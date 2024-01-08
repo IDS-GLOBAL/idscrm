@@ -1,0 +1,425 @@
+/* Global properties ======================================================== */
+* {margin:0; padding:0; -moz-border-radius: 2px; -webkit-border-radius: 2px;}
+
+html {width:100%;}
+
+body {
+
+}
+
+#submit {padding:10px;}
+
+body {
+	/*
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:14pt;
+	color:#333; 
+	*/
+	width: 100%;
+	font-weight: bold;
+	height: 100%;
+	background-image: url(../images/main_bg.jpg);
+	background-repeat: repeat;
+}
+
+#main {
+	width:950px;
+	margin:0 auto;
+	font-size:.69em;
+	border-top-width: 1px;
+	border-right-width: 3px;
+	border-bottom-width: 1px;
+	border-left-width: 3px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #666;
+	border-right-color: #666;
+	border-bottom-color: #666;
+	border-left-color: #666;
+}
+
+#container {
+	width:870px;
+	margin:0 auto;
+	position:relative;
+}
+
+.container { 
+	width:100%;
+
+}
+
+#test_drive td { padding: 5px;}
+
+label #customer_method_0, #customer_method_1, #customer_method_2{ padding: 5px 0 5px 0;}
+
+p {word-wrap:break-word;}
+
+img {
+	border:0; 
+	vertical-align:top; 
+	text-align:left;
+}
+object { 
+	vertical-align:top; 
+	outline:none;
+}
+ul, ol { 
+	list-style:none;
+}
+
+.itemPhoto {
+	background-color: #203761;
+	padding: 2px;
+}
+
+.fleft { 
+	float:left;
+}
+.fright { 
+	float:right;
+}
+.clear { 
+	clear:both;
+}
+
+.col-1, .col-2, .col-3 { 
+	float:left;
+}
+
+.alignright { 
+	text-align:right;
+}
+.aligncenter { 
+	text-align:center;
+}
+
+.wrapper { 
+	width:100%;
+	overflow:hidden;
+}
+
+
+.title { font-weight:bold;
+font-size:14px;
+font-style:italic;
+}
+
+.listings {
+	width:700px;
+	padding: 10px;
+	float: none;
+	height: 150px;
+	position: relative;
+	overflow: visible;
+	visibility: visible;
+	}
+.listings title{
+	font-weight:bold;
+	font-size:16px;
+	float: none;
+	position: relative;
+	font-style: normal;
+	padding: 5px;
+	text-align:left;
+}
+
+.listings section{
+	background-color:#CCC;}
+	
+.itemInfo0, .itemInfo2 {
+	vertical-align: top;
+	padding: 0px 0px 0px 10px;
+	line-height:13px;
+}
+.itemInfo2 {
+	padding-top:6px;
+}
+.itemInfo1 {
+	vertical-align: top; 
+	padding:2px 0px 0px 10px;
+	line-height:13px;
+}
+.itemInfo0 p, .itemInfo1 p, .itemInfo2 p {
+	margin:0px;
+	padding-bottom:5px;
+}
+
+	
+#no-photo {
+	background-image:url(../../vehicles/no-photo.png);
+	background-repeat:no-repeat;
+}
+	
+	
+
+#tgallery {
+	height:100%}
+
+/*==== GLOBAL =====*/
+
+
+#left-bar-inv {
+	width:150px;
+	float: left;
+	height: 100%;
+	border: 1px solid #F00;
+	}
+
+
+#headerimg {
+	height:120px;
+	background-color:#000;
+}
+
+#headernav {
+	height:35px;
+	background-color:#CCC;
+
+}
+
+#header {
+	height:100%;
+	position:relative;
+	overflow:hidden;
+}
+
+#header1 {
+	height:50px;
+	position:relative;
+	overflow:hidden;
+}
+
+
+#header2 {
+	height:50px;
+	position:relative;
+	overflow:hidden;
+	border:2px solid #a1a1a1;
+	background:#dddddd;
+	width:840px;
+	border-radius:25px;
+	-moz-border-radius:25px; /* Firefox 3.6 and earlier */
+	padding-top: 10px;
+	padding-right: 40px;
+	padding-bottom: 5px;
+	padding-left: 40px;
+}
+
+#vtitle {
+	font-weight:bold;
+	font-size: 24px;
+	text-transform: uppercase;
+	line-height: normal;
+	text-decoration: blink;
+}
+
+#vcertified {text-transform:uppercase; font-weight:bold;}
+
+
+#divId {
+	color: #000066;
+	position:relative;	
+	height: 50px;
+	width: 840px;
+	border:2px solid #a1a1a1;
+	border-radius:10px;
+	-moz-border-radius:10px;	
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+		}
+
+
+
+/* Firefox 3.6 and earlier */
+
+#dealerchat { color:#0F0;
+font-weight:bold;
+font-size:16px;
+}
+
+#vehiclestats {
+	height:100px;
+	position:relative;
+	border:2px solid #a1a1a1;
+	width:840px;
+	border-radius:10px;
+	-moz-border-radius:10px; /* Firefox 3.6 and earlier */
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: capitalize;
+	
+/* 	            background-color: @@fromColor@@; fallback color 
+            background-image: -moz-linear-gradient(top, 
+							rgba(79,77,89,.8) 32.0855614973262%, 
+							rgba(144,170,183,0.7540106951871658) 75%);
+            background-image: -webkit-gradient(linear, left top, left bottom, 
+							color-stop( 32.0855614973262%, rgba(79,77,89,.8) ), 
+							color-stop( 75%, rgba(144,170,183,0.7540106951871658)));
+*/			
+}
+
+#vehiclestats_questions {
+}
+
+#vehiclestats_fuelpump {
+	font-weight:bold;
+	font-size:24px;
+
+}
+
+#uniquevinfo {
+	text-transform: capitalize;
+	font-variant: normal;
+}
+
+#vehiclefunbox {
+	height:100%;
+	width:100%;
+	background-color:#CCC;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	border:2px solid #a1a1a1;
+}
+
+#mid-view {
+	width:100%;
+	border-radius:10px;
+	-moz-border-radius:10px; 
+	/* Firefox 3.6 and earlier */
+    /* background-color: @@fromColor@@; fallback color 
+    background-image: -moz-linear-gradient(top, 
+			rgba(79,77,89,.8) 32.0855614973262%, 
+			rgba(144,170,183,0.7540106951871658) 75%);
+    background-image: -webkit-gradient(linear, left top, left bottom, 
+			color-stop( 32.0855614973262%, rgba(79,77,89,.8) ), 
+			color-stop( 75%, rgba(144,170,183,0.7540106951871658)));
+	*/
+}
+
+#photo-box {	
+	background-color:#CCC;
+	height:100%;
+	
+}
+
+#lead-form {
+	height:100%;
+	width: auto;
+	position: relative;
+	padding-left: 5px;
+}
+
+#google-map {
+	height:100%;
+	background-color:#CCC;
+	width:420px;
+	position: relative;
+	border-radius:5px;
+	-moz-border-radius:5px; /* Firefox 3.6 and earlier */
+}
+
+#storeprofile {
+	height:100%;
+	width:840px;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	border:2px solid #a1a1a1;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	padding-right: 20px;
+	position: relative;
+}
+
+#content {
+	padding:9px 20px 11px 20px;
+}
+
+#dealer-vehicle-buttons{ height:50px;}
+
+#header5 {
+	height:300px;
+	position:relative;
+	overflow:hidden;
+	background-color:#CCC;
+}
+
+#footer {
+	background:#828a91;
+	color:#fff;
+	padding:17px 22px 20px 22px;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	border:2px solid #a1a1a1;
+	
+}
+
+/*----- End Custom Knowledge Parameters -----*/
+
+a {
+	color:#0b53b1; 
+	outline:none;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:none;
+}
+
+/*==========================================*/
+
+#animation{
+	width:300px;
+	height:50px;
+	position:relative;
+	animation:mymove 5s infinite;
+	-moz-animation:mymove 5s infinite; /*Firefox*/
+	-webkit-animation:mymove 5s infinite; /*Safari and Chrome*/
+	background-color:#0F9;
+}
+
+@keyframes mymove
+{
+from {left:0px;}
+to {left:600px;}
+}
+
+@-moz-keyframes mymove /*Firefox*/
+{
+from {left:0px;}
+to {left:600px;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+from {left:0px;}
+to {left:600px;}
+}
+
+
+#captcha {
+	border:medium;
+	height: 110px;
+}
+
+#rlcameraicon {
+	background-image:url(../internetdealerservices/images/rl_camera_icon.png);
+	background-repeat:no-repeat;
+	display: block;
+	background-attachment: fixed;
+}
+
+input{ border-color:#CCD5D1; padding: 6px; line-height: 25px;  -moz-border-radius: 4px/*{cornerRadius}*/; -webkit-border-radius: 4px/*{cornerRadius}*/; border-radius: 4px/*{cornerRadius}*/; 	
+}
+
+textarea { border-color:#CCD5D1; padding: 6px; -moz-border-radius: 4px/*{cornerRadius}*/; -webkit-border-radius: 4px/*{cornerRadius}*/; border-radius: 4px/*{cornerRadius}*/;}
+
+select { border-color:#CCD5D1; padding: 6px; width: 75px; height: 40px; -moz-border-radius: 4px/*{cornerRadius}*/; -webkit-border-radius: 4px/*{cornerRadius}*/; border-radius: 4px/*{cornerRadius}*/;}

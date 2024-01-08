@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+#container {
+	width:950px;
+	height:100%;
+}
+
+#main { color:#FFF;
+}
+
+#logo { 
+	float:left;
+	height:100%;
+}

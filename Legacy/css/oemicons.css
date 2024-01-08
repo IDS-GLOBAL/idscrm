@@ -1,0 +1,435 @@
+@charset "utf-8";
+/* CSS Document */
+
+ul {
+list-style: none;
+}
+
+
+ul {
+margin: 0;
+padding: 0;
+}
+
+ul {
+display: block;
+list-style-type: disc;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}
+
+li {
+margin: 0;
+padding: 0;
+}
+
+li {
+display: list-item;
+text-align: -webkit-match-parent;
+}
+
+
+.inshadow {
+-moz-box-shadow: inset 0 0 7px #000000;
+-webkit-box-shadow: inset 0 0 7px #000000;
+box-shadow: inset 0 0 7px #000000;
+-moz-border-radius: 6px 6px 6px 6px;
+-webkit-border-radius: 6px 6px 6px 6px;
+border-radius: 6px 6px 6px 6px;
+border: 1px solid #F00;
+}
+
+
+
+
+
+
+
+
+#oemicons li{
+	width: 90px;
+	height: 68px;
+	overflow: hidden;
+	margin-left: 18px;
+	margin-bottom: 14px;
+	float: left;
+
+}
+
+#oemicons li:hover{
+width: 90px;
+height: 68px;
+overflow: hidden;
+margin-left: 13px;
+margin-right: 5px;
+}
+
+
+
+#oemicons span.brand-search{
+width: 90px;
+height: 68px;
+overflow: hidden;
+margin-left: 18px;
+margin-top: 10px;
+float: left;
+}
+
+#oemicons span.brand-search a{
+	padding-left: 5px;
+color:#F00;
+font-size:22px; 
+font-weight:bold;
+text-decoration:none;
+}
+
+
+#oemicons li a {
+background: transparent url("https://idscrm.com/css/images/oem_icons.png") no-repeat scroll 0 0;
+width: 100%;
+height: 100%;
+display: block;
+text-indent:  -9999px;
+
+}
+
+
+
+
+
+#oemicons li.iconAcura a {
+	background-position: center -1342px;
+}
+
+#oemicons li.iconAudi a {
+	background-position: center -1417px;
+}
+
+
+#oemicons li.iconAMC a {
+	background-position: center -2537px;
+}
+
+
+#oemicons li.iconAvanti a {
+	background-position: center -2900px;
+}
+
+
+
+#oemicons li.iconBentley a {
+	background-position: center -2626px;
+}
+
+
+
+#oemicons li.iconBMW a {
+	background-position: center -1500px;
+}
+
+
+#oemicons li.iconBmw a {
+	background-position: center -1500px;
+}
+
+#oemicons li.iconBuick a {
+	background-position: center -302px;
+}
+
+
+
+#oemicons li.iconChevrolet a {
+	background-position: center -140px;
+}
+
+
+
+#oemicons li.iconCadillac a {
+	background-position: center -379px;
+}
+
+#oemicons li.iconChrysler a {
+	background-position: center -458px;
+}
+
+#oemicons li.iconDaewoo a {
+	background-position: center -2973px;
+}
+
+
+#oemicons li.iconDaihatsu a {
+	background-position: center -3064px;
+}
+
+#oemicons li.iconDatsun a {
+	background-position: center -3147px;
+}
+
+#oemicons li.iconDelorean a {
+	background-position: center -3230px;
+}
+
+#oemicons li.iconDodge a {
+	background-position: center -540px;
+}
+
+#oemicons li.iconEagle a {
+	background-position: center -3250px;
+}
+
+#oemicons li.iconFerrari a {
+	background-position: center -3440px;
+}
+
+
+#oemicons li.iconFiat a {
+	background-position: center -3550px;
+}
+
+#oemicons li.iconFIAT a {
+	background-position: center -3550px;
+}
+
+#oemicons li.iconFord a {
+	background-position: center 8px;
+}
+
+#oemicons li.iconGeo a {
+	background-position: center -3630px;
+}
+
+#oemicons li.iconGMC a {
+	background-position: center -220px;
+}
+
+
+#oemicons li.iconHARLEY a{
+	background-position: center -2265px;	
+}
+
+#oemicons li.iconHARLEY-DAVIDSON a{
+	background-position: center -2265px;
+}
+
+
+#oemicons li.iconHUMMER a {
+	background-position: center -3696px;
+}
+
+
+#oemicons li.iconHonda a {
+	background-position: center -701px;
+}
+
+#oemicons li.iconHyundai a {
+	background-position: center -783px;
+}
+
+#oemicons li.iconInfiniti a {
+	background-position: center -860px;
+}
+
+#oemicons li.iconIsuzu a {
+	background-position: center -3770px;
+}
+
+
+#oemicons li.iconJaguar a {
+	background-position: center -5110px;
+}
+
+
+#oemicons li.iconJeep a {
+	background-position: center -620px;
+}
+
+#oemicons li.iconKAWASAKI a {
+	background-position: center -2840px;
+}
+
+
+#oemicons li.iconKia a {
+	background-position: center -2100px;
+}
+
+#oemicons li.iconLincoln a {
+	background-position: center -60px;
+}
+
+
+#oemicons li.iconLamborghini a {
+	background-position: center -3870px;
+}
+
+
+#oemicons li.iconLancia a {
+	background-position: center -3956px;
+}
+
+#oemicons li.iconLand Rover a {
+	background-position: center -3830px;
+}
+
+#oemicons li.iconLand Rover inshadow a {
+	background-position: center -3830px;
+}
+
+
+#oemicons li.iconLexus a {
+	background-position: center -1020px;
+}
+
+
+#oemicons li.iconLotus a {
+	background-position: center -4125px;
+}
+
+
+#oemicons li.iconMaserati a {
+	background-position: center -4223px;
+}
+
+#oemicons li.iconMaybach a {
+	background-position: center -4320px;
+}
+
+
+#oemicons li.iconMazda a {
+	background-position: center -940px;
+}
+
+#oemicons li.iconMercury a {
+	background-position: center -2355px;
+}
+
+#oemicons li.iconMerkur a {
+	background-position: center -2355px;
+}
+
+
+#oemicons li.iconMercedes a {
+	background-position: center -1110px;
+}
+
+#oemicons li.iconMercedes-Benz a {
+	background-position: center -1100px;
+}
+
+
+#oemicons li.iconMini a {
+	background-position: center -1180px;
+}
+
+#oemicons li.iconMitsubishi a {
+	background-position: center -4417px;
+}
+
+#oemicons li.iconNissan a {
+	background-position: center -1260px;
+}
+
+
+#oemicons li.iconOldsmobile a {
+	background-position: center -2180px;
+}
+
+#oemicons li.iconother a {
+	background-position: center -2180px;
+}
+
+#oemicons li.iconOther a {
+	background-position: center -2180px;
+}
+
+#oemicons li.iconPeugeot a {
+	background-position: center -4508px;
+}
+
+#oemicons li.iconPlymouth a {
+	background-position: center -5310px;
+}
+
+
+#oemicons li.iconPorsche a {
+	background-position: center -4576px;
+}
+
+#oemicons li.iconPontiac a {
+	background-position: center -2452px;
+}
+
+
+#oemicons li.iconRam a {
+	background-position: center -2048px;
+}
+
+
+#oemicons li.iconRenault a {
+	background-position: center -4652px;
+}
+
+
+#oemicons li.iconRolls-Royce a {
+	background-position: center -4744px;
+}
+
+#oemicons li.iconSaab a {
+	background-position: center -4841px;
+}
+
+#oemicons li.iconSaturn a {
+	background-position: center -1580px;
+}
+
+#oemicons li.iconScion a {
+	background-position: center -1662px;
+}
+
+#oemicons li.iconSmart a {
+	background-position: center -4920px;
+}
+
+#oemicons li.iconSterling a {
+	background-position: center -1662px;
+}
+
+#oemicons li.iconSubaru a {
+	background-position: center -4982px;
+}
+
+#oemicons li.iconSuzuki a {
+	background-position: center -1745px;
+}
+
+#oemicons li.iconTriumph a {
+	background-position: center -5244px;
+}
+
+#oemicons li.iconTrailer a {
+	background-position: center -5244px;
+}
+
+#oemicons li.iconToyota a {
+	background-position: center -1822px;
+}
+
+#oemicons li.iconVolkswagen a {
+	background-position: center -1900px;
+}
+
+#oemicons li.iconVolvo a {
+	background-position: center -1980px;
+}
+
+
+#oemicons li.iconYamaha a {
+	background-position: center -5050px;
+}
+
+
+#oemicons li.iconYugo a {
+	background-position: center -5180px;
+}

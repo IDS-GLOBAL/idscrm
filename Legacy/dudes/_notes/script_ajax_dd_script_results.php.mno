@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_find_pitchtemplatedbyid" value="name:dudes_salespitch_id;datatype:int,name:dudes_salespitch_token;datatype:blob,name:dudes_cat_id;datatype:int,name:dudes_cat_label;datatype:blob,name:dudes_salespitch_createdby_dudeid;datatype:int,name:dudes_salespitch_last_updated;datatype:datetime,name:dudes_salespitch_name;datatype:blob,name:dudes_salespitch_status;datatype:int,name:dudes_salespitch_days_response;datatype:int,name:dudes_salespitch_body;datatype:blob,name:dudes_salespitch_created_at;datatype:timestamp" />
+</info>

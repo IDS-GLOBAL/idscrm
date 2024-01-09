@@ -1,0 +1,210 @@
+[08-Feb-2015 17:23:18 America/Chicago] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE) in /home4/idsids/public_html/frazersend/index.php on line 22
+[09-Feb-2015 23:15:40 America/Chicago] PHP Warning:  mysql_pconnect(): Access denied for user 'idsids_frazer'@'localhost' (using password: YES) in /home4/idsids/public_html/Connections/frazerdms.php on line 9
+[09-Feb-2015 23:15:40 America/Chicago] PHP Fatal error:   in /home4/idsids/public_html/Connections/frazerdms.php on line 9
+[09-Feb-2015 23:16:32 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'idsids_frazer'@'localhost' (using password: YES) in /home4/idsids/public_html/Connections/frazerdms.php on line 9
+[09-Feb-2015 23:16:32 America/Chicago] PHP Fatal error:   in /home4/idsids/public_html/Connections/frazerdms.php on line 9
+[09-Feb-2015 23:17:57 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'idsids_frazer'@'localhost' (using password: YES) in /home4/idsids/public_html/Connections/frazerdms.php on line 9
+[09-Feb-2015 23:17:57 America/Chicago] PHP Fatal error:   in /home4/idsids/public_html/Connections/frazerdms.php on line 9
+[09-Feb-2015 23:18:28 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'idsids_frazer'@'localhost' (using password: YES) in /home4/idsids/public_html/Connections/frazerdms.php on line 9
+[09-Feb-2015 23:18:28 America/Chicago] PHP Fatal error:   in /home4/idsids/public_html/Connections/frazerdms.php on line 9
+[09-Feb-2015 23:20:50 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'idsids_frazer'@'localhost' (using password: YES) in /home4/idsids/public_html/Connections/frazerdms.php on line 9
+[09-Feb-2015 23:20:50 America/Chicago] PHP Fatal error:   in /home4/idsids/public_html/Connections/frazerdms.php on line 9
+[09-Feb-2015 23:21:56 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'idsids_frazer'@'localhost' (using password: YES) in /home4/idsids/public_html/Connections/frazerdms.php on line 9
+[09-Feb-2015 23:21:56 America/Chicago] PHP Fatal error:   in /home4/idsids/public_html/Connections/frazerdms.php on line 9
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/idsids/public_html/frazersend/index.php:54) in /home4/idsids/public_html/dwzExport/CsvImport.php on line 5
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 37
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 37
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  mysql_select_db(): 5 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 39
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:19:03 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ): 5 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 41
+[11-Feb-2015 14:22:18 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:22:18 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:22:19 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:22:19 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:22:19 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:22:19 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:22:19 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 37
+[11-Feb-2015 14:22:19 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 37
+[11-Feb-2015 14:22:19 America/Chicago] PHP Warning:  mysql_select_db(): 5 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 39
+[11-Feb-2015 14:22:19 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:22:19 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 14:22:19 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ): 5 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 41
+[11-Feb-2015 15:27:25 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:27:25 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:27:25 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:27:25 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:27:25 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:27:25 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:27:25 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 37
+[11-Feb-2015 15:27:25 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 37
+[11-Feb-2015 15:27:25 America/Chicago] PHP Warning:  mysql_select_db(): 5 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 39
+[11-Feb-2015 15:27:25 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:27:25 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:27:25 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ): 5 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 41
+[11-Feb-2015 15:54:26 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:26 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:27 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:27 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:27 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:27 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:27 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 37
+[11-Feb-2015 15:54:27 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 37
+[11-Feb-2015 15:54:27 America/Chicago] PHP Warning:  mysql_select_db(): 5 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 39
+[11-Feb-2015 15:54:27 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:27 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:27 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ): 5 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 41
+[11-Feb-2015 15:54:35 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:35 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:35 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:35 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:35 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:35 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:35 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 37
+[11-Feb-2015 15:54:35 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 37
+[11-Feb-2015 15:54:35 America/Chicago] PHP Warning:  mysql_select_db(): 5 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 39
+[11-Feb-2015 15:54:35 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:35 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 11
+[11-Feb-2015 15:54:35 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ): 5 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 41
+[11-Feb-2015 15:55:44 America/Chicago] PHP Fatal error:  Call to undefined function GetSQLValueString() in /home4/idsids/public_html/frazersend/index.php on line 60
+[11-Feb-2015 17:06:27 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/idsids/public_html/frazersend/index.php:46) in /home4/idsids/public_html/dwzExport/CsvImport.php on line 5
+[11-Feb-2015 17:20:24 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 107
+[11-Feb-2015 17:20:24 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 107
+[11-Feb-2015 17:22:03 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 135
+[11-Feb-2015 17:22:03 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 135
+[12-Feb-2015 08:15:48 America/Chicago] PHP Parse error:  syntax error, unexpected ';' in /home4/idsids/public_html/frazersend/check_exisiting_idsemail.user.php on line 7
+[12-Feb-2015 08:17:31 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ): 3 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_logcat.php on line 53
+[12-Feb-2015 08:18:43 America/Chicago] PHP Warning:  mysql_select_db(): 3 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_logcat.php on line 41
+[12-Feb-2015 08:18:43 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ): 3 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_logcat.php on line 53
+[12-Feb-2015 08:22:22 America/Chicago] PHP Warning:  mysql_select_db(): 3 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_logcat.php on line 8
+[12-Feb-2015 08:22:22 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ): 3 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_logcat.php on line 20
+[12-Feb-2015 08:22:43 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ): 3 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_logcat.php on line 20
+[12-Feb-2015 08:23:06 America/Chicago] PHP Warning:  mysqli_free_result() expects parameter 1 to be resource, null given in /home4/idsids/public_html/frazersend/index.php on line 161
+[12-Feb-2015 08:23:06 America/Chicago] PHP Warning:  mysqli_free_result() expects parameter 1 to be resource, null given in /home4/idsids/public_html/frazersend/index.php on line 163
+[12-Feb-2015 08:28:29 America/Chicago] PHP Warning:  mysql_select_db(): 3 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_logcat.php on line 41
+[12-Feb-2015 08:28:29 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ): 3 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_logcat.php on line 52
+[12-Feb-2015 08:34:55 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ): 3 is not a valid MySQL-Link resource in /home4/idsids/public_html/frazersend/script_logcat.php on line 19
+[12-Feb-2015 09:03:38 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 97
+[12-Feb-2015 09:03:38 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 97
+[12-Feb-2015 09:03:38 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 98
+[12-Feb-2015 09:03:38 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 98
+[12-Feb-2015 09:04:41 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 12
+[12-Feb-2015 09:04:41 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 12
+[12-Feb-2015 09:04:41 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home4/idsids/public_html/frazersend/index.php:12) in /home4/idsids/public_html/dwzExport/CsvImport.php on line 5
+[12-Feb-2015 09:06:56 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 82
+[12-Feb-2015 09:06:56 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 82
+[12-Feb-2015 09:06:56 America/Chicago] PHP Warning:  mysql_real_escape_string(): Access denied for user 'root'@'localhost' (using password: NO) in /home4/idsids/public_html/frazersend/index.php on line 83
+[12-Feb-2015 09:06:56 America/Chicago] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home4/idsids/public_html/frazersend/index.php on line 83
+[12-Feb-2015 10:50:24 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home4/idsids/public_html/frazersend/script_create_prospect_dealer.php on line 43
+[12-Feb-2015 11:56:55 America/Chicago] PHP Parse error:  syntax error, unexpected ')' in /home4/idsids/public_html/frazersend/process_nomatch_frazerno.php on line 19
+[12-Feb-2015 12:20:15 America/Chicago] PHP Parse error:  syntax error, unexpected ')' in /home4/idsids/public_html/frazersend/index.php on line 102
+[14-Feb-2015 16:26:11 America/Chicago] PHP Warning:  copy(): The first argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 121
+[14-Feb-2015 16:26:11 America/Chicago] PHP Warning:  copy(): The first argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 122
+[14-Feb-2015 16:29:14 America/Chicago] PHP Warning:  copy(): The first argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:29:14 America/Chicago] PHP Warning:  copy(): The first argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:34 America/Chicago] PHP Warning:  copy(): The first argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:34 America/Chicago] PHP Warning:  copy(): The first argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:36 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:36 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:36 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:36 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:34:36 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:34:36 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(): The first argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(): The first argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5317/1J4FJ68S4PL592697_1.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5317/1J4FJ68S4PL592697_2.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5317/1J4FJ68S4PL592697_3.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_1.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_2.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_3.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_4.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_5.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_6.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:34 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_7.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_8.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_9.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_10.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_11.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_12.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_13.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_14.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_15.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_16.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_17.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_18.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_19.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(): The second argument to copy() function cannot be a directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 123
+[14-Feb-2015 16:37:35 America/Chicago] PHP Warning:  copy(../vehicles/photos/96/5318/1FTPW14584KB14170_20.jpg): failed to open stream: No such file or directory in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 125
+[01-Mar-2015 04:00:28 America/Chicago] PHP Fatal error:  Cannot redeclare GetTempFolder() (previously declared in /home4/idsids/public_html/dwzExport/SetTempFolder.php:24) in /home4/idsids/public_html/dwzExport/SetTempFolder.php on line 30
+[02-Jun-2016 09:18:12 America/Chicago] PHP Parse error:  syntax error, unexpected ',' in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 305
+[02-Jun-2016 10:38:24 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home4/idsids/public_html/frazersend/test.run_frazersold.php on line 126
+[02-Jun-2016 11:02:32 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ) expects parameter 2 to be resource, null given in /home4/idsids/public_html/frazersend/run_frazerfiles.php on line 480

@@ -1,0 +1,390 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+.input-group-append {
+    margin-left: -1px;
+}
+
+.input-group-append,
+.input-group-prepend {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
+a.remove_recurEdit_fee_el.preloaded, a.remove_liveEdit_fee_el.preloaded {
+    cursor: pointer;
+    color: #ff0000;
+}
+
+
+
+a.remove_liveEdit_fee_el.ajaxloaded{
+      cursor: pointer;
+    color: #1ab394;
+}
+
+#data_google_maps_view {
+    width: 400px;
+    height: 400px;
+}
+
+div#debug_console {
+    display: none;
+	visibility:hidden;
+
+}
+
+div#create_reocurring_invoice_fees_box {
+    border: 1px solid #1ab394;
+    padding: 6px;
+}
+div#update_live_invoice_fees_box {
+    border: 1px solid #f8ac59;
+    padding: 6px;
+}
+
+div#create_reocurring_invoice_fees_box .form-control, div#update_reocurring_invoice_fees_box .form-control, div#update_live_invoice_fees_box .form-control {
+    padding: 1px;
+    font-size: 1.0em;
+}
+
+
+div#create_reocurring_invoice_fees_box input#fee_qty.form-control, div#update_reocurring_invoice_fees_box input#recurEdit_fee_qty.form-control, div#update_live_invoice_fees_box input#recurEdit_fee_qty.form-control {
+    
+    color:#000;
+}
+
+
+
+#Rowdlrliveinvcvw_bodyvw_row {
+    position: relative;
+}
+
+#create_sysdealer_invoice_fees_box, #update_live_invoice_fees_box {
+    border: 1px solid #f8ac59;
+    padding: 6px;
+}
+
+.tab-content>.active .input-group .form-control,
+.form-control,
+.single-line {
+    position: relative;
+    z-index: 2;
+    float: left;
+    background-image: none;
+    border: 1px solid #24A9E2;
+    border-radius: 2px;
+    color: inherit;
+    display: block;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.tab-content .input-group-addon {
+    border: 1px solid #24A9E2 !important;
+}
+
+.input-group-btn:first-child>.btn,
+.input-group-btn:first-child>.btn-group {
+    overflow: hidden;
+}
+
+.input-group-btn:first-child>.btn:not(:first-child) {
+    overflow: hidden;
+}
+
+button.btn.btn-white.btnFee_slct {
+    width: 150px;
+    z-index: 10;
+}
+
+button.btn.btn-white.dropdown-toggle {
+    z-index: 10;
+}
+
+.btn-small-dim {
+    height: 30px !important;
+    padding-left: 45px !important;
+    font-size: 14px !important;
+}
+
+.btn-small-dim>:first-child {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 64px !important;
+    line-height: 34px !important;
+    font-size: 1.6em !important;
+    text-align: center !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-medium-dim {
+    height: 60px !important;
+    padding-left: 110px !important;
+    font-size: 28px !important;
+}
+
+.btn-medium-dim>:first-child {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 96px !important;
+    line-height: 60px !important;
+    font-size: 1.6em !important;
+    text-align: center !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.somecolor {
+    border: 1px #000 solid;
+    min-height: 200px;
+    background-color: #CCC;
+}
+
+abbr.timeago {
+    text-transform: capitalize !important;
+}
+
+.wf {
+    color: #FFF !important;
+}
+
+textarea.form-control {
+    height: auto !important;
+}
+
+textarea#customer_bodynote {
+    height: 130px !important;
+}
+
+tr.gradeX.unseen {
+    background-color: #FF0 !important;
+}
+
+tr.gradeX.seen {
+    background-color: #FFF !important;
+}
+
+div#testimony_block textarea#body {
+    height: 187px !important;
+}
+
+.form-horizontal .form-group {
+    margin-right: -15px;
+    margin-left: -15px;
+    clear: right !important;
+}
+
+.wfh-rectbg {
+    background-image: url('../img/wfh/wfh_idscrmlogo.png');
+}
+
+.clearfix {
+    clear: both !important;
+}
+
+a#process_vehicle_vin {
+    max-width: 80% !important;
+    margin-left: 15%;
+}
+
+.cum {
+    display: hidden !important;
+}
+
+input#vvin {
+    text-transform: uppercase;
+}
+
+input#vtrim {
+    text-transform: uppercase;
+}
+
+input#vengine {
+    text-transform: uppercase;
+}
+
+input#vstockno {
+    text-transform: uppercase;
+}
+
+input#vengine {
+    text-transform: uppercase;
+}
+
+select#vmodel {
+    overflow: hidden;
+}
+
+span#uselast6ofvin {
+    font-weight: bold;
+}
+
+span#uselast6ofvin:hover {
+    background-color: #FC3;
+}
+
+#iknowmorebox {
+    display: hidden !important;
+}
+
+.thumbnail {
+    border: 1px #999 solid;
+    border-radius: 3px;
+    background-color: #CCC;
+}
+
+.thumbnail:hover {
+    border: 1px #00F solid;
+    border-radius: 3px;
+    background-color: #F93;
+}
+
+img.thumbnail {
+    border-radius: 3px!important;
+}
+
+.alltheway {
+    width: 100% !important;
+}
+
+.ibox-content small {
+    color: #5D51C5 !important;
+}
+
+select.form-control.m-b {
+    width: 100% !important;
+}
+
+.headroom {
+    margin-top: 10px;
+}
+
+.form-control.smwdth {
+    width: 133px !important;
+}
+
+.bigbtn {
+    height: 334px;
+}
+
+a#decodeVIN {
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.input-group.date .input-group-addon:hover {
+    background-color: #f8ac59;
+    color: #FFF;
+    border: 1px solid #ccc;
+}
+
+.box {
+    background-color: #FFF;
+}
+
+.report-range {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+}
+
+.report-range .range-value {
+    margin-right: 3px;
+}
+
+.report-range i {
+    font-size: 16px;
+}
+
+.input-group-addon:last-child {
+    -moz-border-radius-topright: 2px;
+    -webkit-border-top-right-radius: 2px;
+    border-top-right-radius: 2px;
+    -moz-border-radius-bottomright: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+
+/* iCheck plugin Square skin, green
+----------------------------------- */
+
+.icheckbox_square-green,
+.iradio_square-green {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    background: url(green.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_square-green {
+    background-position: 0 0;
+}
+
+.icheckbox_square-green.hover {
+    background-position: -24px 0;
+}
+
+.icheckbox_square-green.checked {
+    background-position: -48px 0;
+}
+
+.icheckbox_square-green.disabled {
+    background-position: -72px 0;
+    cursor: default;
+}
+
+.icheckbox_square-green.checked.disabled {
+    background-position: -96px 0;
+}
+
+.iradio_square-green {
+    background-position: -120px 0;
+}
+
+.iradio_square-green.hover {
+    background-position: -144px 0;
+}
+
+.iradio_square-green.checked {
+    background-position: -168px 0;
+}
+
+.iradio_square-green.disabled {
+    background-position: -192px 0;
+    cursor: default;
+}
+
+.iradio_square-green.checked.disabled {
+    background-position: -216px 0;
+}
+
+
+/* HiDPI support */
+
+@media (-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi),
+(min-resolution:1.5dppx) {
+    .icheckbox_square-green,
+    .iradio_square-green {
+        background-image: url(green@2x.png);
+        -webkit-background-size: 240px 24px;
+        background-size: 240px 24px;
+    }
+}

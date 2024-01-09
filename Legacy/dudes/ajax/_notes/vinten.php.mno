@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_find_vinyear" value="name:vinten_id;datatype:int,name:vinten_code;datatype:string,name:vinten_year;datatype:int,name:vinten_yearabrv;datatype:int" />
+</info>

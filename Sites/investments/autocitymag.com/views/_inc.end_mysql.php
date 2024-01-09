@@ -1,0 +1,1 @@
+<?php mysqli_close($autocity_connection_mysqli); ?>

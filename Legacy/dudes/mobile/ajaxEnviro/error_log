@@ -1,0 +1,17 @@
+[23-Jul-2013 17:06:50] PHP Parse error:  syntax error, unexpected $end in /home/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 140
+[21-Nov-2014 12:28:47 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[21-Nov-2014 12:28:48 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[21-Nov-2014 12:28:49 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[21-Nov-2014 12:28:49 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[21-Nov-2014 12:28:50 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[21-Nov-2014 12:29:11 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[27-Dec-2014 15:21:05 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[27-Dec-2014 15:21:05 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[27-Dec-2014 15:21:05 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[27-Dec-2014 15:21:06 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[27-Dec-2014 15:21:06 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[27-Dec-2014 15:21:07 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[27-Dec-2014 15:21:08 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[27-Dec-2014 15:21:09 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[27-Dec-2014 15:21:09 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118
+[27-Dec-2014 15:21:12 America/Chicago] PHP Warning:  mysqli_num_rows() expects parameter 1 to be resource, boolean given in /home4/idsids/public_html/dudes/mobile/ajaxEnviro/ajax_getdealerstockno.php on line 118

@@ -1,0 +1,2 @@
+[12-Jul-2017 12:07:36 America/Chicago] PHP Warning:  require_once(../Connections/idsconnection.php): failed to open stream: No such file or directory in /home4/idsids/public_html/dudes/images/create-recurring-invoice.php on line 1
+[12-Jul-2017 12:07:36 America/Chicago] PHP Fatal error:  require_once(): Failed opening required '../Connections/idsconnection.php' (include_path='.:/opt/php54/lib/php') in /home4/idsids/public_html/dudes/images/create-recurring-invoice.php on line 1

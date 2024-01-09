@@ -1,0 +1,36 @@
+[28-Oct-2013 08:54:45] PHP Parse error:  syntax error, unexpected T_ISSET, expecting '(' in /home4/idsids/public_html/dudes/ajaxEnviro/deletePendingdealer.php on line 6
+[28-Oct-2013 08:56:18] PHP Parse error:  syntax error, unexpected T_ISSET, expecting '(' in /home4/idsids/public_html/dudes/ajaxEnviro/deletePendingdealer.php on line 6
+[28-Oct-2013 08:57:47] PHP Parse error:  syntax error, unexpected T_ISSET, expecting '(' in /home4/idsids/public_html/dudes/ajaxEnviro/deletePendingdealer.php on line 6
+[30-Oct-2013 18:40:53] PHP Parse error:  syntax error, unexpected '=' in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 40
+[30-Oct-2013 18:45:26] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 42
+[30-Oct-2013 18:45:26] PHP Warning:  mysqli_num_rows(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 43
+[30-Oct-2013 18:46:38] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 42
+[30-Oct-2013 18:46:38] PHP Warning:  mysqli_num_rows(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 43
+[30-Oct-2013 18:47:57] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 43
+[30-Oct-2013 18:47:57] PHP Warning:  mysqli_num_rows(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 44
+[30-Oct-2013 18:47:57] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 87
+[30-Oct-2013 18:47:57] PHP Warning:  mysqli_free_result(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 94
+[30-Oct-2013 18:49:29] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 43
+[30-Oct-2013 18:49:29] PHP Warning:  mysqli_num_rows(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 44
+[30-Oct-2013 18:49:29] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 87
+[30-Oct-2013 18:49:29] PHP Warning:  mysqli_free_result(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 94
+[30-Oct-2013 18:51:41] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 43
+[30-Oct-2013 18:51:41] PHP Warning:  mysqli_num_rows(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 44
+[30-Oct-2013 18:51:41] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 87
+[30-Oct-2013 18:51:41] PHP Warning:  mysqli_free_result(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 94
+[30-Oct-2013 18:56:41] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 43
+[30-Oct-2013 18:56:41] PHP Warning:  mysqli_num_rows(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 44
+[30-Oct-2013 18:56:41] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 87
+[30-Oct-2013 18:56:41] PHP Warning:  mysqli_free_result(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 94
+[30-Oct-2013 18:59:44] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 43
+[30-Oct-2013 18:59:44] PHP Warning:  mysqli_num_rows(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 44
+[30-Oct-2013 18:59:44] PHP Warning:  mysqli_free_result(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 93
+[30-Oct-2013 19:21:51] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 43
+[30-Oct-2013 19:21:51] PHP Warning:  mysqli_num_rows(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 44
+[30-Oct-2013 19:21:51] PHP Warning:  mysqli_free_result(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 93
+[30-Oct-2013 19:22:49] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 43
+[30-Oct-2013 19:22:49] PHP Warning:  mysqli_num_rows(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 44
+[30-Oct-2013 19:23:56] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 43
+[30-Oct-2013 19:23:56] PHP Warning:  mysqli_num_rows(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 44
+[30-Oct-2013 19:26:38] PHP Warning:  mysqli_fetch_array(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 43
+[30-Oct-2013 19:26:38] PHP Warning:  mysqli_num_rows(): supplied argument is not a valid MySQL result resource in /home4/idsids/public_html/dudes/ajaxEnviro/prospect_dealer_comment.php on line 44

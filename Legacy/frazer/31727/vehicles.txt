@@ -1,0 +1,16 @@
+,||,1999,||,PONTIAC,||,GRAND PRIX,||,SE,||,1G2WJ52K1XF236140,||,F236140,||, 105842,||,      5231,||,GREY,||,GREY,||,3.8L,||,4DR,||,Sedan,||,Automatic,||,FWD,||,6,||,,||,1G2WJ52K1XF236140_1|1G2WJ52K1XF236140_2|1G2WJ52K1XF236140_3|1G2WJ52K1XF236140_4|1G2WJ52K1XF236140_5|1G2WJ52K1XF236140_6|1G2WJ52K1XF236140_7|1G2WJ52K1XF236140_8|1G2WJ52K1XF236140_9|1G2WJ52K1XF236140_10|1G2WJ52K1XF236140_11|1G2WJ52K1XF236140_12|1G2WJ52K1XF236140_13|1G2WJ52K1XF236140_14|1G2WJ52K1XF236140_15|1G2WJ52K1XF236140_16|
+,||,2003,||,FORD,||,SUPER DUTY F250,||,REG CAB XL,||,3FTNF21L43MB41163,||,B41163,||,  61000,||,         0,||,WHITE,||,GREY,||,5.4L,||,2DR,||,Mid-Size,||,Automatic,||,4WD,||,8,||,,||,
+,||,2005,||,BMW,||,5 SERIES,||,545I,||,WBANB33555CN66859,||,N66859,||,  96216,||,         0,||,BLACK,||,BLACK,||,4.4L,||,4DR,||,Sedan,||,Automatic,||,RWD,||,8,||,,||,
+,||,2007,||,NISSAN,||,XTERRA,||,SE,||,5N1AN08W37C520504,||,520504,||, 105681,||,         0,||,YELLOW,||,BLACK,||,4.0L,||,4DR,||,Mid-Size,||,Automatic,||,4WD,||,6,||,,||,
+,||,2011,||,BMW,||,5 SERIES,||,535I XDRIVE,||,WBAFU7C54BC780761,||,78761,||,  35758,||,         0,||,GREY,||,BLACK,||,3.0L,||,4DR,||,Sedan,||,Automatic,||,AWD,||,6,||,,||,
+,||,1991,||,CHEVROLET,||,CAMARO,||,Z28,||,1G1FP23F2ML108635,||,108635,||, 193733,||,      6290,||,RED,||,RED,||,5.0L,||,2DR,||,Coupe,||,Automatic,||,,||,8,||,,||,
+,||,2008,||,BMW,||,5 SERIES,||,528XI,||,WBANV13578CZ59780,||,Z59780,||,  88305,||,         0,||,BLACK,||,TAN,||,3.0L,||,4DR,||,Sedan,||,Automatic,||,AWD,||,6,||,,||,
+,||,2006,||,CHEVROLET,||,MALIBU MAXX,||,SS,||,1G1ZW63136F144203,||,144203,||,  98059,||,         0,||,BLACK,||,BLACK,||,3.9L,||,5DR,||,Sedan,||,Automatic,||,FWD,||,6,||,,||,
+,||,1988,||,FORD,||,BRONCO,||,U100,||,1FMEU15N8JLA02451,||,205389,||, 166000,||,         0,||,,||,,||,5.0L,||,2DR,||,SUV,||,Automatic,||,4WD,||,8,||,,||,
+,||,2007,||,HONDA,||,RIDGELINE,||,RTS,||,2HJYK16497H507994,||,507994,||, 146120,||,         0,||,SILVER,||,GREY,||,3.5L,||,4DR,||,Truck,||,Automatic,||,RWD,||,6,||,,||,
+,||,2006,||,LEXUS,||,IS,||,250,||,JTHCK262465005403,||,005403,||,  92348,||,         0,||,WHITE,||,BLACK,||,2.5L,||,4DR,||,Sedan,||,Automatic,||,AWD,||,6,||,,||,
+,||,2001,||,TOYOTA,||,CELICA,||,GT,||,JTDDR32T310095204,||,095204,||,  85822,||,         0,||,SILVER,||,BLACK,||,1.8L,||,2DR,||,Coupe,||,Automatic,||,FWD,||,4,||,,||,
+,||,2004,||,VOLKSWAGEN,||,PASSAT,||,GLS,||,WVWVD63B94E068011,||,068011,||,  98730,||,         0,||,GREY,||,GREY,||,1.8L,||,4DR,||,Wagon,||,Automatic,||,FWD,||,4,||,,||,
+,||,2006,||,AUDI,||,A4,||,2.0T QUATTRO,||,WAUDF78EX6A045892,||,045892,||, 124899,||,     10495,||,BLACK,||,BLACK,||,2.0L,||,4DR,||,Sedan,||,Automatic,||,AWD,||,4,||,,||,
+,||,2004,||,BMW,||,525,||,I,||,WBANA53564B852433,||,852433,||, 108945,||,      9999,||,SILVER,||,GREY,||,2.5L,||,4DR,||,Sedan,||,Automatic,||,RWD,||,6,||,,||,
+,||,2004,||,JAGUAR,||,XJR,||,S,||,SAJWA73B84TG23968,||,G23968,|

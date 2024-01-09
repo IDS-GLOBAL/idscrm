@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget>
+  <id><![CDATA[2682024]]></id>
+  <version><![CDATA[1.0]]></version>
+  <name><![CDATA[jQuery Mobile Form Controls]]></name>
+  <presets>
+    <preset name="IDS Mobile Phone Form Controls">
+      <description>Develop This For All Mobile Phone Apps relating to Business.</description>
+      <properties>
+        <property name="theme" value="e"/>
+      </properties>
+    </preset>
+    <preset name="IDSCRM True Theme">
+      <description>IDSCRM Mobile Phone Theme.</description>
+      <properties>
+        <property name="theme" value="e"/>
+      </properties>
+    </preset>
+    <preset name="Sales Person Theme">
+      <description>Faith Said To change Them Up.</description>
+      <properties>
+        <property name="theme" value="a"/>
+      </properties>
+    </preset>
+    <preset name="Dealer Theme">
+      <description>Faith Said To change Them Up.</description>
+      <properties>
+        <property name="theme" value="b"/>
+      </properties>
+    </preset>
+  </presets>
+</widget>

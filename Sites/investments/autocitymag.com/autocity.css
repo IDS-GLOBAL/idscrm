@@ -1,0 +1,35 @@
+/* CSS Document */
+
+.comsn { color:#FFFFFF; font-family:Geneva, Arial, Helvetica, sans-serif; font-size:24px;}
+
+.fnav {
+	color:#FFFFFF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	text-align: left;
+	text-decoration: none;
+	}
+	
+.ffooter {
+	color:#FFFFFF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align: center;
+	text-decoration: none;
+}
+
+a:link {
+	color: #FFFFFF;
+}
+a {
+text-decoration: none;
+}
+a:visited {
+	color: #FFFFFF;
+}
+a:hover {
+	color: #990000;
+}
+a:active {
+	color: #FFFFFF;
+}

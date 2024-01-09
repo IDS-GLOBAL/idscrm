@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_carYears" value="name:yrid;datatype:int,name:year;datatype:int" />
+	<infoitem key="UD_vmakes" value="name:make_id;datatype:int,name:car_make;datatype:string" />
+	<infoitem key="UD_query_bodystyles" value="name:body_style_id;datatype:int,name:body_style_name;datatype:blob" />
+	<infoitem key="UD_vmodels" value="name:id;datatype:int,name:make_id;datatype:int,name:make;datatype:string,name:model;datatype:string,name:vyear;datatype:string,name:thisdid;datatype:int,name:created_when;datatype:timestamp" />
+</info>

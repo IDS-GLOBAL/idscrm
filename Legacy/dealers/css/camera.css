@@ -1,0 +1,233 @@
+@charset "utf-8";
+/* CSS Document 
+
+
+.modal-footer{ display: none;}
+.dropzone{ min-height: 10px !important;}
+
+div#addAphoto_icon {
+display: none;
+}
+
+
+
+*/
+
+
+
+
+button#post-news {
+margin-top: 10px;
+margin-left: 10px;
+}
+
+
+.ibox-content .well {
+overflow: hidden !important;
+overflow-x: scroll !important;
+}
+
+.ibox-content .well iframe{
+width: 95% !important;
+}
+
+
+.these.fancybox img {
+margin-bottom: 5px;
+width: 166px;
+}
+
+div#upmyphotosModal .modal-header .close span, div#upmyphotosModal .modal-header .close:hover, .close:focus {
+color:#F00;
+font-size: 30px !important;
+}
+
+
+.navbar-static-top {
+z-index: 333 !important;
+border-width: 0 0 1px;
+}
+
+#album_block .bootstrap-datetimepicker-widget.dropdown-menu.bottom.pull-right{
+display: block !important;
+top: 57px !important;
+right: 38px !important;
+}
+
+
+#photo_container_block {
+margin-top: 49px;
+}
+#photo_container_block
+{
+ max-height: 80%;
+ clear: right;
+}
+
+span#addAphoto i.fa.fa-sign-in.big-icon{ float:right;}
+
+
+
+form#my-dropzone{
+	height: 60% !important; 
+	overflow: hidden;
+}
+
+#my-dropzone{
+
+overflow: hidden !important;
+}
+
+.modal-body {
+}
+
+.modal-dialog.modal-xlg .modal-content, .modal-dialog.modal-xlg .modal-body{
+	height: 90% !important;
+	overflow-y: scroll;
+	padding-bottom: 13px;
+}
+
+
+.modal-dialog.modal-xlg {
+overflow: hidden;
+}
+
+#middle_view{ overflow-y::scroll;
+}
+
+.modal.in .modal-dialog.modal-dialog.modal-xlg{
+	height: 99% !important;
+	
+}
+
+.modal-dialog.modal-xlg .modal-content{
+	height: 99% !important;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+
+
+
+
+
+
+#upmyphotosModal .modal-dialog modal-xlg{
+	height: 100% !important;
+}
+
+
+
+
+
+
+
+
+/* Static to keep dropzone from moving */
+form#my-dropzone, #my-dropzone{
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:768px){
+
+.mymodal.bottom.fixed a.btn {
+width: 32%;
+font-size: 12px;
+text-align: center;
+}
+
+
+.mymodal .modal-dialog.modal-xlg .modal-content {
+height: 682px !important;
+}
+}
+
+@media (max-width:568px){
+div#album_block {
+margin-bottom: 60px;
+}
+.mymodal.bottom.fixed a.btn {
+width: 30%;
+font-size: 8px;
+text-align: center;
+}
+}
+
+@media (min-width:768px){
+
+
+.mymodal.bottom.fixed{
+/* height: 382px !important; */
+}
+
+
+
+
+
+
+.modal-xlg .mymodal.bottom.fixed {
+position: fixed;
+bottom: 37px;
+left: 0;
+right: 0;
+z-index: 1000;
+padding: 10px 20px;
+border-top: 1px solid #e7eaec;
+margin-left: 10px;
+}
+
+
+
+
+div#addAphoto_icon {
+absolute !important;
+margin-right: 0 !important;
+float: right;
+bottom: 0 !important;
+right: 0;
+}
+
+#album_block{
+position: relative;
+}
+
+.modal-xlg div#upmyphotosModal {
+
+height: auto;
+left: 0;
+min-height: 100%;
+position: absolute;
+right: 0;
+top: 0;
+z-index: 400;
+}
+
+
+ div#upmyphotosModal .modal-xlg .modal-dialog.modal-xlg, .modal.in .modal-dialog{
+margin-top: 4px !important;
+}
+
+ div#upmyphotosModal .modal-xlg .modal-dialog.modal-xlg, .modal.in .modal-dialog {
+margin: 0 auto;
+}
+
+
+
+ div#upmyphotosModal.modal-dialog.modal-xlg{
+
+}
+
+.modal-xlg .modal-dialog.modal-xlg, .modal-xlg {
+	width: 100% !important;
+	margin-top: 4px !important;
+}
+
+}

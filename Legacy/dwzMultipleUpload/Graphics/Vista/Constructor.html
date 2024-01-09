@@ -1,0 +1,89 @@
+<script type="text/javascript">
+var swfupload_#Instance# = new Object();
+window.onload = function() {
+	var settings_#Instance# = {
+		flash_url : "#rootPath#dwzMultipleUpload/swfupload.swf",
+		upload_url: "#uploadUrl#?dwzInstance=#Instance#",
+		post_params: {"currentUploadTotalFiles": "0"},
+		file_size_limit : "#file_size_limit#",
+		file_types : "#file_types#",
+		file_types_description : "#file_types_description#",
+		file_upload_limit : #file_upload_limit#,
+		file_queue_limit : #file_queue_limit#,
+		custom_settings : {
+			instance: "#Instance#",
+			progressTarget : "dwzUploadProgress_#Instance#",
+			stopButtonId : "btnStop_#Instance#",
+			removeAllButtonId: "btnRemoveAll_#Instance#",
+			uploadButton: "btnUpload_#Instance#",
+			rootPath: "#rootPath#",
+			currentUploadTotalFiles: 0,
+			redirectUrl: "#RedirectUrl#",
+			graphicPath: "#GraphicPath#",
+			currentFileCounter: 0,
+			
+			customMessage:	{
+							cannotBeRemoved: "#cannotBeRemoved#",
+							SwfUploadNotDefined: "#SwfUploadNotDefined#",
+							UploadInProgress: "#UploadInProgress#",
+							NoFileSelected: "#NoFileSelected#",
+							UploadCompleted: "#UploadCompleted#",
+							UploadCompletedWithError: "#UploadCompletedWithError#",
+							RemoveFromQueue: "#RemoveFromQueue#"
+							},
+			
+			startTime: (new Date()).getTime(),
+			divTotalProgress: "divTotalProgress_#Instance#",
+			divTotalFileSize: "divTotalFileSize_#Instance#",
+			divUploadedSize: "divUploadedSize_#Instance#",
+			divTimeElapsed: "divTimeElapsed_#Instance#",
+			divTimeRemaining: "divTimeRemaining_#Instance#",
+			divTotalSpeed: "divTotalSpeed_#Instance#",
+			divCurrentSpeed: "divCurrentSpeed_#Instance#",
+			
+			maxProgressBarFilesWidth: "#maxProgressBarFilesWidth#",
+			maxProgressBarWidth: "#maxProgressBarWidth#",
+							
+			ButtonTextStyle: ".dwzBrowseButton_1 {#ButtonTextStyle#}",
+			ButtonDisabledTextStyle: ".dwzBrowseButton_1 {#ButtonDisabledTextStyle#}",
+			
+			stopUploadRequest: false,
+			fieldsToSend: "#fieldsToSend#",
+			insertRecordParams: {insert: #insert#, 
+								 form: '#form#', 
+								 fieldsList: [#formFieldsList#]
+								 },
+			
+			buttonDisabled: false
+			
+		},
+		debug: false,
+		
+		moving_average_history_size: 200,
+		
+		// Button settings
+		button_image_url: "#button_image_url#",
+		button_width: "#button_width#",
+		button_height: "#button_height#",
+		button_placeholder_id: "dwzBrowseButtonPlaceHolder_#Instance#",
+		button_text: '<span id="dwzBrowseButton_#Instance#" class="dwzBrowseButton_#Instance#" >#button_text#</span>',
+		button_text_style: ".dwzBrowseButton_#Instance# {#ButtonTextStyle#}",
+		button_text_left_padding: #button_text_left_padding#,
+		button_text_top_padding: #button_text_top_padding#,
+		button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
+		button_cursor: SWFUpload.CURSOR.HAND,
+		
+		// The event handler functions are defined in handlers.js
+		file_queued_handler : fileQueued,
+		file_queue_error_handler : fileQueueError,
+		file_dialog_complete_handler : fileDialogComplete,
+		upload_start_handler : uploadStart,
+		upload_progress_handler : uploadProgress,
+		upload_error_handler : uploadError,
+		upload_success_handler : uploadSuccess,
+		upload_complete_handler : uploadComplete,
+		queue_complete_handler : queueComplete	// Queue plugin event
+	};
+	swfupload_#Instance# = new SWFUpload(settings_#Instance#);
+};
+</script>

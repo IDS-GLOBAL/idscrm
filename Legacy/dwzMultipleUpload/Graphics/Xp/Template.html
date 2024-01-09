@@ -1,0 +1,71 @@
+
+<table class="wrapper" width="#masterWidth#" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td class="wrapperHeader" colspan="2">
+      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="wrapperInfoText">
+        <tr >
+          <td width="43%" align="left">&nbsp;#Title#</td>
+          <td width="7%" align="right"><span id="dwzBrowseButtonPlaceHolder_#Instance#"></span></td>
+          <td width="50%" height="25" valign="middle" align="right">
+		  <table align="right" cellpadding=2><tr>
+		  <td>
+		  <span onclick="dwzStartUpload('1', this)" name="btnUpload_#Instance#" id="btnUpload_#Instance#" class="btnUploadDisabled" title="#btnUploadTitle#" >#btnUpload#</span>
+		  </td>
+		  <td>
+		  <span onclick="dwzClearAll('1', this)" name="btnRemoveAll_#Instance#" id="btnRemoveAll_#Instance#" class="btnClearAllDisabled" title="#btnRemoveTitle#" >#btnRemoveAll#</span>
+		  </td>
+		  <td>
+		  <span onclick="dwzStop('1', this)" name="btnStop_#Instance#" id="btnStop_#Instance#" class="btnStopDisabled" title="#btnStopTitle#" >#btnStop#</span>
+		  </td>
+		  </tr></table>
+		  </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="wrapperContent" height="#queueHeight#" colspan="2" align="left" valign="top">
+    	<div id="dwzUploadProgress_#Instance#" style="width:#queueWidth#px;" class="wrapperQueue wrapperInfoText" ></div>
+    </td>
+  </tr>
+  
+  <tr style="display:#ShowInfo#;">
+    <td class="wrapperFooter">
+      <table class="wrapperInfoText" cellpadding="2" cellspacing="0" width="100%">
+                
+         <tr>
+          <td colspan="4" height="16" align="left">
+          <div class="divInfoText" style="width:100px;" >#TotalProgress#</div>
+          <div class="divInfoText" style="width:390px;vertical-align:middle;" id="divTotalProgress_#Instance#" ><img src="#rootPath#dwzMultipleUpload/#GraphicPath#/ProgressBar.gif" width="2" height="13"  /></div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4" height="16" align="left">
+          <div class="divInfoText" style="width:100px;" >#TotalFileSize#</div>
+          <div class="divInfoText" style="width:150px;" id="divTotalFileSize_#Instance#" width="30%" align="left">0 Mb</div>
+          <div class="divInfoText" style="width:120px;" >#UploadedSize#</div>
+          <div class="divInfoText" style="width:120px;" id="divUploadedSize_#Instance#" width="25%" align="left">0 Mb (0 %)</div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4" height="16" align="left">
+          <div class="divInfoText" style="width:100px;" >#TimeElapsed#</div>
+          <div class="divInfoText" style="width:150px;" id="divTimeElapsed_#Instance#" >&nbsp;</div>
+          <div class="divInfoText" style="width:120px;" >#TimeRemaining#</div>
+          <div class="divInfoText" style="width:120px;" id="divTimeRemaining_#Instance#" >&nbsp;</div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4" height="16" align="left">
+          <div class="divInfoText" style="width:100px;" >#TotalSpeed#</div>
+          <div class="divInfoText" style="width:150px;" id="divTotalSpeed_#Instance#" >0 Mbps</div>
+          <div class="divInfoText" style="width:120px;" >#CurrentSpeed#</div>
+          <div class="divInfoText" style="width:120px;" id="divCurrentSpeed_#Instance#" align="left">0 Mbps</div>
+          </td>
+        </tr>
+                
+      </table>
+    </td>
+  </tr>
+</table>

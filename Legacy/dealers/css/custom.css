@@ -1,0 +1,192 @@
+@charset "utf-8";
+/* CSS Document */
+
+abbr.timeago {
+    text-transform: capitalize  !important;
+}
+
+.wf{ color:#FFF !important; }
+
+textarea#customer_bodynote {
+    height: 130px !important;
+}
+
+tr.gradeX.unseen{
+	background-color:#FF0 !important;
+}
+
+tr.gradeX.seen{
+
+}
+
+.dl-horizontal dd {
+    text-align: left;
+}
+
+div#testimony_block textarea#body{
+	height: 187px !important;
+}
+
+
+.form-horizontal .form-group {
+  margin-right: -15px;
+  margin-left: -15px;
+  clear: right !important;
+}
+
+
+.wfh-rectbg{
+	background-repeat:no-repeat;
+	background-image:url('../img/wfh/wfh_idscrmlogo.png');
+}
+
+.clearfix {
+  clear: both !important;
+}
+
+a#process_vehicle_vin {
+  max-width: 80% !important;
+  margin-left: 15%;
+}
+
+
+
+.cum{display: hidden !important; }
+
+
+
+input#vvin{text-transform:uppercase;}
+input#vtrim{ text-transform:uppercase;}
+input#vengine{ text-transform:uppercase;}
+input#vstockno{ text-transform:uppercase;}
+input#vengine{ text-transform:uppercase;}
+
+
+
+select#vmodel {
+overflow: hidden;
+}
+
+
+
+span#uselast6ofvin{ font-weight:bold; }
+span#uselast6ofvin:hover{ background-color:#FC3; }
+
+
+#iknowmorebox{ display: hidden !important; }
+
+.thumbnail{ border: 1px #999 solid;  border-radius: 3px; background-color:#CCC;} 
+.thumbnail:hover{ border: 1px #00F solid;  border-radius: 3px; background-color:#F93;}
+img.thumbnail{border-radius: 3px!important;}
+.alltheway{ width:100% !important; }
+
+.ibox-content small{   color:#5D51C5 !important;}
+
+select.form-control.m-b{ width:100% !important; }
+
+.headroom { margin-top: 10px; }
+
+.form-group {
+	/* margin-left: 9px; */
+}
+
+.form-control.smwdth{ width: 133px !important; }
+
+
+
+.bigbtn{height: 334px;}
+
+a#decodeVIN {display:table-cell;  vertical-align:middle; font-weight:bold;}
+
+.input-group.date .input-group-addon:hover {
+background-color: #f8ac59;
+color:#FFF;
+border: 1px solid #ccc;
+}
+
+.box{ background-color:#FFF; }
+
+.report-range {
+cursor: pointer;
+padding: 5px 10px;
+border: 1px solid #ccc;
+}
+
+.report-range .range-value {
+margin-right: 3px;
+}
+
+.report-range i {
+font-size: 16px;
+}
+
+
+.input-group-addon:last-child{
+-moz-border-radius-topright: 2px;
+-webkit-border-top-right-radius: 2px;
+border-top-right-radius: 2px;
+-moz-border-radius-bottomright: 2px;
+-webkit-border-bottom-right-radius: 2px;
+border-bottom-right-radius: 2px;
+}
+
+
+/* iCheck plugin Square skin, green
+----------------------------------- */
+.icheckbox_square-green,
+.iradio_square-green {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    background: url(green.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_square-green {
+    background-position: 0 0;
+}
+.icheckbox_square-green.hover {
+    background-position: -24px 0;
+}
+.icheckbox_square-green.checked {
+    background-position: -48px 0;
+}
+.icheckbox_square-green.disabled {
+    background-position: -72px 0;
+    cursor: default;
+}
+.icheckbox_square-green.checked.disabled {
+    background-position: -96px 0;
+}
+
+.iradio_square-green {
+    background-position: -120px 0;
+}
+.iradio_square-green.hover {
+    background-position: -144px 0;
+}
+.iradio_square-green.checked {
+    background-position: -168px 0;
+}
+.iradio_square-green.disabled {
+    background-position: -192px 0;
+    cursor: default;
+}
+.iradio_square-green.checked.disabled {
+    background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi), (min-resolution:1.5dppx) {
+    .icheckbox_square-green,
+    .iradio_square-green {
+        background-image: url(green@2x.png);
+        -webkit-background-size: 240px 24px;
+        background-size: 240px 24px;
+    }
+}

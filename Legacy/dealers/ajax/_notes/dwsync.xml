@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="mysales.body.mobileviewmodal.verify.php" server="ftp.idscrm.com" local="131806914791992208" remote="131927661600000000" />
+<file name="db.php" server="ftp.idscrm.com" local="131922422121483481" remote="131927661600000000" />
+<file name="pull_tasks.php" server="ftp.idscrm.com" local="131927661977645824" remote="131927661600000000" />
+<file name="check.vin.transfer.php" server="ftp.idscrm.com" local="131926632320810581" remote="131926632600000000" />
+<file name="checkvin.php" server="ftp.idscrm.com" local="131927645888002882" remote="131927646000000000" />
+<file name="checkvstockno.php" server="ftp.idscrm.com" local="131927646175461894" remote="131927646000000000" />
+<file name="check_managerperson_username.php" server="ftp.idscrm.com" local="131927661189825553" remote="131927661000000000" />
+<file name="check_manager_email.php" server="ftp.idscrm.com" local="131927661378112272" remote="131927661000000000" />
+<file name="check_salesperson_email.php" server="ftp.idscrm.com" local="131927660509362495" remote="131927660400000000" />
+<file name="check_salesperson_username.php" server="ftp.idscrm.com" local="131927660535588733" remote="131927660400000000" />
+<file name="check_vin.php" server="ftp.idscrm.com" local="131926628027206488" remote="131926632600000000" />
+<file name="error_log" server="ftp.idscrm.com" local="131492873852562650" remote="131922573600000000" />
+<file name="inventory_markHold.php" server="ftp.idscrm.com" local="132058294210000000" remote="132058294200000000" />
+<file name="inventory_markLive.php" server="ftp.idscrm.com" local="132058291601043536" remote="132058291200000000" />
+<file name="inventory_markSold.php" server="ftp.idscrm.com" local="132058294333400833" remote="132058294200000000" />
+<file name="manager.db.php" server="ftp.idscrm.com" local="131927649178158296" remote="131927649000000000" />
+<file name="manager.inventory_markHold.php" server="ftp.idscrm.com" local="131927651821326524" remote="131927651400000000" />
+<file name="manager.inventory_markLive.php" server="ftp.idscrm.com" local="132058293535433434" remote="132058293600000000" />
+<file name="manager.inventory_markSold.php" server="ftp.idscrm.com" local="132058293923704805" remote="132058293600000000" />
+<file name="mysales.db.php" server="ftp.idscrm.com" local="131927648063578503" remote="131927647800000000" />
+<file name="pullmodels.php" server="ftp.idscrm.com" local="131927653001600989" remote="131927652600000000" />
+<file name="pullsubmarkets.php" server="ftp.idscrm.com" local="131927653967723601" remote="131927653800000000" />
+<file name="pull_accountperson_profile_photo.php" server="ftp.idscrm.com" local="131927659418553515" remote="131927660400000000" />
+<file name="pull_lastsalespersonnews.php" server="ftp.idscrm.com" local="131927658654773741" remote="131927660400000000" />
+<file name="pull_lastsalespersonnews_responses.php" server="ftp.idscrm.com" local="131492873830371799" remote="131922573600000000" />
+<file name="pull_managerperson_profile_photo.php" server="ftp.idscrm.com" local="131927659132403171" remote="131927659200000000" />
+<file name="pull_newsresponses.php" server="ftp.idscrm.com" local="131927657714297560" remote="131927659200000000" />
+<file name="pull_salesperson_profile_photo.php" server="ftp.idscrm.com" local="131927657096022772" remote="131927656800000000" />
+<file name="pull_team_gallery.php" server="ftp.idscrm.com" local="131927656601717669" remote="131927656200000000" />
+<file name="pull_team_profile_photo.php" server="ftp.idscrm.com" local="131927656032128096" remote="131927655600000000" />
+<file name="pull_template.php" server="ftp.idscrm.com" local="131927654202251608" remote="131927655000000000" />
+<file name="pull_testimony_profile_photo.php" server="ftp.idscrm.com" local="131927655122434110" remote="131927655000000000" />
+<file name="vinten.php" server="ftp.idscrm.com" local="131926583448283616" remote="131926583400000000" />
+</dwsync>

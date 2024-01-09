@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_query_bodystyles" value="name:body_style_id;datatype:int,name:body_style_name;datatype:blob" />
+	<infoitem key="UD_colors_hex" value="name:color_id;datatype:int,name:color_name;datatype:string,name:color_hex;datatype:string" />
+	<infoitem key="UD_distinct_transm" value="name:vtransm;datatype:string" />
+</info>

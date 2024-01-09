@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_states" value="name:state_id;datatype:int,name:state_name;datatype:string,name:state_abrv;datatype:string,name:sate_name_url;datatype:string,name:state_abrv_url;datatype:string,name:state_capital;datatype:string,name:dealer_tavt_state_link;datatype:blob,name:state_latitude;datatype:string,name:state_longitude;datatype:string,name:state_zoomto;datatype:string" />
+	<infoitem key="UD_autoYears" value="name:yrid;datatype:int,name:year;datatype:int" />
+	<infoitem key="UD_vmakes" value="name:make_id;datatype:int,name:car_make;datatype:string" />
+</info>

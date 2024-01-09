@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_find_vehicle_photo" value="name:v_photoid;datatype:int,name:sort_orderno;datatype:int,name:vehicle_id;datatype:int,name:dealer_id;datatype:int,name:prospctdlrid;datatype:int,name:salesperson_id;datatype:int,name:photo_dudes_id;datatype:int,name:vehicleVin;datatype:string,name:photo_file_name;datatype:blob,name:photo_file_path;datatype:blob,name:impPhotoFilePath;datatype:blob,name:photo_file_width;datatype:blob,name:photo_file_height;datatype:blob,name:photo_thumb_fname;datatype:blob,name:photo_thumb_fpath;datatype:blob,name:created_at;datatype:timestamp,name:v_caption;datatype:string" />
+</info>

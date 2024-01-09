@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_query_bodystyles" value="name:body_style_id;datatype:int,name:body_style_name;datatype:blob" />
+</info>

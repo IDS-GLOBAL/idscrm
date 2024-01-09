@@ -1,0 +1,4 @@
+[12-Jul-2017 12:07:42 America/Chicago] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, null given in /home4/idsids/public_html/dealers/css/plugins/fullcalendar/inc.chatwindow.php on line 2
+[12-Jul-2017 12:07:42 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ) expects parameter 2 to be resource, null given in /home4/idsids/public_html/dealers/css/plugins/fullcalendar/inc.chatwindow.php on line 4
+[12-Jul-2017 12:07:42 America/Chicago] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, null given in /home4/idsids/public_html/dealers/css/plugins/fullcalendar/inc.chatwindow.php on line 2
+[12-Jul-2017 12:07:42 America/Chicago] PHP Warning:  mysqli_query($idsconnection_mysqli, ) expects parameter 2 to be resource, null given in /home4/idsids/public_html/dealers/css/plugins/fullcalendar/inc.chatwindow.php on line 4

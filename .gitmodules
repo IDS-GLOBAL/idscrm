@@ -1,3 +1,6 @@
 [submodule "Sites/investments/africars.io"]
 	path = Sites/investments/africars.io
 	url = https://github.com/IDS-GLOBAL/africars.io.git
+[submodule "africars.app"]
+	path = africars.app
+	url = https://github.com/IDS-GLOBAL/africars.app.git

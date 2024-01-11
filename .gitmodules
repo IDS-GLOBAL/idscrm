@@ -4,6 +4,9 @@
 [submodule "africars.io"]
 	path = Sites/investments/africars.io
 	url = https://github.com/IDS-GLOBAL/africars.io.git
-[submodule "Sites/investments/autocitymag"]
-	path = Sites/investments/autocitymag
+[submodule "Sites/investments/autocitymag.com"]
+	path = Sites/investments/autocitymag.com
 	url = https://github.com/IDS-GLOBAL/autocitymag.com.git
+[submodule "Sites/investments/africars.io"]
+	path = Sites/investments/africars.io
+	url = https://github.com/IDS-GLOBAL/africars.io.git

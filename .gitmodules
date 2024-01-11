@@ -13,3 +13,6 @@
 [submodule "Sites/investments/autocitymag.com"]
 	path = Sites/investments/autocitymag.com
 	url = https://github.com/IDS-GLOBAL/autocitymag.com.git
+[submodule "Sites/investments/afrocars.io"]
+	path = Sites/investments/afrocars.io
+	url = https://github.com/IDS-GLOBAL/africars.io.git

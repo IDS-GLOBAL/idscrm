@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "prisma": "^5.8.0"
-  }
+  },
+  "name": "prismascaffold",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
 }

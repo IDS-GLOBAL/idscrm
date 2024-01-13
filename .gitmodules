@@ -19,3 +19,6 @@
 [submodule "Sites/investments/wefinancehere.com"]
 	path = Sites/investments/wefinancehere.com
 	url = https://github.com/IDS-GLOBAL/wefinancehere.com.git
+[submodule "Sites/investments/africars.app"]
+	path = Sites/investments/africars.app
+	url = https://github.com/IDS-GLOBAL/africars.app.git

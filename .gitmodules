@@ -13,3 +13,9 @@
 [submodule "Sites/investments/carezmart.com"]
 	path = Sites/investments/carezmart.com
 	url = https://github.com/IDS-GLOBAL/carezmart.com.git
+[submodule "Sites/investments/buyherepayhereus.com"]
+	path = Sites/investments/buyherepayhereus.com
+	url = https://github.com/IDS-GLOBAL/buyherepayhereus.com.git
+[submodule "Sites/investments/wefinancehere.com"]
+	path = Sites/investments/wefinancehere.com
+	url = https://github.com/IDS-GLOBAL/wefinancehere.com.git

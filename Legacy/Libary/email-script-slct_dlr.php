@@ -89,12 +89,10 @@ EOD;
 
 /* Results rendered as HTML */
 
-	$theResults = <<<EOD
-
-?>
+	$theResults = "
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 <title>Email Script - Dealer Notifier</title>
 </head>
 
@@ -102,6 +100,8 @@ EOD;
 Email Should Be Sent Go To Thank You Page:
 </body>
 </html>
+";
+?>
 <?php
 mysqli_free_result($email_dealer_post);
 

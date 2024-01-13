@@ -19,7 +19,7 @@ setlocale(LC_MONETARY, 'en_US.UTF-8');
 // Function To Calculate Money without commas.
 function formatMoney($number, $fractional=false) { 
     if ($fractional) { 
-        $number =  '%.2f', $number); 
+        $number =  sprintf('%.2f', $number); 
     } 
     while (true) { 
         $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number); 

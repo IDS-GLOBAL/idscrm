@@ -53,7 +53,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "invoiceBody")) {
-  $updateSQL =  "UPDATE ids_toinvoices SET invoice_number=%s, invoice_status=%s, invoice_date=%s, invoice_duedate=%s, fee_id1=%s, lineitem1=%s, fee_description1=%s, quantity1=%s, fee_price1=%s, fee_amount1=%s, tax1=%s, fee_id2=%s, lineitem2=%s, fee_description2=%s, quantity2=%s, fee_price2=%s, fee_amount2=%s, tax2=%s, fee_id3=%s, lineitem3=%s, fee_description3=%s, quantity3=%s, fee_price3=%s, fee_amount3=%s, tax3=%s, fee_id4=%s, lineitem4=%s, fee_description4=%s, quantity4=%s, fee_price4=%s, fee_amount4=%s, tax4=%s, fee_id5=%s, lineitem5=%s, fee_description5=%s, quantity5=%s, fee_price5=%s, fee_amount5=%s, tax5=%s, fee_id6=%s, lineitem6=%s, fee_description6=%s, quantity6=%s, fee_price6=%s, fee_amount6=%s, tax6=%s, fee_id7=%s, lineitem7=%s, fee_description7=%s, quantity7=%s, fee_price7=%s, fee_amount7=%s, tax7=%s, fee_id8=%s, lineitem8=%s, fee_description8=%s, quantity8=%s, fee_price8=%s, fee_amount8=%s, tax8=%s, fee_id9=%s, lineitem9=%s, fee_description9=%s, quantity9=%s, fee_price9=%s, fee_amount9=%s, tax9=%s, fee_id10=%s, lineitem10=%s, fee_description10=%s, quantity10=%s, fee_price10=%s, fee_amount10=%s, tax10=%s, fee_id11=%s, lineitem11=%s, fee_description11=%s, quantity11=%s, fee_price11=%s, fee_amount11=%s, tax11=%s, fee_id12=%s, lineitem12=%s, fee_description12=%s, quantity12=%s, fee_price12=%s, fee_amount12=%s, tax12=%s, fee_id13=%s, lineitem13=%s, fee_description13=%s, quantity13=%s, fee_price13=%s, fee_amount13=%s, tax13=%s, fee_id14=%s, lineitem14=%s, fee_description14=%s, quantity14=%s, fee_price14=%s, fee_amount14=%s, tax14=%s, fee_id15=%s, lineitem15=%s, fee_description15=%s, quantity15=%s, fee_price15=%s, fee_amount15=%s, tax15=%s, sales_taxrate=%s, invoice_subtotal=%s, invoice_comments=%s, invoice_taxtotal=%s, invoice_total=%s, applied_payment=%s, invoice_amount_due=%s, dudes_id_lastmodified=%s, invoice_lastmodified=%s WHERE invoice_id=%s",
+  $updateSQL =  sprintf("UPDATE ids_toinvoices SET invoice_number=%s, invoice_status=%s, invoice_date=%s, invoice_duedate=%s, fee_id1=%s, lineitem1=%s, fee_description1=%s, quantity1=%s, fee_price1=%s, fee_amount1=%s, tax1=%s, fee_id2=%s, lineitem2=%s, fee_description2=%s, quantity2=%s, fee_price2=%s, fee_amount2=%s, tax2=%s, fee_id3=%s, lineitem3=%s, fee_description3=%s, quantity3=%s, fee_price3=%s, fee_amount3=%s, tax3=%s, fee_id4=%s, lineitem4=%s, fee_description4=%s, quantity4=%s, fee_price4=%s, fee_amount4=%s, tax4=%s, fee_id5=%s, lineitem5=%s, fee_description5=%s, quantity5=%s, fee_price5=%s, fee_amount5=%s, tax5=%s, fee_id6=%s, lineitem6=%s, fee_description6=%s, quantity6=%s, fee_price6=%s, fee_amount6=%s, tax6=%s, fee_id7=%s, lineitem7=%s, fee_description7=%s, quantity7=%s, fee_price7=%s, fee_amount7=%s, tax7=%s, fee_id8=%s, lineitem8=%s, fee_description8=%s, quantity8=%s, fee_price8=%s, fee_amount8=%s, tax8=%s, fee_id9=%s, lineitem9=%s, fee_description9=%s, quantity9=%s, fee_price9=%s, fee_amount9=%s, tax9=%s, fee_id10=%s, lineitem10=%s, fee_description10=%s, quantity10=%s, fee_price10=%s, fee_amount10=%s, tax10=%s, fee_id11=%s, lineitem11=%s, fee_description11=%s, quantity11=%s, fee_price11=%s, fee_amount11=%s, tax11=%s, fee_id12=%s, lineitem12=%s, fee_description12=%s, quantity12=%s, fee_price12=%s, fee_amount12=%s, tax12=%s, fee_id13=%s, lineitem13=%s, fee_description13=%s, quantity13=%s, fee_price13=%s, fee_amount13=%s, tax13=%s, fee_id14=%s, lineitem14=%s, fee_description14=%s, quantity14=%s, fee_price14=%s, fee_amount14=%s, tax14=%s, fee_id15=%s, lineitem15=%s, fee_description15=%s, quantity15=%s, fee_price15=%s, fee_amount15=%s, tax15=%s, sales_taxrate=%s, invoice_subtotal=%s, invoice_comments=%s, invoice_taxtotal=%s, invoice_total=%s, applied_payment=%s, invoice_amount_due=%s, dudes_id_lastmodified=%s, invoice_lastmodified=%s WHERE invoice_id=%s",
                        GetSQLValueString($_POST['invoice_number'], "int"),
                        GetSQLValueString($_POST['invoice_status'], "text"),
                        GetSQLValueString($_POST['invoice_date'], "text"),
@@ -183,7 +183,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -209,7 +209,7 @@ if (isset($_GET['id'])) {
   $colname_queryDealer = $_GET['id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_queryDealer =  "SELECT * FROM dealers WHERE id = %s", GetSQLValueString($colname_queryDealer, "int"));
+$query_queryDealer =  sprintf("SELECT * FROM dealers WHERE id = %s", GetSQLValueString($colname_queryDealer, "int"));
 $queryDealer = mysqli_query($idsconnection_mysqli, $query_queryDealer);
 $row_queryDealer = mysqli_fetch_array($queryDealer);
 $totalRows_queryDealer = mysqli_num_rows($queryDealer);
@@ -232,7 +232,7 @@ if (isset($_GET['invoice_id'])) {
   $colname_queryInvoice = $_GET['invoice_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_queryInvoice =  "SELECT * FROM ids_toinvoices WHERE invoice_id = %s", GetSQLValueString($colname_queryInvoice, "int"));
+$query_queryInvoice =  sprintf("SELECT * FROM ids_toinvoices WHERE invoice_id = %s", GetSQLValueString($colname_queryInvoice, "int"));
 $queryInvoice = mysqli_query($idsconnection_mysqli, $query_queryInvoice);
 $row_queryInvoice = mysqli_fetch_array($queryInvoice);
 $totalRows_queryInvoice = mysqli_num_rows($queryInvoice);

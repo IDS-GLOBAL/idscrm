@@ -51,7 +51,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userDudes = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);

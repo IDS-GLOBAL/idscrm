@@ -40,7 +40,7 @@ $startRow_find_dupphotos = $pageNum_find_dupphotos * $maxRows_find_dupphotos;
 
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
 $query_find_dupphotos = "SELECT vehicle_id, dealer_id, photo_file_name, COUNT(*) FROM vehicle_photos WHERE dealer_id = 85 GROUP BY photo_file_name HAVING COUNT(*) > 1";
-$query_limit_find_dupphotos =  "%s LIMIT %d, %d", $query_find_dupphotos, $startRow_find_dupphotos, $maxRows_find_dupphotos);
+$query_limit_find_dupphotos = sprintf("%s LIMIT %d, %d", $query_find_dupphotos, $startRow_find_dupphotos, $maxRows_find_dupphotos);
 $find_dupphotos = mysqli_query($idsconnection_mysqli, $query_limit_find_dupphotos);
 $row_find_dupphotos = mysqli_fetch_assoc($find_dupphotos);
 

@@ -14,7 +14,7 @@ if (isset($_GET['appt_token'])) {
   $colname_quick_appointment = $_GET['appt_token'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_quick_appointment =  "SELECT * FROM `dealers_appointments` WHERE `dlr_appt_token` = %s", GetSQLValueString($colname_quick_appointment, "text"));
+$query_quick_appointment =  sprintf("SELECT * FROM `dealers_appointments` WHERE `dlr_appt_token` = %s", GetSQLValueString($colname_quick_appointment, "text"));
 $quick_appointment = mysqli_query($idsconnection_mysqli, $query_quick_appointment);
 $row_quick_appointment = mysqli_fetch_assoc($quick_appointment);
 $totalRows_quick_appointment = mysqli_num_rows($quick_appointment);

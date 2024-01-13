@@ -5,7 +5,7 @@ if (isset($_GET['deal_id'])) {
   $colname_pull_dlr_deal = $_GET['deal_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_pull_dlr_deal =  "SELECT * FROM deals_bydealer WHERE deal_id = %s", GetSQLValueString($colname_pull_dlr_deal, "int"));
+$query_pull_dlr_deal =  sprintf("SELECT * FROM deals_bydealer WHERE deal_id = %s", GetSQLValueString($colname_pull_dlr_deal, "int"));
 $pull_dlr_deal = mysqli_query($idsconnection_mysqli, $query_pull_dlr_deal);
 $row_pull_dlr_deal = mysqli_fetch_assoc($pull_dlr_deal);
 $totalRows_pull_dlr_deal = mysqli_num_rows($pull_dlr_deal);
@@ -31,7 +31,7 @@ if (isset($_GET['app_id'])) {
   $colname_find_dlr_creditapp = $_GET['app_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_find_dlr_creditapp =  "SELECT * FROM credit_app_fullblown WHERE credit_app_fullblown_id = %s", GetSQLValueString($colname_find_dlr_creditapp, "int"));
+$query_find_dlr_creditapp =  sprintf("SELECT * FROM credit_app_fullblown WHERE credit_app_fullblown_id = %s", GetSQLValueString($colname_find_dlr_creditapp, "int"));
 $find_dlr_creditapp = mysqli_query($idsconnection_mysqli, $query_find_dlr_creditapp);
 $row_find_dlr_creditapp = mysqli_fetch_assoc($find_dlr_creditapp);
 $totalRows_find_dlr_creditapp = mysqli_num_rows($find_dlr_creditapp);

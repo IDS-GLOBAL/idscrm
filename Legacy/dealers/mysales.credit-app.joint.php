@@ -5,7 +5,7 @@ if (isset($_GET['app_id'])) {
   $colname_find_dlr_creditapp = $_GET['app_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_find_dlr_creditapp =  "SELECT * FROM `idsids_idsdms`.`credit_app_fullblown` WHERE `credit_app_fullblown_id` = %s", GetSQLValueString($colname_find_dlr_creditapp, "int"));
+$query_find_dlr_creditapp =  sprintf("SELECT * FROM `idsids_idsdms`.`credit_app_fullblown` WHERE `credit_app_fullblown_id` = %s", GetSQLValueString($colname_find_dlr_creditapp, "int"));
 $find_dlr_creditapp = mysqli_query($idsconnection_mysqli, $query_find_dlr_creditapp);
 $row_find_dlr_creditapp = mysqli_fetch_assoc($find_dlr_creditapp);
 $totalRows_find_dlr_creditapp = mysqli_num_rows($find_dlr_creditapp);
@@ -27,7 +27,7 @@ if (isset($_GET['app_token2'])) {
   $colname_find_dlr_creditapp2 = mysql_real_escape_string(trim($_GET['app_token2']));
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_find_dlr_creditapp2 =  "SELECT * FROM `idsids_idsdms`.`credit_app_fullblown` WHERE `applicant_app_joint_token` = %s", GetSQLValueString($colname_find_dlr_creditapp2, "int"));
+$query_find_dlr_creditapp2 =  sprintf("SELECT * FROM `idsids_idsdms`.`credit_app_fullblown` WHERE `applicant_app_joint_token` = %s", GetSQLValueString($colname_find_dlr_creditapp2, "int"));
 $find_dlr_creditapp2 = mysqli_query($idsconnection_mysqli, $query_find_dlr_creditapp2);
 $row_find_dlr_creditapp2 = mysqli_fetch_assoc($find_dlr_creditapp2);
 $totalRows_find_dlr_creditapp2 = mysqli_num_rows($find_dlr_creditapp2);

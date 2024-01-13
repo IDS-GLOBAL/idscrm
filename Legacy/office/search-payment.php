@@ -52,7 +52,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -112,7 +112,7 @@ if (isset($_GET['did'])) {
   $colname_queryDealer = $_GET['did'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_queryDealer =  "SELECT * FROM dealers WHERE id = %s", GetSQLValueString($colname_queryDealer, "int"));
+$query_queryDealer =  sprintf("SELECT * FROM dealers WHERE id = %s", GetSQLValueString($colname_queryDealer, "int"));
 $queryDealer = mysqli_query($idsconnection_mysqli, $query_queryDealer);
 $row_queryDealer = mysqli_fetch_array($queryDealer);
 $totalRows_queryDealer = mysqli_num_rows($queryDealer);
@@ -164,7 +164,7 @@ setlocale(LC_MONETARY, 'en_US.UTF-8');
 // Function To Calculate Money without commas.
 function formatMoney($number, $fractional=false) { 
     if ($fractional) { 
-        $number =  '%.2f', $number); 
+        $number =  sprintf('%.2f', $number); 
     } 
     while (true) { 
         $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number); 

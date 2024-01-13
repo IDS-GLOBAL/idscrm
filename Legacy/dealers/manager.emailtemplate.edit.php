@@ -6,7 +6,7 @@ if (isset($_GET['templateid'])) {
   $colname_find_dlr_template = $_GET['templateid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_find_dlr_template =  "SELECT * FROM email_dealer_templates WHERE id = %s", GetSQLValueString($colname_find_dlr_template, "int"));
+$query_find_dlr_template =  sprintf("SELECT * FROM email_dealer_templates WHERE id = %s", GetSQLValueString($colname_find_dlr_template, "int"));
 $find_dlr_template = mysqli_query($idsconnection_mysqli, $query_find_dlr_template);
 $row_find_dlr_template = mysqli_fetch_assoc($find_dlr_template);
 $totalRows_find_dlr_template = mysqli_num_rows($find_dlr_template);

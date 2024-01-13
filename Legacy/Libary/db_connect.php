@@ -125,7 +125,7 @@ if (isset($_GET['v'])) {
   $colname_qry_vehicle = $_GET['v'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_qry_vehicle =  "SELECT * FROM vehicles WHERE vid = %s ORDER BY created_at DESC", GetSQLValueString($colname_qry_vehicle, "int"));
+$query_qry_vehicle =  sprintf("SELECT * FROM vehicles WHERE vid = %s ORDER BY created_at DESC", GetSQLValueString($colname_qry_vehicle, "int"));
 $qry_vehicle = mysqli_query($idsconnection_mysqli, $query_qry_vehicle);
 $row_qry_vehicle = mysqli_fetch_assoc($qry_vehicle);
 $totalRows_qry_vehicle = mysqli_num_rows($qry_vehicle);
@@ -155,7 +155,7 @@ if (isset($_GET['dept'])) {
   $colname_query_dept = $_GET['dept'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_query_dept =  "SELECT * FROM dealer_depts WHERE dept_link = %s AND dealer_depts.dept_did = '$thisdid'", GetSQLValueString($colname_query_dept, "text"));
+$query_query_dept =  sprintf("SELECT * FROM dealer_depts WHERE dept_link = %s AND dealer_depts.dept_did = '$thisdid'", GetSQLValueString($colname_query_dept, "text"));
 $query_dept = mysqli_query($idsconnection_mysqli, $query_query_dept);
 $row_query_dept = mysqli_fetch_assoc($query_dept);
 $totalRows_query_dept = mysqli_num_rows($query_dept);
@@ -281,7 +281,7 @@ if (isset($_GET['token'])) {
   $colname_lead_recover = mysql_real_escape_string($_GET['token']);
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_lead_recover =  "SELECT * FROM cust_leads WHERE cust_lead_token = %s ORDER BY cust_leadid ASC LIMIT 1", GetSQLValueString($colname_lead_recover, "text"));
+$query_lead_recover =  sprintf("SELECT * FROM cust_leads WHERE cust_lead_token = %s ORDER BY cust_leadid ASC LIMIT 1", GetSQLValueString($colname_lead_recover, "text"));
 $lead_recover = mysqli_query($idsconnection_mysqli, $query_lead_recover);
 $row_lead_recover = mysqli_fetch_assoc($lead_recover);
 $totalRows_lead_recover = mysqli_num_rows($lead_recover);

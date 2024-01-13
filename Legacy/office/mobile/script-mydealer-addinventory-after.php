@@ -52,7 +52,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -81,7 +81,7 @@ if (isset($_GET['token'])) {
   $colname_myDealer = $_GET['token'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_myDealer =  "SELECT * FROM dealers WHERE id = %s", GetSQLValueString($colname_myDealer, "int"));
+$query_myDealer =  sprintf("SELECT * FROM dealers WHERE id = %s", GetSQLValueString($colname_myDealer, "int"));
 $myDealer = mysqli_query($idsconnection_mysqli, $query_myDealer);
 $row_myDealer = mysqli_fetch_array($myDealer);
 $totalRows_myDealer = mysqli_num_rows($myDealer);

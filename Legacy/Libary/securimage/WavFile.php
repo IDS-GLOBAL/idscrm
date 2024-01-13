@@ -1823,7 +1823,7 @@ class WavFile
             ."Number of Sample Blocks: %u\n"
             ."Byte Rate: %uBps\n";
 
-        $s =  $s, $this->getActualSize(),
+            sprintf($s =  $s, $this->getActualSize(),
                          $this->getChunkSize(),
                          $this->getFmtChunkSize(),
                          $this->getFmtExtendedSize(),

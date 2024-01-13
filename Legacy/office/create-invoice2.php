@@ -52,7 +52,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -78,7 +78,7 @@ if (isset($_GET['id'])) {
   $colname_queryDealer = $_GET['id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_queryDealer =  "SELECT id, company FROM dealers WHERE id = %s", GetSQLValueString($colname_queryDealer, "int"));
+$query_queryDealer =  sprintf("SELECT id, company FROM dealers WHERE id = %s", GetSQLValueString($colname_queryDealer, "int"));
 $queryDealer = mysqli_query($idsconnection_mysqli, $query_queryDealer);
 $row_queryDealer = mysqli_fetch_array($queryDealer);
 $totalRows_queryDealer = mysqli_num_rows($queryDealer);
@@ -94,7 +94,7 @@ if (isset($_GET['invoice_dealerid'])) {
   $colname_lastInvcNum = $_GET['invoice_dealerid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_lastInvcNum =  "SELECT * FROM ids_toinvoices WHERE invoice_dealerid = %s", GetSQLValueString($colname_lastInvcNum, "int"));
+$query_lastInvcNum =  sprintf("SELECT * FROM ids_toinvoices WHERE invoice_dealerid = %s", GetSQLValueString($colname_lastInvcNum, "int"));
 $lastInvcNum = mysqli_query($idsconnection_mysqli, $query_lastInvcNum);
 $row_lastInvcNum = mysqli_fetch_array($lastInvcNum);
 $totalRows_lastInvcNum = mysqli_num_rows($lastInvcNum);

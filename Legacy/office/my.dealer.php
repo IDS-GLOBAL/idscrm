@@ -8,7 +8,7 @@ if (isset($_GET['dlrid'])) {
   $colname_query_dlrprospect = $_GET['dlrid'];
 }
 mysql_select_db($idsconnection);
-$query_query_dlrprospect =  "SELECT * FROM `dealers` WHERE `id` = %s", GetSQLValueString($colname_query_dlrprospect, "int"));
+$query_query_dlrprospect =  sprintf("SELECT * FROM `dealers` WHERE `id` = %s", GetSQLValueString($colname_query_dlrprospect, "int"));
 $query_dlrprospect = mysqli_query($idsconnection_mysqli, $query_query_dlrprospect);
 $row_query_dlrprospect = mysqli_fetch_array($query_dlrprospect);
 $totalRows_query_dlrprospect = mysqli_num_rows($query_dlrprospect);

@@ -64,7 +64,7 @@ if (isset($_POST['e_login'], $_POST['p_login'])) {
 	$password=mysqli_real_escape_string($idsconnection_mysqli, trim($_POST['p_login']));
 
 	mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-  $LoginRS__query= "SELECT `dealers`.`email`, `dealers`.`password`, `dealers`.`status`  FROM `dealers` WHERE `email`=%s AND `dealers`.`password`=%s",
+  $LoginRS__query= sprintf("SELECT `dealers`.`email`, `dealers`.`password`, `dealers`.`status`  FROM `dealers` WHERE `email`=%s AND `dealers`.`password`=%s",
     GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
    
   $LoginRS = mysqli_query($idsconnection_mysqli, $LoginRS__query);
@@ -95,7 +95,7 @@ if (isset($_POST['e_login'], $_POST['p_login'])) {
 
 
  
-  $LoginRSS__query= "SELECT `sales_person`.`salesperson_email`, `sales_person`.`salesperson_password`, `sales_person`.`acct_status` FROM `sales_person` WHERE `sales_person`.`salesperson_email`=%s AND `sales_person`.`salesperson_password`=%s",
+  $LoginRSS__query= sprintf("SELECT `sales_person`.`salesperson_email`, `sales_person`.`salesperson_password`, `sales_person`.`acct_status` FROM `sales_person` WHERE `sales_person`.`salesperson_email`=%s AND `sales_person`.`salesperson_password`=%s",
     GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
    
   $LoginRSS = mysqli_query($idsconnection_mysqli, $LoginRSS__query);
@@ -125,7 +125,7 @@ if (isset($_POST['e_login'], $_POST['p_login'])) {
 
 
 	// Now We Try Manager Credentials
-	$LoginRSSS__query= "SELECT `manager_person`.`manager_email`, `manager_person`.`manager_password`, `manager_person`.`acct_status` FROM `manager_person` WHERE `manager_email`=%s AND `manager_password`=%s",
+	$LoginRSSS__query= sprintf("SELECT `manager_person`.`manager_email`, `manager_person`.`manager_password`, `manager_person`.`acct_status` FROM `manager_person` WHERE `manager_email`=%s AND `manager_password`=%s",
 	GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
 	
 	$LoginManager = mysqli_query($idsconnection_mysqli, $LoginRSSS__query);
@@ -147,7 +147,7 @@ if (isset($_POST['e_login'], $_POST['p_login'])) {
 
 
 	// Now We Try Collector Credentials
-	$LoginCollector_sql_query= "SELECT `account_person`.`account_email`, `account_person`.`account_password`, `account_person`.`acct_status` FROM `account_person` WHERE `account_email`=%s AND `account_password`=%s",
+	$LoginCollector_sql_query= sprintf("SELECT `account_person`.`account_email`, `account_person`.`account_password`, `account_person`.`acct_status` FROM `account_person` WHERE `account_email`=%s AND `account_password`=%s",
 	GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
 	
 	$LoginCollector = mysqli_query($idsconnection_mysqli, $LoginCollector_sql_query);
@@ -168,7 +168,7 @@ if (isset($_POST['e_login'], $_POST['p_login'])) {
 
 
 	// Now We Try Repair Shop Credentials
-	$LoginRepairshop_sql_query= "SELECT `repair_shops`.`repairshops_email`, `repair_shops`.`repairshops_password`, `repair_shops`.`repairshops_status` FROM `repair_shops` WHERE `repair_shops`.`repairshops_email`=%s AND `repair_shops`.`repairshops_password`=%s",
+	$LoginRepairshop_sql_query= sprintf("SELECT `repair_shops`.`repairshops_email`, `repair_shops`.`repairshops_password`, `repair_shops`.`repairshops_status` FROM `repair_shops` WHERE `repair_shops`.`repairshops_email`=%s AND `repair_shops`.`repairshops_password`=%s",
 	GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
 	
 	$LoginRepairshop = mysqli_query($idsconnection_mysqli, $LoginRepairshop_sql_query);

@@ -1,0 +1,28 @@
+{
+  "name": "prismaapi",
+  "version": "1.0.0",
+  "description": "IDS CRM using prisma as ORM for endpoint data and json webtokens for security.",
+  "main": "index.js",
+  "author": "Benjamin Carter",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.3",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.2",
+    "prisma": "^5.8.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

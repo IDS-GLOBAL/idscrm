@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express";
 const app = express();
-const { PrismaClient  } = require("@prisma/client")
+import { PrismaClient } from "@prisma/client";
 
 const PORT = 3002
 
@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 
 app.use(express.json());
 
-app.get("/vehiclesAll", async (req, res) => {
+app.get("/vehiclesAll", async (req: any, res: any) => {
     const allVehicles = await prisma.vehicles.findMany();
     // const allVehicles = await prisma.vehicles.findFirst({
     //     where: {
@@ -21,14 +21,14 @@ app.get("/vehiclesAll", async (req, res) => {
 })
 
 
-app.get("/vehicles", async (req, res) => {
+app.get("/vehicles", async (req: any, res: any) => {
     try {
         const allVehicles = await prisma.vehicles.findMany();
 
         // Convert BigInt values to strings
-        const serializedVehicles = allVehicles.map(vehicle => ({
-            ...vehicle,
-            someBigIntField: vehicle.vid.toString(),
+        const serializedVehicles = allVehicles.map((vehicles: { vid: { toString: () => any; }; }) => ({
+            ...vehicles,
+            someBigIntField: vehicles.vid.toString(),
             // Add similar lines for other BigInt fields if needed
         }));
 

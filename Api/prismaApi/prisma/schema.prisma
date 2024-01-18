@@ -9,7 +9,7 @@ datasource db {
 
 
 
-model User {
+model Users {
   Id    Int     @id @default(autoincrement())
   uuid String  @unique
   role  String @default("USER")
@@ -69,7 +69,7 @@ model Dealers {
   verified                         String?
   token                            String
   created_at                       DateTime        @default(now())
-  user    User    @relation(fields: [userId], references: [Id])
+  user    Users    @relation(fields: [userId], references: [Id])
   userId  Int
   dealersContent DealersContent[]
   dealer Int
@@ -164,7 +164,7 @@ model Post {
   content   String?
   published Boolean @default(false)
   created_at DateTime?        @default(now())
-  user  User  @relation(fields: [userId], references: [Id])
+  user  Users  @relation(fields: [userId], references: [Id])
   userId  Int
 }
 
@@ -175,7 +175,7 @@ model News {
   content   String?
   published Boolean @default(false)
   created_at DateTime?        @default(now())
-  user    User  @relation(fields: [userId], references: [Id])
+  user    Users  @relation(fields: [userId], references: [Id])
   userId  Int
 }
 

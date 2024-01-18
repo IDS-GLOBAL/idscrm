@@ -10,162 +10,162 @@ datasource db {
 
 
 model Users {
-  Id    Int     @id @default(autoincrement())
-  uuid String  @unique
-  role  String @default("USER")
-  email String  @unique
-  name  String?
-  firstName String
-  lastName String
-  password  String
-  usrImage String
-  created_at                       DateTime?        @default(now())
+  Id                              Int       @id @default(autoincrement())
+  uuid                            String    @unique
+  role                            String    @default("USER")
+  email                           String    @unique
+  name                            String?
+  firstName                       String
+  lastName                        String
+  password                        String
+  usrImage                        String
+  created_at                      DateTime @default(now())
   dealer Dealers[]
   posts Post[]
   news News[]
 }
 
 model Dealers {
-  Id                               Int         @id @default(autoincrement())
-  dealer_pending_id                Int?
-  prospct_dlrid                    Int?
-  dealer_type_id                   Int?
-  dealer_market_id                 Int?
-  dealer_market_sub_id             Int?
-  dudes_id                         Int?
-  dudes2_id                        Int?
-  assigned_salesrep                String?          
-  assigned_salesrep_phone          String?          
-  support_rep_id                   Int?
-  leadsidsemail                    String?          
-  leadsthirdparty                  String?          
-  balance_credits                  String?          
-  contact                          String?          
-  contact_title                    String?          
-  contact_phone                    String?          
-  contact_phone_type               String?          
-  dmcontact2                       String?          
-  dmcontact2_title                 String?          
-  dmcontact2_phone                 String?          
-  dmcontact2_phone_type            String?          
-  company                          String?          
-  company_legalname                String?          
-  dealerTimezone                   String?          
-  website                          String?          
-  finance                          String?          
-  finance_contact                  String?          
-  sales                            String?          
-  sales_contact                    String?          
-  phone                            String?          
-  fax                              String?          
-  address                          String?          
-  city                             String?          
-  state                            String?          
-  zip                              String?          
-  country                          String?          
-  email                            String           
-  username                         String?          
-  password                         String?          
-  verified                         String?
-  token                            String
-  created_at                       DateTime        @default(now())
+  Id                              Int       @id @default(autoincrement())
+  dealer_pending_id               Int?
+  prospct_dlrid                   Int?
+  dealer_type_id                  Int?
+  dealer_market_id                Int?
+  dealer_market_sub_id            Int?
+  dudes_id                        Int?
+  dudes2_id                       Int?
+  assigned_salesrep               String?          
+  assigned_salesrep_phone         String?          
+  support_rep_id                  Int?
+  leadsidsemail                   String?          
+  leadsthirdparty                 String?          
+  balance_credits                 String?          
+  contact                         String?          
+  contact_title                   String?          
+  contact_phone                   String?          
+  contact_phone_type              String?          
+  dmcontact2                      String?          
+  dmcontact2_title                String?          
+  dmcontact2_phone                String?          
+  dmcontact2_phone_type           String?          
+  company                         String          
+  company_legalname               String?          
+  dealerTimezone                  String?          
+  website                         String?          
+  finance                         String?          
+  finance_contact                 String?          
+  sales                           String?          
+  sales_contact                   String?          
+  phone                           String?          
+  fax                             String?          
+  address                         String?          
+  city                            String?          
+  state                           String?          
+  zip                             String?          
+  country                         String?          
+  email                           String           
+  username                        String?          
+  password                        String?          
+  verified                        String?
+  token                           String
+  created_at                      DateTime  @default(now())
   user    Users    @relation(fields: [userId], references: [Id])
-  userId  Int
+  userId                           Int
   dealersContent DealersContent[]
   dealer Int
 }
 
 model DealersContent {
-  Id                               Int         @id @default(autoincrement())
-  home                             String?
-  about                            String?
-  directions                       String?
-  contactus                        String?
-  thankyou_page                    String?
-  mapurl                           String?
-  mapframe                         String?
-  slogan                           String?
-  disclaimer                       String?
-  newmatrixcredit_vgoodcredit      String?
-  newmatrixcredit_jgoodcredit      String?
-  newmatrixcredit_faircredit       String?
-  newmatrixcredit_poorcredit       String?
-  newmatrixcredit_subprime         String?
-  newmatrixcredit_unknown          String?
-  newmatrixcredit_fminimumprofit   String?
-  newmatrixcredit_bminimumprofit   String?
-  usedmatrixcredit_vgoodcredit     String?
-  usedmatrixcredit_jgoodcredit     String?
-  usedmatrixcredit_faircredit      String?
-  usedmatrixcredit_poorcredit      String?
-  usedmatrixcredit_subprime        String?
-  usedmatrixcredit_unknown         String?
-  usedmatrixcredit_fminimumprofit  String?
-  usedmatrixcredit_bminimumprofit  String?
-  settingCurrency                  String?
-  settingDefaultDPpercntg          Int?
-  settingDefaultPromoPriceOff      Int?
-  settingDefaultAPR                String?
-  settingDefaultTerm               Int?
-  settingSateSlsTax                String?
-  settingDocDlvryFee               String?
-  settingTitleFee                  String?
-  settingStateInspectnFee          String?
-  dlr_ok_googlemp                  String?
-  dlr_geo_latitude                 String?
-  dlr_geo_longitude                String?   
-  status                           Int?             
-  dealer_chat                      String?          
-  dealer_chatname                  String?          
-  dealer_chat_display              String?          
-  dealer_chat_code                 String 
-  dealer_chat_visitorid            Int?
-  customtitle1                     String?
-  customcontent1                   String?
-  feedIDCars                       String?
-  feedIDComcast                    String?
-  feedidautotrader                 String?
-  feedidfrazer                     String?
-  feedidautomart                   String?
-  feedidvehix                      String?
-  feedidove                        String?
-  feedhomenetfilename              String?          
-  metaDescription                  String?
-  metaKeywords                     String?
-  showPricing                      Int?
-  showMileage                      Int?
-  sbv_1                            Int?
-  sbv_2                            Int?
-  sbv_3                            Int?
-  sbv_4                            Int?
-  sla                              Int?
-  accts_rcvbles_name               String?
-  accts_rcvbles_email              String?
-  accts_rcvbles_verified           Int?
-  accts_rcvbles_password           String?
-  accts_rcvbles_phone              String?
-  accts_payables_name              String?
-  accts_payables_email             String?
-  accts_payables_verified          Int?
-  accts_payables_password          String?
-  accts_payables_phone             String?
-  export_tocarsforsale             Int?
-  export_tovast                    Int?
-  created_at                       DateTime?        @default(now())
-  last_modified                    DateTime         @updatedAt
+  Id                              Int       @id @default(autoincrement())
+  home                            String?
+  about                           String?
+  directions                      String?
+  contactus                       String?
+  thankyou_page                   String?
+  mapurl                          String?
+  mapframe                        String?
+  slogan                          String?
+  disclaimer                      String?
+  newmatrixcredit_vgoodcredit     String?
+  newmatrixcredit_jgoodcredit     String?
+  newmatrixcredit_faircredit      String?
+  newmatrixcredit_poorcredit      String?
+  newmatrixcredit_subprime        String?
+  newmatrixcredit_unknown         String?
+  newmatrixcredit_fminimumprofit  String?
+  newmatrixcredit_bminimumprofit  String?
+  usedmatrixcredit_vgoodcredit    String?
+  usedmatrixcredit_jgoodcredit    String?
+  usedmatrixcredit_faircredit     String?
+  usedmatrixcredit_poorcredit     String?
+  usedmatrixcredit_subprime       String?
+  usedmatrixcredit_unknown        String?
+  usedmatrixcredit_fminimumprofit String?
+  usedmatrixcredit_bminimumprofit String?
+  settingCurrency                 String?
+  settingDefaultDPpercntg         Int?
+  settingDefaultPromoPriceOff     Int?
+  settingDefaultAPR               String?
+  settingDefaultTerm              Int?
+  settingSateSlsTax               String?
+  settingDocDlvryFee              String?
+  settingTitleFee                 String?
+  settingStateInspectnFee         String?
+  dlr_ok_googlemp                 String?
+  dlr_geo_latitude                String?
+  dlr_geo_longitude               String?   
+  status                          Int?             
+  dealer_chat                     String?          
+  dealer_chatname                 String?          
+  dealer_chat_display             String?          
+  dealer_chat_code                String 
+  dealer_chat_visitorid           Int?
+  customtitle1                    String?
+  customcontent1                  String?
+  feedIDCars                      String?
+  feedIDComcast                   String?
+  feedidautotrader                String?
+  feedidfrazer                    String?
+  feedidautomart                  String?
+  feedidvehix                     String?
+  feedidove                       String?
+  feedhomenetfilename             String?          
+  metaDescription                 String?
+  metaKeywords                    String?
+  showPricing                     Int?
+  showMileage                     Int?
+  sbv_1                           Int?
+  sbv_2                           Int?
+  sbv_3                           Int?
+  sbv_4                           Int?
+  sla                             Int?
+  accts_rcvbles_name              String?
+  accts_rcvbles_email             String?
+  accts_rcvbles_verified          Int?
+  accts_rcvbles_password          String?
+  accts_rcvbles_phone             String?
+  accts_payables_name             String?
+  accts_payables_email            String?
+  accts_payables_verified         Int?
+  accts_payables_password         String?
+  accts_payables_phone            String?
+  export_tocarsforsale            Int?
+  export_tovast                   Int?
+  created_at                      DateTime? @default(now())
+  last_modified                   DateTime  @updatedAt
   dealer Dealers  @relation(fields: [dealerId], references: [Id])
   dealerId  Int
 
 }
 
 model Post {
-  Id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  created_at DateTime?        @default(now())
+  Id                              Int       @id @default(autoincrement())
+  title                           String
+  content                         String?
+  published                       Boolean   @default(false)
+  created_at                      DateTime? @default(now())
   user  Users  @relation(fields: [userId], references: [Id])
-  userId  Int
+  userId                          Int
 }
 
 

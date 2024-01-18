@@ -1,4 +1,4 @@
-import db from '../src/utils/db.server';
+import prismaOrm from '../src/utils/prismaOrm';
 
 type Users = {
     uuid: string;
@@ -115,7 +115,7 @@ async function seed() {
     /* >>> Start Repated Process */
     await Promise.all(
         getUsers().map((user) => {
-            return db.users.create({
+            return prismaOrm.users.create({
                 data: {
                     uuid: user.uuid,
                     email: user.email,
@@ -128,7 +128,7 @@ async function seed() {
         })
     );
 
-    const user = await db.users.findFirst({
+    const user = await prismaOrm.users.findFirst({
         where: {
             firstName: "John",
         }

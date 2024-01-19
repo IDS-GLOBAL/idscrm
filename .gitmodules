@@ -7,10 +7,6 @@
 [submodule "Sites/investments/autocitymag.com"]
 	path = Sites/investments/autocitymag.com
 	url = https://github.com/IDS-GLOBAL/autocitymag.com.git
-[submodule "Sites/investments/africars.io"]
-	path = Sites/investments/africars.io
-	url = https://github.com/IDS-GLOBAL/africars.io.git
-[submodule "Sites/investments/carezmart.com"]
 	path = Sites/investments/carezmart.com
 	url = https://github.com/IDS-GLOBAL/carezmart.com.git
 [submodule "Sites/investments/buyherepayhereus.com"]

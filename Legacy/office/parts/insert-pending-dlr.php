@@ -170,7 +170,7 @@
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Token:</td>
-      <td><input type="text" name="token" value="<?php if(!$row_dlr_id_pass['token']){echo $tkey;}else{$row_dlr_id_pass['token'];} ?>" size="32" /></td>
+      <td><input type="text" name="token" value="<?php echo if(!$row_dlr_id_pass['token']){echo $tkey;}else{$row_dlr_id_pass['token'];} ?>" size="32" /></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right">Home:</td>

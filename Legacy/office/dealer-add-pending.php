@@ -52,7 +52,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -67,7 +67,7 @@ if (isset($_GET['id'])) {
   $colname_dlr_id_pass = $_GET['id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_dlr_id_pass =  sprintf("SELECT * FROM dealers_pending WHERE id = %s", GetSQLValueString($colname_dlr_id_pass, "int"));
+$query_dlr_id_pass =  "SELECT * FROM dealers_pending WHERE id = %s", GetSQLValueString($colname_dlr_id_pass, "int"));
 $dlr_id_pass = mysqli_query($idsconnection_mysqli, $query_dlr_id_pass);
 $row_dlr_id_pass = mysqli_fetch_array($dlr_id_pass);
 $totalRows_dlr_id_pass = mysqli_num_rows($dlr_id_pass);
@@ -78,7 +78,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL =  sprintf("INSERT INTO dealers (dealer_pending_id, dudes_id, assigned_salesrep, contact, contact_phone, contact_phone_type, dmcontact2, dmcontact2_phone, dmcontact2_phone_type, company, website, finance, finance_contact, sales, sales_contact, phone, fax, address, city, `state`, zip, email, username, password, verified, token, home, about, directions, mapurl, mapframe, slogan, disclaimer, status, dealer_chat, fuel_pump_display, dcommercial_youtube_onoff, dcommercial_youtube_title, dcommercial_youtube_embed, dcommercial_youtube_description, craigslist_nickname, craigslist_vtb_bordercolor, craigslist_bg_ad_color, craigslist_pricing_showhide, craigslist_mileage_showhide, customtitle1, customcontent1, feedIDCars, feedIDComcast, feedidautotrader, feedidfrazer, feedidautomart, feedidvehix, feedidove, metaDescription, metaKeywords, showPricing, showMileage, sla) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+  $insertSQL =  "INSERT INTO dealers (dealer_pending_id, dudes_id, assigned_salesrep, contact, contact_phone, contact_phone_type, dmcontact2, dmcontact2_phone, dmcontact2_phone_type, company, website, finance, finance_contact, sales, sales_contact, phone, fax, address, city, `state`, zip, email, username, password, verified, token, home, about, directions, mapurl, mapframe, slogan, disclaimer, status, dealer_chat, fuel_pump_display, dcommercial_youtube_onoff, dcommercial_youtube_title, dcommercial_youtube_embed, dcommercial_youtube_description, craigslist_nickname, craigslist_vtb_bordercolor, craigslist_bg_ad_color, craigslist_pricing_showhide, craigslist_mileage_showhide, customtitle1, customcontent1, feedIDCars, feedIDComcast, feedidautotrader, feedidfrazer, feedidautomart, feedidvehix, feedidove, metaDescription, metaKeywords, showPricing, showMileage, sla) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['dealer_pending_id'], "int"),
                        GetSQLValueString($_POST['assigned_salesrep'], "int"),
                        GetSQLValueString($_POST['assigned_salesrep'], "text"),
@@ -147,7 +147,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( sprintf("Location: %s", $insertGoTo));
+  header( "Location: %s", $insertGoTo));
 }
 ?>
 <?php

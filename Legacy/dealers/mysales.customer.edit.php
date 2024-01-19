@@ -6,7 +6,7 @@ if (isset($_GET['customer_id'])) {
   $colname_view_thiscustomer = $_GET['customer_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_view_thiscustomer =  sprintf("SELECT * FROM customers WHERE customer_id = %s", GetSQLValueString($colname_view_thiscustomer, "int"));
+$query_view_thiscustomer =  "SELECT * FROM customers WHERE customer_id = %s", GetSQLValueString($colname_view_thiscustomer, "int"));
 $view_thiscustomer = mysqli_query($idsconnection_mysqli, $query_view_thiscustomer);
 $row_view_thiscustomer = mysqli_fetch_assoc($view_thiscustomer);
 $totalRows_view_thiscustomer = mysqli_num_rows($view_thiscustomer);

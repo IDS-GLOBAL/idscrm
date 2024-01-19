@@ -99,15 +99,13 @@ $totalRows_dlrSlctBySsnDid = mysqli_num_rows($dlrSlctBySsnDid);
 $maxRows_all_msgsbyDid = 10;
 $pageNum_all_msgsbyDid = 0;
 if (isset($_GET['pageNum_all_msgsbyDid'])) {
-  	$pageNum_all_msgsbyDid = $_GET['pageNum_all_msgsbyDid'];
+  $pageNum_all_msgsbyDid = $_GET['pageNum_all_msgsbyDid'];
 }
 $startRow_all_msgsbyDid = $pageNum_all_msgsbyDid * $maxRows_all_msgsbyDid;
 
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
 $query_all_msgsbyDid = "SELECT * FROM messages WHERE did = $did ORDER BY messages.created_at";
-
-$query_limit_all_msgsbyDid =  sprintf("%s LIMIT %d, %d", $query_all_msgsbyDid, $startRow_all_msgsbyDid, $maxRows_all_msgsbyDid);
-
+$query_limit_all_msgsbyDid =  "%s LIMIT %d, %d", $query_all_msgsbyDid, $startRow_all_msgsbyDid, $maxRows_all_msgsbyDid);
 $all_msgsbyDid = mysqli_query($idsconnection_mysqli, $query_limit_all_msgsbyDid);
 $row_all_msgsbyDid = mysqli_fetch_assoc($all_msgsbyDid);
 

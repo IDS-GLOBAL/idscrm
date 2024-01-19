@@ -53,7 +53,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "post_payment")) {
-  $updateSQL =  sprintf("UPDATE ids_toinvoices SET invoice_dealerid=%s, invoice_status=%s, payment_type=%s, creditCardslct=%s, check_number=%s, paid_amount=%s, credit_amount=%s, paymentBalance=%s, payment_status=%s, paymentNotes=%s, dudes_id_rcvdpymt=%s, dudes_id_rcvdpymtwhn=%s WHERE invoice_id=%s",
+  $updateSQL =  "UPDATE ids_toinvoices SET invoice_dealerid=%s, invoice_status=%s, payment_type=%s, creditCardslct=%s, check_number=%s, paid_amount=%s, credit_amount=%s, paymentBalance=%s, payment_status=%s, paymentNotes=%s, dudes_id_rcvdpymt=%s, dudes_id_rcvdpymtwhn=%s WHERE invoice_id=%s",
                        GetSQLValueString($_POST['invoice_dealerid'], "int"),
                        GetSQLValueString($_POST['invoice_status'], "text"),
                        GetSQLValueString($_POST['payment_type'], "text"),
@@ -76,7 +76,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "post_payment")) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
     $updateGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( sprintf("Location: %s", $updateGoTo));
+  header( "Location: %s", $updateGoTo));
 }
 
 $colname_userDudes = "-1";
@@ -84,7 +84,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -119,7 +119,7 @@ if (isset($_GET['id'])) {
   $colname_queryDealer = $_GET['id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_queryDealer =  sprintf("SELECT id, company FROM dealers WHERE id = %s", GetSQLValueString($colname_queryDealer, "int"));
+$query_queryDealer =  "SELECT id, company FROM dealers WHERE id = %s", GetSQLValueString($colname_queryDealer, "int"));
 $queryDealer = mysqli_query($idsconnection_mysqli, $query_queryDealer);
 $row_queryDealer = mysqli_fetch_array($queryDealer);
 $totalRows_queryDealer = mysqli_num_rows($queryDealer);
@@ -135,7 +135,7 @@ if (isset($_GET['invoice_id'])) {
   $colname_query_invoice = $_GET['invoice_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_query_invoice =  sprintf("SELECT * FROM ids_toinvoices WHERE invoice_id = %s", GetSQLValueString($colname_query_invoice, "int"));
+$query_query_invoice =  "SELECT * FROM ids_toinvoices WHERE invoice_id = %s", GetSQLValueString($colname_query_invoice, "int"));
 $query_invoice = mysqli_query($idsconnection_mysqli, $query_query_invoice);
 $row_query_invoice = mysqli_fetch_array($query_invoice);
 $totalRows_query_invoice = mysqli_num_rows($query_invoice);

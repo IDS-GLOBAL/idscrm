@@ -3,11 +3,10 @@
 
 $colname_find_dlr_creditapp = "-1";
 if (isset($_GET['app_id'])) {
-    $colname_find_dlr_creditapp = $_GET['app_id'];
+  $colname_find_dlr_creditapp = $_GET['app_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_find_dlr_creditapp =  "SELECT * FROM `idsids_idsdms`.`credit_app_fullblown` WHERE `credit_app_fullblown_id` = '$colname_find_dlr_creditapp' AND `applicant_did` = '$did'";
-
+$query_find_dlr_creditapp =  "SELECT * FROM `idsids_idsdms`.`credit_app_fullblown` WHERE `credit_app_fullblown_id` = %s AND `applicant_did` = '$did'", GetSQLValueString($colname_find_dlr_creditapp, "int"));
 $find_dlr_creditapp = mysqli_query($idsconnection_mysqli, $query_find_dlr_creditapp);
 $row_find_dlr_creditapp = mysqli_fetch_assoc($find_dlr_creditapp);
 $totalRows_find_dlr_creditapp = mysqli_num_rows($find_dlr_creditapp);

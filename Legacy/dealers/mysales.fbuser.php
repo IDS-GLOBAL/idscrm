@@ -6,7 +6,7 @@ if (isset($_GET['fbuser_id'])) {
   $colname_find_fbuser = $_GET['fbuser_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_find_fbuser =  sprintf("SELECT * FROM `fbuserprofiles` WHERE `fbuser_id` = %s", GetSQLValueString($colname_find_fbuser, "int"));
+$query_find_fbuser =  "SELECT * FROM `fbuserprofiles` WHERE `fbuser_id` = %s", GetSQLValueString($colname_find_fbuser, "int"));
 $find_fbuser = mysqli_query($idsconnection_mysqli, $query_find_fbuser);
 $row_find_fbuser = mysqli_fetch_assoc($find_fbuser);
 $totalRows_find_fbuser = mysqli_num_rows($find_fbuser);

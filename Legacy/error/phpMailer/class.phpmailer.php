@@ -436,9 +436,9 @@ class PHPMailer {
    */
   public function SendmailSend($header, $body) {
     if ($this->Sender != '') {
-      $sendmail =  sprintf("%s -oi -f %s -t", escapeshellcmd($this->Sendmail), escapeshellarg($this->Sender));
+      $sendmail =  "%s -oi -f %s -t", escapeshellcmd($this->Sendmail), escapeshellarg($this->Sender));
     } else {
-      $sendmail =  sprintf("%s -oi -t", escapeshellcmd($this->Sendmail));
+      $sendmail =  "%s -oi -t", escapeshellcmd($this->Sendmail));
     }
 
     if(!@$mail = popen($sendmail, 'w')) {
@@ -476,7 +476,7 @@ class PHPMailer {
 
     $toArr = split(',', $to);
 
-    $params =  sprintf("-oi -f %s", $this->Sender);
+    $params =  "-oi -f %s", $this->Sender);
     if ($this->Sender != '' && strlen(ini_get('safe_mode'))< 1) {
       $old_from = ini_get('sendmail_from');
       ini_set('sendmail_from', $this->Sender);
@@ -729,7 +729,7 @@ class PHPMailer {
    * @return string
    */
   public function WrapText($message, $length, $qp_mode = false) {
-    $soft_break = ($qp_mode) ?  sprintf(" =%s", $this->LE) : $this->LE;
+    $soft_break = ($qp_mode) ?  " =%s", $this->LE) : $this->LE;
     // If utf-8 encoding is used, we will need to make sure we don't
     // split multibyte characters when we wrap
     $is_utf8 = (strtolower($this->CharSet) == "utf-8");
@@ -761,7 +761,7 @@ class PHPMailer {
               $part = substr($word, 0, $len);
               $word = substr($word, $len);
               $buf .= ' ' . $part;
-              $message .= sprintf($buf .  "=%s", $this->LE);
+              $message .= $buf .  "=%s", $this->LE);
             } else {
               $message .= $buf . $soft_break;
             }
@@ -780,7 +780,7 @@ class PHPMailer {
             $word = substr($word, $len);
 
             if (strlen($word) > 0) {
-              $message .= $part .  sprintf("=%s", $this->LE);
+              $message .= $part .  "=%s", $this->LE);
             } else {
               $buf = $part;
             }
@@ -921,7 +921,7 @@ class PHPMailer {
     if($this->MessageID != '') {
       $result .= $this->HeaderLine('Message-ID',$this->MessageID);
     } else {
-      $result .=  sprintf("Message-ID: <%s@%s>%s", $uniq_id, $this->ServerHostname(), $this->LE);
+      $result .=  "Message-ID: <%s@%s>%s", $uniq_id, $this->ServerHostname(), $this->LE);
     }
     $result .= $this->HeaderLine('X-Priority', $this->Priority);
     $result .= $this->HeaderLine('X-Mailer', 'PHPMailer (phpmailer.codeworxtech.com) [version ' . $this->Version . ']');
@@ -952,13 +952,13 @@ class PHPMailer {
     switch($this->message_type) {
       case 'plain':
         $result .= $this->HeaderLine('Content-Transfer-Encoding', $this->Encoding);
-        $result .=  sprintf("Content-Type: %s; charset=\"%s\"", $this->ContentType, $this->CharSet);
+        $result .=  "Content-Type: %s; charset=\"%s\"", $this->ContentType, $this->CharSet);
         break;
       case 'attachments':
         /* fall through */
       case 'alt_attachments':
         if($this->InlineImageExists()){
-          $result .=  sprintf("Content-Type: %s;%s\ttype=\"text/html\";%s\tboundary=\"%s\"%s", 'multipart/related', $this->LE, $this->LE, $this->boundary[1], $this->LE);
+          $result .=  "Content-Type: %s;%s\ttype=\"text/html\";%s\tboundary=\"%s\"%s", 'multipart/related', $this->LE, $this->LE, $this->boundary[1], $this->LE);
         } else {
           $result .= $this->HeaderLine('Content-Type', 'multipart/mixed;');
           $result .= $this->TextLine("\tboundary=\"" . $this->boundary[1] . '"');
@@ -1011,8 +1011,8 @@ class PHPMailer {
         $result .= $this->AttachAll();
         break;
       case 'alt_attachments':
-        $result .=  sprintf("--%s%s", $this->boundary[1], $this->LE);
-        $result .=  sprintf("Content-Type: %s;%s" . "\tboundary=\"%s\"%s", 'multipart/alternative', $this->LE, $this->boundary[2], $this->LE.$this->LE);
+        $result .=  "--%s%s", $this->boundary[1], $this->LE);
+        $result .=  "Content-Type: %s;%s" . "\tboundary=\"%s\"%s", 'multipart/alternative', $this->LE, $this->boundary[2], $this->LE.$this->LE);
         $result .= $this->GetBoundary($this->boundary[2], '', 'text/plain', '') . $this->LE; // Create text body
         $result .= $this->EncodeString($this->AltBody, $this->Encoding);
         $result .= $this->LE.$this->LE;
@@ -1068,7 +1068,7 @@ class PHPMailer {
       $encoding = $this->Encoding;
     }
     $result .= $this->TextLine('--' . $boundary);
-    $result .=  sprintf("Content-Type: %s; charset = \"%s\"", $contentType, $charSet);
+    $result .=  "Content-Type: %s; charset = \"%s\"", $contentType, $charSet);
     $result .= $this->LE;
     $result .= $this->HeaderLine('Content-Transfer-Encoding', $encoding);
     $result .= $this->LE;
@@ -1187,17 +1187,17 @@ class PHPMailer {
       $disposition = $this->attachment[$i][6];
       $cid         = $this->attachment[$i][7];
 
-      $mime[] =  sprintf("--%s%s", $this->boundary[1], $this->LE);
+      $mime[] =  "--%s%s", $this->boundary[1], $this->LE);
       //$mime[] =  "Content-Type: %s; name=\"%s\"%s", $type, $name, $this->LE);
-      $mime[] =  sprintf("Content-Type: %s; name=\"%s\"%s", $type, $this->EncodeHeader($this->SecureHeader($name)), $this->LE);
-      $mime[] =  sprintf("Content-Transfer-Encoding: %s%s", $encoding, $this->LE);
+      $mime[] =  "Content-Type: %s; name=\"%s\"%s", $type, $this->EncodeHeader($this->SecureHeader($name)), $this->LE);
+      $mime[] =  "Content-Transfer-Encoding: %s%s", $encoding, $this->LE);
 
       if($disposition == 'inline') {
-        $mime[] =  sprintf("Content-ID: <%s>%s", $cid, $this->LE);
+        $mime[] =  "Content-ID: <%s>%s", $cid, $this->LE);
       }
 
       //$mime[] =  "Content-Disposition: %s; filename=\"%s\"%s", $disposition, $name, $this->LE.$this->LE);
-      $mime[] =  sprintf("Content-Disposition: %s; filename=\"%s\"%s", $disposition, $this->EncodeHeader($this->SecureHeader($name)), $this->LE.$this->LE);
+      $mime[] =  "Content-Disposition: %s; filename=\"%s\"%s", $disposition, $this->EncodeHeader($this->SecureHeader($name)), $this->LE.$this->LE);
 
       /* Encode as string attachment */
       if($bString) {
@@ -1215,7 +1215,7 @@ class PHPMailer {
       }
     }
 
-    $mime[] =  sprintf("--%s--%s", $this->boundary[1], $this->LE);
+    $mime[] =  "--%s--%s", $this->boundary[1], $this->LE);
 
     return join('', $mime);
   }
@@ -1637,7 +1637,7 @@ class PHPMailer {
     $tzs = ($tz < 0) ? '-' : '+';
     $tz = abs($tz);
     $tz = (int)($tz/3600)*100 + ($tz%3600)/60;
-    $result =  sprintf("%s %s%04d", date('D, j M Y H:i:s'), $tzs, $tz);
+    $result =  "%s %s%04d", date('D, j M Y H:i:s'), $tzs, $tz);
 
     return $result;
   }

@@ -53,7 +53,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "addVehicleymkmd")) {
-  $insertSQL =  sprintf("INSERT INTO vehicles (did, dudes_id, vmakeid, vmodelid, vsource_idscrm_import_txt, vyear, vvin, vcondition, vcertified, vstockno, vmileage, vrprice, vdprice, vspecialprice, vecolor_txt, vicolor_txt, vbody, vtransm) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+  $insertSQL =  "INSERT INTO vehicles (did, dudes_id, vmakeid, vmodelid, vsource_idscrm_import_txt, vyear, vvin, vcondition, vcertified, vstockno, vmileage, vrprice, vdprice, vspecialprice, vecolor_txt, vicolor_txt, vbody, vtransm) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['did'], "int"),
                        GetSQLValueString($_POST['dudes_id'], "int"),
                        GetSQLValueString($_POST['vmakeid'], "int"),
@@ -81,7 +81,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "addVehicleymkmd")) 
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( sprintf("Location: %s", $insertGoTo));
+  header( "Location: %s", $insertGoTo));
 }
 
 
@@ -93,7 +93,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -143,7 +143,7 @@ if (isset($_GET['token'])) {
   $colname_dealer = $_GET['token'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_dealer =  sprintf("SELECT * FROM dealers WHERE id = %s", GetSQLValueString($colname_dealer, "int"));
+$query_dealer =  "SELECT * FROM dealers WHERE id = %s", GetSQLValueString($colname_dealer, "int"));
 $dealer = mysqli_query($idsconnection_mysqli, $query_dealer);
 $row_dealer = mysqli_fetch_array($dealer);
 $totalRows_dealer = mysqli_num_rows($dealer);

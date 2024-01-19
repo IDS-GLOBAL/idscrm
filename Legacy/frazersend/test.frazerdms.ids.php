@@ -37,7 +37,7 @@ if (isset($_GET['frazerid'])) {
   $colname_find_frzrno_n_dealersystem = $_GET['frazerid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_find_frzrno_n_dealersystem =  sprintf("SELECT * FROM dealers WHERE feedidfrazer = %s", GetSQLValueString($colname_find_frzrno_n_dealersystem, "text"));
+$query_find_frzrno_n_dealersystem =  "SELECT * FROM dealers WHERE feedidfrazer = %s", GetSQLValueString($colname_find_frzrno_n_dealersystem, "text"));
 $find_frzrno_n_dealersystem = mysqli_query($idsconnection_mysqli, $query_find_frzrno_n_dealersystem);
 $row_find_frzrno_n_dealersystem = mysqli_fetch_assoc($find_frzrno_n_dealersystem);
 $totalRows_find_frzrno_n_dealersystem = mysqli_num_rows($find_frzrno_n_dealersystem);

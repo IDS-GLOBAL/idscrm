@@ -103,7 +103,7 @@ if (isset($_GET['leadid'])) {
   $colname_cust_lead = $_GET['leadid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_cust_lead =  sprintf("SELECT * FROM cust_leads WHERE cust_leadid = %s", GetSQLValueString($colname_cust_lead, "int"));
+$query_cust_lead =  "SELECT * FROM cust_leads WHERE cust_leadid = %s", GetSQLValueString($colname_cust_lead, "int"));
 $cust_lead = mysqli_query($idsconnection_mysqli, $query_cust_lead);
 $row_cust_lead = mysqli_fetch_assoc($cust_lead);
 $totalRows_cust_lead = mysqli_num_rows($cust_lead);

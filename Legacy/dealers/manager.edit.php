@@ -5,7 +5,7 @@ if (isset($_GET['mgrid'])) {
   $colname_query_Manager = $_GET['mgrid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_query_Manager =  sprintf("SELECT * FROM `manager_person` WHERE `manager_person`.`manager_id` = %s AND `manager_person`.`dealer_id` = '$did' ", GetSQLValueString($colname_query_Manager, "int"));
+$query_query_Manager =  "SELECT * FROM `manager_person` WHERE `manager_person`.`manager_id` = %s AND `manager_person`.`dealer_id` = '$did' ", GetSQLValueString($colname_query_Manager, "int"));
 $query_Manager = mysqli_query($idsconnection_mysqli, $query_query_Manager);
 $row_query_Manager = mysqli_fetch_assoc($query_Manager);
 $totalRows_query_Manager = mysqli_num_rows($query_Manager);

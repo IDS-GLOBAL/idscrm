@@ -9,7 +9,7 @@ if (isset($_GET['vid'])) {
   $colname_find_vehicle = $_GET['vid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_find_vehicle =  sprintf("SELECT * FROM `vehicles` WHERE `vid` = %s", GetSQLValueString($colname_find_vehicle, "int"));
+$query_find_vehicle =  "SELECT * FROM `vehicles` WHERE `vid` = %s", GetSQLValueString($colname_find_vehicle, "int"));
 $find_vehicle = mysqli_query($idsconnection_mysqli, $query_find_vehicle);
 $row_find_vehicle = mysqli_fetch_assoc($find_vehicle);
 $totalRows_find_vehicle = mysqli_num_rows($find_vehicle);
@@ -36,7 +36,7 @@ if (isset($_GET['vid'])) {
   $colname_find_vehicle_photos = $_GET['vid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_find_vehicle_photos =  sprintf("SELECT * FROM `vehicle_photos` WHERE `vehicle_photos`.`dealer_id` = '$did' AND `vehicle_id` = %s ORDER BY `sort_orderno` ASC, created_at DESC", GetSQLValueString($colname_find_vehicle_photos, "int"));
+$query_find_vehicle_photos =  "SELECT * FROM `vehicle_photos` WHERE `vehicle_photos`.`dealer_id` = '$did' AND `vehicle_id` = %s ORDER BY `sort_orderno` ASC, created_at DESC", GetSQLValueString($colname_find_vehicle_photos, "int"));
 $find_vehicle_photos = mysqli_query($idsconnection_mysqli, $query_find_vehicle_photos);
 $row_find_vehicle_photos = mysqli_fetch_assoc($find_vehicle_photos);
 $totalRows_find_vehicle_photos = mysqli_num_rows($find_vehicle_photos);

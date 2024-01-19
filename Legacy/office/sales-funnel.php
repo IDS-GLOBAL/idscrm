@@ -53,7 +53,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "add_dealer_pending")) {
-  $insertSQL =  sprintf("INSERT INTO dealers_pending (dudes_id, contact, contact_phone, contact_phone_type, dmcontact2, dmcontact2_phone, dmcontact2_phone_type, company, website, finance, finance_contact, sales, sales_contact, phone, fax, address, city, `state`, zip, email, username, password, sla) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+  $insertSQL =  "INSERT INTO dealers_pending (dudes_id, contact, contact_phone, contact_phone_type, dmcontact2, dmcontact2_phone, dmcontact2_phone_type, company, website, finance, finance_contact, sales, sales_contact, phone, fax, address, city, `state`, zip, email, username, password, sla) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['dudes_id'], "int"),
                        GetSQLValueString($_POST['contact'], "text"),
                        GetSQLValueString($_POST['contact_phone'], "text"),
@@ -86,11 +86,11 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "add_dealer_pending"
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( sprintf("Location: %s", $insertGoTo));
+  header( "Location: %s", $insertGoTo));
 }
 
 if ((isset($_GET['delete_id'])) && ($_GET['delete_id'] != "")) {
-  $deleteSQL =  sprintf("DELETE FROM dealers_pending WHERE id=%s",
+  $deleteSQL =  "DELETE FROM dealers_pending WHERE id=%s",
                        GetSQLValueString($_GET['delete_id'], "int"));
 
   mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
@@ -103,7 +103,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
 }
 
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);

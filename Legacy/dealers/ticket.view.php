@@ -6,7 +6,7 @@ if (isset($_GET['ticket_token'])) {
   $colname_view_thistickettoken = $_GET['ticket_token'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_dlr_support_ticket =   sprintf("SELECT * FROM ticket_submit_dlr WHERE ticket_submit_dlr.did = $did AND ticket_token = %s", GetSQLValueString($colname_view_thistickettoken, "int"));
+$query_dlr_support_ticket =   "SELECT * FROM ticket_submit_dlr WHERE ticket_submit_dlr.did = $did AND ticket_token = %s", GetSQLValueString($colname_view_thistickettoken, "int"));
 $dlr_support_ticket = mysqli_query($idsconnection_mysqli, $query_dlr_support_ticket);
 $row_dlr_support_ticket = mysqli_fetch_assoc($dlr_support_ticket);
 $totalRows_dlr_support_ticket = mysqli_num_rows($dlr_support_ticket);

@@ -53,7 +53,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form-ticketpreview")) {
-  $updateSQL =  sprintf("UPDATE ticket_submit_dlr SET dudesId=%s, dudesName=%s, dudesResponse=%s, dudes_last_modfied=NOW() WHERE id=%s",
+  $updateSQL =  "UPDATE ticket_submit_dlr SET dudesId=%s, dudesName=%s, dudesResponse=%s, dudes_last_modfied=NOW() WHERE id=%s",
                        GetSQLValueString($_POST['dudesId'], "int"),
                        GetSQLValueString($_POST['dudesName'], "text"),
                        GetSQLValueString($_POST['dudesResponse'], "text"),
@@ -68,7 +68,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form-ticketpreview"
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
     $updateGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( sprintf("Location: %s", $updateGoTo));
+  header( "Location: %s", $updateGoTo));
 }
 
 $colname_userDudes = "-1";
@@ -76,7 +76,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -105,7 +105,7 @@ if (isset($_GET['ticketid'])) {
   $colname_DlrTicketId = $_GET['ticketid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_DlrTicketId =  sprintf("SELECT * FROM ticket_submit_dlr WHERE id = %s", GetSQLValueString($colname_DlrTicketId, "int"));
+$query_DlrTicketId =  "SELECT * FROM ticket_submit_dlr WHERE id = %s", GetSQLValueString($colname_DlrTicketId, "int"));
 $DlrTicketId = mysqli_query($idsconnection_mysqli, $query_DlrTicketId);
 $row_DlrTicketId = mysqli_fetch_array($DlrTicketId);
 $totalRows_DlrTicketId = mysqli_num_rows($DlrTicketId);

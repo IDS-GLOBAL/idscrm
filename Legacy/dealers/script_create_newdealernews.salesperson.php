@@ -37,7 +37,7 @@ if (isset($_GET['salesperson_id'])) {
   $colname_fetch_last_sales_person_post = $_GET['salesperson_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_fetch_last_sales_person_post =  sprintf("SELECT * FROM dealers_news WHERE dealers_news.dlr_news_sid = '$salesperson_id' AND dealers_news.dlr_news_did = '$did' ORDER BY dealers_news.dlr_news_id DESC LIMIT 1", GetSQLValueString($colname_fetch_last_sales_person_post, "int"));
+$query_fetch_last_sales_person_post =  "SELECT * FROM dealers_news WHERE dealers_news.dlr_news_sid = '$salesperson_id' AND dealers_news.dlr_news_did = '$did' ORDER BY dealers_news.dlr_news_id DESC LIMIT 1", GetSQLValueString($colname_fetch_last_sales_person_post, "int"));
 $fetch_last_sales_person_post = mysqli_query($idsconnection_mysqli, $query_fetch_last_sales_person_post);
 $row_fetch_last_sales_person_post = mysqli_fetch_assoc($fetch_last_sales_person_post);
 $totalRows_fetch_last_sales_person_post = mysqli_num_rows($fetch_last_sales_person_post);

@@ -12,7 +12,7 @@ if (isset($_GET['dlr_team_id'])) {
   $colname_find_singledealerteam = $_GET['dlr_team_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_find_singledealerteam =  sprintf("SELECT * FROM `dealers_teams` WHERE `dealers_teams`.`dlr_team_id` = %s AND `dealers_teams`.`dlr_team_did` = '$did'", GetSQLValueString($colname_find_singledealerteam, "text"));
+$query_find_singledealerteam =  "SELECT * FROM `dealers_teams` WHERE `dealers_teams`.`dlr_team_id` = %s AND `dealers_teams`.`dlr_team_did` = '$did'", GetSQLValueString($colname_find_singledealerteam, "text"));
 $find_singledealerteam = mysqli_query($idsconnection_mysqli, $query_find_singledealerteam);
 $row_find_singledealerteam = mysqli_fetch_assoc($find_singledealerteam);
 $totalRows_find_singledealerteam = mysqli_num_rows($find_singledealerteam);

@@ -33,8 +33,8 @@ if (isset($_GET['state'])) {
   $colname_find_dealer_prospects = $_GET['state'];
 }
 mysql_select_db($database_tracking, $tracking);
-$query_find_dealer_prospects =  sprintf("SELECT * FROM dealer_prospects WHERE `state` = %s ORDER BY company ASC", GetSQLValueString($colname_find_dealer_prospects, "text"));
-$query_limit_find_dealer_prospects =  sprintf("%s LIMIT %d, %d", $query_find_dealer_prospects, $startRow_find_dealer_prospects, $maxRows_find_dealer_prospects);
+$query_find_dealer_prospects =  "SELECT * FROM dealer_prospects WHERE `state` = %s ORDER BY company ASC", GetSQLValueString($colname_find_dealer_prospects, "text"));
+$query_limit_find_dealer_prospects =  "%s LIMIT %d, %d", $query_find_dealer_prospects, $startRow_find_dealer_prospects, $maxRows_find_dealer_prospects);
 $find_dealer_prospects = mysqli_query($idsconnection_mysqli, $query_limit_find_dealer_prospects, $tracking);
 $row_find_dealer_prospects = mysqli_fetch_array($find_dealer_prospects);
 
@@ -60,7 +60,7 @@ if (!empty($_SERVER['QUERY_STRING'])) {
     $queryString_find_dealer_prospects = "&" . htmlentities(implode("&", $newParams));
   }
 }
-$queryString_find_dealer_prospects =  sprintf("&totalRows_find_dealer_prospects=%d%s", $totalRows_find_dealer_prospects, $queryString_find_dealer_prospects);
+$queryString_find_dealer_prospects =  "&totalRows_find_dealer_prospects=%d%s", $totalRows_find_dealer_prospects, $queryString_find_dealer_prospects);
 
 
 

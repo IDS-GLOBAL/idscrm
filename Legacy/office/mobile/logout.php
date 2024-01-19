@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
   $MM_redirecttoReferrer = true;
   mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
   	
-  $LoginRS__query= sprintf("SELECT dudes_username, dudes_password, dudes_access_level FROM dudes WHERE dudes_username=%s AND dudes_password=%s",
+  $LoginRS__query= "SELECT dudes_username, dudes_password, dudes_access_level FROM dudes WHERE dudes_username=%s AND dudes_password=%s",
   GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
    
   $LoginRS = mysqli_query($idsconnection_mysqli, $LoginRS__query);

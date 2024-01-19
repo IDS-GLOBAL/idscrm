@@ -3,10 +3,10 @@ include("../ajax/db.php");
 
 $colname_find_dlr_creditapp2 = "-1";
 if (isset($_GET['pulled_app_id'])) {
-    $colname_find_dlr_creditapp2 = $_GET['pulled_app_id'];
+  $colname_find_dlr_creditapp2 = $_GET['pulled_app_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_find_dlr_creditapp2 =  "SELECT * FROM `idsids_idsdms`.`credit_app_fullblown` WHERE `credit_app_fullblown_id` = '$colname_find_dlr_creditapp2' AND `applicant_did` = '$did'";
+$query_find_dlr_creditapp2 =  "SELECT * FROM `idsids_idsdms`.`credit_app_fullblown` WHERE `credit_app_fullblown_id` = %s AND `applicant_did` = '$did'", GetSQLValueString($colname_find_dlr_creditapp2, "int"));
 $find_dlr_creditapp2 = mysqli_query($idsconnection_mysqli, $query_find_dlr_creditapp2);
 $row_find_dlr_creditapp2 = mysqli_fetch_assoc($find_dlr_creditapp2);
 $totalRows_find_dlr_creditapp2 = mysqli_num_rows($find_dlr_creditapp2);

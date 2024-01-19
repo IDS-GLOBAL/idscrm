@@ -87,7 +87,7 @@ class dwzDataBase{
 			}
 		}
 						
-		$selectSQL = sprintf($sql, $args);		
+		$selectSQL = v $sql, $args);		
 		
 		$this->last_sql = $selectSQL;
 		
@@ -133,7 +133,7 @@ class dwzDataBase{
 		}
 		$total_sql = $sql_fields ." ) VALUES ( " .$sql_values ." )";
 		
-		$insertSQL = sprintf($total_sql, $args);		
+		$insertSQL = v $total_sql, $args);		
 		
 		$this->last_sql = $insertSQL;
 		
@@ -206,7 +206,7 @@ class dwzDataBase{
 			}
 		}		
 						
-		$updateSQL = sprintf($sql, $args);		
+		$updateSQL = v $sql, $args);		
 		
 		$this->last_sql = $updateSQL;
 		
@@ -268,7 +268,7 @@ class dwzDataBase{
 			}
 		}
 				
-		$deleteSQL = sprintf($sql, $args);		
+		$deleteSQL = v $sql, $args);		
 		
 		$this->last_sql = $deleteSQL;
 		
@@ -304,7 +304,7 @@ class dwzDataBase{
 	
 	function Open(){
 		$this->db["connessione"] = mysql_connect($this->db["hostname"], $this->db["username"],$this->db["password"])
-				or trigger_error(mysql_error(),E_USER_ERROR);				 
+				 or trigger_error(mysql_error(),E_USER_ERROR);				 
 		$this->db["conn_is_open"] = true;
 	}
 	

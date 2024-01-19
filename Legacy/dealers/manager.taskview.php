@@ -11,7 +11,7 @@ if (isset($_GET['task_token'])) {
   $colname_find_singledealertask = $_GET['task_token'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_find_singledealertask =  sprintf("SELECT * FROM `dealers_tasks` WHERE `dealers_tasks`.`task_did` = '$did' AND `dealers_tasks`.`task_token` = %s", GetSQLValueString($colname_find_singledealertask, "text"));
+$query_find_singledealertask =  "SELECT * FROM `dealers_tasks` WHERE `dealers_tasks`.`task_did` = '$did' AND `dealers_tasks`.`task_token` = %s", GetSQLValueString($colname_find_singledealertask, "text"));
 $find_singledealertask = mysqli_query($idsconnection_mysqli, $query_find_singledealertask);
 $row_find_singledealertask = mysqli_fetch_assoc($find_singledealertask);
 $totalRows_find_singledealertask = mysqli_num_rows($find_singledealertask);

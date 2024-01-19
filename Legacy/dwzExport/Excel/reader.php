@@ -258,7 +258,7 @@ class Spreadsheet_Excel_Reader
      */ 
     function Spreadsheet_Excel_Reader()
     {
-        $this->_ole =& OLERead();
+        $this->_ole =& new OLERead();
         $this->setUTFEncoder('iconv');
     }
 
@@ -787,7 +787,7 @@ class Spreadsheet_Excel_Reader
                         if (isset($this->_columnsFormat[$column + 1])){
                                 $this->curformat = $this->_columnsFormat[$column + 1];
                         }
-                        $string =  sprintf($this->curformat, $numValue * $this->multiplier);
+                        $string =  $this->curformat, $numValue * $this->multiplier);
                         //$this->addcell(RKRecord($r));
                     }
                     $this->addcell($row, $column, $string, $raw);
@@ -817,7 +817,7 @@ class Spreadsheet_Excel_Reader
                             if (isset($this->_columnsFormat[$colFirst + $i + 1])){
                                         $this->curformat = $this->_columnsFormat[$colFirst + $i + 1];
                                 }
-                            $string =  sprintf($this->curformat, $numValue * $this->multiplier);
+                            $string =  $this->curformat, $numValue * $this->multiplier);
                         }
                       //$rec['rknumbers'][$i]['xfindex'] = ord($rec['data'][$pos]) | ord($rec['data'][$pos+1]) << 8;
                       $tmppos += 6;
@@ -842,7 +842,7 @@ class Spreadsheet_Excel_Reader
                                 $this->curformat = $this->_columnsFormat[$column + 1];
                         }
                         $raw = $this->createNumber($spos);
-                        $string =  sprintf($this->curformat, $raw * $this->multiplier);
+                        $string =  $this->curformat, $raw * $this->multiplier);
 
                      //   $this->addcell(NumberRecord($r));
                     }
@@ -874,7 +874,7 @@ class Spreadsheet_Excel_Reader
                                     $this->curformat = $this->_columnsFormat[$column + 1];
                             }
                             $raw = $this->createNumber($spos);
-                            $string =  sprintf($this->curformat, $raw * $this->multiplier);
+                            $string =  $this->curformat, $raw * $this->multiplier);
 
                          //   $this->addcell(NumberRecord($r));
                         }

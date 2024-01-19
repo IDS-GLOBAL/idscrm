@@ -56,7 +56,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -105,7 +105,7 @@ if (isset($_GET['vid'])) {
   $colname_queryVehicle = $_GET['vid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_queryVehicle =  sprintf("SELECT * FROM vehicles WHERE vid = %s", GetSQLValueString($colname_queryVehicle, "int"));
+$query_queryVehicle =  "SELECT * FROM vehicles WHERE vid = %s", GetSQLValueString($colname_queryVehicle, "int"));
 $queryVehicle = mysqli_query($idsconnection_mysqli, $query_queryVehicle);
 $row_queryVehicle = mysqli_fetch_array($queryVehicle);
 $totalRows_queryVehicle = mysqli_num_rows($queryVehicle);

@@ -1,0 +1,33 @@
+// https://youtu.be/mbsmsi7l3r4?si=Dtb7Se7NHiW8whM8
+
+
+GET http://localhost:3002/api/users
+
+###
+
+GET http://localhost:3002/vehiclesAll
+
+###
+
+GET http://localhost:3002/vehicles1
+
+###
+
+GET http://localhost:3002/dealers
+
+###
+# SELECT * FROM `vehicles` WHERE v_warranty_one NOT IN (1,0)
+
+GET http://localhost:3002/createDealer
+Content-Type: application/json
+
+{
+    "useremail": "johndoe@johndoe.com",
+    "userpassword": "1234567890"
+}
+
+###
+
+
+
+###

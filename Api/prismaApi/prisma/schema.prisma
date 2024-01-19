@@ -1,0 +1,348 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://idsids_faith:benjamin2831@localhost:3306/idsids_idscrm"
+}
+
+
+
+model Users {
+  Id                              Int       @id @default(autoincrement())
+  uuid                            String    @unique
+  role                            String    @default("USER")
+  email                           String    @unique
+  name                            String?
+  firstName                       String
+  lastName                        String
+  password                        String
+  usrImage                        String
+  created_at                      DateTime @default(now())
+  dealer Dealers[]
+  posts Post[]
+  news News[]
+}
+
+model Dealers {
+  Id                              Int       @id @default(autoincrement())
+  dealer_pending_id               Int?
+  prospct_dlrid                   Int?
+  dealer_type_id                  Int?
+  dealer_market_id                Int?
+  dealer_market_sub_id            Int?
+  dudes_id                        Int?
+  dudes2_id                       Int?
+  assigned_salesrep               String?          
+  assigned_salesrep_phone         String?          
+  support_rep_id                  Int?
+  leadsidsemail                   String?          
+  leadsthirdparty                 String?          
+  balance_credits                 String?          
+  contact                         String?          
+  contact_title                   String?          
+  contact_phone                   String?          
+  contact_phone_type              String?          
+  dmcontact2                      String?          
+  dmcontact2_title                String?          
+  dmcontact2_phone                String?          
+  dmcontact2_phone_type           String?          
+  company                         String          
+  company_legalname               String?          
+  dealerTimezone                  String?          
+  website                         String?          
+  finance                         String?          
+  finance_contact                 String?          
+  sales                           String?          
+  sales_contact                   String?          
+  phone                           String?          
+  fax                             String?          
+  address                         String?          
+  city                            String?          
+  state                           String?          
+  zip                             String?          
+  country                         String?          
+  email                           String           
+  username                        String?          
+  password                        String?          
+  verified                        String?
+  token                           String
+  created_at                      DateTime  @default(now())
+  user    Users    @relation(fields: [userId], references: [Id])
+  userId                           Int
+  dealersContent DealersContent[]
+  dealer Int
+}
+
+model DealersContent {
+  Id                              Int       @id @default(autoincrement())
+  home                            String?
+  about                           String?
+  directions                      String?
+  contactus                       String?
+  thankyou_page                   String?
+  mapurl                          String?
+  mapframe                        String?
+  slogan                          String?
+  disclaimer                      String?
+  newmatrixcredit_vgoodcredit     String?
+  newmatrixcredit_jgoodcredit     String?
+  newmatrixcredit_faircredit      String?
+  newmatrixcredit_poorcredit      String?
+  newmatrixcredit_subprime        String?
+  newmatrixcredit_unknown         String?
+  newmatrixcredit_fminimumprofit  String?
+  newmatrixcredit_bminimumprofit  String?
+  usedmatrixcredit_vgoodcredit    String?
+  usedmatrixcredit_jgoodcredit    String?
+  usedmatrixcredit_faircredit     String?
+  usedmatrixcredit_poorcredit     String?
+  usedmatrixcredit_subprime       String?
+  usedmatrixcredit_unknown        String?
+  usedmatrixcredit_fminimumprofit String?
+  usedmatrixcredit_bminimumprofit String?
+  settingCurrency                 String?
+  settingDefaultDPpercntg         Int?
+  settingDefaultPromoPriceOff     Int?
+  settingDefaultAPR               String?
+  settingDefaultTerm              Int?
+  settingSateSlsTax               String?
+  settingDocDlvryFee              String?
+  settingTitleFee                 String?
+  settingStateInspectnFee         String?
+  dlr_ok_googlemp                 String?
+  dlr_geo_latitude                String?
+  dlr_geo_longitude               String?   
+  status                          Int?             
+  dealer_chat                     String?          
+  dealer_chatname                 String?          
+  dealer_chat_display             String?          
+  dealer_chat_code                String 
+  dealer_chat_visitorid           Int?
+  customtitle1                    String?
+  customcontent1                  String?
+  feedIDCars                      String?
+  feedIDComcast                   String?
+  feedidautotrader                String?
+  feedidfrazer                    String?
+  feedidautomart                  String?
+  feedidvehix                     String?
+  feedidove                       String?
+  feedhomenetfilename             String?          
+  metaDescription                 String?
+  metaKeywords                    String?
+  showPricing                     Int?
+  showMileage                     Int?
+  sbv_1                           Int?
+  sbv_2                           Int?
+  sbv_3                           Int?
+  sbv_4                           Int?
+  sla                             Int?
+  accts_rcvbles_name              String?
+  accts_rcvbles_email             String?
+  accts_rcvbles_verified          Int?
+  accts_rcvbles_password          String?
+  accts_rcvbles_phone             String?
+  accts_payables_name             String?
+  accts_payables_email            String?
+  accts_payables_verified         Int?
+  accts_payables_password         String?
+  accts_payables_phone            String?
+  export_tocarsforsale            Int?
+  export_tovast                   Int?
+  created_at                      DateTime? @default(now())
+  last_modified                   DateTime  @updatedAt
+  dealer Dealers  @relation(fields: [dealerId], references: [Id])
+  dealerId  Int
+
+}
+
+model Post {
+  Id                              Int       @id @default(autoincrement())
+  title                           String
+  content                         String?
+  published                       Boolean   @default(false)
+  created_at                      DateTime? @default(now())
+  user  Users  @relation(fields: [userId], references: [Id])
+  userId                          Int
+}
+
+
+model News {
+  Id        Int     @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean @default(false)
+  created_at DateTime?        @default(now())
+  user    Users  @relation(fields: [userId], references: [Id])
+  userId  Int
+}
+
+
+model Vehicles {
+  vid                               Int     @id @default(autoincrement())
+  vtoken                            String
+  did                               Int
+  prospctdlrid                      Int?
+  cid                               Int?
+  sid                               Int?
+  dudes_id                          Int?
+  frazerid                          Int?
+  vphotoid                          Int?
+  vvideoid                          Int?
+  vauctionid                        Int?  
+  vlivestatus                       Int?
+  vonholdstatus                     Int?
+  vFeedStatusLckd                   Int?
+  salesperson_private               Int?
+  vphoto_count                      Int?
+  vthubmnail_file                   String?
+  vthubmnail_file_path              String?
+  vPhotoURLs                        String?   
+  video_on_off_status               Int?  
+  vDateInStock                      String?
+  vyear                             String?
+  vmake                             String?
+  vmodel                            String?
+  vtrim                             String?
+  vvin                              String?
+  vcondition                        String?
+  vcertified                        Int?
+  vstockno                          String?
+  vmileage                          String?
+  vpurchasecost                     String?
+  vdlrpack                          String?
+  vaddedcost                        String?
+  vadvalorem_tax                    String?
+  vrprice                           String?
+  vdprice                           String?
+  vspecialprice                     String?
+  vecolor                           String?
+  vicolor                           String?   
+  vecolor_txt                       String?
+  vicolor_txt                       String?   
+  vcustomcolor                      String?   
+  vbody                             String?
+  vtransm                           String?
+  vengine                           String?
+  vcylinders                        Int?
+  vfueltype                         String?
+  vdoors                            Int?
+  modified_at                       DateTime  @updatedAt
+  created_at                        DateTime @default(now())
+  vehicleFeatures VehiclesFeatures[]
+  vehicleFeatureId Int
+}
+
+model VehiclesFeatures {
+  Id                                Int         @id @default(autoincrement())
+  vsource_idscrm_import_txt         String?
+  vehicle_mpg_city                  Int?
+  vehicle_mpg_hwy                   Int?
+  vehicle_mpg_combined              Int?
+  vehicleOptionsBulk                String?   
+  vehicleOptionsBulk_exterior       String?   
+  vehicleOptionsBulk_interior       String?   
+  vehicleOptionsBulk_functional     String?   
+  vehicleOptionsBulk_safetysecurity String?   
+  vehicleOptionsBulk_warranty       String?   
+  Air_Conditioning                  Int?
+  Alloy_Wheels                      Int?
+  AntiLock_Brakes                   Int?
+  Auto_Updown_Windows               Int?
+  Bluetooth_Handsfree               Int?
+  Bed_Liner                         Int?
+  Child_Seat                        Int?
+  Climate_Control                   Int?
+  Cruise_Control                    Int?
+  Driver_Air_Bag                    Int?
+  Illuminated_Lightning             Int?
+  Keyless_Entry                     Int?
+  Leather_Seats                     Int?
+  On_Star_Equipped                  Int?
+  Rear_Ent_Center                   Int?
+  Navigation_System                 Int?
+  Passenger_Air_Bag                 Int?
+  Power_Door_Locks                  Int?
+  Power_Mirrors                     Int?
+  Power_Seats                       Int?
+  Power_Steering                    Int?
+  Power_Windows                     Int?
+  Push_Button_Start                 Int?
+  Memory_Seats                      Int?
+  Rear_Air_Conditioning             Int?
+  Rear_view_monitor                 Int?
+  Rear_Window_Defroster             Int?
+  Rear_Wiper                        Int?
+  Running_Boards                    Int?
+  Side_Air_Bag                      Int?
+  SunroofMoonroof                   Int?
+  Television                        Int?
+  Theft_System                      Int?
+  Tilt_Wheel                        Int?
+  Tinted_Glass                      Int?
+  Sliding_Doors                     Int?
+  CD_Player                         Int?
+  CD_Changer                        Int?
+  Bluetooth                         Int?
+  Satellite_Radio                   Int?
+  carfax                            Int?
+  autocheck                         Int?
+  v_warranty_one                    Int?
+  v_warranty_two                    String?   
+  dlroption1chck                    Int?
+  dlroption1                        String?   
+  dlroption2chck                    Int?
+  dlroption2                        String?   
+  dlroption3chck                    Int?
+  dlroption3                        String?   
+  dlroptequip1chck                  Int?
+  dlroptequip1                      String?   
+  dlroptequip2chck                  Int?
+  dlroptequip2                      String?   
+  dlroptequip3chck                  Int?
+  dlroptequip3                      String?   
+  dlroptequip4chck                  Int?
+  dlroptequip4                      String?   
+  dlroptequip5chck                  Int?
+  dlroptequip5                      String?   
+  vcomments                         String?   
+  feedcarscom                       Int?
+  feedautotradercom                 Int?
+  feedovecom                        Int?
+  craigslistorg                     Int?
+  feedebaycom                       Int?
+  feedcomcastvod                    Int?
+  ove_physicallocationind           String?   
+  ove_priorpaint                    String?   
+  ove_titlestatus                   String?   
+  ove_titlestate                    String?
+  statistic                         Int?
+  vdeleted                          Int?
+  marked_sold                       String?
+  importHomnetPhotos                String?
+  homenetLastSent                   String?
+  homenetDo                         Int?
+  importFrazerPhotos                String?
+  export_cfs_photourls              String?
+  export_vast_photourls             String?
+  export_vast_listing_time          String?
+  export_vast_expire_time           String?
+  frazerLastSent                    String?
+  accts_rcvbles_name                String?
+  accts_rcvbles_email               String?
+  export_tocarsforsale              Int?
+  export_tovast                     Int?
+  modified_at                       String?
+  created_at                        DateTime? @default(now())
+  vehicles Vehicles  @relation(fields: [vehicleId], references: [vid])
+  vehicleId Int
+}
+
+
+enum Role {
+  STANDARD
+  PRO
+  PREMIUM
+}

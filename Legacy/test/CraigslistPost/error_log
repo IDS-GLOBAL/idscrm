@@ -1,0 +1,22 @@
+[03-Oct-2013 15:41:51] PHP Parse error:  syntax error, unexpected T_STRING in /home4/idsids/public_html/test/CraigslistPost/libs/db_functions.php on line 4
+[03-Oct-2013 15:43:08] PHP Parse error:  syntax error, unexpected T_STRING in /home4/idsids/public_html/test/CraigslistPost/libs/db_functions.php on line 4
+[03-Oct-2013 15:43:10] PHP Parse error:  syntax error, unexpected T_STRING in /home4/idsids/public_html/test/CraigslistPost/libs/db_functions.php on line 4
+[03-Oct-2013 15:43:41] PHP Parse error:  syntax error, unexpected T_STRING in /home4/idsids/public_html/test/CraigslistPost/libs/try.php on line 4
+[03-Oct-2013 15:44:52] PHP Parse error:  syntax error, unexpected T_STRING in /home4/idsids/public_html/test/CraigslistPost/libs/try.php on line 4
+[03-Oct-2013 15:44:54] PHP Parse error:  syntax error, unexpected T_STRING in /home4/idsids/public_html/test/CraigslistPost/libs/try.php on line 4
+[03-Oct-2013 15:45:37] PHP Parse error:  syntax error, unexpected '<' in /home4/idsids/public_html/test/CraigslistPost/index.php on line 73
+[03-Oct-2013 15:46:17] PHP Parse error:  syntax error, unexpected T_STRING in /home4/idsids/public_html/test/CraigslistPost/index.php on line 73
+[03-Oct-2013 15:46:32] PHP Parse error:  syntax error, unexpected T_STRING in /home4/idsids/public_html/test/CraigslistPost/index.php on line 73
+[03-Oct-2013 15:46:33] PHP Parse error:  syntax error, unexpected T_STRING in /home4/idsids/public_html/test/CraigslistPost/index.php on line 73
+[03-Oct-2013 15:46:47] PHP Parse error:  syntax error, unexpected '<' in /home4/idsids/public_html/test/CraigslistPost/index.php on line 74
+[03-Oct-2013 16:07:23] PHP Parse error:  syntax error, unexpected '<' in /home4/idsids/public_html/test/CraigslistPost/index.php on line 114
+[03-Oct-2013 16:07:50] PHP Parse error:  syntax error, unexpected ')' in /home4/idsids/public_html/test/CraigslistPost/mysql_connect.php on line 5
+[03-Oct-2013 16:10:33] PHP Parse error:  syntax error, unexpected ')' in /home4/idsids/public_html/test/CraigslistPost/mysql_connect.php on line 5
+[03-Oct-2013 16:11:22] PHP Parse error:  syntax error, unexpected ')' in /home4/idsids/public_html/test/CraigslistPost/mysql_connect.php on line 5
+[03-Oct-2013 16:11:24] PHP Parse error:  syntax error, unexpected ')' in /home4/idsids/public_html/test/CraigslistPost/mysql_connect.php on line 5
+[03-Oct-2013 16:15:39] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home4/idsids/public_html/test/CraigslistPost/index.php:52) in /home4/idsids/public_html/test/CraigslistPost/index.php on line 54
+[03-Oct-2013 17:09:22] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_CONSTANT_ENCAPSED_STRING or '(' in /home4/idsids/public_html/test/CraigslistPost/sample_client.php on line 11
+[03-Oct-2013 17:14:55] PHP Parse error:  syntax error, unexpected '/' in /home4/idsids/public_html/test/CraigslistPost/sample_client.php on line 10
+[03-Oct-2013 17:15:08] PHP Parse error:  syntax error, unexpected '/' in /home4/idsids/public_html/test/CraigslistPost/sample_client.php on line 10
+[03-Oct-2013 17:15:28] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_CONSTANT_ENCAPSED_STRING or '(' in /home4/idsids/public_html/test/CraigslistPost/sample_client.php on line 11
+[03-Oct-2013 18:16:41] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_CONSTANT_ENCAPSED_STRING or '(' in /home4/idsids/public_html/test/CraigslistPost/sample_client.php on line 11

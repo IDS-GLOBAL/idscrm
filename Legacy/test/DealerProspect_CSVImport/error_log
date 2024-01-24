@@ -1,0 +1,4 @@
+[29-Oct-2013 12:46:33] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home4/idsids/public_html/dwzExport/CsvImport.php on line 523
+[29-Oct-2013 12:48:58] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home4/idsids/public_html/dwzExport/CsvImport.php on line 523
+[29-Oct-2013 13:49:30] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 71 bytes) in /home4/idsids/public_html/dwzExport/CsvImport.php on line 523
+[29-Oct-2013 13:50:16] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 24 bytes) in /home4/idsids/public_html/dwzExport/CsvImport.php on line 523

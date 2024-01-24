@@ -1,0 +1,1109 @@
+
+
+<!-- http://www.craigslist.org/about/bulk_posting_interface#sample_xslt -->
+
+<!-- auto generated file. do not edit. GIuAUj41.  -->
+<html>
+
+  <head>
+    <style type="text/css">
+      div.code_sample {
+        border: 1px solid #000;
+        background-color: #ccc; 
+        padding: 2px;
+        width: 40em;
+      }
+      pre {
+        font-size: 10px;
+      }
+      div.reference_table {
+        border: 1px solid #000;
+        width: 60%;
+      }
+      div.reference_table table {
+        width: 100%;
+      }
+      div.reference_table table td {
+        border-top: 1px solid #bbb;
+        font-family: sans-serif;
+        font-size: 10px;
+      }
+      td.deprecated {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Craigslist Bulk Posting Interface</h1>
+
+    <h2>Overview:</h2>
+    Craigslist provides a bulk posting interface for easy submission of multiple new posts in a single request to our server.  This document describes that interface and how it is used.
+    <p>
+    New postings are submitted to craigslist in <a href="http://en.wikipedia.org/wiki/RSS_%28file_format%29">RSS format</a> with <a href="#submission_format">additional craigslist-specific elements</a> via HTTPS POST.  Craigslist returns another <a href="#response_format">RSS document</a> detailing which postings are valid or which have been posted.
+    <p>
+    A description of the <a href="#protocol">protocol</a>, RSS <a href="#submission_format">submission</a> and <a href="#response_format">response</a> formats, and a <a href="#reference">reference</a> of acceptable values is below.
+ 
+    <br>
+    <h3>Update Jul 12 2013:</h3>  New posting attributes available.  See below.
+    
+<a name="protocol">
+    <h2>Protocol:</h2>
+    <h3>Request:</h3>
+      Submitting a request to post or validate postings is done by establishing an HTTPS connection to craigslist at one of the URLs below, sending an HTTP request with a Content-Type of "application/x-www-form-urlencoded" and containing RSS content in the correct <a href="#submission_format">format</a>, and waiting for a response.
+      <p>
+      Bulk posting interface access URLs:
+      <ul>
+        <li><b>https://post.craigslist.org/bulk-rss/validate</b> - <small>Submit RSS to this URL to be validated.</small></li>
+        <li><b>https://post.craigslist.org/bulk-rss/post</b> - <small>Submit RSS to this URL to be posted.</small></li>
+      </ul>
+      See <a href="#sample_client">code sample</a> in this document for an example bulk post client.
+    <h3>Response:</h3>
+    Possible HTTP status values:
+    <ul>
+      <li><b>415</b> Unsupported Media Type - <small><br>
+        <i>Content of response will be one of these error messages:</i><ul>
+          <li><b>"Failed to parse RSS"</b> - This error occurs when the posting submission RSS document is not well-formed, or if the parser encounters an error processing the format of the RSS.  A detailed parse failure message should accompany this error.</li>
+        </small></ul>
+      </li>
+      <li><b>403</b> Forbidden - <small><br>
+        <i>Content of response will be one of these error messages:</i><ul>
+          <li><b>"Must supply username"</b> - A username was not supplied in the &lt;cl:auth&gt; element.</li>
+          <li><b>"Must supply password"</b> - A password was not supplied in the &lt;cl:auth&gt; element.</li>
+          <li><b>"AccountID required"</b> - An accountID was not supplied in the &lt;cl:auth&gt; element.</li>
+          <li><b>"Invalid username/password"</b> - Username and/or password supplied in RSS submission are not known or invalid.</li>
+          <li><b>"This user account is not granted bulk post access"</b> - The user account supplied is not authorized to use the bulk posting interface.  Please contact craigslist with authorization requests.</li>
+          <li><b>"User is not a buyer for account"</b> - The user account supplied is not indicated as an authorized buyer for the accountID supplied.</li>
+        </small></ul>
+      </li>
+      <li><b>200</b> OK - <small>
+        <i>Content of response will be RSS document in <a href="#response_format">posting response format</a></i>
+      </small></li>
+    </ul>
+
+    <br><br><br>
+<a name="submission_format">
+    <h2>Posting Submission Format:</h2>
+    Below is a sample RSS bulk posting submission containing two NYC housing postings.  
+    <p>
+    A submission consists of a &lt;channel&gt; element containing a list of
+    postings to be processed (within &lt;items&gt; element), and a
+    &lt;cl:auth&gt; element containing authentication credentials for the user
+    submitting the postings.  The &lt;items&gt; element should contain
+    &lt;rdf:li&gt; elements, each having an attribute, rdf:resource=, whose value is an arbitrary user-supplied string identifying each posting.  These identifiers need only be unique within the RSS document.
+    <p>
+    Additionally, there is an &lt;item&gt; element for every posting submitted,
+    containing various subelements defining the post content.  The about=
+    attribute of this element should contain a value that matches one of the
+    rdf:resource= attributes in an &lt;rdf:li&gt; element.  A description of the various elements allowed within each &lt;item&gt; is below this example.
+    <p>
+
+    <div class="code_sample"><pre>
+&lt;?xml version="1.0"?&gt;
+
+&lt;rdf:RDF xmlns="http://purl.org/rss/1.0/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:cl="http://www.craigslist.org/about/cl-bulk-ns/1.0"&gt;
+
+  &lt;channel&gt;
+    &lt;items&gt;
+      &lt;rdf:li rdf:resource="NYCBrokerHousingSample1"/&gt;
+      &lt;rdf:li rdf:resource="NYCBrokerHousingSample2"/&gt;
+    &lt;/items&gt;
+
+    &lt;cl:auth username="listuser@bogus.com"
+             password="p0stp@rty"
+             accountID="14"/&gt;
+  &lt;/channel&gt;
+
+  &lt;item rdf:about="NYCBrokerHousingSample1"&gt;
+    &lt;cl:category&gt;fee&lt;/cl:category&gt;
+    &lt;cl:area&gt;nyc&lt;/cl:area&gt;
+    &lt;cl:subarea&gt;mnh&lt;/cl:subarea&gt;
+    &lt;cl:neighborhood&gt;Upper West Side&lt;/cl:neighborhood&gt;
+    &lt;cl:housingInfo price="1450"
+                    bedrooms="0"
+                    sqft="600"/&gt;
+    &lt;cl:replyEmail privacy="C"&gt;bulkuser@bulkposterz.net&lt;/cl:replyEmail&gt;
+    &lt;cl:brokerInfo companyName="Joe Sample and Associates"
+                   feeDisclosure="fee disclosure here" /&gt;
+    &lt;title&gt;Spacious Sunny Studio in Upper West Side&lt;/title&gt;
+    &lt;description&gt;&lt;![CDATA[
+      posting body here
+    ]]&gt;&lt;/description&gt;
+  &lt;/item&gt;
+
+  &lt;item rdf:about="NYCBrokerHousingSample2"&gt;
+    &lt;cl:category&gt;fee&lt;/cl:category&gt;
+    &lt;cl:area&gt;nyc&lt;/cl:area&gt;
+    &lt;cl:subarea&gt;mnh&lt;/cl:subarea&gt;
+    &lt;cl:neighborhood&gt;Chelsea&lt;/cl:neighborhood&gt;
+    &lt;cl:housingInfo price="2175"
+                    bedrooms="1"
+                    sqft="850"
+                    catsOK="1"/&gt;
+    &lt;cl:mapLocation city="New York"
+                    state="NY"
+                    crossStreet1="23rd Street"
+                    crossStreet2="9th Avenue"
+                    latitude="40.746492"
+                    longitude="-74.001326"
+    /&gt;
+    &lt;cl:replyEmail privacy="C" 
+                   otherContactInfo="212.555.1212"&gt;
+      bulkuser@bulkposterz.net
+    &lt;/cl:replyEmail&gt;
+    &lt;cl:brokerInfo companyName="Joe Sample and Associates"
+                   feeDisclosure="fee disclosure here" /&gt;
+    &lt;title&gt;1BR Charmer in Chelsea&lt;/title&gt;
+    &lt;description&gt;&lt;![CDATA[
+      posting body goes here
+    ]]&gt;&lt;/description&gt;
+    &lt;cl:PONumber&gt;Purchase Order 094122&lt;/cl:PONumber&gt;
+  &lt;/item&gt;
+&lt;/rdf:RDF&gt;
+    </pre></div><i><small>Sample RSS Posting Submission</small></i><br>
+
+    <h3>Inside &lt;channel&gt; Element:</h3>
+      <b><i>Note:  time-related attributes specified as "integer" will
+          often be
+          <a href="http://en.wikipedia.org/wiki/Unix_time">POSIX timestamps</a>
+          ; i.e. seconds since 1 January 1970 UTC (except when they aren't).
+      </i></b>
+      <h4>required:</h4> 
+      <ul>
+        <li><b>&lt;cl:auth&gt;</b> - <small>Authentication information for this submission.  
+            <br><i>Attributes:</i><ul>
+              <li><b>username</b> - email address used to log into craigslist account / authenticate.</li>
+              <li><b>password</b> - Craigslist user password.</li>
+              <li><b>accountID</b> - A craigslist account number with sufficient
+              block credit (or an invoiced account), where the username supplied is an authorized buyer for this accountID.</li>
+            </ul></small></li>
+      </ul>
+    <h3>Inside &lt;item&gt; Elements:</h3>
+      <h4>required:</h4> 
+      <ul>
+        <li><b>&lt;title&gt;</b> - <small>The title of the post.</small></li>
+        <li><b>&lt;description&gt;</b> - <small>The content (body) of the post.</small></li>
+        <li><b>&lt;cl:category&gt;</b> - <small>The category where this will be posted.  Contents should be a valid <a href="#categories">category abbreviation</a>.</small></li>
+        <li><b>&lt;cl:area&gt;</b> - <small>The area (city) where this will be posted. Contents should be a valid <a href="#areas">area abbreviation</a>.</small></li>
+        <li><b>&lt;cl:replyEmail&gt;</b> - <small>Reply email address for this post.  
+            <br><i>Attributes:</i><ul>
+              <li><b>privacy</b> - How reply email should be displayed on the post. <br>(<b>A</b>=don't show any email address, <b>C</b>=use anonymous craigslist email address, <b>P</b>=publicly show the replyEmail address)</li>
+              <li><b>outsideContactOK</b> - (0 or 1) If set to 0, will add text to bottom of post: <i>it's NOT ok to contact this poster with services or other commercial interests</i>.</li>
+              <li><b>otherContactInfo</b> - Any alternate contact info text.</li>
+            </ul></small></li>
+      </ul>
+      <h4>optional:</h4> 
+      <ul>
+        <li><b>&lt;cl:image position="</b><i>[0-7]</i><b>"&gt;</b>
+           - <small>Base 64 (rfc 2045) encoded jpeg image.  The optional "position" attribute determines the order in which
+              the images will be layed out on the posting page.
+              The image at position 0 will be featured on search pages, etc. so put the best one there.
+              You may specify up to 8 images.
+           </small></li>
+        <li><b>&lt;cl:Image1&gt;</b> - <small>Base 64 (rfc 2045) encoded jpeg image to be shown in the first position</small> (deprecated - use cl:image with position="0") </li>
+        <li><b>&lt;cl:Image2&gt;</b> - <small>Base 64 (rfc 2045) encoded jpeg image to be shown in the second position</small> (deprecated - use cl:image) </li>
+        <li><b>&lt;cl:Image3&gt;</b> - <small>Base 64 (rfc 2045) encoded jpeg image to be shown in the third position</small> (deprecated - use cl:image) </li>
+        <li><b>&lt;cl:Image4&gt;</b> - <small>Base 64 (rfc 2045) encoded jpeg image to be shown in the fourth position</small> (deprecated - use cl:image) </li>
+        <li><b>&lt;cl:subarea&gt;</b> - <small>Subarea where this will be posted.  Ad will posted under this subarea as well as "all areas".  Contents should be a valid <a href="#areas">subarea abbreviation</a>.</small></li>
+        <li><b>&lt;cl:neighborhood&gt;</b> - <small>The name of the neighborhood that this post applies to.  (free-form text)</small></li>
+        <li><b>&lt;cl:mapLocation&gt;</b> - <small>Information for creating map links.
+            <br><i>Attributes:</i> <ul>
+              <li><b>city</b> - City name in text, such as "New York"</li>
+              <li><b>state</b> - State postal abbreviation, such as "NY"</li>
+              <li><b>crossStreet1</b> - Cross street name</li>
+              <li><b>crossStreet2</b> - Other cross street name</li>
+              <li><b>latitude</b> - Latitude of item (signed floating point number).
+              </li>
+              <li><b>longitude</b> - Longitude of item (signed floating point number). See latitude.</li>
+            </ul>
+              <b><u>Note:</u>  The latitude and longitude attributes determine
+                 the position of the pin for the post in the craigsist map view. <br>
+                 <i>You must specify them for your post to appear in map views.</i>
+              </b>
+            </small></li>
+        <li><b>&lt;cl:PONumber&gt;</b> - <small>A purchase order number or internal tracking number for your own record-keeping purposes.  (free-form text)</small></li>
+        <li><b>&lt;cl:housingInfo&gt;</b> - <small>Housing info fields.
+          <br><i>Attributes:</i><ul>
+            <li><b>price</b> - Advertised price. (numeric value)</li>
+            <li><b>bedrooms</b> - Number of bedrooms. (integer, <b>0</b>=studio)</li> 
+            <li><b>sqft</b> - Surface area of the space.</li>
+            <li><b>catsOK</b> - (0 or 1) Add <i>Cats are OK</i> notice to bottom of post.</li>
+            <li><b>dogsOK</b> - (0 or 1) Add <i>Dogs are OK</i> notice to bottom of post.</li>
+          </ul></small>
+        </li>
+        <li><b>&lt;cl:brokerInfo&gt;</b> - housing broker information<small>
+          <br><i>Attributes:</i><ul>
+            <li><b>companyName</b> - Broker company name.</li>
+            <li><b>feeDisclosure</b> - Broker fee disclosure.</li> 
+          </ul></small>
+        <li><b>&lt;cl:jobInfo&gt;</b> - <small>Jobs info fields.
+          <br><i>Attributes:</i><ul>
+            <li><b>compensation</b> - Compensation rate. (numeric value)</li>
+            <li><b>telecommuting</b> - (0 or 1) Indicates telcommuting job.</li>
+            <li><b>partTime</b> - (0 or 1) Indicates part-time job.</li>
+            <li><b>contract</b> - (0 or 1) Indicates contract job.</li>
+            <li><b>nonprofit</b> - (0 or 1) Indicates non-profit employer.</li>
+            <li><b>internship</b> - (0 or 1) Indicates internship job.</li>
+            <li><b>disability</b> - (0 or 1) Indicates OK to repost to job developers for persons with disabilities</li>
+            <li><b>recruitersOK</b> - (0 or 1) Add <i>Recruiters OK</i> notice to bottom of post.</li>
+            <li><b>phoneCallsOK</b> - (0 or 1) Add <i>Phone calls OK</i> notice to bottom of post.</li>
+            <li><b>okToContact</b> - (0 or 1) Add <i>OK to contact</i> notice to bottom of post.</li>
+            <li><b>okToRepost</b> - (0 or 1) Add <i>OK to repost</i> notice to bottom of post.</li>
+          </ul></small>
+        </li>
+      <li><b>&lt;cl:auto_basics&gt;</b> - <small><br><i>Attributes:</i><ul><li><b>auto_color</b> - &nbsp;string</li><li><b>auto_is_new</b> - ("0" or "1")</li><li><b>auto_make_other</b> - &nbsp;string</li><li><b>auto_miles</b> - &nbsp;integer</li><li><b>auto_model_other</b> - &nbsp;string</li><li><b>auto_trans_auto</b> - ("0" or "1")</li><li><b>auto_trans_manual</b> - ("0" or "1")</li><li><b>auto_vin</b> - &nbsp;string</li><li><b>auto_year</b> - &nbsp;integer</li></ul></small></li><li><b>&lt;cl:generic&gt;</b> - <small><br><i>Attributes:</i><ul><li><b>contact_method</b> - ("email", "phone" or "text")</li><li><b>contact_name</b> - &nbsp;string</li><li><b>contact_ok</b> - ("0" or "1")</li><li><b>contact_other</b> - &nbsp;string</li><li><b>contact_phone</b> - &nbsp;string</li><li><b>contact_time</b> - &nbsp;string</li><li><b>fee_disclosure</b> - &nbsp;string</li><li><b>has_license</b> - ("0" or "1")</li><li><b>license_info</b> - &nbsp;string</li><li><b>phonecalls_ok</b> - ("0" or "1")</li><li><b>repost_ok</b> - ("0" or "1")</li></ul></small></li><li><b>&lt;cl:housing_amenities&gt;</b> - <small><br><i>Attributes:</i><ul><li><b>airconditioning</b> - ("0" or "1")</li><li><b>bfastnook</b> - ("0" or "1")</li><li><b>cableready</b> - ("0" or "1")</li><li><b>ceiling_fan</b> - ("0" or "1")</li><li><b>controlaccess</b> - ("0" or "1")</li><li><b>dishwasher</b> - ("0" or "1")</li><li><b>doublepane</b> - ("0" or "1")</li><li><b>eatinkitchen</b> - ("0" or "1")</li><li><b>fireplace</b> - ("0" or "1")</li><li><b>freezer</b> - ("0" or "1")</li><li><b>gasfireplace</b> - ("0" or "1")</li><li><b>gdisposal</b> - ("0" or "1")</li><li><b>granitectr</b> - ("0" or "1")</li><li><b>highinternet</b> - ("0" or "1")</li><li><b>jacuzzi</b> - ("0" or "1")</li><li><b>microwave</b> - ("0" or "1")</li><li><b>newcarpet</b> - ("0" or "1")</li><li><b>oven</b> - ("0" or "1")</li><li><b>pantry</b> - ("0" or "1")</li><li><b>refrigerator</b> - ("0" or "1")</li><li><b>sauna</b> - ("0" or "1")</li><li><b>securitysys</b> - ("0" or "1")</li><li><b>skylights</b> - ("0" or "1")</li><li><b>spa</b> - ("0" or "1")</li><li><b>stainless</b> - ("0" or "1")</li><li><b>tcompactor</b> - ("0" or "1")</li><li><b>vaultedceil</b> - ("0" or "1")</li></ul></small></li><li><b>&lt;cl:housing_basics&gt;</b> - <small><br><i>Attributes:</i><ul><li><b>bathrooms</b> - ("1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5", "8", "8.5", "9+", "shared" or "split")</li><li><b>flooring</b> - ("carpet", "dirt", "other", "tile" or "wood")</li><li><b>floors_bldg</b> - &nbsp;integer</li><li><b>has_view</b> - ("0" or "1")</li><li><b>heat_type</b> - ("coal", "electric-forced air", "electric-radiant", "gas-forced air", "gas-radiant", "none", "oil-forced air", "oil-radiant", "other" or "wood/pellet")</li><li><b>housing_type</b> - ("apartment", "assisted living", "condo", "cottage/cabin", "duplex", "flat", "house", "in-law", "land", "loft", "manufactured" or "townhouse")</li><li><b>is_furnished</b> - ("0" or "1")</li><li><b>laundry</b> - ("laundry in bldg", "laundry on site", "w/d hookups" or "w/d in unit")</li><li><b>near_transpo</b> - ("0" or "1")</li><li><b>parking</b> - ("attached garage", "carport", "detached garage", "off-street parking", "street parking" or "valet parking")</li><li><b>storage_incl</b> - ("0" or "1")</li><li><b>unit_floor</b> - &nbsp;integer</li><li><b>units_bldg</b> - &nbsp;integer</li><li><b>wheelchaccess</b> - ("0" or "1")</li><li><b>year_built</b> - &nbsp;integer</li></ul></small></li><li><b>&lt;cl:housing_outside&gt;</b> - <small><br><i>Attributes:</i><ul><li><b>outside_balco</b> - ("0" or "1")</li><li><b>outside_deck</b> - ("0" or "1")</li><li><b>outside_dock</b> - ("0" or "1")</li><li><b>outside_fyard</b> - ("0" or "1")</li><li><b>outside_garden</b> - ("0" or "1")</li><li><b>outside_landsc</b> - ("0" or "1")</li><li><b>outside_patio</b> - ("0" or "1")</li><li><b>outside_pool</b> - ("0" or "1")</li><li><b>outside_porch</b> - ("0" or "1")</li><li><b>outside_waterf</b> - ("0" or "1")</li><li><b>outside_yard</b> - ("0" or "1")</li></ul></small></li><li><b>&lt;cl:housing_pets&gt;</b> - <small><br><i>Attributes:</i><ul><li><b>pets_cat</b> - ("0" or "1")</li><li><b>pets_dog</b> - ("0" or "1")</li><li><b>pets_fish</b> - ("0" or "1")</li><li><b>pets_no</b> - ("0" or "1")</li><li><b>pets_smalldog</b> - ("0" or "1")</li></ul></small></li><li><b>&lt;cl:housing_rooms&gt;</b> - <small><br><i>Attributes:</i><ul><li><b>room_atrium</b> - ("0" or "1")</li><li><b>room_attic</b> - ("0" or "1")</li><li><b>room_basement</b> - ("0" or "1")</li><li><b>room_bonus</b> - ("0" or "1")</li><li><b>room_den</b> - ("0" or "1")</li><li><b>room_dining</b> - ("0" or "1")</li><li><b>room_family</b> - ("0" or "1")</li><li><b>room_green</b> - ("0" or "1")</li><li><b>room_kitchen</b> - ("0" or "1")</li><li><b>room_library</b> - ("0" or "1")</li><li><b>room_living</b> - ("0" or "1")</li><li><b>room_masterbath</b> - ("0" or "1")</li><li><b>room_masterbed</b> - ("0" or "1")</li><li><b>room_mud</b> - ("0" or "1")</li><li><b>room_office</b> - ("0" or "1")</li><li><b>room_solarium</b> - ("0" or "1")</li><li><b>room_sun</b> - ("0" or "1")</li><li><b>room_walkin</b> - ("0" or "1")</li><li><b>room_workshop</b> - ("0" or "1")</li></ul></small></li><li><b>&lt;cl:housing_shared&gt;</b> - <small><br><i>Attributes:</i><ul><li><b>shared_basketb</b> - ("0" or "1")</li><li><b>shared_bbq</b> - ("0" or "1")</li><li><b>shared_busctr</b> - ("0" or "1")</li><li><b>shared_clubh</b> - ("0" or "1")</li><li><b>shared_deck</b> - ("0" or "1")</li><li><b>shared_doorman</b> - ("0" or "1")</li><li><b>shared_elev</b> - ("0" or "1")</li><li><b>shared_fitness</b> - ("0" or "1")</li><li><b>shared_gated</b> - ("0" or "1")</li><li><b>shared_golf</b> - ("0" or "1")</li><li><b>shared_intercm</b> - ("0" or "1")</li><li><b>shared_jacuzzi</b> - ("0" or "1")</li><li><b>shared_lake</b> - ("0" or "1")</li><li><b>shared_lobby</b> - ("0" or "1")</li><li><b>shared_maint</b> - ("0" or "1")</li><li><b>shared_onsmgmt</b> - ("0" or "1")</li><li><b>shared_patrol</b> - ("0" or "1")</li><li><b>shared_petpark</b> - ("0" or "1")</li><li><b>shared_pfriend</b> - ("0" or "1")</li><li><b>shared_playgr</b> - ("0" or "1")</li><li><b>shared_pond</b> - ("0" or "1")</li><li><b>shared_pool</b> - ("0" or "1")</li><li><b>shared_promgmt</b> - ("0" or "1")</li><li><b>shared_sauna</b> - ("0" or "1")</li><li><b>shared_secentr</b> - ("0" or "1")</li><li><b>shared_spa</b> - ("0" or "1")</li><li><b>shared_tennis</b> - ("0" or "1")</li><li><b>shared_yard</b> - ("0" or "1")</li></ul></small></li><li><b>&lt;cl:housing_terms&gt;</b> - <small><br><i>Attributes:</i><ul><li><b>rent_period</b> - ("daily", "monthly", "weekly" or "yearly")</li><li><b>terms_avail_end</b> - &nbsp;integer</li><li><b>terms_avail_start</b> - &nbsp;integer</li><li><b>terms_deposit</b> - &nbsp;string</li><li><b>terms_lease</b> - ("1 year", "month-to-month", "multi year lease" or "short term lease")</li><li><b>terms_lease_other</b> - &nbsp;string</li></ul></small></li><li><b>&lt;cl:housing_utilities&gt;</b> - <small><br><i>Attributes:</i><ul><li><b>util_cable</b> - ("0" or "1")</li><li><b>util_elec</b> - ("0" or "1")</li><li><b>util_garbage</b> - ("0" or "1")</li><li><b>util_gas</b> - ("0" or "1")</li><li><b>util_heat</b> - ("0" or "1")</li><li><b>util_internet</b> - ("0" or "1")</li><li><b>util_water</b> - ("0" or "1")</li></ul></small></li><li><b>&lt;cl:job_basics&gt;</b> - <small><br><i>Attributes:</i><ul><li><b>company_name</b> - &nbsp;string</li><li><b>disability_ok</b> - ("0" or "1")</li><li><b>is_contract</b> - ("0" or "1")</li><li><b>is_forpay</b> - ("0" or "1")</li><li><b>is_internship</b> - ("0" or "1")</li><li><b>is_nonprofit</b> - ("0" or "1")</li><li><b>is_parttime</b> - ("0" or "1")</li><li><b>is_telecommuting</b> - ("0" or "1")</li><li><b>is_volunteer</b> - ("0" or "1")</li><li><b>recruiters_ok</b> - ("0" or "1")</li><li><b>remuneration</b> - &nbsp;string</li></ul></small></li>
+
+      </ul>
+
+    <br><br><br>
+<a name="response_format">
+    <h2>Posting Response Format:</h2>
+    Below are some examples of an RSS response document for validation and posting, as well as a description of the craigslist-specific elements.
+    <p>
+
+    <h3>Validation:</h3>
+    <div class="code_sample"><pre>
+&lt;rdf:RDF xmlns="http://purl.org/rss/1.0/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:cl="http://www.craigslist.org/about/cl-bulk-ns/1.0"&gt;
+  &lt;channel&gt;
+    &lt;items&gt;
+      &lt;rdf:Seq&gt;
+        &lt;rdf:li rdf:resource="NYCBrokerHousingSample1"/&gt;
+        &lt;rdf:li rdf:resource="NYCBrokerHousingSample2"/&gt;
+      &lt;/rdf:Seq&gt;
+    &lt;/items&gt;
+  &lt;/channel&gt;
+  &lt;item rdf:about="NYCBrokerHousingSample1"&gt;
+    &lt;cl:postedStatus&gt;VALID&lt;/cl:postedStatus&gt;
+    &lt;cl:postedExplanation&gt;This posting seems to be valid.&lt;/cl:postedExplanation&gt;
+    &lt;cl:previewHTML&gt;&lt;![CDATA[
+      HTML preview of posting will appear here.
+    ]]&gt;&lt;/cl:previewHTML&gt;
+  &lt;/item&gt;
+  &lt;item rdf:about="NYCBrokerHousingSample2"&gt;
+    &lt;cl:postedStatus&gt;VALID&lt;/cl:postedStatus&gt;
+    &lt;cl:postedExplanation&gt;This posting seems to be valid.&lt;/cl:postedExplanation&gt;
+    &lt;cl:previewHTML&gt;&lt;![CDATA[
+      HTML preview of posting will appear here.
+    ]]&gt;&lt;/cl:previewHTML&gt;
+  &lt;/item&gt;
+
+&lt;/rdf:RDF&gt;
+    </pre></div><i><small>Sample RSS Validation Response</small></i><br>
+
+    <h3>Posting:</h3>
+    <div class="code_sample"><pre>
+&lt;rdf:RDF xmlns="http://purl.org/rss/1.0/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:cl="http://www.craigslist.org/about/cl-bulk-ns/1.0"&gt;
+  &lt;channel&gt;
+    &lt;items&gt;
+      &lt;rdf:Seq&gt;
+        &lt;rdf:li rdf:resource="NYCBrokerHousingSample1"/&gt;
+        &lt;rdf:li rdf:resource="NYCBrokerHousingSample2"/&gt;
+      &lt;/rdf:Seq&gt;
+    &lt;/items&gt;
+  &lt;/channel&gt;
+  &lt;item rdf:about="NYCBrokerHousingSample1"&gt;
+    &lt;cl:postedStatus&gt;POSTED&lt;/cl:postedStatus&gt;
+    &lt;cl:postedExplanation&gt;Successfully enqueued posting.&lt;/cl:postedExplanation&gt;
+    &lt;cl:postingID&gt;159144091&lt;/cl:postingID&gt;
+    &lt;cl:postingManageURL&gt;https://post.craigslist.org/manage/159144091/to6s1
+    &lt;/cl:postingManageURL&gt;
+    &lt;cl:previewHTML&gt;&lt;![CDATA[
+      HTML preview of posting will appear here.
+    ]]&gt;&lt;/cl:previewHTML&gt;
+  &lt;/item&gt;
+  &lt;item rdf:about="NYCBrokerHousingSample2"&gt;
+    &lt;cl:postedStatus&gt;POSTED&lt;/cl:postedStatus&gt;
+    &lt;cl:postedExplanation&gt;Successfully enqueued posting.&lt;/cl:postedExplanation&gt;
+    &lt;cl:postingID&gt;159144092&lt;/cl:postingID&gt;
+    &lt;cl:postingManageURL&gt;https://post.craigslist.org/manage/159144092/b0n65
+    &lt;/cl:postingManageURL&gt;
+    &lt;cl:previewHTML&gt;&lt;![CDATA[
+      HTML preview of posting will appear here.
+    ]]&gt;&lt;/cl:previewHTML&gt;
+  &lt;/item&gt;
+
+&lt;/rdf:RDF&gt;
+    </pre></div><i><small>Sample RSS Posting Response</small></i><br>
+
+    <h3>&lt;item&gt; Elements:</h3>
+      <ul>
+        <li><b>&lt;cl:postedStatus&gt;</b> - <small>Status of processing this
+        posting.  Possible values are <b>VALID</b>, <b>NOT_VALID</b>,
+        <b>INSUFFICIENT_BLOCKS</b>, <b>POSTED</b>, and <b>FAILED</b>.
+        <b>VALID</b> appears only in validation mode and if your RSS document is
+        valid.  <b>NOT_VALID</b> appears in post and validate modes and will be
+        accompanied by message in &lt;cl:postedExplanation&gt; detailing where
+        the validation failed.  <b>INSUFFICIENT_BLOCKS</b> is reported when the
+        accountID supplied does not have enough remaining blocks to create a
+        posting in the city/category and is not an invoiced account, more blocks must be purchased before the posting is processed.  <b>POSTED</b> indicates that the posting was successfully accepted.  <b>FAILED</b> indicates an unexpected error at post time.</small></li>
+        <li><b>&lt;cl:postedExplanation&gt;</b> - <small>Human-readable status of processing this posting.  If there is an error in validation, error details will appear in this element.</small></li>
+        <li><b>&lt;cl:previewHTML&gt;</b> - <small>HTML preview of submitted posting.</small></li>
+        <li><b>&lt;cl:warning&gt;</b> - <small>Warnings related to this post;  typically, these will be non-fatal xml parsing issues. This tag will be specified once per warning.</small></li>
+        <li><b>&lt;cl:postingID&gt;</b> - <small>In post mode, this element will contain the craigslist ID of the newly created posting.</small></li>
+        <li><b>&lt;cl:postingManageURL&gt;</b> - <small>In post mode, this
+        element will contain a URL that can be used to edit or delete the new posting.</small></li>
+      </ul>
+      See the <a href="#sample_xslt">sample XSLT</a> in this document for a possible way to process a response.
+    <p><b>Note:</b>  If you submit a posting item with the same rdf:about as an existing posting item, the existing posting item will <b><i>not</i></b> be updated.  Presently the only way to alter the content of a posting is via URL specificed in the cl:postingManageURL element.</p>
+    <br>
+<a name="reference">
+    <h2>Reference:</h2>
+
+<a name="categories">
+    <h3>Categories:</h3>
+    <div class="reference_table">
+      <table>
+        <tr><th>Abbreviation</th><th>Description</th><th>Type</th></tr>
+        <tr><td>apa</td><td>apts/housing for rent          </td><td>Housing</td><tr>
+        <tr><td>fee</td><td>apts broker fee                </td><td>Housing</td><tr>
+        <tr><td>nfb</td><td>apts broker no fee             </td><td>Housing</td><tr>
+        <tr><td>off</td><td>office & commercial            </td><td>Housing</td><tr>
+        <tr><td>reb</td><td>real estate - by broker        </td><td>Housing</td><tr>
+        <tr><td>vac</td><td>vacation rentals               </td><td>Housing</td><tr>
+
+        <tr><td>acc</td><td>accounting/finance jobs       </td><td>Jobs</td></tr>
+        <tr><td>bus</td><td>business/mgmt jobs            </td><td>Jobs</td></tr>
+        <tr><td>csr</td><td>customer service jobs         </td><td>Jobs</td></tr>
+        <tr><td>edu</td><td>education/teaching jobs       </td><td>Jobs</td></tr>
+        <tr><td>egr</td><td>architect/engineer/CAD jobs   </td><td>Jobs</td></tr>
+        <tr><td>eng</td><td>internet engineering jobs     </td><td>Jobs</td></tr>
+        <tr><td>etc</td><td>et cetera jobs                </td><td>Jobs</td></tr>
+        <tr><td>fbh</td><td>food/beverage/hospitality jobs</td><td>Jobs</td></tr>
+        <tr><td>gov</td><td>government jobs               </td><td>Jobs</td></tr>
+        <tr><td>hea</td><td>healthcare jobs               </td><td>Jobs</td></tr>
+        <tr><td>hum</td><td>human resource jobs           </td><td>Jobs</td></tr>
+        <tr><td>lab</td><td>general labor jobs            </td><td>Jobs</td></tr>
+        <tr><td>lgl</td><td>legal/paralegal jobs          </td><td>Jobs</td></tr>
+        <tr><td>mar</td><td>marketing/advertising/PR jobs </td><td>Jobs</td></tr>
+        <tr><td>med</td><td>art/media/design jobs         </td><td>Jobs</td></tr>
+        <tr><td>mnu</td><td>manufacturing jobs            </td><td>Jobs</td></tr>
+        <tr><td>npo</td><td>nonprofit jobs                </td><td>Jobs</td></tr>
+        <tr><td>ofc</td><td>admin/office jobs             </td><td>Jobs</td></tr>
+        <tr><td>rej</td><td>real estate jobs              </td><td>Jobs</td></tr>
+        <tr><td>ret</td><td>retail/wholesale jobs         </td><td>Jobs</td></tr>
+        <tr><td>sad</td><td>systems/networking jobs       </td><td>Jobs</td></tr>
+        <tr><td>sci</td><td>science/biotech jobs          </td><td>Jobs</td></tr>
+        <tr><td>sec</td><td>security jobs                 </td><td>Jobs</td></tr>
+        <tr><td>sls</td><td>sales jobs                    </td><td>Jobs</td></tr>
+        <tr><td>sof</td><td>software/QA/DBA/etc jobs      </td><td>Jobs</td></tr>
+        <tr><td>spa</td><td>salon/spa/fitness jobs        </td><td>Jobs</td></tr>
+        <tr><td>tch</td><td>technical support jobs        </td><td>Jobs</td></tr>
+        <tr><td>tfr</td><td>tv/film/video/radio jobs      </td><td>Jobs</td></tr>
+        <tr><td>trd</td><td>skilled trades/artisan jobs   </td><td>Jobs</td></tr>
+        <tr><td>trp</td><td>transportation jobs           </td><td>Jobs</td></tr>
+        <tr><td>web</td><td>web/HTML/info design jobs     </td><td>Jobs</td></tr>
+        <tr><td>wri</td><td>writing/editing jobs          </td><td>Jobs</td></tr>
+
+
+      </table>
+    </div>
+    <br>
+
+<a name="areas">
+    <h3>Areas and Subareas:</h3>
+    <div class="reference_table">
+      <table>
+<tr><th>Area Abbreviation</th><th>Description</th><th>Subarea Abbreviation</th><th>Description</th></tr>
+
+<tr><td>aaa</td><td>ann arbor</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>abb</td><td>fraser valley</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>abi</td><td>abilene</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>abq</td><td>albuquerque</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>abr</td><td>northeast SD</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>aby</td><td>albany, GA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>aex</td><td>central louisiana</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ahn</td><td>athens, GA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>alb</td><td>albany</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>alt</td><td>lehigh valley</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ama</td><td>amarillo</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ame</td><td>ames, IA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>anb</td><td>gadsden-anniston</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>anc</td><td>anchorage / mat-su</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>anp</td><td>annapolis</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>aoo</td><td>altoona-johnstown</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>app</td><td>appleton-oshkosh-FDL</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ash</td><td>asheville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>atl</td><td>atlanta</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>aub</td><td>auburn</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>aug</td><td>augusta</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>aus</td><td>austin</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>avp</td><td>scranton / wilkes-barre</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bak</td><td>bakersfield</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bal</td><td>baltimore</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bel</td><td>belleville, ON</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bfd</td><td>brantford-woodstock</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bff</td><td>scottsbluff / panhandle</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bgm</td><td>binghamton</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bhm</td><td>birmingham, AL</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bil</td><td>billings</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bis</td><td>bismarck</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bji</td><td>bemidji</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>blg</td><td>bowling green</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bli</td><td>bellingham</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bln</td><td>bloomington-normal</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bmg</td><td>bloomington, IN</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bnc</td><td>boone</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bnd</td><td>bend</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>boi</td><td>boise</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bos</td><td>boston</td><td>gbs</td><td> boston/cambridge/brookline</td></tr>
+<tr><td>bos</td><td>boston</td><td>nwb</td><td> northwest/merrimack</td></tr>
+<tr><td>bos</td><td>boston</td><td>bmw</td><td> metro west</td></tr>
+<tr><td>bos</td><td>boston</td><td>nos</td><td> north shore</td></tr>
+<tr><td>bos</td><td>boston</td><td>sob</td><td> south shore</td></tr>
+<tr><td>bou</td><td>boulder</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bpt</td><td>beaumont / port arthur</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>brd</td><td>brainerd</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>brl</td><td>vermont</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bro</td><td>brownsville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>brr</td><td>barrie</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>btc</td><td>battle creek</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>btm</td><td>butte</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>btr</td><td>baton rouge</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>buf</td><td>buffalo</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bwk</td><td>brunswick, GA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>bzn</td><td>bozeman</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cae</td><td>columbia, SC</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cak</td><td>akron / canton</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cap</td><td>cape cod / islands</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cat</td><td>catskills</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cbd</td><td>southern illinois</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cbg</td><td>cumberland valley</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cbo</td><td>cariboo</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ced</td><td>cedar rapids</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cfl</td><td>heartland florida</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cha</td><td>charlotte</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>chc</td><td>chico</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>chi</td><td>chicago</td><td>chc</td><td> city of chicago</td></tr>
+<tr><td>chi</td><td>chicago</td><td>nch</td><td> north chicagoland</td></tr>
+<tr><td>chi</td><td>chicago</td><td>wcl</td><td> west chicagoland</td></tr>
+<tr><td>chi</td><td>chicago</td><td>sox</td><td> south chicagoland</td></tr>
+<tr><td>chi</td><td>chicago</td><td>nwi</td><td> northwest indiana</td></tr>
+<tr><td>chi</td><td>chicago</td><td>nwc</td><td> northwest suburbs</td></tr>
+<tr><td>chk</td><td>chatham-kent</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>chl</td><td>chillicothe</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>chm</td><td>champaign urbana</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>chq</td><td>chautauqua</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>chs</td><td>charleston, SC</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cht</td><td>chattanooga</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cin</td><td>cincinnati, OH</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ckv</td><td>clarksville, TN</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cle</td><td>cleveland</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>clg</td><td>calgary</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cmu</td><td>central michigan</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cmx</td><td>comox valley</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cnj</td><td>central NJ</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>col</td><td>columbus</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>coo</td><td>cookeville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cor</td><td>oregon coast</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cos</td><td>colorado springs</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cou</td><td>columbia / jeff city</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>crp</td><td>corpus christi</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>crv</td><td>corvallis/albany</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>crw</td><td>charleston, WV</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>csd</td><td>pierre / central SD</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>csg</td><td>columbus, GA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cst</td><td>college station</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>cvn</td><td>clovis / portales</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>dab</td><td>daytona beach</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>dal</td><td>dallas / fort worth</td><td>dal</td><td>dallas</td></tr>
+<tr><td>dal</td><td>dallas / fort worth</td><td>ftw</td><td>fort worth</td></tr>
+<tr><td>dal</td><td>dallas / fort worth</td><td>mid</td><td>mid cities</td></tr>
+<tr><td>dal</td><td>dallas / fort worth</td><td>ndf</td><td>north dfw</td></tr>
+<tr><td>dal</td><td>dallas / fort worth</td><td>sdf</td><td>south dfw</td></tr>
+<tr><td>day</td><td>dayton / springfield</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>dbq</td><td>dubuque</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>den</td><td>denver</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>det</td><td>detroit metro</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>dhn</td><td>dothan, AL</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>dil</td><td>decatur, IL</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>dlh</td><td>duluth / superior</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>dlw</td><td>delaware</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>dnv</td><td>danville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>drt</td><td>del rio / eagle pass</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>dsm</td><td>des moines</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>eau</td><td>eau claire</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>eco</td><td>eastern CO</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>edm</td><td>edmonton</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>eid</td><td>east idaho</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>eky</td><td>eastern kentucky</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>elk</td><td>elko</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>elm</td><td>elmira-corning</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>elp</td><td>el paso</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ena</td><td>kenai peninsula</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>enc</td><td>eastern NC</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>end</td><td>northwest OK</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>eor</td><td>east oregon</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>eri</td><td>erie, PA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>esh</td><td>eastern shore</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>etx</td><td>tyler / east TX</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>eug</td><td>eugene</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>evv</td><td>evansville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ewv</td><td>eastern panhandle</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ezf</td><td>fredericksburg</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fai</td><td>fairbanks</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>far</td><td>fargo / moorhead</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fay</td><td>fayetteville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fca</td><td>kalispell</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fdk</td><td>frederick</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fgl</td><td>finger lakes</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fhu</td><td>sierra vista</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>flg</td><td>flagstaff / sedona</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fll</td><td>fort lauderdale</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>flo</td><td>florence, SC</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fmc</td><td>ft mcmurray</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fmy</td><td>ft myers / SW florida</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fnm</td><td>farmington, NM</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fnt</td><td>flint</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fre</td><td>fresno / madera</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fsd</td><td>sioux falls / SE SD</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fsm</td><td>fort smith, AR</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ftc</td><td>fort collins / north CO</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ftd</td><td>fort dodge</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fwa</td><td>fort wayne</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>fyv</td><td>fayetteville, AR</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>gbo</td><td>greensboro</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>gfk</td><td>grand forks</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>gfl</td><td>glens falls</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>gil</td><td>grand island</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>gjt</td><td>western slope</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>gld</td><td>gold country</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>gls</td><td>galveston</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>gnv</td><td>gainesville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>gph</td><td>guelph</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>gpt</td><td>gulfport / biloxi</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>grb</td><td>green bay</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>grk</td><td>killeen / temple / ft hood</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>grr</td><td>grand rapids</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>gsp</td><td>greenville / upstate</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>gtf</td><td>great falls</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hat</td><td>medicine hat</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hez</td><td>southwest MS</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hfx</td><td>halifax</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hhi</td><td>hilton head</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hky</td><td>hickory / lenoir</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hld</td><td>holland</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hln</td><td>helena</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hmb</td><td>humboldt county</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hml</td><td>hamilton-burlington</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hnf</td><td>hanford-corcoran</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hnl</td><td>hawaii</td><td>oah</td><td> oahu</td></tr>
+<tr><td>hnl</td><td>hawaii</td><td>big</td><td> big island</td></tr>
+<tr><td>hnl</td><td>hawaii</td><td>mau</td><td> maui</td></tr>
+<tr><td>hnl</td><td>hawaii</td><td>kau</td><td> kauai</td></tr>
+<tr><td>hnl</td><td>hawaii</td><td>mol</td><td> molokai</td></tr>
+<tr><td>hou</td><td>houston</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hrs</td><td>harrisburg</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hsv</td><td>huntsville / decatur</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>htf</td><td>hartford</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hts</td><td>huntington-ashland</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hud</td><td>hudson valley</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hum</td><td>houma</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>hvn</td><td>new haven</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>iac</td><td>iowa city</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>imp</td><td>imperial county</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ind</td><td>indianapolis</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>inl</td><td>inland empire</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>isp</td><td>long island</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ith</td><td>ithaca</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>jan</td><td>jackson, MS</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>jax</td><td>jacksonville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>jbr</td><td>jonesboro</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>jfn</td><td>ashtabula</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>jln</td><td>joplin</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>jnu</td><td>southeast alaska</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>jvl</td><td>janesville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>jxn</td><td>jackson, MI</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>jxt</td><td>jackson, TN</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>jys</td><td>jersey shore</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>kch</td><td>kitchener-waterloo-cambridge</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>kel</td><td>kelowna / okanagan</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>key</td><td>florida keys</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>klf</td><td>klamath falls</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>kml</td><td>kamloops</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>kng</td><td>kingston, ON</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>knx</td><td>knoxville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>koo</td><td>kootenays</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>kpr</td><td>kennewick-pasco-richland</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>krk</td><td>kirksville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ksc</td><td>kansas city, MO</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>kzo</td><td>kalamazoo</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>laf</td><td>lafayette / west lafayette</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lal</td><td>lakeland</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lan</td><td>lansing</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>law</td><td>lawton</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lax</td><td>los angeles</td><td>wst</td><td> westside-southbay-310</td></tr>
+<tr><td>lax</td><td>los angeles</td><td>sfv</td><td> san fernando valley</td></tr>
+<tr><td>lax</td><td>los angeles</td><td>lac</td><td> central LA 213/323</td></tr>
+<tr><td>lax</td><td>los angeles</td><td>sgv</td><td> san gabriel valley</td></tr>
+<tr><td>lax</td><td>los angeles</td><td>lgb</td><td> long beach / 562</td></tr>
+<tr><td>lax</td><td>los angeles</td><td>ant</td><td> antelope valley</td></tr>
+<tr><td>lbb</td><td>lubbock</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lbf</td><td>north platte</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lcq</td><td>north central FL</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lcr</td><td>las cruces</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lex</td><td>lexington, KY</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lft</td><td>lafayette</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lgu</td><td>logan</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lit</td><td>little rock</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lkc</td><td>lake charles</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lma</td><td>lima / findlay</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lnk</td><td>lincoln</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lns</td><td>lancaster, PA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lon</td><td>london, ON</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lou</td><td>louisville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>loz</td><td>lake of the ozarks</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lrd</td><td>laredo</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lse</td><td>la crosse</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lsl</td><td>la salle co</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lth</td><td>lethbridge</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lvg</td><td>las vegas</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lwr</td><td>lawrence</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lws</td><td>lewiston / clarkston</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>lyn</td><td>lynchburg</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mad</td><td>madison</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mbs</td><td>saginaw-midland-baycity</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mca</td><td>mcallen / edinburg</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mcn</td><td>macon / warner robins</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mdo</td><td>mendocino county</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mdv</td><td>meadville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mei</td><td>meridian</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mem</td><td>memphis, TN</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mer</td><td>merced</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mfd</td><td>mansfield</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mfr</td><td>medford-ashland</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mgm</td><td>montgomery</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mhk</td><td>manhattan, KS</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mhv</td><td>mohave county</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mia</td><td>south florida</td><td>mdc</td><td>miami / dade county</td></tr> 
+<tr><td>mia</td><td>south florida</td><td>brw</td><td>broward county</td></tr>
+<tr><td>mia</td><td>south florida</td><td>pbc</td><td>palm beach county</td></tr>
+<tr><td>mil</td><td>milwaukee</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>min</td><td>minneapolis / st paul</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mkg</td><td>muskegon</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mkt</td><td>mankato</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mlb</td><td>space coast</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mli</td><td>quad cities, IA/IL</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mlk</td><td>moses lake</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mlu</td><td>monroe, LA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mml</td><td>southwest MN</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mne</td><td>maine</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mnr</td><td>monroe</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mnt</td><td>montana (old)</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mob</td><td>mobile</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mod</td><td>modesto</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mon</td><td>montreal</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>msc</td><td>mason city</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>msl</td><td>florence / muscle shoals</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mso</td><td>missoula</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mtb</td><td>monterey bay</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mto</td><td>mattoon-charleston</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mun</td><td>muncie / anderson</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>mvw</td><td>skagit / island / SJI</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>myr</td><td>myrtle beach</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nbw</td><td>new brunswick</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nct</td><td>northwest CT</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ndk</td><td>north dakota</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nfk</td><td>hampton roads</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nfl</td><td>st john's, NL</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nhm</td><td>new hampshire</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>njy</td><td>north jersey</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nlo</td><td>eastern CT</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nmi</td><td>northern michigan</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nmo</td><td>nanaimo</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nms</td><td>north mississippi</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nor</td><td>new orleans</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nph</td><td>tuscarawas co</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nsc</td><td>niagara region</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nsh</td><td>nashville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nwg</td><td>northwest GA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nwi</td><td>northern WI</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nwk</td><td>northwest KS</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>nyc</td><td>new york city</td><td>mnh</td><td> manhattan</td></tr>
+<tr><td>nyc</td><td>new york city</td><td>brk</td><td> brooklyn</td></tr>
+<tr><td>nyc</td><td>new york city</td><td>que</td><td> queens</td></tr>
+<tr><td>nyc</td><td>new york city</td><td>brx</td><td> bronx</td></tr>
+<tr><td>nyc</td><td>new york city</td><td>stn</td><td> staten island</td></tr>
+<tr><td>nyc</td><td>new york city</td><td>jsy</td><td> new jersey</td></tr>
+<tr><td>nyc</td><td>new york city</td><td>lgi</td><td> long island</td></tr>
+<tr><td>nyc</td><td>new york city</td><td>wch</td><td> westchester</td></tr>
+<tr><td>nyc</td><td>new york city</td><td>fct</td><td> fairfield co, CT</td></tr>
+<tr><td>oaj</td><td>jacksonville, NC</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>obx</td><td>outer banks</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>oca</td><td>ocala</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>och</td><td>deep east texas</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>odm</td><td>odessa / midland</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ogd</td><td>ogden-clearfield</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ohu</td><td>athens, OH</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>okc</td><td>oklahoma city</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>okk</td><td>kokomo</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>okv</td><td>winchester</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>olp</td><td>olympic peninsula</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>oma</td><td>omaha / council bluffs</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>onh</td><td>oneonta</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>orc</td><td>orange county</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>orl</td><td>orlando</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>osu</td><td>stillwater</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ott</td><td>ottawa-hull-gatineau</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>otu</td><td>southeast IA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>owb</td><td>owensboro</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ows</td><td>owen sound</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>oxr</td><td>ventura county</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>pax</td><td>peace river country</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>pdx</td><td>portland, OR</td><td>mlt</td><td> multnomah county</td></tr>
+<tr><td>pdx</td><td>portland, OR</td><td>wsc</td><td> washington county</td></tr>
+<tr><td>pdx</td><td>portland, OR</td><td>clk</td><td> clark/cowlitz WA</td></tr>
+<tr><td>pdx</td><td>portland, OR</td><td>clc</td><td> clackamas county</td></tr>
+<tr><td>pdx</td><td>portland, OR</td><td>nco</td><td> north coast</td></tr>
+<tr><td>pdx</td><td>portland, OR</td><td>yam</td><td> yamhill co</td></tr>
+<tr><td>pei</td><td>prince edward island</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>pfn</td><td>panama city, FL</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>phi</td><td>philadelphia</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>phn</td><td>port huron</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>phx</td><td>phoenix</td><td>cph</td><td>central / south phx</td></tr>
+<tr><td>phx</td><td>phoenix</td><td>evl</td><td>east valley</td></tr>
+<tr><td>phx</td><td>phoenix</td><td>nph</td><td>phx north</td></tr>
+<tr><td>phx</td><td>phoenix</td><td>wvl</td><td>west valley</td></tr>
+<tr><td>pia</td><td>peoria</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>pit</td><td>pittsburgh</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>pkb</td><td>parkersburg-marietta</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>plb</td><td>plattsburgh-adirondacks</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>plm</td><td>pullman / moscow</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>pns</td><td>pensacola</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>poc</td><td>poconos</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>prc</td><td>prescott</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>prv</td><td>rhode island</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>psl</td><td>treasure coast</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>psp</td><td>palm springs, CA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>psu</td><td>state college</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ptd</td><td>potsdam-canton-massena</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>pub</td><td>pueblo</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>pvu</td><td>provo / orem</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>qbc</td><td>quebec city</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>qcy</td><td>western IL</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>rac</td><td>kenosha-racine</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ral</td><td>raleigh / durham / CH</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>rap</td><td>rapid city / west SD</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>rbg</td><td>roseburg</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>rck</td><td>high rockies</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>rcs</td><td>rochester, NY</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>rdd</td><td>redding</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>rea</td><td>reading</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>red</td><td>red deer</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>reg</td><td>regina</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>rfd</td><td>rockford</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ric</td><td>richmond</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>rin</td><td>richmond, IN</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>rmn</td><td>rochester, MN</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>rno</td><td>reno / tahoe</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>roa</td><td>roanoke</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>row</td><td>roswell / carlsbad</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sac</td><td>sacramento</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>saf</td><td>santa fe / taos</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sat</td><td>san antonio</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sav</td><td>savannah / hinesville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sba</td><td>santa barbara</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sbm</td><td>sheboygan, WI</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sbn</td><td>south bend / michiana</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sdk</td><td>south dakota</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sdo</td><td>san diego</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sea</td><td>seattle-tacoma</td><td>see</td><td> seattle</td></tr>
+<tr><td>sea</td><td>seattle-tacoma</td><td>est</td><td> eastside</td></tr>
+<tr><td>sea</td><td>seattle-tacoma</td><td>sno</td><td> snohomish county</td></tr>
+<tr><td>sea</td><td>seattle-tacoma</td><td>kit</td><td> kitsap / west puget</td></tr>
+<tr><td>sea</td><td>seattle-tacoma</td><td>tac</td><td> tacoma / pierce</td></tr>
+<tr><td>sea</td><td>seattle-tacoma</td><td>oly</td><td> olympia / thurston</td></tr>
+<tr><td>sea</td><td>seattle-tacoma</td><td>skc</td><td> south king co</td></tr>
+<tr><td>sek</td><td>southeast KS</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sfo</td><td>san francisco bay area</td><td>sfc</td><td> city of san francisco</td></tr>
+<tr><td>sfo</td><td>san francisco bay area</td><td>sby</td><td> south bay area</td></tr>
+<tr><td>sfo</td><td>san francisco bay area</td><td>eby</td><td> east bay area</td></tr>
+<tr><td>sfo</td><td>san francisco bay area</td><td>pen</td><td> peninsula</td></tr>
+<tr><td>sfo</td><td>san francisco bay area</td><td>nby</td><td> north bay / marin</td></tr>
+
+<tr><td>sfo</td><td>san francisco bay area</td><td>scz</td><td> santa cruz co</td></tr>
+
+<tr><td>sgf</td><td>springfield, MO</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sgy</td><td>saguenay</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>shb</td><td>sherbrooke</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>shd</td><td>harrisonburg</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>shv</td><td>shreveport</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sjt</td><td>san angelo</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ske</td><td>skeena-bulkley</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>skt</td><td>saskatoon</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sky</td><td>sandusky</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>slc</td><td>salt lake city</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sle</td><td>salem, OR</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>slo</td><td>san luis obispo</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sma</td><td>south coast</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>smd</td><td>southern maryland</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>smo</td><td>southeast missouri</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>smx</td><td>santa maria</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>snj</td><td>south jersey</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sns</td><td>salina</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>soo</td><td>sault ste marie, ON</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sow</td><td>show low</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>spi</td><td>springfield, IL</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>spk</td><td>spokane / coeur d'alene</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>srn</td><td>sarnia</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>srq</td><td>sarasota-bradenton</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ssk</td><td>siskiyou county</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ssn</td><td>susanville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>stc</td><td>st cloud</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>stg</td><td>st george</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>stj</td><td>st joseph</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>stk</td><td>stockton</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>stl</td><td>st louis, MO</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sud</td><td>sudbury</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sun</td><td>sunshine coast</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>sux</td><td>sioux city, IA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>swk</td><td>southwest KS</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>swm</td><td>southwest michigan</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>swv</td><td>southern WV</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>syr</td><td>syracuse</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tal</td><td>tallahassee</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tbr</td><td>statesboro</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tby</td><td>thunder bay</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tha</td><td>terre haute</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>thb</td><td>the thumb</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>toc</td><td>territories</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tol</td><td>toledo</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tor</td><td>toronto</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tpa</td><td>tampa bay area</td><td>hdo</td><td>hernando co</td></tr>
+<tr><td>tpa</td><td>tampa bay area</td><td>hil</td><td>hillsborough co</td></tr>
+<tr><td>tpa</td><td>tampa bay area</td><td>psc</td><td>pasco co</td></tr>
+<tr><td>tpa</td><td>tampa bay area</td><td>pnl</td><td>pinellas co</td></tr>
+<tr><td>tpk</td><td>topeka</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tri</td><td>tri-cities, TN</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>trs</td><td>trois-rivieres</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tsc</td><td>tuscaloosa</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tsu</td><td>san marcos</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tts</td><td>twin tiers NY/PA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tul</td><td>tulsa</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>tus</td><td>tucson</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>twf</td><td>twin falls</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>txk</td><td>texarkana</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>txm</td><td>texoma</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>usm</td><td>hattiesburg</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ust</td><td>st augustine</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>uti</td><td>utica-rome-oneida</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>uva</td><td>charlottesville</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>van</td><td>vancouver, BC</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>vaw</td><td>southwest VA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>vic</td><td>victoria</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>vis</td><td>visalia-tulare</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>vld</td><td>valdosta</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>vpi</td><td>new river valley</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>vps</td><td>okaloosa / walton</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>vtx</td><td>victoria, TX</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wau</td><td>wausau</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wco</td><td>waco</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wdc</td><td>washington, DC</td><td>doc</td><td>district of columbia</td></tr>
+<tr><td>wdc</td><td>washington, DC</td><td>nva</td><td>northern virginia</td></tr>
+<tr><td>wdc</td><td>washington, DC</td><td>mld</td><td>maryland</td></tr>
+<tr><td>wen</td><td>wenatchee</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>whh</td><td>whitehorse</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>whi</td><td>whistler, BC</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>whl</td><td>northern panhandle</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wic</td><td>wichita</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>win</td><td>winnipeg</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wky</td><td>western KY</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wlo</td><td>waterloo / cedar falls</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wma</td><td>western massachusetts</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wmd</td><td>western maryland</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wnc</td><td>wilmington, NC</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wor</td><td>worcester / central MA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wpb</td><td>west palm beach</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wpt</td><td>williamsport</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wsl</td><td>winston-salem</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wsr</td><td>windsor</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wtf</td><td>wichita falls</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wtn</td><td>watertown</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wtx</td><td>southwest TX</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wva</td><td>west virginia (old)</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wvu</td><td>morgantown</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>wyo</td><td>wyoming</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>yak</td><td>yakima</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ybs</td><td>yuba-sutter</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ycc</td><td>cornwall, ON</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ykf</td><td>yellowknife</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>yng</td><td>youngstown</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>ypq</td><td>peterborough</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>yrk</td><td>york, PA</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>yum</td><td>yuma</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>yup</td><td>upper peninsula</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>yxs</td><td>prince george</td><td>&nbsp;</td><td>&nbsp;</td></tr> 
+<tr><td>zvl</td><td>zanesville / cambridge</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+      </table>
+    </div>
+    <h3>Categories for which bulk posting is no longer supported:</h3>
+    Do not use the bulk posting interface to post to these categories.  Thanks.
+    <div class="reference_table">
+      <table>
+        <tr><th>Abbreviation</th><th>Description</th><th>Type</th></tr>
+        <tr><td>aiv</td><td> apts registration fee</td><td> Housing</td></tr>
+        <tr><td>sbw</td><td> sublet/temp wanted   </td><td> Housing</td></tr>
+        <tr><td>rew</td><td> real estate wanted   </td><td> Housing</td></tr>
+        <tr><td>swp</td><td> housing swap         </td><td> Housing</td></tr>
+        <tr><td>sub</td><td> sublets & temporary  </td><td> Housing</td></tr>
+        <tr><td class=deprecated>rfs</td><td class=deprecated>real estate for sale</td><td>Deprecated</td></tr>
+        <tr><td>reo</td><td> real estate by owner </td><td> Housing</td></tr>
+        <tr><td>prk</td><td> parking & storage    </td><td> Housing</td></tr>
+        <tr><td>hou</td><td> apts wanted          </td><td> Housing</td></tr>
+        <tr><td>ssl</td><td> summer sublets       </td><td> Housing</td></tr>
+        <tr><td>abo</td><td> apts by owner        </td><td> Housing</td></tr>
+        <tr><td>sha</td><td> room/share wanted    </td><td> Housing</td></tr>
+        <tr><td>roo</td><td> rooms & shares       </td><td> Housing</td></tr>
+        <tr><td>tel</td><td>network/WAN/telcom jobs </td><td>Jobs</td></tr>
+      </table>
+    </div>
+    <br>
+
+<a name="sample_client">
+    <h3>Sample Bulk Post Client:</h3>
+    This example bulk posting client script is written in perl5 and requires the LWP perl module.  It processes commandline options, reads an RSS file from disk, then submits it to craigslist for either verification or posting.  It returns the reply RSS to STDOUT unless -o option is specified.<br>
+    <div class="code_sample"><pre>
+#!/usr/bin/perl
+use LWP;
+use LWP::UserAgent;
+use Getopt::Std;
+use strict;
+
+use constant BASE_URL =&gt; 'https://post.craigslist.org/bulk-rss';
+
+# process options
+my $opts = {};
+getopts('o:f:p', $opts);
+my $post     = $opts-&gt;{'p'};
+my $filename = $opts-&gt;{'f'};
+my $outfile  = $opts-&gt;{'o'};
+unless($filename) {
+  print "usage: $0 [-p] [-o outfile] -f filename\n".
+        "       options:\n".
+        "       -f  -  the name of the RSS file to submit (required)\n".
+        "       -p  -  actually post (otherwise just validate)\n".
+        "       -o  -  output filename (otherwise results sent to STDOUT)\n\n";
+  exit(0);
+}
+
+# open file
+my $content = undef;
+open(CFH, "&lt;$filename") || die "can't open $filename for read: $!";
+{ local $/ = undef; $content = &lt;CFH&gt;; }
+close(CFH);
+
+# prepare request
+my $ua = LWP::UserAgent->new();
+$ua->agent('SampleBulkPostClient/0.1');
+my $post_url = BASE_URL .'/'. ($post? 'post': 'validate');
+my $req = HTTP::Request->new( POST => $post_url );
+$req->content_type('application/x-www-form-urlencoded');
+$req->content($content);
+
+# issue request
+my $res = $ua->request($req);
+
+# print result
+if($res->is_success()) {
+  if($outfile) {
+    open(OFH,">$outfile") || die "can't open $outfile for write: $!";
+    print OFH $res->content();
+    close OFH;
+  }
+  else {
+    print $res->content()."\n";
+  }
+}
+else {
+  print "request failed:\n".   
+        $res->status_line()."\n".$res->content()."\n";
+}
+
+    </pre></div><i><small>Sample Perl Bulk Posting Client Script</small></i><br>
+
+<a name="sample_xslt"/>
+    <h3>Sample XSLT for transforming from the
+	<a href="#response_format">Posting Response Format</a> to HTML</h3>
+    Here's an example XSLT stylesheet for transforming a posting response.  This example converts a posting response to HTML.
+    <div class="code_sample"><pre>
+&lt;xsl:stylesheet version = '1.0' 
+     xmlns:xsl='http://www.w3.org/1999/XSL/Transform'
+     extension-element-prefixes="cl rdf"
+     xmlns:rss="http://purl.org/rss/1.0/"
+     xmlns:cl="http://www.craigslist.org/about/cl-bulk-ns/1.0"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;html&gt;
+      &lt;head&gt;&lt;title&gt;Bulk posting results&lt;/title&gt;
+      &lt;style type="text/css"&gt;
+        tr.error { color : red; }
+      &lt;/style&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;xsl:apply-templates select="rdf:RDF"/&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="rdf:RDF"&gt;
+    &lt;h3&gt; Bulk posting results: &lt;/h3&gt;
+    &lt;xsl:apply-templates select="rss:channel"/&gt;
+    &lt;table border="1"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt; &lt;td&gt;Item&lt;/td&gt;&lt;td&gt;Status&lt;/td&gt;&lt;td&gt;Explanation&lt;/td&gt;&lt;td&gt;ID&lt;/td&gt;&lt;td&gt;Warnings&lt;/td&gt; &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;xsl:apply-templates select="rss:item"&gt;
+      &lt;xsl:sort select="@rdf:about"/&gt;
+    &lt;/xsl:apply-templates&gt;
+    &lt;/table&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="rss:channel"&gt;
+    &lt;xsl:apply-templates select="rss:items"/&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="rss:item"&gt;
+    &lt;xsl:variable name='status' select="cl:postedStatus"/&gt;
+    &lt;xsl:variable name='rowclass'&gt;
+      &lt;xsl:choose&gt;
+        &lt;xsl:when test="$status = 'POSTED' or $status = 'VALID'"&gt;
+          &lt;xsl:text&gt;valid&lt;/xsl:text&gt;
+        &lt;/xsl:when&gt;
+        &lt;xsl:otherwise&gt;
+          &lt;xsl:text&gt;error&lt;/xsl:text&gt;
+        &lt;/xsl:otherwise&gt;
+      &lt;/xsl:choose&gt;
+    &lt;/xsl:variable&gt;
+    &lt;tr class="{$rowclass}"&gt;
+      &lt;td&gt; &lt;xsl:value-of select="@rdf:about"/&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;xsl:value-of select="$status"/&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;xsl:value-of select="cl:postedExplanation"/&gt; &lt;/td&gt;
+      &lt;td&gt;
+        &lt;a href="{cl:postingManageURL}"&gt;
+          &lt;xsl:value-of select="cl:postingID"/&gt;
+        &lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;ul&gt;
+          &lt;xsl:for-each select="cl:warning"&gt;
+            &lt;li&gt;
+              &lt;xsl:value-of select="current()"/&gt;
+            &lt;/li&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/ul&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+    </pre></div><i><small>Sample XSLT</small></i><br>
+
+  </body>
+
+</html>

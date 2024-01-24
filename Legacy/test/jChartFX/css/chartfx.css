@@ -1,0 +1,17 @@
+.jchartfx .AxisX_Minor {
+      stroke: #DBDBD9;
+}
+
+.jchartfx .AxisX_Interlaced {
+      fill: #ECEBE8;
+}
+
+.jchartfx .AxisX_Line {
+      stroke: #DBDBD9;
+      stroke-width: 2;
+}
+
+.jchartfx .PointLabel {
+      fill: #666666;
+}
+…

@@ -1,0 +1,2 @@
+[11-Dec-2014 12:11:43 America/Chicago] PHP Warning:  require_once(tcpdf_include.php): failed to open stream: No such file or directory in /home4/idsids/public_html/tcpdf/examples/example_001.php on line 28
+[11-Dec-2014 12:11:43 America/Chicago] PHP Fatal error:  require_once(): Failed opening required 'tcpdf_include.php' (include_path='.:/opt/php54/lib/php') in /home4/idsids/public_html/tcpdf/examples/example_001.php on line 28

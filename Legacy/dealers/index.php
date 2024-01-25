@@ -190,16 +190,12 @@ if (isset($_POST['e_login'], $_POST['p_login'])) {
 
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-	<link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
+    
     <!-- Mainly scripts -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
-<!--
-var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "email");
-//-->
-    </script>
+
 
 </head>
 

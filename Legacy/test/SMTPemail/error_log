@@ -1,4 +1,0 @@
-[02-Jan-2014 10:26:39] PHP Fatal error:  Class 'Mail' not found in /home4/idsids/public_html/test/SMTPemail/email.aboutcom.php on line 16
-[02-Jan-2014 11:53:56] PHP Fatal error:  Class 'Mail' not found in /home4/idsids/public_html/test/SMTPemail/email.aboutcom.php on line 16
-[02-Jan-2014 12:21:29] PHP Fatal error:  Class 'Mail' not found in /home4/idsids/public_html/test/SMTPemail/email.aboutcom.php on line 22
-[02-Jan-2014 12:30:17] PHP Fatal error:  Class 'Mail' not found in /home4/idsids/public_html/test/SMTPemail/index.php on line 24

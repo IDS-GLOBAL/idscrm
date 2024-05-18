@@ -1,2 +1,0 @@
-[21-Mar-2015 15:45:46 America/Chicago] PHP Parse error:  syntax error, unexpected '$vvin_num' (T_VARIABLE), expecting ')' in /home4/idsids/public_html/test/@VIN/build_car_model_database.php on line 60
-[21-Mar-2015 15:49:22 America/Chicago] PHP Parse error:  syntax error, unexpected '$vvin_num' (T_VARIABLE), expecting ')' in /home4/idsids/public_html/test/@VIN/build_car_model_database.php on line 60

@@ -4,10 +4,10 @@ $(document).ready(function(){
 
 		//alert('Boot.Js is Ready!');
 
-function validateEmail(email) {
-  var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-  return re.test(email);
-}
+		function validateEmail(email) {
+		var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+		return re.test(email);
+		}
 
 	
 	
@@ -80,14 +80,14 @@ function validateEmail(email) {
 				
 		});
 
-	$('a#full_screen_button').on('click', function(){
-			   window.location.href = 'dealers/';
-	});
+		$('a#full_screen_button').on('click', function(){
+				window.location.href = 'dealers/';
+		});
 
 
-	$('a#forgot_password').on('click', function(){
-			   window.location.href = 'recoverpass.php';
-	});
+		$('a#forgot_password').on('click', function(){
+				window.location.href = 'recoverpass.php';
+		});
 
 
 

@@ -144,7 +144,7 @@
             </div>
         </div>
     	<div class="row">
-        	<div class="col-lg-12"><!--//fo -->
+        	<div class="col-lg-12">
             
             
             
@@ -162,163 +162,165 @@
             
                 
               <div id="boxshadow" class="bs-example">
-	            <div class="navy-line"></div>
-            	<h2 align="center">Request Your Demo Today!</h2>
+	            
+              <div class="navy-line"></div>
+            	
+                <h2 align="center">Request Your Demo Today!</h2>
 
-       <div class="m-t" id="getademo">
+                <div class="m-t" id="getademo">
 
-		<div class="row">
-        	<div class="col-xs-6 col-md-4">
-            <div class="form-group">
-                	<label for="e_demo">Primary Email</label>
-                    <input type="text" name="e_demo" class="form-control" id="e_demo" placeholder="Email" required="">
+                <div class="row">
+                    <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                            <label for="e_demo">Primary Email</label>
+                            <input type="text" name="e_demo" class="form-control" id="e_demo" placeholder="Email" required="">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                            <label for="phone_demo">(US) Phone Number:</label>
+                            <input type="text" name="phone_demo" class="form-control" id="phone_demo" placeholder="Phone Number" required="" data-mask="(999)999-9999">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="form-group">
+                            <label for="company_name_demo">Dealership Name:</label>
+                            <input type="text" name="company_name_demo" class="form-control" id="company_name_demo" placeholder="Your Company Name" value="" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-4">
+                        <div class="form-group">
+                            <label for="contact_demo">Contact Name:</label>
+                            <input type="text" name="contact_demo" class="form-control" id="contact_demo" placeholder="Your Personal Name or Decision Makers Name" value="" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                            <label for="city_demo">City:</label>
+                            <input type="text" name="city_demo" class="form-control" id="city_demo" placeholder="City" value="" required="">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                            <label for="state_demo">State:</label>
+                            <select id="state_demo" class="form-control">
+                                <optgroup label="Dealership Located">
+                                        <option value="" selected="selected">Select State</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">Washington D.C.</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virgina</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virgina</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                        </optgroup>
+                            </select>
+                        </div>
+
                 </div>
-            </div>
-        	<div class="col-xs-6 col-md-4">
-                <div class="form-group">
-                	<label for="phone_demo">(US) Phone Number:</label>
-                    <input type="text" name="phone_demo" class="form-control" id="phone_demo" placeholder="Phone Number" required="" data-mask="(999)999-9999">
+                <div class="col-xs-6 col-md-4">
+                                <div class="form-group">
+                                    <label for="zip_demo">Zip Code:</label>
+                                    <input type="text" name="zip_demo" class="form-control" id="zip_demo" placeholder="Zip Code" value="" required="" data-mask="99999">
+                                </div>
                 </div>
-            </div>
-        	<div class="col-xs-12 col-md-4">
-                <div class="form-group">
-                	<label for="company_name_demo">Dealership Name:</label>
-                    <input type="text" name="company_name_demo" class="form-control" id="company_name_demo" placeholder="Your Company Name" value="" required="">
-                </div>
-            </div>
 
-        	<div class="col-xs-12 col-md-4">
-                <div class="form-group">
-                	<label for="contact_demo">Contact Name:</label>
-                    <input type="text" name="contact_demo" class="form-control" id="contact_demo" placeholder="Your Personal Name or Decision Makers Name" value="" required="">
-                </div>
-            </div>
-
-        	<div class="col-xs-6 col-md-4">
-                <div class="form-group">
-                	<label for="city_demo">City:</label>
-                    <input type="text" name="city_demo" class="form-control" id="city_demo" placeholder="City" value="" required="">
-                </div>
-            </div>
-
-  <div class="col-xs-6 col-md-4">
-                	  				<div class="form-group">
-                	<label for="state_demo">State:</label>
-                    <select id="state_demo" class="form-control">
-                        <optgroup label="Dealership Located">
-                                  <option value="" selected="selected">Select State</option>
-                                  <option value="AL">Alabama</option>
-                                  <option value="AK">Alaska</option>
-                                  <option value="AZ">Arizona</option>
-                                  <option value="AR">Arkansas</option>
-                                  <option value="CA">California</option>
-                                  <option value="CO">Colorado</option>
-                                  <option value="CT">Connecticut</option>
-                                  <option value="DE">Delaware</option>
-                                  <option value="DC">Washington D.C.</option>
-                                  <option value="FL">Florida</option>
-                                  <option value="GA">Georgia</option>
-                                  <option value="HI">Hawaii</option>
-                                  <option value="ID">Idaho</option>
-                                  <option value="IL">Illinois</option>
-                                  <option value="IN">Indiana</option>
-                                  <option value="IA">Iowa</option>
-                                  <option value="KS">Kansas</option>
-                                  <option value="KY">Kentucky</option>
-                                  <option value="LA">Louisiana</option>
-                                  <option value="ME">Maine</option>
-                                  <option value="MD">Maryland</option>
-                                  <option value="MA">Massachusetts</option>
-                                  <option value="MI">Michigan</option>
-                                  <option value="MN">Minnesota</option>
-                                  <option value="MS">Mississippi</option>
-                                  <option value="MO">Missouri</option>
-                                  <option value="MT">Montana</option>
-                                  <option value="NE">Nebraska</option>
-                                  <option value="NV">Nevada</option>
-                                  <option value="NH">New Hampshire</option>
-                                  <option value="NJ">New Jersey</option>
-                                  <option value="NM">New Mexico</option>
-                                  <option value="NY">New York</option>
-                                  <option value="NC">North Carolina</option>
-                                  <option value="ND">North Dakota</option>
-                                  <option value="OH">Ohio</option>
-                                  <option value="OK">Oklahoma</option>
-                                  <option value="OR">Oregon</option>
-                                  <option value="PA">Pennsylvania</option>
-                                  <option value="RI">Rhode Island</option>
-                                  <option value="SC">South Carolina</option>
-                                  <option value="SD">South Dakota</option>
-                                  <option value="TN">Tennessee</option>
-                                  <option value="TX">Texas</option>
-                                  <option value="UT">Utah</option>
-                                  <option value="VT">Vermont</option>
-                                  <option value="VA">Virgina</option>
-                                  <option value="WA">Washington</option>
-                                  <option value="WV">West Virgina</option>
-                                  <option value="WI">Wisconsin</option>
-                                  <option value="WY">Wyoming</option>
-                                </optgroup>
-                    </select>
-  				</div>
-
-  </div>
-  <div class="col-xs-6 col-md-4">
-                <div class="form-group">
-                	<label for="zip_demo">Zip Code:</label>
-                    <input type="text" name="zip_demo" class="form-control" id="zip_demo" placeholder="Zip Code" value="" required="" data-mask="99999">
-				</div>
-  </div>
-
-<div class="col-xs-6 col-md-4">
-				<div class="form-group">
-                	<label for="postion_demo">Best Time To Be Reached:</label>
-                    <select id="postion_demo" class="form-control">
-                    	<option value="08am" selected="selected">Anytime</option>
-                    	<option value="09am">09 am</option>
-                    	<option value="10am">10 am</option>
-                    	<option value="11am">11 am</option>
-                    	<option value="12pm">12 pm</option>
-                    	<option value="01pm">01 pm</option>
-                    	<option value="02pm">02 pm</option>
-                    	<option value="03pm">03 pm</option>
-                    	<option value="04pm">04 pm</option>
-                    	<option value="05pm">05 pm</option>
-                    	<option value="06pm">06 pm</option>
-                    	<option value="07pm">07 pm</option>
-                    </select>
-                </div>  
-			</div>
+                <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                            <label for="postion_demo">Best Time To Be Reached:</label>
+                            <select id="postion_demo" class="form-control">
+                                <option value="08am" selected="selected">Anytime</option>
+                                <option value="09am">09 am</option>
+                                <option value="10am">10 am</option>
+                                <option value="11am">11 am</option>
+                                <option value="12pm">12 pm</option>
+                                <option value="01pm">01 pm</option>
+                                <option value="02pm">02 pm</option>
+                                <option value="03pm">03 pm</option>
+                                <option value="04pm">04 pm</option>
+                                <option value="05pm">05 pm</option>
+                                <option value="06pm">06 pm</option>
+                                <option value="07pm">07 pm</option>
+                            </select>
+                        </div>  
+                    </div>
 
 
-        	<div class="col-xs-6 col-md-4">
-                <div class="form-group">
-                	<label for="bmodel_demo">Business Model:</label>
-                    <select id="bmodel_demo" class="form-control">
-                    	<option value="0" selected="selected">Select</option>
-                        <option value="1">New Car Store</option>
-                    	<option value="3">Special Finance</option>
-                    	<option value="2">Buy Here Pay Here</option>
-                    	<option value="4">Rent To Own</option>
-                    	<option value="5">Whole Sale</option>
-                    	<option value="6">Cash Only</option>
-                    	<option value="7">Other</option>
+                    <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                            <label for="bmodel_demo">Business Model:</label>
+                            <select id="bmodel_demo" class="form-control">
+                                <option value="0" selected="selected">Select</option>
+                                <option value="1">New Car Store</option>
+                                <option value="3">Special Finance</option>
+                                <option value="2">Buy Here Pay Here</option>
+                                <option value="4">Rent To Own</option>
+                                <option value="5">Whole Sale</option>
+                                <option value="6">Cash Only</option>
+                                <option value="7">Other</option>
 
-                    </select>
-                </div>
-            </div>
-			<div class="col-xs-6 col-md-4">
-                <div class="form-group">
-                	<label for="postion_demo">Do You Use Frazer Software?:</label>
-                    <select id="has_frazer" class="form-control">
-                    	<option value="0" selected="selected">No</option>
-                    	<option value="1">Yes</option>
-                    </select>
-                </div>
-			</div>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-4">
+                        <div class="form-group">
+                            <label for="postion_demo">Do You Use Frazer Software?:</label>
+                            <select id="has_frazer" class="form-control">
+                                <option value="0" selected="selected">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
 
-			
-		</div>          
+                    
+                </div>          
 
 
 

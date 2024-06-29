@@ -1,5 +1,5 @@
 
-<?php include("inc.chatwindow.php"); ?>
+<?php //include("inc.chatwindow.php"); ?>
 
 <?php include("inc.modals.php"); ?>
 

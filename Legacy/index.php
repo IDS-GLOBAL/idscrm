@@ -988,14 +988,17 @@
             <div class="col-lg-12 text-center">
                 <address>
                     <strong><span class="navy">Intergrated Dealer Systems (IDSCRM.COM)</span></strong><br />                   
-                    Nairobi, Kenya<br />
+                    
                     <!--- abbr title="Phone">Phone: </abbr> <a href="#">#</a><br />
                     <a href="sms:+1-404-565-4371" class="btn btn-block"><i class="fa fa-phone"></i> Text Us</a  --->
                 </address>
             </div>
             <div class="col-lg-4" style="display:none;">
                 <p class="text-color">
-                    Dealership Back Office Portal, Lead Management, Inventory Management, Teams, Sales People, Managers, Collectors, Repair Shops.  Lite Desking.  Data Feeds, Dealer To Dealer Sales (Wholesale). Other Marketing Avenues.
+                    Dealership Back Office Portal, 
+                    Lead Management, Inventory Management, Teams, 
+                    Sales People, Managers, Collectors, Repair Shops.  Lite Desking.  
+                    Data Feeds, Dealer To Dealer Sales (Wholesale). Other Marketing Avenues.
                 </p>
             </div>
         </div>
@@ -1017,7 +1020,7 @@
         </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
-                <p><strong>&copy; <?php echo date('Y'); ?> Intergrated Dealer Systems</strong><br/> An African Based Tech Company Located in Nairobi, Kenya.</p>
+                <p><strong>&copy; <?php echo date('Y'); ?> Intergrated Dealer Systems</strong><br/> United States and Canda Based Automotive Solution.</p>
             </div>
         </div>
     </div>

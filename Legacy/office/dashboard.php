@@ -1,45 +1,7 @@
+<?php require_once('../Connections/idsconnection.php'); ?>
+<?php require_once('../Connections/tracking.php'); ?>
+<?php require_once('../Connections/wfh_connection.php'); ?>
 <?php
-# FileName="Connection_php_mysql.htm"
-# Type="MYSQL"
-# HTTP="true"
-$hostname_idsconnection = "localhost";
-$database_idsconnection = "idsids_idsdms";
-$username_idsconnection = "idsids_faith";
-$password_idsconnection = "benjamin2831";
-$idsconnection_mysqli = mysqli_connect($hostname_idsconnection, $username_idsconnection, $password_idsconnection);
-
-
-
-$hostname_tracking = "localhost";
-$database_tracking = "idsids_tracking_idsvehicles";
-$username_tracking = "idsids_dudes";
-$password_tracking = "VL&4v!PnvWug";
-$tracking_mysqli = mysqli_connect($hostname_tracking, $username_tracking, $password_tracking, $database_tracking); 
-
-
-
-$hostname_wfh_connection = "localhost";
-$database_wfh_connection = "idsids_wefinancehere";
-$username_wfh_connection = "idsids_wefinance";
-$password_wfh_connection = "yrBIBVwHt)6p";
-$wfh_connection_mysqli = mysqli_connect($hostname_wfh_connection, $username_wfh_connection, $password_wfh_connection); 
-
-
-# FileName="Connection_php_mysql.htm"
-# Type="MYSQL"
-# HTTP="true"
-chdir(dirname(__FILE__));
-$hostname_idschatconnection = "localhost";
-$database_idschatconnection = "idsids_idschat";
-$username_idschatconnection = "idsids_crft1";
-$password_idschatconnection = "dmsKBO6xqWMzt2";
-$idschatconnection_mysqli = mysqli_connect($hostname_idschatconnection, $username_idschatconnection, $password_idschatconnection, $database_idschatconnection); 
-
-
-
-
-
-?><?php
 if (!isset($_SESSION)) {
   session_start();
 }
@@ -250,7 +212,7 @@ $row_dealers_pend = mysqli_fetch_array($dealers_pend);
 $totalRows_dealers_pend = mysqli_num_rows($dealers_pend);
 
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_dlrtickets = "SELECT * FROM `idsids_idsdms`.`ticket_submit_dlr` ORDER BY `ticket_submit_dlr`.`ticket_id` DESC";
+$query_dlrtickets = "SELECT * FROM `idsids_idsdms`.`ticket_submit_dlr` ORDER BY `ticket_submit_dlr`.`id` DESC";
 $dlrtickets = mysqli_query($idsconnection_mysqli, $query_dlrtickets);
 $row_dlrtickets = mysqli_fetch_array($dlrtickets);
 $totalRows_dlrtickets = mysqli_num_rows($dlrtickets);

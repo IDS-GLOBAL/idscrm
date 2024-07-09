@@ -112,11 +112,13 @@ $_SESSION['MM_UserGroupmobi'] = NULL;
 unset($_SESSION['MM_Usernamemobi']);
 unset($_SESSION['MM_UserGroupmobi']);
 unset($_SESSION['PrevUrl']);
-$_SESSION = array();
-$params = session_get_cookie_params();
-setcookie(session_name(), '', time() -42000,
-  $params["path"], $params["domain"],
-  $params["secure"], $params["httponly"]);
+if (isset($_SESSION))
+{
+    unset($_SESSION);
+    session_unset();
+    session_destroy();
+}
+
 session_destroy();
 if ($logoutGoTo != "") {header("Location: $logoutGoTo");
 exit;
@@ -126,7 +128,7 @@ exit;
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Logging Out</title>
 </head>
 
 <body>

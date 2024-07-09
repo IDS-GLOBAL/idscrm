@@ -86,7 +86,7 @@ $myname = "$myfname $mylname";
 	
 	
 	
-	echo $inertDudeActivityStr = "INSERT INTO `idsids_tracking_idsvehicles`.`dudes_activity` (`dudes_dlr_actid`, `dudes_dlr_did`, `dudes_dlr_did_prospctid`, `dudes_dlr_dude_id`, `dudes_dlr_dude_name`, `dudes_dlr_body`, `dudes_dlr_created_at`) VALUES (NULL, '', '', '$dudesid', '$myname', '$myname Logged out', CURRENT_TIMESTAMP)";
+	echo $inertDudeActivityStr = "INSERT INTO `idsids_tracking_idsvehicles`.`dudes_activity` (`dudes_dlr_actid`, `dudes_dlr_dude_id`, `dudes_dlr_dude_name`, `dudes_dlr_body`, `dudes_dlr_created_at`) VALUES (NULL,  NULL, '$dudesid', '$myname', '$myname Logged out', CURRENT_TIMESTAMP)";
 //$inertDudeActivityStr = mysql_real_escape_string($inertDudeActivityStr);
 	
 $result = mysqli_query($tracking_mysqli, $inertDudeActivityStr);

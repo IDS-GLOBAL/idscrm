@@ -85,8 +85,10 @@ $myname = "$myfname $mylname";
 	//      Folder For Creating 
 	
 	
-	
-	echo $inertDudeActivityStr = "INSERT INTO `idsids_tracking_idsvehicles`.`dudes_activity` (`dudes_dlr_dude_id`, `dudes_dlr_dude_name`, `dudes_dlr_body`, `dudes_dlr_created_at`) VALUES ('$dudesid', '$myname', '$myname Logged out', CURRENT_TIMESTAMP)";
+	mysqli_select_db($tracking_mysqli, $database_idsconnection);
+	echo $inertDudeActivityStr = "INSERT INTO `idsids_tracking_idsvehicles`.`dudes_activity`
+  (`dudes_dlr_dude_id`, `dudes_dlr_dude_name`, `dudes_dlr_body`, `dudes_dlr_created_at`) 
+  VALUES ('$dudesid', '$myname', '$myname Logged out', CURRENT_TIMESTAMP)";
 //$inertDudeActivityStr = mysql_real_escape_string($inertDudeActivityStr);
 	
 $result = mysqli_query($tracking_mysqli, $inertDudeActivityStr);

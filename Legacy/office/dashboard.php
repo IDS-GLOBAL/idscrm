@@ -745,7 +745,7 @@ function formatMoney($number, $fractional=false) {
                                     <div class="feed-element">
                                         <div>
 <br />
-<small class="pull-right"><a href="ticketd.view.php?sysdealerid=<?php echo $row_dlrtickets['ticket_did']; ?>&amp;ticketid=<?php echo $row_dlrtickets['ticket_id']; ?>" class="btn btn-sm btn-primary">View Ticket (<?php echo $row_dlrtickets['ticket_id']; ?>)</a></small>
+<small class="pull-right"><a href="ticketd.view.php?sysdealerid=<?php echo $row_dlrtickets['ticket_did']; ?>&amp;ticketid=<?php echo $row_dlrtickets['id']; ?>" class="btn btn-sm btn-primary">View Ticket (<?php echo $row_dlrtickets['id']; ?>)</a></small>
                                           <strong><?php echo $row_dlrtickets['contact_name']; ?> @:<?php echo $row_dlrtickets['did']; ?> <?php echo $row_dlrtickets['priority']; ?> <?php echo $row_dlrtickets['status_dudes']; ?></strong>
                                           <div><?php echo $row_dlrtickets['what_happened']; ?><?php if($row_dlrtickets['what_you_want_to_happen']){ echo ' | '.$row_dlrtickets['what_you_want_to_happen']; }  ?><br /></div>
                                           <div><small class=""><?php echo $row_dlrtickets['created_at']; ?></small></div>

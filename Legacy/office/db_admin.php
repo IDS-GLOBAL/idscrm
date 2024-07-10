@@ -229,16 +229,8 @@ $query_dealer_query =  "SELECT * FROM `idsids_idsdms`.`dealers` WHERE `dealers`.
 $dealer_query = mysqli_query($idsconnection_mysqli, $query_dealer_query);
 $row_dealer_query = mysqli_fetch_array($dealer_query);
 $totalRows_dealer_query = mysqli_num_rows($dealer_query);
-
-$thisdid = $colname_dealer_query;
-$dealer_email = "";
-
-@if($row_dealer_query['id']){
-  $thisdid = $row_dealer_query['id'];
-  $dealer_email = $row_dealer_query['email'];
-}
-
-
+@$thisdid = $row_dealer_query['id'];
+@$dealer_email = $row_dealer_query['email'];
 
 
 
@@ -252,13 +244,9 @@ $prspct_dealers = mysqli_query($tracking_mysqli, $query_prspct_dealers);
 $row_prspct_dealers = mysqli_fetch_array($prspct_dealers);
 $totalRows_prspct_dealers = mysqli_fetch_array($prspct_dealers);
 
-
 $state_prospect = $colname_prspct_dealers;
-$dlr_prspct_id = $colname_prspct_dealers;
 
-@if($row_prspct_dealers['id']){
-  $dlr_prspct_id = $row_prspct_dealers['id'];
-}
+@$dlr_prspct_id = $row_prspct_dealers['id'];
 
 
 mysqli_select_db($tracking_mysqli, $database_tracking);

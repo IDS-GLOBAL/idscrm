@@ -229,8 +229,8 @@ $query_dealer_query =  "SELECT * FROM `idsids_idsdms`.`dealers` WHERE `dealers`.
 $dealer_query = mysqli_query($idsconnection_mysqli, $query_dealer_query);
 $row_dealer_query = mysqli_fetch_array($dealer_query);
 $totalRows_dealer_query = mysqli_num_rows($dealer_query);
-$thisdid = $row_dealer_query['id'];
-$dealer_email = $row_dealer_query['email'];
+@$thisdid = $row_dealer_query['id'];
+@$dealer_email = $row_dealer_query['email'];
 
 
 
@@ -243,8 +243,10 @@ $query_prspct_dealers =  "SELECT * FROM `idsids_tracking_idsvehicles`.`dealer_pr
 $prspct_dealers = mysqli_query($tracking_mysqli, $query_prspct_dealers);
 $row_prspct_dealers = mysqli_fetch_array($prspct_dealers);
 $totalRows_prspct_dealers = mysqli_fetch_array($prspct_dealers);
+
 $state_prospect = $colname_prspct_dealers;
-$dlr_prspct_id = $row_prspct_dealers['id'];
+
+@$dlr_prspct_id = $row_prspct_dealers['id'];
 
 
 mysqli_select_db($tracking_mysqli, $database_tracking);
@@ -264,7 +266,7 @@ $totalRows_dealers_pend = mysqli_num_rows($dealers_pend);
 
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
 
-$query_dlrtickets = "SELECT * FROM `idsids_idsdms`.`ticket_submit_dlr` ORDER BY `ticket_submit_dlr`.`ticket_id` DESC";
+$query_dlrtickets = "SELECT * FROM `idsids_idsdms`.`ticket_submit_dlr` ORDER BY `ticket_submit_dlr`.`id` DESC";
 $dlrtickets = mysqli_query($idsconnection_mysqli, $query_dlrtickets);
 $row_dlrtickets = mysqli_fetch_array($dlrtickets);
 $totalRows_dlrtickets = mysqli_num_rows($dlrtickets);

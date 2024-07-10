@@ -354,7 +354,13 @@ $query_minuscreditsAvilable = "SELECT SUM(`wfhuser_ledger_log`.`wfhuserledger_lo
 $minuscreditsAvilable = mysqli_query($idsconnection_mysqli, $query_minuscreditsAvilable);
 $row_minusminuscreditsAvilable = mysqli_fetch_array($minuscreditsAvilable);
 $totalRows_minuscreditsAvilable = mysqli_num_rows($minuscreditsAvilable);
-$total_minuscredits = $row_minusminuscreditsAvilable['total_minuscredits'];
+
+if($row_minusminuscreditsAvilable['total_minuscredits'] > 0){
+
+    $total_minuscredits = $row_minusminuscreditsAvilable['total_minuscredits'];
+}else{
+    $total_minuscredits = 0.00;
+}
 
 
 $true_total_credits = ($total_pluscredits - $total_minuscredits);
@@ -746,7 +752,7 @@ function formatMoney($number, $fractional=false) {
                                         <div>
 <br />
 <small class="pull-right"><a href="ticketd.view.php?sysdealerid=<?php echo $row_dlrtickets['ticket_did']; ?>&amp;ticketid=<?php echo $row_dlrtickets['id']; ?>" class="btn btn-sm btn-primary">View Ticket (<?php echo $row_dlrtickets['id']; ?>)</a></small>
-                                          <strong><?php echo $row_dlrtickets['contact_name']; ?> @:<?php echo $row_dlrtickets['did']; ?> <?php echo $row_dlrtickets['priority']; ?> <?php echo $row_dlrtickets['status_dudes']; ?></strong>
+                                          <strong><?php echo $row_dlrtickets['contact_name']; ?> @:<?php echo $row_dlrtickets['ticket_did']; ?> <?php echo $row_dlrtickets['priority']; ?> <?php echo $row_dlrtickets['status_dudes']; ?></strong>
                                           <div><?php echo $row_dlrtickets['what_happened']; ?><?php if($row_dlrtickets['what_you_want_to_happen']){ echo ' | '.$row_dlrtickets['what_you_want_to_happen']; }  ?><br /></div>
                                           <div><small class=""><?php echo $row_dlrtickets['created_at']; ?></small></div>
                                           </div>

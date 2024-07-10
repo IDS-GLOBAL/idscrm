@@ -66,15 +66,12 @@ foreach ($row_userDudes as $col => $val) {
   $_SESSION[$col] = $val;
 }
 
-?>
-<?php
+
 
 $dudesid = $row_userDudes['dudes_id'];
 $myfname = $row_userDudes['dudes_firstname'];
 $mylname = $row_userDudes['dudes_lname'];
 $myname = "$myfname $mylname";
-?>
-<?php
 
 	// Get the ID From The Previous Page
 	// Track What Was Changed And By Who
@@ -89,7 +86,7 @@ $myname = "$myfname $mylname";
 	$inertDudeActivityStr = "INSERT INTO `idsids_tracking_idsvehicles`.`dudes_activity`
   (`dudes_dlr_dude_id`, `dudes_dlr_dude_name`, `dudes_dlr_body`, `dudes_dlr_created_at`) 
   VALUES ('$dudesid', '$myname', '$myname Logged out', CURRENT_TIMESTAMP)";
-//$inertDudeActivityStr = mysql_real_escape_string($inertDudeActivityStr);
+  //$inertDudeActivityStr = mysql_real_escape_string($inertDudeActivityStr);
 	
 $result = mysqli_query($tracking_mysqli, $inertDudeActivityStr);
 	
@@ -119,18 +116,7 @@ if (isset($_SESSION))
     session_destroy();
 }
 
-session_destroy();
 if ($logoutGoTo != "") {header("Location: $logoutGoTo");
 exit;
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Logging Out</title>
-</head>
-
-<body>
-</body>
-</html>

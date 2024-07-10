@@ -233,7 +233,7 @@ $totalRows_dealer_query = mysqli_num_rows($dealer_query);
 $thisdid = $colname_dealer_query;
 $dealer_email = "";
 
-if($row_dealer_query['id'];){
+if($row_dealer_query['id']){
   $thisdid = $row_dealer_query['id'];
   $dealer_email = $row_dealer_query['email'];
 }

@@ -116,7 +116,9 @@ if (isset($_SESSION))
     session_destroy();
 }
 
-if ($logoutGoTo != "") {header("Location: $logoutGoTo");
-exit;
-}
+if ($logoutGoTo != "")
+  {
+    header("Location: $logoutGoTo");
+    exit;
+  }
 ?>

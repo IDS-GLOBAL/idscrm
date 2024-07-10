@@ -355,7 +355,7 @@ $minuscreditsAvilable = mysqli_query($idsconnection_mysqli, $query_minuscreditsA
 $row_minusminuscreditsAvilable = mysqli_fetch_array($minuscreditsAvilable);
 $totalRows_minuscreditsAvilable = mysqli_num_rows($minuscreditsAvilable);
 
-if($row_minusminuscreditsAvilable['total_minuscredits'] => 0){
+if($row_minusminuscreditsAvilable['total_minuscredits'] > 0){
 
     $total_minuscredits = $row_minusminuscreditsAvilable['total_minuscredits'];
 }else{

@@ -87,11 +87,11 @@ $row_userDets = mysqli_fetch_assoc($userDets);
 $totalRows_userDets = mysqli_num_rows($userDets);
 $did = $row_userDets['id']; //Hackishere
 $colname_dlrSlctBySsnDid = "-1";
-if (isset($_SESSION['$did'])) {
-  $colname_dlrSlctBySsnDid = $_SESSION['$did'];
+if (isset($_SESSION["did"])) {
+  $colname_dlrSlctBySsnDid = $_SESSION["did"];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_dlrSlctBySsnDid =  "SELECT * FROM dealers WHERE id = ".$did."";;
+$query_dlrSlctBySsnDid =  "SELECT * FROM dealers WHERE id = '$did'";
 $dlrSlctBySsnDid = mysqli_query($idsconnection_mysqli, $query_dlrSlctBySsnDid);
 $row_dlrSlctBySsnDid = mysqli_fetch_assoc($dlrSlctBySsnDid);
 $totalRows_dlrSlctBySsnDid = mysqli_num_rows($dlrSlctBySsnDid);
@@ -104,7 +104,7 @@ if (isset($_GET['pageNum_all_msgsbyDid'])) {
 $startRow_all_msgsbyDid = $pageNum_all_msgsbyDid * $maxRows_all_msgsbyDid;
 
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_all_msgsbyDid = "SELECT * FROM messages WHERE did = $did ORDER BY messages.created_at";
+$query_all_msgsbyDid = "SELECT * FROM `messages` WHERE `did` = $did ORDER BY `messages`.`created_at`";
 $query_limit_all_msgsbyDid =  "%s LIMIT %d, %d", $query_all_msgsbyDid, $startRow_all_msgsbyDid, $maxRows_all_msgsbyDid);
 $all_msgsbyDid = mysqli_query($idsconnection_mysqli, $query_limit_all_msgsbyDid);
 $row_all_msgsbyDid = mysqli_fetch_assoc($all_msgsbyDid);
@@ -118,7 +118,7 @@ if (isset($_GET['totalRows_all_msgsbyDid'])) {
 $totalPages_all_msgsbyDid = ceil($totalRows_all_msgsbyDid/$maxRows_all_msgsbyDid)-1;
 
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_msgCSS = "SELECT * FROM messages_css";
+$query_msgCSS = "SELECT * FROM `messages_css`";
 $msgCSS = mysqli_query($idsconnection_mysqli, $query_msgCSS);
 $row_msgCSS = mysqli_fetch_assoc($msgCSS);
 $totalRows_msgCSS = mysqli_num_rows($msgCSS);

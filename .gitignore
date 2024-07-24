@@ -128,3 +128,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+Legacy/Connections/frazerdms.php
+Legacy/Connections/idschatconnection.php
+Legacy/Connections/idsconnection.php
+Legacy/Connections/idshomenetatuoconnection.php
+Legacy/Connections/tracking.php

@@ -4,18 +4,18 @@
 [submodule "africars.io"]
 	path = Sites/investments/africars.io
 	url = https://github.com/IDS-GLOBAL/africars.io.git
-[submodule "Sites/investments/autocitymag.com"]
+[submodule "autocitymag.com"]
 	path = Sites/investments/autocitymag.com
 	url = https://github.com/IDS-GLOBAL/autocitymag.com.git
-[submodule "Sites/investments/africars.io"]
+[submodule "africars.io"]
 	path = Sites/investments/africars.io
 	url = https://github.com/IDS-GLOBAL/africars.io.git
-[submodule "Sites/investments/carezmart.com"]
+[submodule "carezmart.com"]
 	path = Sites/investments/carezmart.com
 	url = https://github.com/IDS-GLOBAL/carezmart.com.git
-[submodule "Sites/investments/buyherepayhereus.com"]
+[submodule "buyherepayhereus.com"]
 	path = Sites/investments/buyherepayhereus.com
 	url = https://github.com/IDS-GLOBAL/buyherepayhereus.com.git
-[submodule "Sites/investments/wefinancehere.com"]
+[submodule "wefinancehere.com"]
 	path = Sites/investments/wefinancehere.com
 	url = https://github.com/IDS-GLOBAL/wefinancehere.com.git

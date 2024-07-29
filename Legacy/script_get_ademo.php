@@ -4,8 +4,8 @@
 if(!$_POST) exit;
 
 
-//require_once("Mail.php");
-require_once("/home/idsids/php/Mail.php");
+require_once("Mail.php");
+//require_once("/home/idsids/php/Mail.php");
 
 
 

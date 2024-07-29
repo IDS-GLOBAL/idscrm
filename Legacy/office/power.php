@@ -14,6 +14,13 @@ $state_prospect = $colname_prspct_dealers;
 
 
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
+$query_dlrtickets = "SELECT * FROM `idsids_idsdms`.`ticket_submit_dlr` ORDER BY `ticket_submit_dlr`.`id` DESC";
+$dlrtickets = mysqli_query($idsconnection_mysqli, $query_dlrtickets);
+$row_dlrtickets = mysqli_fetch_array($dlrtickets);
+$totalRows_dlrtickets = mysqli_num_rows($dlrtickets);
+
+
+mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
 $query_dealers_pend = "SELECT * FROM `idsids_idsdms`.`dealers_pending` ORDER BY id ASC";
 $dealers_pend = mysqli_query($idsconnection_mysqli, $query_dealers_pend);
 $row_dealers_pend = mysqli_fetch_array($dealers_pend);
@@ -111,13 +118,13 @@ $totalRows_wfhlatest_fbusrs = mysqli_num_rows($wfhlatest_fbusrs);
               		
                     <tr>
                 <td><input name="utc1" id="utc2" type="checkbox" class="utc" /></td>
-                <td><?php echo $row_DlrTickets['id']; ?></td>
-                <td><?php echo $row_DlrTickets['created_at']; ?></td>
-                <td><?php echo $row_DlrTickets['contact_name']; ?></td>
-                <td><?php echo $row_DlrTickets['status_dudes']; ?></td>
-                <td><?php echo $row_DlrTickets['contact_phone']; ?></td>
-                <td><a href="#"><?php echo $row_DlrTickets['contact_email']; ?></a></td>
-                <td><a href="tickets-bydealers-preview.php?ticketid=<?php echo $row_DlrTickets['id']; ?>"><img src="images/pimpa_yes.gif" alt="picture" width="15" height="15" class="tabpimpa" /></a></td>
+                <td><?php echo $row_dlrtickets['id']; ?></td>
+                <td><?php echo $row_dlrtickets['created_at']; ?></td>
+                <td><?php echo $row_dlrtickets['contact_name']; ?></td>
+                <td><?php echo $row_dlrtickets['status_dudes']; ?></td>
+                <td><?php echo $row_dlrtickets['contact_phone']; ?></td>
+                <td><a href="#"><?php echo $row_dlrtickets['contact_email']; ?></a></td>
+                <td><a href="tickets-bydealers-preview.php?ticketid=<?php echo $row_dlrtickets['id']; ?>"><img src="images/pimpa_yes.gif" alt="picture" width="15" height="15" class="tabpimpa" /></a></td>
                 <td><a href="#"><img src="images/pimpa_no.gif" alt="picture" width="15" height="15" class="tabpimpa" /></a></td>
               </tr>
 				

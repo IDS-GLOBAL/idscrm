@@ -8,4 +8,5 @@ mysqli_close($idschatconnection_mysqli);
 
 mysqli_close($wfh_connection_mysqli);
 
+$pdo = null;
 ?>

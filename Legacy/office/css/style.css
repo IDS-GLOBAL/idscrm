@@ -2174,9 +2174,12 @@ input.form-control.input-sm{
 
 .form-group {
     margin-bottom: 10px !important;
+    padding-bottom: 30px;
 }
 
-.form-group select{	font-weight:bold !important; border-right: 1px #24a9e2 solid !important;
+.form-group select {
+    font-weight:bold !important; 
+    border-right: 1px #24a9e2 solid !important;
 }
 
 .form-control {
@@ -3320,7 +3323,7 @@ a.forum-item-title:hover {
 .tabs-container .tabs-left > .nav-tabs .active > a:hover,
 .tabs-container .tabs-left > .nav-tabs .active > a:focus {
   border-color: #e7eaec transparent #e7eaec #e7eaec;
-  *border-right-color: #ffffff;
+  border-right-color: #ffffff;
 }
 .tabs-container .tabs-right > .nav-tabs {
   float: right;
@@ -3336,7 +3339,7 @@ a.forum-item-title:hover {
 .tabs-container .tabs-right > .nav-tabs .active > a:hover,
 .tabs-container .tabs-right > .nav-tabs .active > a:focus {
   border-color: #e7eaec #e7eaec #e7eaec transparent;
-  *border-left-color: #ffffff;
+  border-left-color: #ffffff;
   z-index: 1;
 }
 @media (max-width: 767px) {

@@ -165,7 +165,7 @@
 	            
               <div class="navy-line"></div>
             	
-                <h2 align="center">Request Your Demo Today!</h2>
+                <h2 align="center">Request Access For Your Dealership!</h2>
 
                 <div class="m-t" id="getademo">
 
@@ -274,7 +274,7 @@
 
                 <div class="col-xs-6 col-md-4">
                         <div class="form-group">
-                            <label for="postion_demo">Best Time To Be Reached:</label>
+                            <label for="postion_demo">Best Time To Be Reached?:</label>
                             <select id="postion_demo" class="form-control">
                                 <option value="08am" selected="selected">Anytime</option>
                                 <option value="09am">09 am</option>
@@ -295,7 +295,7 @@
 
                     <div class="col-xs-6 col-md-4">
                         <div class="form-group">
-                            <label for="bmodel_demo">Business Model:</label>
+                            <label for="bmodel_demo">Your Dealership Business Model?:</label>
                             <select id="bmodel_demo" class="form-control">
                                 <option value="0" selected="selected">Select</option>
                                 <option value="1">New Car Store</option>

@@ -2174,8 +2174,11 @@ input.form-control.input-sm{
 
 .form-group {
     margin-bottom: 10px !important;
-    padding-bottom: 30px;
+ 
 }
+
+
+
 
 .form-group select {
     font-weight:bold !important; 

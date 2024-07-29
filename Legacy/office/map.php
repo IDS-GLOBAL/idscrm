@@ -137,6 +137,7 @@ $totalRows_map_prspctdlrs = mysqli_num_rows($map_prspctdlrs);
                     <div class="ibox-content">
 
                     <h3>Prospect And System Dealers</h3>
+                    
                         <div id="map-canvas"></div>
     
 

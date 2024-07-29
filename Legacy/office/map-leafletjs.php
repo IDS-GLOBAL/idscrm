@@ -19,7 +19,7 @@
  <?php include("inc.head.php"); ?>
 
 <style>
-    #map { height: 180px; }
+    #map { height: 100%; width: 100%; }
 </style>
  
 </head>
@@ -65,7 +65,7 @@
                     </div>
                     <div class="ibox-content">
 
-                    <div id="map-leaf" style="width: 600px; height: 400px;"></div>
+                    <div id="map-leaf" style="width: 100%; height: 400px;"></div>
 
                     </div>
                 </div>
@@ -216,43 +216,97 @@ $(document).ready(function() {
 
 <script>
 
-	const map = L.map('map-leaf').setView([51.505, -0.09], 13);
-
-	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		maxZoom: 19,
-		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-	}).addTo(map);
-
-	const marker = L.marker([51.5, -0.09]).addTo(map)
-		.bindPopup('<b>Hello world!</b><br />I am a popup.').openPopup();
-
-	const circle = L.circle([51.508, -0.11], {
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5,
-		radius: 500
-	}).addTo(map).bindPopup('I am a circle.');
-
-	const polygon = L.polygon([
-		[51.509, -0.08],
-		[51.503, -0.06],
-		[51.51, -0.047]
-	]).addTo(map).bindPopup('I am a polygon.');
+	const map = L.map('map-leaf')
 
 
-	const popup = L.popup()
-		.setLatLng([51.513, -0.09])
-		.setContent('I am a standalone popup.')
-		.openOn(map);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    
 
-	function onMapClick(e) {
-		popup
-			.setLatLng(e.latlng)
-			.setContent(`You clicked the map at ${e.latlng.toString()}`)
-			.openOn(map);
-	}
+    let marker, circle, zoomed;
+    
+    navigator.geolocation.watchPosition(mapsuccess, maperror);
+    
+    function mapsuccess(pos) {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        const accuracy = pos.coords.accuracy;
+        
+        map.setView([lat, lng], 13); // Set the map view to the current location
 
-	map.on('click', onMapClick);
+       
+        if(marker){
+            map.removeLayer(marker);
+            map.removeLayer(circle);
+        }
+
+
+
+        marker = L.marker([lat, lng]).addTo(map).bindPopup('Your Approximate Location <br /> Lat: '+ lat + ' <br /> Long: ' +lng);
+
+        circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+
+        if(!zoomed){
+            zoomed = map.fitBounds(circle.getBounds());
+        }
+
+        map.setView([lat, lng]); // Set the map view to the current location
+        
+        
+        
+    }
+
+    function maperror(err) {
+
+        if( err.code === 1) {
+            alert('Please Allow geolocation Access')
+        }else{
+            alert('Cannot get current location access')
+            map.setView([51.505, -0.09]);
+        }
+
+       
+    }
+    
+    
+    
+    // const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //     maxZoom: 19,
+    //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    // }).addTo(map);
+    
+	// const marker = L.marker([51.5, -0.09]).addTo(map)
+	// 	.bindPopup('<b>Hello world!</b><br />I am a popup.').openPopup();
+
+	// const circle = L.circle([51.508, -0.11], {
+	// 	color: 'red',
+	// 	fillColor: '#f03',
+	// 	fillOpacity: 0.5,
+	// 	radius: 500
+	// }).addTo(map).bindPopup('I am a circle.');
+
+	// const polygon = L.polygon([
+	// 	[51.509, -0.08],
+	// 	[51.503, -0.06],
+	// 	[51.51, -0.047]
+	// ]).addTo(map).bindPopup('I am a polygon.');
+
+
+	// const popup = L.popup()
+	// 	.setLatLng([51.513, -0.09])
+	// 	.setContent('I am a standalone popup.')
+	// 	.openOn(map);
+
+	// function onMapClick(e) {
+	// 	popup
+	// 		.setLatLng(e.latlng)
+	// 		.setContent(`You clicked the map at ${e.latlng.toString()}`)
+	// 		.openOn(map);
+	// }
+
+	// map.on('click', onMapClick);
 
 </script>
 </body>

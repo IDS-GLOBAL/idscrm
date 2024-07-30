@@ -1,0 +1,1 @@
+<img src="../../vehicles/photos/<?php echo $row_salespersoninventory['did']; ?>/<?php echo $row_salespersoninventory['vid']; ?>/<?php echo $row_salespersoninventory['vthubmnail_file']; ?>" width="50"  alt="Vehicle photo">

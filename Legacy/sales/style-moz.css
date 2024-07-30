@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+/* WebAppSkins.com */
+
+a.bg_grey { -moz-border-radius:6px;}
+a.bg_grey span { -moz-border-radius:6px;}
+.gadget { -moz-border-radius:8px;}
+.gadget .gadget_border { -moz-border-radius:6px;}
+.gadget .gadget_title { -moz-border-radius:6px;}
+.gadget .gadget_title h3 { -moz-border-radius:6px;}
+.gadget ul.admin_boxes li { -moz-border-radius:8px;}
+.gadget ul.admin_boxes li img { -moz-border-radius:6px;}
+input.text, textarea, form a.pnbtn { -moz-border-radius:6px;}
+.cntresults { -moz-border-radius:3px;}
+.footer_sub1 { -moz-border-radius:8px;}
+.footer_sub2 { -moz-border-radius:6px;}
+.plogo { -moz-border-radius:6px;}
+.header .logged span { -moz-border-radius:6px;}
+.formsearch { -moz-border-radius:6px;}
+.formsearch span { -moz-border-radius:4px;}
+.header .menublock { -moz-border-radius:8px;}
+.header .menublocksub { -moz-border-radius:6px;}
+.header .butright { -moz-border-radius:6px;}
+.header .butright span { -moz-border-radius:6px;}
+.header ul.menu { -moz-border-radius:6px;}
+.header ul.menu li a { -moz-border-radius:6px;}
+.window { -moz-border-radius:8px;}
+.gadget .eben_center { -moz-border-radius-bottomleft:6px; -moz-border-radius-bottomright:6px;}
+.gadget .eben_center .eben_bl, .gadget .eben_center .eben_br { -moz-border-radius-topleft:6px; -moz-border-radius-topright:6px;}
+.gadget .eben_center .eben_l, .gadget .eben_center .eben_r { -moz-border-radius-topleft:6px; -moz-border-radius-topright:6px;}
+.gadget .eben_center .eben_bl, .gadget .eben_center .eben_l { -moz-border-radius-bottomright:6px;}
+.gadget .eben_center .eben_br, .gadget .eben_center .eben_r { -moz-border-radius-bottomleft:6px;}

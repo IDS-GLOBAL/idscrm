@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+#photogallery ul{ list-style:none;}
+
+#photogallery li{float:left; padding:4px;}
+
+.photo_file{ cursor:pointer;}
+
+
+.vtphoto img{
+		padding: 3px;
+border: 1px solid #FF9;
+display: inline;
+width: 90px;
+}
+
+.vtphoto img:hover {
+	padding: 3px;
+border: 1px solid #FF9;
+background-color: #CCC;
+margin-bottom: 0;
+}
+

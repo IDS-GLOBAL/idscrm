@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget>
+  <id><![CDATA[2137022]]></id>
+  <version><![CDATA[1.0]]></version>
+  <name><![CDATA[jQuery UI Datepicker]]></name>
+  <presets>
+    <preset name="IDSCRM - Date Picker">
+      <description>Customized For Sales CRM</description>
+      <properties>
+        <property name="headerBackgroundColor" value="#1c94c4"/>
+        <property name="headerBorderColor" value="#999999"/>
+        <property name="defaultColor" value="#1c94c4"/>
+        <property name="activeColor" value="#ffcc00"/>
+        <property name="contentBackgroundImage" value="ui-glass-gradient"/>
+        <property name="hoverColor" value="#ffcc66"/>
+        <property name="highlightColor" value="#ffff66"/>
+        <property name="headerBorderWidth" value="2px"/>
+        <property name="showOtherMonths" value="true"/>
+      </properties>
+    </preset>
+  </presets>
+</widget>

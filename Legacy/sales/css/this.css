@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* example_6 css */
+#example_6 {
+	position: relative; /* important */
+	overflow: hidden; /* important */
+	width: 640px; /* important */
+	height: 540px; /* important */
+	margin: 0;
+	background: #fff;
+}
+
+#example_6_content {
+	position: absolute;
+	top: 0;
+	margin-left: 0;
+}
+
+#example_6_content
+#example_6_content li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+	#example_6_content {
+		width: 13440px;
+	}
+	#container_bd #example_6 ul li {
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 0;
+		border: none;
+		background-color: #fff;
+	}
+
+#container_bd #example_6 ul li img {
+	display: block;
+}
+
+#example_6_frame {
+	position: relative;
+	margin: 485px 131px 0 131px;
+}
+#container_bd #example_6_frame ul li {
+	margin: 0 2px;
+}
+#container_bd #example_6_frame ul li img{
+	border: 1px solid #9cf;
+	padding: 2px;
+}
+	#container_bd #example_6_frame ul li img:hover {border: 1px solid #369;}
+			

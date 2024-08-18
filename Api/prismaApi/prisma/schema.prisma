@@ -2885,6 +2885,24 @@ model time_minutes_5 {
   fivemin_name String? @db.VarChar(2)
 }
 
+model users {
+  id               Int       @id @default(autoincrement())
+  uuid             String?   @unique(map: "User_uuid_key")
+  name             String?
+  role             String?
+  email            String    @unique(map: "User_email_key")
+  emailVerified    DateTime?
+  image            String?   @db.LongText
+  phone            String?
+  hashedPassword   String?
+  firstName        String?
+  lastName         String?
+  updatedAt        DateTime  @default(now())
+  createdAt        DateTime  @default(now())
+  favoriteBapUuids String?   @db.LongText
+  favoriteBbUuids  String?   @db.LongText
+}
+
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 model vehicle_options {
   voption_id        Int     @id @default(autoincrement())
@@ -3935,22 +3953,215 @@ model year_options {
   year_name  String @db.VarChar(25)
 }
 
-model users {
-  id               Int       @id @default(autoincrement())
-  uuid             String?   @unique(map: "User_uuid_key")
-  name             String?
-  role             String?
-  email            String    @unique(map: "User_email_key")
-  emailVerified    DateTime?
-  image            String?   @db.LongText
-  phone            String?
-  hashedPassword   String?
-  firstName        String?
-  lastName         String?
-  updatedAt        DateTime  @default(now())
-  createdAt        DateTime  @default(now())
-  favoriteBapUuids String?   @db.LongText
-  favoriteBbUuids  String?   @db.LongText
+model dealerscontent {
+  Id                              Int       @id @default(autoincrement())
+  home                            String?
+  about                           String?
+  directions                      String?
+  contactus                       String?
+  thankyou_page                   String?
+  mapurl                          String?
+  mapframe                        String?
+  slogan                          String?
+  disclaimer                      String?
+  newmatrixcredit_vgoodcredit     String?
+  newmatrixcredit_jgoodcredit     String?
+  newmatrixcredit_faircredit      String?
+  newmatrixcredit_poorcredit      String?
+  newmatrixcredit_subprime        String?
+  newmatrixcredit_unknown         String?
+  newmatrixcredit_fminimumprofit  String?
+  newmatrixcredit_bminimumprofit  String?
+  usedmatrixcredit_vgoodcredit    String?
+  usedmatrixcredit_jgoodcredit    String?
+  usedmatrixcredit_faircredit     String?
+  usedmatrixcredit_poorcredit     String?
+  usedmatrixcredit_subprime       String?
+  usedmatrixcredit_unknown        String?
+  usedmatrixcredit_fminimumprofit String?
+  usedmatrixcredit_bminimumprofit String?
+  settingCurrency                 String?
+  settingDefaultDPpercntg         Int?
+  settingDefaultPromoPriceOff     Int?
+  settingDefaultAPR               String?
+  settingDefaultTerm              Int?
+  settingSateSlsTax               String?
+  settingDocDlvryFee              String?
+  settingTitleFee                 String?
+  settingStateInspectnFee         String?
+  dlr_ok_googlemp                 String?
+  dlr_geo_latitude                String?
+  dlr_geo_longitude               String?
+  status                          Int?
+  dealer_chat                     String?
+  dealer_chatname                 String?
+  dealer_chat_display             String?
+  dealer_chat_code                String
+  dealer_chat_visitorid           Int?
+  customtitle1                    String?
+  customcontent1                  String?
+  feedIDCars                      String?
+  feedIDComcast                   String?
+  feedidautotrader                String?
+  feedidfrazer                    String?
+  feedidautomart                  String?
+  feedidvehix                     String?
+  feedidove                       String?
+  feedhomenetfilename             String?
+  metaDescription                 String?
+  metaKeywords                    String?
+  showPricing                     Int?
+  showMileage                     Int?
+  sbv_1                           Int?
+  sbv_2                           Int?
+  sbv_3                           Int?
+  sbv_4                           Int?
+  sla                             Int?
+  accts_rcvbles_name              String?
+  accts_rcvbles_email             String?
+  accts_rcvbles_verified          Int?
+  accts_rcvbles_password          String?
+  accts_rcvbles_phone             String?
+  accts_payables_name             String?
+  accts_payables_email            String?
+  accts_payables_verified         Int?
+  accts_payables_password         String?
+  accts_payables_phone            String?
+  export_tocarsforsale            Int?
+  export_tovast                   Int?
+  created_at                      DateTime? @default(now())
+  last_modified                   DateTime
+  dealerId                        Int
+
+  @@index([dealerId], map: "DealersContent_dealerId_fkey")
+}
+
+model news {
+  Id         Int       @id @default(autoincrement())
+  title      String
+  content    String?
+  published  Boolean   @default(false)
+  created_at DateTime? @default(now())
+  userId     Int
+
+  @@index([userId], map: "News_userId_fkey")
+}
+
+model post {
+  Id         Int       @id @default(autoincrement())
+  title      String
+  content    String?
+  published  Boolean   @default(false)
+  created_at DateTime? @default(now())
+  userId     Int
+
+  @@index([userId], map: "Post_userId_fkey")
+}
+
+model vehiclesfeatures {
+  Id                                Int       @id @default(autoincrement())
+  vsource_idscrm_import_txt         String?
+  vehicle_mpg_city                  Int?
+  vehicle_mpg_hwy                   Int?
+  vehicle_mpg_combined              Int?
+  vehicleOptionsBulk                String?
+  vehicleOptionsBulk_exterior       String?
+  vehicleOptionsBulk_interior       String?
+  vehicleOptionsBulk_functional     String?
+  vehicleOptionsBulk_safetysecurity String?
+  vehicleOptionsBulk_warranty       String?
+  Air_Conditioning                  Int?
+  Alloy_Wheels                      Int?
+  AntiLock_Brakes                   Int?
+  Auto_Updown_Windows               Int?
+  Bluetooth_Handsfree               Int?
+  Bed_Liner                         Int?
+  Child_Seat                        Int?
+  Climate_Control                   Int?
+  Cruise_Control                    Int?
+  Driver_Air_Bag                    Int?
+  Illuminated_Lightning             Int?
+  Keyless_Entry                     Int?
+  Leather_Seats                     Int?
+  On_Star_Equipped                  Int?
+  Rear_Ent_Center                   Int?
+  Navigation_System                 Int?
+  Passenger_Air_Bag                 Int?
+  Power_Door_Locks                  Int?
+  Power_Mirrors                     Int?
+  Power_Seats                       Int?
+  Power_Steering                    Int?
+  Power_Windows                     Int?
+  Push_Button_Start                 Int?
+  Memory_Seats                      Int?
+  Rear_Air_Conditioning             Int?
+  Rear_view_monitor                 Int?
+  Rear_Window_Defroster             Int?
+  Rear_Wiper                        Int?
+  Running_Boards                    Int?
+  Side_Air_Bag                      Int?
+  SunroofMoonroof                   Int?
+  Television                        Int?
+  Theft_System                      Int?
+  Tilt_Wheel                        Int?
+  Tinted_Glass                      Int?
+  Sliding_Doors                     Int?
+  CD_Player                         Int?
+  CD_Changer                        Int?
+  Bluetooth                         Int?
+  Satellite_Radio                   Int?
+  carfax                            Int?
+  autocheck                         Int?
+  v_warranty_one                    Int?
+  v_warranty_two                    String?
+  dlroption1chck                    Int?
+  dlroption1                        String?
+  dlroption2chck                    Int?
+  dlroption2                        String?
+  dlroption3chck                    Int?
+  dlroption3                        String?
+  dlroptequip1chck                  Int?
+  dlroptequip1                      String?
+  dlroptequip2chck                  Int?
+  dlroptequip2                      String?
+  dlroptequip3chck                  Int?
+  dlroptequip3                      String?
+  dlroptequip4chck                  Int?
+  dlroptequip4                      String?
+  dlroptequip5chck                  Int?
+  dlroptequip5                      String?
+  vcomments                         String?
+  feedcarscom                       Int?
+  feedautotradercom                 Int?
+  feedovecom                        Int?
+  craigslistorg                     Int?
+  feedebaycom                       Int?
+  feedcomcastvod                    Int?
+  ove_physicallocationind           String?
+  ove_priorpaint                    String?
+  ove_titlestatus                   String?
+  ove_titlestate                    String?
+  statistic                         Int?
+  vdeleted                          Int?
+  marked_sold                       String?
+  importHomnetPhotos                String?
+  homenetLastSent                   String?
+  homenetDo                         Int?
+  importFrazerPhotos                String?
+  export_cfs_photourls              String?
+  export_vast_photourls             String?
+  export_vast_listing_time          String?
+  export_vast_expire_time           String?
+  frazerLastSent                    String?
+  accts_rcvbles_name                String?
+  accts_rcvbles_email               String?
+  export_tocarsforsale              Int?
+  export_tovast                     Int?
+  modified_at                       String?
+  created_at                        DateTime? @default(now())
+  vehicleId                         Int
+
+  @@index([vehicleId], map: "VehiclesFeatures_vehicleId_fkey")
 }
 
 enum dealers_verified {

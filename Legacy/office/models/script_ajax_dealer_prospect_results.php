@@ -1,6 +1,9 @@
 <?php require_once('../db_admin.php'); ?>
 <?php
 
+if(!$_POST){ exit();}else{ echo '<h2>db_admin.php</h2>'; }
+
+
 //print_r($_POST);
 $colname_find_dealer_prospects = "-1";
 if (isset($_POST['prospect_states'], $_POST['prospect_cities'], $_POST['prospect_dlrtypes'], $_POST['prospect_dlr_assigndtome'])) {

@@ -26,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'])) {
        $mail->Username = 'idsrobot@idscrm.com';  // Gmail username
        $mail->Password = 'ZF7xWD17VnVtK7fq';  // Application password or Gmail password
        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-       //$mail->Port = 587;
-       $mail->Port = 465;
+       $mail->Port = 587;
+       //$mail->Port = 465;
 
        //Recipients
        $mail->setFrom('idsrobot@idscrm.com', 'IDSCRMRobot');

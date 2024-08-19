@@ -846,7 +846,7 @@ $(document).on('click', 'button#movethis_prospectanemail', function(){
 
 
 
-function emailcapture_moveprospect(){
+function emailcapture_moveprospect() {
 	
 	var dlrposted_token = $('input#dlrpost_token').val();
 	
@@ -1162,13 +1162,18 @@ function emailcapture_moveprospect(){
 						//window.location.replace('my.dealers.php');
 
 			
-		}); <!-- end data  function from ajax post-->
+		}); 
+
+		//					end data  function from ajax post
 	
 	
 	
 	//update_prospect_dealer();
 	
-}<!--End Email Capture Move Prospect -->
+}
+
+// End Email Capture Move Prospect
+
 
 
 
@@ -1446,6 +1451,6 @@ function update_prospect_dealer(){
 			console.log(data);
 			$('div#debug_console').html(data);
 			
-		}); <!-- end data  function from ajax post-->
+		}); //	<!-- end data  function from ajax post-->
 
 }

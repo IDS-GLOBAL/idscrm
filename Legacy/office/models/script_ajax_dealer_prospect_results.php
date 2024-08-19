@@ -79,7 +79,6 @@ $row_find_dealer_prospects = mysqli_fetch_array($find_dealer_prospects);
 $totalRows_find_dealer_prospects = mysqli_num_rows($find_dealer_prospects);
 
 
-echo '<br /> After SQL'
 
 ?>
 <script src="js/custom/page/custom.ajax_dealer_prospect_results.js"></script>

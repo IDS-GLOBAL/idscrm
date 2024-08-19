@@ -26,7 +26,7 @@ $left_join_dlprspct_sql = " LEFT JOIN  `idsids_tracking_idsvehicles`.`dudes_stat
 
 									
 mysqli_select_db($tracking_mysqli, $database_tracking);
-echo $query_distnct_dlrprspct_cities = "
+$query_distnct_dlrprspct_cities = "
 	SELECT
 DISTINCT count(  `dealer_prospects`.`id` ) AS `total_city_records`, `dealer_prospects`.`city`, `dealer_prospects`.`state`
 	FROM `idsids_tracking_idsvehicles`.`dealer_prospects`

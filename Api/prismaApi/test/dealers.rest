@@ -1,0 +1,27 @@
+###
+
+GET http://localhost:3333/api/dealers/
+
+###
+
+GET http://localhost:3333/api/dealers/all
+
+###
+
+GET http://localhost:3333/api/dealers/id/39
+
+
+###
+
+GET http://localhost:3333/api/dealers/email/ugocargo@gmail.com
+
+###
+
+
+POST http://localhost:3333/dealers/create/
+Content-Type: application/json
+
+{       
+    "email": "lyricicarter@gmail.com",
+    "hashedPassword": "1234567890"
+}

@@ -1,0 +1,31 @@
+
+
+##
+
+
+GET http://localhost:3333/api/users
+
+
+
+###
+
+GET http://localhost:3333/api/users/all
+
+###
+
+GET http://localhost:3333/api/users/id/3
+
+###
+
+GET http://localhost:3333/api/users/email/louisfarrkahan@noi.org
+
+###
+
+
+POST http://localhost:3333/api/users/login/
+Content-Type: application/json
+
+{       
+    "email": "lyricicarter@gmail.com",
+    "hashedPassword": "1234567890"
+}

@@ -911,7 +911,7 @@ model dealer_types {
 
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 model dealers {
-  id                               BigInt           @unique(map: "id") @default(autoincrement())
+  id                               Int           @unique(map: "id") @default(autoincrement())
   dealer_pending_id                Int?
   prospct_dlrid                    String?          @db.VarChar(11)
   dealer_type_id                   String?          @db.VarChar(20)
@@ -1086,7 +1086,7 @@ model dealers {
   mapurl1                          String?          @db.Text
   mapurl2                          String?          @db.Text
   dealer_listingindex_displayprice String?          @default("0") @db.VarChar(11)
-  created_at                       DateTime?        @db.DateTime(0)
+  created_at                       DateTime?        @default(now())
   last_login_time                  DateTime         @default(now()) @db.Timestamp(0)
   last_modified                    DateTime?        @db.DateTime(0)
   accts_rcvbles_name               String?          @db.Text

@@ -1,0 +1,26 @@
+###
+
+GET http://localhost:3333/api/vehicles/
+
+###
+
+GET http://localhost:3333/api/vehicles/all
+
+###
+
+GET http://localhost:3333/api/users/email/louisfarrkahan@noi.org
+
+###
+
+
+POST http://localhost:3333/vehicle/create/
+Content-Type: application/json
+
+{       
+    "email": "lyricicarter@gmail.com",
+    "hashedPassword": "1234567890"
+}
+
+
+###
+

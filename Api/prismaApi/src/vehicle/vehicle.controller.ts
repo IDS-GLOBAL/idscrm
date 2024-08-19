@@ -1,4 +1,4 @@
-import prismaOrm from '../../src/utils/prismaOrm';
+import prismaOrm from '../../utils/prismaOrm';
 
 type Vehicles = {
     vid:                        number | null;

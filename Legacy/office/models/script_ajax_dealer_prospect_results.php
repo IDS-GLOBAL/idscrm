@@ -1,7 +1,7 @@
 <?php require_once('../db_admin.php'); ?>
 <?php
 
-if(!$_POST){ exit();}else{ echo '<h2>db_admin.php</h2>'; }
+if(!$_POST) exit();
 
 
 //print_r($_POST);

@@ -133,3 +133,6 @@ Legacy/Connections/idschatconnection.php
 Legacy/Connections/idsconnection.php
 Legacy/Connections/idshomenetatuoconnection.php
 Legacy/Connections/tracking.php
+Legacy/office/Connections/wfh_connection.php
+Legacy/office/Connections/tracking.php
+Legacy/office/Connections/idsconnection.php

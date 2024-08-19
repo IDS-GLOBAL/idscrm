@@ -15,7 +15,7 @@ try {
     $mail->Password = 'ZF7xWD17VnVtK7fq';  // SMTP password or Gmail password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption, `ssl` also accepted
     //$mail->Port = 587;
-    $mail->Port = 465;  // TCP port to connect to
+    $mail->Port = 587;  // TCP port to connect to
 
     //Recipients
     $mail->setFrom('idsrobot@idscrm.com', 'IDSCRM ROBOT');

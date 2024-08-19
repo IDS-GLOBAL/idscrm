@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'])) {
                        <h2>Test Email</h2>
                    </div>
                    <div class="card-body">
-                       <form action="test_email.php" method="post">
+                       <form action="send_email2.php" method="post">
                            <div class="mb-3">
                                <label for="email" class="form-label">Destination Email Address</label>
                                <input type="email" class="form-control" id="email" name="email" required>

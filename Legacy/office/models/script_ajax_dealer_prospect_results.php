@@ -42,7 +42,7 @@ if (isset($_POST['prospect_states'], $_POST['prospect_cities'], $_POST['prospect
 
 
 }
-$query_find_dealer_prospects = "SELECT * 
+echo $query_find_dealer_prospects = "SELECT * 
 FROM 
 `idsids_tracking_idsvehicles`.`dealer_prospects`
 LEFT JOIN `idsids_tracking_idsvehicles`.`dudes_states`

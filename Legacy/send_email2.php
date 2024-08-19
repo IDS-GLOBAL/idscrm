@@ -4,7 +4,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '/vendor/autoload.php';//confirm your web path
+require 'vendor/autoload.php';//confirm your web path
 
 // Initialize debugging variables
 $debug = '';

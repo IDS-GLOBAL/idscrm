@@ -9,7 +9,7 @@ $colname_find_dealer_prospects = "-1";
 if (isset($_POST['prospect_states'], $_POST['prospect_cities'], $_POST['prospect_dlrtypes'], $_POST['prospect_dlr_assigndtome'])) {
 	
 	
-		echo 'Made it passed Post';
+		
 
 		$prospect_states = mysqli_real_escape_string($idsconnection_mysqli, trim($_POST['prospect_states']));
 		$prospect_cities = mysqli_real_escape_string($idsconnection_mysqli, trim($_POST['prospect_cities']));
@@ -42,7 +42,16 @@ if (isset($_POST['prospect_states'], $_POST['prospect_cities'], $_POST['prospect
 
 
 }
-echo $query_find_dealer_prospects = "SELECT * 
+$query_find_dealer_prospects = "SELECT 
+ 	dealer_prospects.id, 
+    dealer_prospects.company, 
+    dealer_prospects.state, 
+    dealer_prospects.city, 
+    dealer_prospects.dealer_type_id, 
+    dealer_prospects.dudes_id, 
+    dealer_prospects.dudes2_id,
+    dudes_states.state_id, 
+    dudes_states.state_abrv 
 FROM 
 `idsids_tracking_idsvehicles`.`dealer_prospects`
 LEFT JOIN `idsids_tracking_idsvehicles`.`dudes_states`
@@ -53,7 +62,15 @@ ON `dealer_prospects`.`state` = `dudes_states`.`state_abrv`
  $prospect_dlrtypes_sql
  $prospect_dlr_assigndtome_sql
  GROUP BY 
- 	`dealer_prospects`.`id`
+ 	dealer_prospects.id, 
+    dealer_prospects.company, 
+    dealer_prospects.state, 
+    dealer_prospects.city, 
+    dealer_prospects.dealer_type_id, 
+    dealer_prospects.dudes_id, 
+    dealer_prospects.dudes2_id, 
+    dudes_states.state_id, 
+    dudes_states.state_abrv
  
  ORDER BY `dealer_prospects`.`company` ASC
  ";

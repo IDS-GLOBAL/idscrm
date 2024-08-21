@@ -2,6 +2,7 @@
 
 
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';//confirm your web path
@@ -57,13 +58,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'])) {
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<?php include 'navbar.php'; ?>
+<?php //include 'navbar.php'; ?>
    <div class="container mt-5">
        <div class="row justify-content-center">
            <div class="col-md-6">
                <div class="card">
                    <div class="card-header">
-                       <h2>Test Email</h2>
+                       <h2>Test Server Send Email</h2>
                    </div>
                    <div class="card-body">
                        <form action="send_email2.php" method="post">

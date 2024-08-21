@@ -27,10 +27,11 @@
 
     </div>
 
-    <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
-    <script src="assets/js/leaftletmap.js"></script> -->
+    
+    <script src="assets/js/leaftletmap.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
 

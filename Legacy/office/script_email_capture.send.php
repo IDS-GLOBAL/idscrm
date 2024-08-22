@@ -1,7 +1,7 @@
 <?php require_once('db_admin.php'); ?>
 <?php
 
-require_once("Mail.php");
+//require_once("Mail.php");
 
 //print_r($_POST);
 

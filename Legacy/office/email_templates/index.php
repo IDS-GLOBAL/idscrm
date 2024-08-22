@@ -1,36 +1,4 @@
-<?php
-# FileName="Connection_php_mysql.htm"
-# Type="MYSQL"
-# HTTP="true"
-$hostname_idsconnection = "localhost";
-$database_idsconnection = "idsids_idsdms";
-$username_idsconnection = "idsids_faith";
-$password_idsconnection = "benjamin2831";
-$idsconnection_mysqli = mysqli_connect($hostname_idsconnection, $username_idsconnection, $password_idsconnection) or trigger_error(mysql_error(),E_USER_ERROR); 
-
-
-
-$hostname_tracking = "localhost";
-$database_tracking = "idsids_tracking_idsvehicles";
-$username_tracking = "idsids_faith";
-$password_tracking = "benjamin2831";
-$tracking_mysqli = mysqli_connect($hostname_tracking, $username_tracking, $password_tracking) or trigger_error(mysql_error(),E_USER_ERROR); 
-
-
-
-
-$hostname_wfh_connection = "localhost";
-$database_wfh_connection = "idsids_wefinancehere";
-$username_wfh_connection = "idsids_wefinance";
-$password_wfh_connection = "yrBIBVwHt)6p";
-$wfh_connection_mysqli = mysqli_connect($hostname_wfh_connection, $username_wfh_connection, $password_wfh_connection) or trigger_error(mysql_error(),E_USER_ERROR); 
-
-
-
-
-
-
-?>
+<?php require_once('../../Connections/idsconnection.php'); ?>
 <?php
 if (!isset($_SESSION)) {
   session_start();

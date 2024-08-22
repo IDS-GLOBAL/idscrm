@@ -1,5 +1,5 @@
 // Create a Stripe client
-var stripe = Stripe('pk_YOURPUBLISHABLEKEY');
+var stripe = Stripe('pk_test_51PqJpNEnH91tsX6Rp6Xo5PScfRa2rWtkGVFq6gTrZYoeWtp6XcSSDYQopRcppPaOqkfhikPVwKruYAmgif1G2Kz300BB9T6v0a');
 
 // Create an instance of Elements
 var elements = stripe.elements();
@@ -23,8 +23,7 @@ var style = {
 };
 
 // Style button with BS
-document.querySelector('#payment-form button').classList =
-  'btn btn-primary btn-block mt-4';
+document.querySelector('#payment-form button').classList = 'btn btn-primary btn-block mt-4';
 
 // Create an instance of the card Element
 var card = elements.create('card', { style: style });

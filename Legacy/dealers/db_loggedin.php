@@ -295,7 +295,7 @@ if (isset($_GET['vstat'])) {
   $vstatsql = "`vehicles`.`vlivestatus` IN ($vstatus)";
    
 }else{$vstat_text = 'Live'; $vstatus = "'1'"; $vstatsql = "vehicles.vlivestatus IN ($vstatus)"; }
-$query_LiveVehicles = "SELECT * FROM `idsids_idsdms`.`vehicles` WHERE `vehicles`.`did` = '$did' AND $vstatsql ORDER BY `vehicles`.`created_at` DESC ";
+echo $query_LiveVehicles = "SELECT * FROM `idsids_idsdms`.`vehicles` WHERE `vehicles`.`did` = '$did' AND $vstatsql ORDER BY `vehicles`.`created_at` DESC ";
 $LiveVehicles = mysqli_query($idsconnection_mysqli, $query_LiveVehicles);
 $row_LiveVehicles = mysqli_fetch_assoc($LiveVehicles);
 $totalRows_LiveVehicles = mysqli_num_rows($LiveVehicles);

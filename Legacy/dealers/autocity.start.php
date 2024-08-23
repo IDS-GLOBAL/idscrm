@@ -19,8 +19,12 @@ $totalRows_find_dlrdeals = mysqli_num_rows($find_dlrdeals);
 
     <title>IDSCRM | Blank: <?php echo $row_userDets['company']; ?></title>
 
- <script src="https://use.fontawesome.com/94d5a20675.js"></script>
- <?php include("inc.head.php"); ?>
+    <script src="https://use.fontawesome.com/94d5a20675.js"></script>
+    
+    <?php include("inc.head.php"); ?>
+    
+    <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
 
 </head>
 
@@ -56,7 +60,7 @@ $totalRows_find_dlrdeals = mysqli_num_rows($find_dlrdeals);
                 <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Blank Page <small>Sort, search</small></h5>
+                        <h5>AutoCity Mag About Dealership <small>Sort, search</small></h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -77,9 +81,15 @@ $totalRows_find_dlrdeals = mysqli_num_rows($find_dlrdeals);
                     </div>
                     <div class="ibox-content">
 
-                    <h2>Blank Form <small>Use this Form When you want to start fresh.</small></h2>
+                    <h2>Dealership Blurb <small>Use this section to manage the highlight of your dealership and reasons to encourage the internet to do business with you.</small></h2>
 
-                    </div>
+                    <!-- <form>
+                        <textarea rows="10" cols="1"></textarea>
+                    </form> -->
+
+                    <div class="summernote"></div>
+
+
                 </div>
             </div>
             </div>
@@ -89,7 +99,7 @@ $totalRows_find_dlrdeals = mysqli_num_rows($find_dlrdeals);
 
 
 
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -137,7 +147,7 @@ $totalRows_find_dlrdeals = mysqli_num_rows($find_dlrdeals);
                 </div>
               </div>
             </div>
-            
+             -->
 
 
 
@@ -161,17 +171,34 @@ $totalRows_find_dlrdeals = mysqli_num_rows($find_dlrdeals);
     <!-- Mainly scripts -->
 	<?php include("inc.end.body.php"); ?>
 
-<script type="text/javascript" language="javascript" class="init">
+     <!-- SUMMERNOTE -->
+     <script src="js/plugins/summernote/summernote.min.js"></script>
+     <script>
+        $(document).ready(function(){
 
-$(document).ready(function() {
-	$('#mydataTable').dataTable({
-        "scrollX": true,
-        "scrollCollapse": true,
-        "paging":         true
-    });
-} );
+            $('.summernote').summernote();
 
-</script>
+       });
+        var edit = function() {
+            $('.click2edit').summernote({focus: true});
+        };
+        var save = function() {
+            var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
+            $('.click2edit').destroy();
+        };
+    </script>
+
+        <!-- <script type="text/javascript" language="javascript" class="init">
+
+        $(document).ready(function() {
+            $('#mydataTable').dataTable({
+                "scrollX": true,
+                "scrollCollapse": true,
+                "paging":         true
+            });
+        } );
+
+        </script> -->
 </body>
 
 </html>

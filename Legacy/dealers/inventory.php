@@ -140,9 +140,9 @@ $totalRows_CountVehicles = mysqli_num_rows($CountVehicles);
                 <div class="col-sm-12">
                     <div class="midbar" align="center">
    <?php 
-		if($vstat == '9'){$inventory_btn_sold = 'btn-warning';}else{ $inventory_btn_sold = 'btn-primary'; }
-		if($vstat == '0'){$inventory_btn_hold = 'btn-warning';}else{ $inventory_btn_hold = 'btn-primary'; }
-		if($vstat == '1'){$inventory_btn_live = 'btn-warning';}else{ $inventory_btn_live = 'btn-primary'; }
+		if($vstat == '9'){$inventory_btn_sold = 'btn-danger';}else{ $inventory_btn_sold = 'btn-danger'; }
+		if($vstat == '0'){$inventory_btn_hold = 'btn-warning';}else{ $inventory_btn_hold = 'btn-warning'; }
+		if($vstat == '1'){$inventory_btn_live = 'btn-primary';}else{ $inventory_btn_live = 'btn-primary'; }
   
 		if($vstat == 'all'){
 			$inventory_btn_live = 'btn-primary'; $inventory_btn_hold = 'btn-primary'; $inventory_btn_sold = 'btn-primary'; 

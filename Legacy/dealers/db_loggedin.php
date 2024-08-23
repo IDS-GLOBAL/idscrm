@@ -70,12 +70,17 @@ $balance_credits = $row_userDets['balance_credits'];
 
 $dealerTimezone = $row_userDets['dealerTimezone'];
 
-if($dealerTimezone){
+// Set the default timezones
 $zone_from = 'America/New_York';
-$zone_to = $dealerTimezone;
+$zone_to = $dealerTimezone ?: 'America/New_York';
+
+
+if($dealerTimezone){
+  $zone_from = 'America/New_York';
+  $zone_to = $dealerTimezone;
 }else{
-$zone_from ='America/New_York';
-$zone_to = 'America/New_York';
+  $zone_from ='America/New_York';
+  $zone_to = 'America/New_York';
 }
 
 

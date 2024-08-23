@@ -7,7 +7,7 @@ function fileExists($filePath)
 
 
 
-$query_CountVehicles = "
+echo $query_CountVehicles = "
 SELECT
 (SELECT count(`vehicles`.`vid`) FROM  `idsids_idsdms`.`vehicles` WHERE `vehicles`.`did` = '$did' AND `vehicles`.`vlivestatus` = '1') AS countLive,
 (SELECT count(`vehicles`.`vid`) FROM  `idsids_idsdms`.`vehicles` WHERE `vehicles`.`did` = '$did' AND `vehicles`.`vlivestatus` = '0') AS countHold,

@@ -51,14 +51,16 @@ if (isset($_POST['e_login'], $_POST['p_login'])) {
   $LoginRS = mysqli_query($idsconnection_mysqli, $LoginRS__query);
   $loginFoundUser = mysqli_num_rows($LoginRS);
   if ($loginFoundUser) {
-  // Now We Try Dealer Credentials which takes persidence Admin account actually
+  	
+	// 	Now We Create The Dealer Credentials which takes persidence for Admin dealers
 	$row_LoginRS = mysqli_fetch_assoc($LoginRS);
 
     
     $loginStrGroup  = $row_LoginRS['status'];
 
     
-    //declare two session variables and assign them
+    // 	Declare two session variables and assign them
+	
     //$_SESSION['MM_Dealer'] = $loginUsername;
     //$_SESSION['MM_DealerAccess'] = $loginStrGroup;	      
     $_SESSION['MM_Username'] = $loginUsername;

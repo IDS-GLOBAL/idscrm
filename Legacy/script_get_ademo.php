@@ -65,7 +65,7 @@ if(isset($_POST['e_demo'], $_POST['phone_demo'], $_POST['company_name_demo'], $_
 
 
 
-			 ini_set ("SMTP", "mail.idscrm.com");
+			 //ini_set ("SMTP", "mail.idscrm.com");
 			 
 			 //$SendToEmail = "webgoonie@gmail.com";
 			 
@@ -112,7 +112,7 @@ if(isset($_POST['e_demo'], $_POST['phone_demo'], $_POST['company_name_demo'], $_
 			
 
 			// Check if the form was submitted
-			if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'])) {
+			// if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'])) {
 				
 				//$to = $_POST['email'];
 				
@@ -153,7 +153,7 @@ if(isset($_POST['e_demo'], $_POST['phone_demo'], $_POST['company_name_demo'], $_
 				}
 
 
-			}
+			// }
 
 
 	

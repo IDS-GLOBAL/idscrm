@@ -29,7 +29,7 @@
             
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message"><a href="account.php" target="_parent">Hi! "<?php echo $row_userDets['company']; ?>"  It's <?php echo date("M d, Y - h:i a / D", strtotime($server_time)); ?> in <?php echo $zone_to; ?> Time Zone.</a></span>
+                    <span class="m-r-sm text-muted welcome-message"><a href="account.php" target="_parent">Hi! "<?php echo $row_userDets['company']; ?>"  It's <?php echo date("M d, Y - h:i A / D", strtotime($server_time)); ?> in <?php echo $zone_to; ?> Time Zone.</a></span>
                     <input type="hidden" id="token" name="token" value="<?php echo $tkey; ?>" />
                     <input id="thisdid" type="hidden" value="<?php echo $did; ?>" />
                     <input id="thissid" type="hidden" value="<?php echo $sid; ?>" />

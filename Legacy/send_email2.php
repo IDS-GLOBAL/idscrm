@@ -43,8 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'])) {
        $mail->send();
        $sent = true;
        $debug = 'Email sent successfully.';
+       echo 'Message has been sent';
    } catch (Exception $e) {
        $debug = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+       echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
    }
 }
 ?>

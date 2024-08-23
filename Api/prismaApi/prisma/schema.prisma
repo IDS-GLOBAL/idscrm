@@ -1232,7 +1232,7 @@ model dealers_pending {
   wfh_dealer_type_label          String?  @db.Text
   dealer_market_sub_id           Int?
   dealer_market_id               Int?
-  sla                            Int
+  sla                            String?  @db.VarChar(1000)
   token                          String   @db.VarChar(100)
   package                        String?  @db.VarChar(100)
   created_at                     DateTime @default(now()) @db.Timestamp(0)

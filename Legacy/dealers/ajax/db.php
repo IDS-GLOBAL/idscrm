@@ -1,4 +1,4 @@
-<?php require_once('../Connections/idsconnection.php'); ?>
+<?php require_once('../../Connections/idsconnection.php'); ?>
 <?php
 
 if (!isset($_SESSION)) {

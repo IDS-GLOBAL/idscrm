@@ -52,7 +52,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userDets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDets =  "SELECT * FROM `idsids_idsdms`.`dealers` WHERE `email` = %s";
+$query_userDets =  sprintf("SELECT * FROM `idsids_idsdms`.`dealers` WHERE `email` = %s");
 $userDets = mysqli_query($idsconnection_mysqli, $query_userDets);
 $row_userDets = mysqli_fetch_assoc($userDets);
 $totalRows_userDets = mysqli_num_rows($userDets);

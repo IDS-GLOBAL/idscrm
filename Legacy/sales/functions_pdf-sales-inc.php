@@ -82,7 +82,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "ovrphngoal")) {
-  $insertSQL =  "INSERT INTO cust_leads (cust_nickname, cust_email, cust_lead_temperature, cust_phoneno, cust_phonetype, cust_lead_sp_comment, cust_dealer_id, cust_salesperson_id, cust_lead_token) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+  $insertSQL =  sprintf("INSERT INTO cust_leads (cust_nickname, cust_email, cust_lead_temperature, cust_phoneno, cust_phonetype, cust_lead_sp_comment, cust_dealer_id, cust_salesperson_id, cust_lead_token) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['cust_nickname'], "text"),
                        GetSQLValueString($_POST['cust_email'], "text"),
                        GetSQLValueString($_POST['cust_lead_temperature'], "text"),
@@ -101,11 +101,11 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "ovrphngoal")) {
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $insertGoTo));
+  header( sprintf("Location: %s", $insertGoTo));
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form_quickcontact")) {
-  $insertSQL =  "INSERT INTO cust_leads (cust_nickname, cust_fname, cust_lname, cust_email, cust_lead_temperature, cust_phoneno, cust_phonetype, cust_lead_sp_comment, cust_dealer_id, cust_salesperson_id, cust_lead_token) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+  $insertSQL =  sprintf("INSERT INTO cust_leads (cust_nickname, cust_fname, cust_lname, cust_email, cust_lead_temperature, cust_phoneno, cust_phonetype, cust_lead_sp_comment, cust_dealer_id, cust_salesperson_id, cust_lead_token) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['cust_nickname'], "text"),
                        GetSQLValueString($_POST['cust_fname'], "text"),
                        GetSQLValueString($_POST['cust_lname'], "text"),
@@ -126,7 +126,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form_quickcontact")
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $insertGoTo));
+  header( sprintf("Location: %s", $insertGoTo));
 }
 
 $colname_userSets = "-1";
@@ -134,7 +134,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userSets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userSets =  "SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
+$query_userSets =  sprintf("SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
 $userSets = mysqli_query($idsconnection_mysqli, $query_userSets);
 $row_userSets = mysqli_fetch_assoc($userSets);
 $totalRows_userSets = mysqli_num_rows($userSets);
@@ -159,7 +159,7 @@ if (isset($_GET['credit_app_id'])) {
   $colname_creditapp_id_did = $_GET['credit_app_id'];
 }else{$colname_creditapp_id_did='NULL';}
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_creditapp_id_did =  "SELECT * FROM credit_app_fullblown WHERE credit_app_fullblown.credit_app_fullblown_id = %s AND credit_app_fullblown.applicant_did = '$did'", GetSQLValueString($colname_creditapp_id_did, "int"));
+$query_creditapp_id_did =  sprintf("SELECT * FROM credit_app_fullblown WHERE credit_app_fullblown.credit_app_fullblown_id = %s AND credit_app_fullblown.applicant_did = '$did'", GetSQLValueString($colname_creditapp_id_did, "int"));
 $creditapp_id_did = mysqli_query($idsconnection_mysqli, $query_creditapp_id_did);
 $row_creditapp_id_did = mysqli_fetch_assoc($creditapp_id_did);
 $totalRows_creditapp_id_did = mysqli_num_rows($creditapp_id_did);

@@ -82,7 +82,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "customerUpdate")) {
-  $insertSQL =  "INSERT INTO customers (customer_id, customer_dayhunt, customer_dealer_id, customer_sales_person_id, customer_sales_person2_id, customer_fnimgr_id, customer_slsmgr_id, customer_vehicles_id, customer_token_id, customer_status, customer_title, customer_fname, customer_mname, customer_lname, customer_suffix, customer_sex, customer_email, customer_dlstate, customer_dlno, customer_dlexpdate, customer_dob, customer_ssn, customer_perf_commun, customer_lead_temperature, customer_phoneno, customer_phonetype, customer_cellphone, customer_date_td, customer_hour_td, customer_min_td, customer_home_addr1, customer_home_addr2, customer_home_city, customer_home_state, customer_home_zip, customer_home_county, customer_home_live_years, customer_home_live_months, customer_employer_name, customer_employer_addr1, customer_employer_addr2, customer_employer_city, customer_employer_state, customer_employer_zip, customer_employer_phone, customer_supervisors_name, customer_supervisors_phone, customer_supervisors_phone_ext, customer_employer_hiredate, customer_employer_years, customer_employer_months, customer_gross_income, customer_income_frequency, titleconjucation, customer2_relationship, customer2_title, customer2_fname, customer2_mname, customer2_lname, customer2_suffix, customer2_sex, customer2_email, customer2_dlstate, customer2_dlno, customer2_dlexpdate, customer2_dob, customer2_ssn, customer2_phoneno, customer2_cellphone, customer2_home_addr1, customer2_home_addr2, customer2_home_city, customer2_home_state, customer2_home_zip, customer2_home_county, customer2_home_live_years, customer2_home_live_months, customer2_employer_name, customer2_employer_addr1, customer2_employer_addr2, customer2_employer_city, customer2_employer_state, customer2_employer_zip, customer2_employer_phone, customer2_employer_hiredate, customer2_employer_years, customer2_employer_months, customer2_gross_income, customer2_income_frequency) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+  $insertSQL =  sprintf("INSERT INTO customers (customer_id, customer_dayhunt, customer_dealer_id, customer_sales_person_id, customer_sales_person2_id, customer_fnimgr_id, customer_slsmgr_id, customer_vehicles_id, customer_token_id, customer_status, customer_title, customer_fname, customer_mname, customer_lname, customer_suffix, customer_sex, customer_email, customer_dlstate, customer_dlno, customer_dlexpdate, customer_dob, customer_ssn, customer_perf_commun, customer_lead_temperature, customer_phoneno, customer_phonetype, customer_cellphone, customer_date_td, customer_hour_td, customer_min_td, customer_home_addr1, customer_home_addr2, customer_home_city, customer_home_state, customer_home_zip, customer_home_county, customer_home_live_years, customer_home_live_months, customer_employer_name, customer_employer_addr1, customer_employer_addr2, customer_employer_city, customer_employer_state, customer_employer_zip, customer_employer_phone, customer_supervisors_name, customer_supervisors_phone, customer_supervisors_phone_ext, customer_employer_hiredate, customer_employer_years, customer_employer_months, customer_gross_income, customer_income_frequency, titleconjucation, customer2_relationship, customer2_title, customer2_fname, customer2_mname, customer2_lname, customer2_suffix, customer2_sex, customer2_email, customer2_dlstate, customer2_dlno, customer2_dlexpdate, customer2_dob, customer2_ssn, customer2_phoneno, customer2_cellphone, customer2_home_addr1, customer2_home_addr2, customer2_home_city, customer2_home_state, customer2_home_zip, customer2_home_county, customer2_home_live_years, customer2_home_live_months, customer2_employer_name, customer2_employer_addr1, customer2_employer_addr2, customer2_employer_city, customer2_employer_state, customer2_employer_zip, customer2_employer_phone, customer2_employer_hiredate, customer2_employer_years, customer2_employer_months, customer2_gross_income, customer2_income_frequency) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['customer_id'], "int"),
                        GetSQLValueString($_POST['customer_dayhunt'], "int"),
                        GetSQLValueString($_POST['customer_dealer_id'], "int"),
@@ -181,7 +181,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "customerUpdate")) {
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $insertGoTo));
+  header( sprintf("Location: %s", $insertGoTo));
 }
 
 $colname_userSets = "-1";
@@ -189,7 +189,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userSets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userSets =  "SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
+$query_userSets =  sprintf("SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
 $userSets = mysqli_query($idsconnection_mysqli, $query_userSets);
 $row_userSets = mysqli_fetch_assoc($userSets);
 $totalRows_userSets = mysqli_num_rows($userSets);
@@ -254,7 +254,7 @@ if (isset($_GET['customerid'])) {
   $colname_findCustomer = $_GET['customerid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_findCustomer =  "SELECT * FROM customers WHERE customer_id = %s", GetSQLValueString($colname_findCustomer, "int"));
+$query_findCustomer =  sprintf("SELECT * FROM customers WHERE customer_id = %s", GetSQLValueString($colname_findCustomer, "int"));
 $findCustomer = mysqli_query($idsconnection_mysqli, $query_findCustomer);
 $row_findCustomer = mysqli_fetch_assoc($findCustomer);
 $totalRows_findCustomer = mysqli_num_rows($findCustomer);

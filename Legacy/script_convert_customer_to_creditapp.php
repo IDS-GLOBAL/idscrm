@@ -6,7 +6,7 @@ if (isset($_GET['customer_id'])) {
   $colname_view_thiscustomer = $_GET['customer_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_view_thiscustomer =  "SELECT * FROM customers WHERE customer_id = %s", GetSQLValueString($colname_view_thiscustomer, "int"));
+$query_view_thiscustomer =   sprintf("SELECT * FROM customers WHERE customer_id = %s", GetSQLValueString($colname_view_thiscustomer, "int"));
 $view_thiscustomer = mysqli_query($idsconnection_mysqli, $query_view_thiscustomer);
 $row_view_thiscustomer = mysqli_fetch_assoc($view_thiscustomer);
 $totalRows_view_thiscustomer = mysqli_num_rows($view_thiscustomer);
@@ -36,7 +36,7 @@ $customer_finance_type = mysql_real_escape_string(trim($row_view_thiscustomer['c
 $customer_lostcode = mysql_real_escape_string(trim($row_view_thiscustomer['customer_lostcode']));
 $customer_vehicles_id = mysql_real_escape_string(trim($row_view_thiscustomer['customer_vehicles_id']));
 
-$row_view_thiscustomer['customer_testimony_id']));
+$customer_testimony_id = mysql_real_escape_string(trim($row_view_thiscustomer['customer_testimony_id']));
 $customer_token_id = mysql_real_escape_string(trim($row_view_thiscustomer['customer_token_id']));
 $customer_facebook_id = mysql_real_escape_string(trim($row_view_thiscustomer['customer_facebook_id']));
 $customer_status = mysql_real_escape_string(trim($row_view_thiscustomer['customer_status']));
@@ -87,7 +87,7 @@ $customer_employer_years = mysql_real_escape_string(trim($row_view_thiscustomer[
 $customer_employer_months = mysql_real_escape_string(trim($row_view_thiscustomer['customer_employer_months']));
 $customer_gross_income = mysql_real_escape_string(trim($row_view_thiscustomer['customer_gross_income']));
 $customer_net_income = mysql_real_escape_string(trim($row_view_thiscustomer['customer_net_income']));
-$customer_income_frequency $row_view_thiscustomer['customer_income_frequency']));
+$customer_income_frequency = mysql_real_escape_string(trim($row_view_thiscustomer['customer_income_frequency']));
 $customer_income_other = mysql_real_escape_string(trim($row_view_thiscustomer['customer_income_other']));
 $customer_income_other_amount = mysql_real_escape_string(trim($row_view_thiscustomer['customer_income_other_amount']));
 $customer_income_other_frequency = mysql_real_escape_string(trim($row_view_thiscustomer['customer_income_other_frequency']));

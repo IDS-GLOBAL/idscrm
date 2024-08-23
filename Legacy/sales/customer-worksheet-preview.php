@@ -82,7 +82,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "updateCustleadsbyid")) {
-  $updateSQL =  "UPDATE cust_leads SET cust_nickname=%s, cust_fname=%s, cust_mname=%s, cust_lname=%s, cust_email=%s, cust_dealer_id=%s, cust_vehicle_id=%s, cust_salesperson_id=%s, cust_date_td=%s, cust_hour_td=%s, cust_min_td=%s, cust_ampm_td=%s, cust_lead_token=%s WHERE cust_leadid=%s",
+  $updateSQL =  sprintf("UPDATE cust_leads SET cust_nickname=%s, cust_fname=%s, cust_mname=%s, cust_lname=%s, cust_email=%s, cust_dealer_id=%s, cust_vehicle_id=%s, cust_salesperson_id=%s, cust_date_td=%s, cust_hour_td=%s, cust_min_td=%s, cust_ampm_td=%s, cust_lead_token=%s WHERE cust_leadid=%s",
                        GetSQLValueString($_POST['cust_nickname'], "text"),
                        GetSQLValueString($_POST['cust_fname'], "text"),
                        GetSQLValueString($_POST['cust_mname'], "text"),
@@ -107,7 +107,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userSets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userSets =  "SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
+$query_userSets =  sprintf("SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
 $userSets = mysqli_query($idsconnection_mysqli, $query_userSets);
 $row_userSets = mysqli_fetch_assoc($userSets);
 $totalRows_userSets = mysqli_num_rows($userSets);
@@ -122,7 +122,7 @@ if (isset($_GET['lead'])) {
   $colname_querycust_leads = $_GET['lead'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_querycust_leads =  "SELECT * FROM cust_leads WHERE cust_leadid = %s AND cust_leads.cust_salesperson_id = $sid", GetSQLValueString($colname_querycust_leads, "int"));
+$query_querycust_leads =  sprintf("SELECT * FROM cust_leads WHERE cust_leadid = %s AND cust_leads.cust_salesperson_id = $sid", GetSQLValueString($colname_querycust_leads, "int"));
 $querycust_leads = mysqli_query($idsconnection_mysqli, $query_querycust_leads);
 $row_querycust_leads = mysqli_fetch_assoc($querycust_leads);
 $totalRows_querycust_leads = mysqli_num_rows($querycust_leads);

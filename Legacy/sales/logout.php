@@ -95,7 +95,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userSets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userSets =  "SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
+$query_userSets =  sprintf("SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
 $userSets = mysqli_query($idsconnection_mysqli, $query_userSets);
 $row_userSets = mysqli_fetch_assoc($userSets);
 $totalRows_userSets = mysqli_num_rows($userSets);

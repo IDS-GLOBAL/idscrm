@@ -82,7 +82,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "addVehicleymkmd")) {
-  $updateSQL =  "UPDATE vehicles SET did=%s, sid=%s, vmakeid=%s, vmodelid=%s, vlivestatus=%s, vyear=%s, vtrim=%s, vcondition=%s WHERE vid=%s",
+  $updateSQL =  sprintf("UPDATE vehicles SET did=%s, sid=%s, vmakeid=%s, vmodelid=%s, vlivestatus=%s, vyear=%s, vtrim=%s, vcondition=%s WHERE vid=%s",
                        GetSQLValueString($_POST['did'], "int"),
                        GetSQLValueString($_POST['sid'], "int"),
                        GetSQLValueString($_POST['vmakeid'], "int"),
@@ -101,7 +101,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "addVehicleymkmd")) 
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
     $updateGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $updateGoTo));
+  header( sprintf("Location: %s", $updateGoTo));
 }
 
 $colname_userSets = "-1";
@@ -109,7 +109,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userSets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userSets =  "SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
+$query_userSets =  sprintf("SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
 $userSets = mysqli_query($idsconnection_mysqli, $query_userSets);
 $row_userSets = mysqli_fetch_assoc($userSets);
 $totalRows_userSets = mysqli_num_rows($userSets);
@@ -150,7 +150,7 @@ if (isset($_GET['vid'])) {
   $colname_query_vehicle = $_GET['vid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_query_vehicle =  "SELECT vehicles.vid, vehicles.did, vehicles.sid, vehicles.vmodelid, car_model.id, car_model.make, car_model.model FROM vehicles, car_model WHERE vehicles.vmodelid = car_model.id  AND vehicles.vid = %s", GetSQLValueString($colname_query_vehicle, "int"));
+$query_query_vehicle =  sprintf("SELECT vehicles.vid, vehicles.did, vehicles.sid, vehicles.vmodelid, car_model.id, car_model.make, car_model.model FROM vehicles, car_model WHERE vehicles.vmodelid = car_model.id  AND vehicles.vid = %s", GetSQLValueString($colname_query_vehicle, "int"));
 $query_vehicle = mysqli_query($idsconnection_mysqli, $query_query_vehicle);
 $row_query_vehicle = mysqli_fetch_assoc($query_vehicle);
 $totalRows_query_vehicle = mysqli_num_rows($query_vehicle);

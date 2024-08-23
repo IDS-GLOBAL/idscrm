@@ -6,7 +6,7 @@ if (isset($_GET['leadid'])) {
   $colname_view_thislead = $_GET['leadid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_view_thislead =  "SELECT * FROM cust_leads WHERE cust_leadid = %s";
+$query_view_thislead =  sprintf("SELECT * FROM cust_leads WHERE cust_leadid = %s");
 $view_thislead = mysqli_query($idsconnection_mysqli, $query_view_thislead);
 $row_view_thislead = mysqli_fetch_assoc($view_thislead);
 $totalRows_view_thislead = mysqli_num_rows($view_thislead);

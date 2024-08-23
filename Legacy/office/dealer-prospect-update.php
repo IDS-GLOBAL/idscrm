@@ -54,7 +54,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form_dlr_update")) {
-  $updateSQL =  "UPDATE dealer_prospects SET dudes_id=%s, dudes2_id=%s, support_rep_id=%s, contact=%s, contact_phone=%s, contact_phone_type=%s, dmcontact2=%s, dmcontact2_phone=%s, company=%s, website=%s, finance=%s, finance_contact=%s, sales=%s, sales_contact=%s, phone=%s, fax=%s, address=%s, city=%s, `state`=%s, zip=%s, mapframe=%s, disclaimer=%s, status=%s WHERE id=%s",
+  $updateSQL =  sprintf("UPDATE dealer_prospects SET dudes_id=%s, dudes2_id=%s, support_rep_id=%s, contact=%s, contact_phone=%s, contact_phone_type=%s, dmcontact2=%s, dmcontact2_phone=%s, company=%s, website=%s, finance=%s, finance_contact=%s, sales=%s, sales_contact=%s, phone=%s, fax=%s, address=%s, city=%s, `state`=%s, zip=%s, mapframe=%s, disclaimer=%s, status=%s WHERE id=%s",
                        GetSQLValueString($_POST['dudes_id'], "int"),
                        GetSQLValueString($_POST['dudes2_id'], "int"),
                        GetSQLValueString($_POST['support_rep_id'], "int"),
@@ -88,7 +88,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form_dlr_update")) 
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
     $updateGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $updateGoTo));
+  header( sprintf("Location: %s", $updateGoTo));
 }
 
 $currentPage = $_SERVER["PHP_SELF"];
@@ -98,7 +98,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -113,7 +113,7 @@ if (isset($_GET['dealer'])) {
   $dudes_dlr_notes_did = $colname_dealer_query;
 }
 mysql_select_db($database_tracking);
-$query_dealer_query =  "SELECT * FROM dealer_prospects WHERE id = %s", GetSQLValueString($colname_dealer_query, "int"));
+$query_dealer_query =  sprintf("SELECT * FROM dealer_prospects WHERE id = %s", GetSQLValueString($colname_dealer_query, "int"));
 $dealer_query = mysqli_query($idsconnection_mysqli, $query_dealer_query);
 $row_dealer_query = mysqli_fetch_array($dealer_query);
 $totalRows_dealer_query = mysqli_num_rows($dealer_query);
@@ -127,8 +127,8 @@ if (isset($_GET['pageNum_dealer_leads'])) {
 $startRow_dealer_leads = $pageNum_dealer_leads * $maxRows_dealer_leads;
 
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_dealer_leads = "SELECT * FROM cust_leads WHERE cust_dealer_id = '$did' ORDER BY cust_leads.cust_lead_created_at DESC";
-$query_limit_dealer_leads =  "%s LIMIT %d, %d", $query_dealer_leads, $startRow_dealer_leads, $maxRows_dealer_leads);
+$query_dealer_leads = sprintf("SELECT * FROM cust_leads WHERE cust_dealer_id = '$did' ORDER BY cust_leads.cust_lead_created_at DESC");
+$query_limit_dealer_leads =  sprintf("%s LIMIT %d, %d", $query_dealer_leads, $startRow_dealer_leads, $maxRows_dealer_leads);
 $dealer_leads = mysqli_query($idsconnection_mysqli, $query_limit_dealer_leads);
 $row_dealer_leads = mysqli_fetch_array($dealer_leads);
 
@@ -249,7 +249,7 @@ setlocale(LC_MONETARY, 'en_US.UTF-8');
 // Function To Calculate Money without commas.
 function formatMoney($number, $fractional=false) { 
     if ($fractional) { 
-        $number =  '%.2f', $number); 
+        $number =  sprintf('%.2f', $number); 
     } 
     while (true) { 
         $replaced = preg_replace('/(-?\d+)(\d\d\d)/', '$1,$2', $number); 

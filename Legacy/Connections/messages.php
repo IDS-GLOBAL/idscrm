@@ -81,7 +81,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userDets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDets =  "SELECT * FROM dealers WHERE email = %s";
+$query_userDets =  sprintf("SELECT * FROM dealers WHERE email = %s");
 $userDets = mysqli_query($idsconnection_mysqli, $query_userDets);
 $row_userDets = mysqli_fetch_assoc($userDets);
 $totalRows_userDets = mysqli_num_rows($userDets);
@@ -105,7 +105,7 @@ $startRow_all_msgsbyDid = $pageNum_all_msgsbyDid * $maxRows_all_msgsbyDid;
 
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
 $query_all_msgsbyDid = "SELECT * FROM `messages` WHERE `did` = $did ORDER BY `messages`.`created_at`";
-$query_limit_all_msgsbyDid =  "%s LIMIT %d, %d", $query_all_msgsbyDid, $startRow_all_msgsbyDid, $maxRows_all_msgsbyDid);
+$query_limit_all_msgsbyDid =  sprintf("%s LIMIT %d, %d", $query_all_msgsbyDid, $startRow_all_msgsbyDid, $maxRows_all_msgsbyDid);
 $all_msgsbyDid = mysqli_query($idsconnection_mysqli, $query_limit_all_msgsbyDid);
 $row_all_msgsbyDid = mysqli_fetch_assoc($all_msgsbyDid);
 

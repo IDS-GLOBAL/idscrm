@@ -82,7 +82,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "ovrphngoal")) {
-  $insertSQL =  "INSERT INTO cust_leads (cust_nickname, cust_phoneno, cust_dealer_id, cust_salesperson_id, cust_date_td) VALUES (%s, %s, %s, %s, %s)",
+  $insertSQL =  sprintf("INSERT INTO cust_leads (cust_nickname, cust_phoneno, cust_dealer_id, cust_salesperson_id, cust_date_td) VALUES (%s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['cust_nickname'], "text"),
                        GetSQLValueString($_POST['cust_phoneno'], "text"),
                        GetSQLValueString($_POST['cust_dealer_id'], "int"),
@@ -97,7 +97,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "ovrphngoal")) {
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $insertGoTo));
+  header( sprintf("Location: %s", $insertGoTo));
 }
 
 $colname_userSets = "-1";
@@ -105,7 +105,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userSets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userSets =  "SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
+$query_userSets =  sprintf("SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
 $userSets = mysqli_query($idsconnection_mysqli, $query_userSets);
 $row_userSets = mysqli_fetch_assoc($userSets);
 $totalRows_userSets = mysqli_num_rows($userSets);

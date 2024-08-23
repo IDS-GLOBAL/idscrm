@@ -82,7 +82,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form_one_creditapp")) {
-  $insertSQL =  "INSERT INTO credit_app_fullblown (applicant_did, applicant_sid, applicant_vid, applicant_cid, applicant_clid, applicant_app_token, credit_app_type, credit_app_source, applicant_ssn, applicant_dob, applicant_titlename, applicant_fname, applicant_mname, applicant_lname, applicant_main_phone, applicant_cell_phone, applicant_present_address1, applicant_present_addr_city, applicant_present_addr_state, applicant_present_addr_zip, applicant_addr_years, applicant_addr_months, applicant_buy_own_rent_other, applicant_previous1_addr1, applicant_previous1_addr_city, applicant_previous1_addr_zip, applicant_previous1_live_years, applicant_previous1_live_months, applicant_employment_type, applicant_employment_status, applicant_employer1_name, applicant_employer1_addr, applicant_employer1_city, applicant_employer1_state, applicant_employer1_zip, applicant_employer1_phone, applicant_employer1_work_years, applicant_employer1_work_months, applicant_employer1_position, applicant_employer1_salary_bringhome, applicant_employer1_payday_freq, applicant_other_income_amount, applicant_other_income_source, applicant_other_income_when_rcvd, applicant_employer2_name, applicant_employer2_phone, applicant_employer2_work_years, applicant_employer2_work_months, applicant_employer2_position, applilcant_v_asset_type, applilcant_v_intendeduse, applilcant_v_neworused, applilcant_v_stockno, applilcant_v_vin, applilcant_v_year, applilcant_v_make, applilcant_v_model, applilcant_v_style, applilcant_v_inception_miles, applilcant_v_trade_year, applilcant_v_trade_make, applilcant_v_trade_model, applilcant_v_trade_lien_holder_name, applilcant_v_cashprice, applilcant_v_taxes, applilcant_v_doc_fees, title_lic_reg_other_fees, applilcant_v_cash_down, applilcant_v_rebate, applilcant_v_trade_allowance, applilcant_v_trade_owed, applilcant_v_gap, applilcant_v_srvc_contract, applilcant_v_credit_life, applilcant_v_disability, applilcant_v_financed_amount, applilcant_v_term_months, applilcant_v_cust_rate, applilcant_v_total_monthpmts_est, applilcant_v_wholesale_invoice, applilcant_v_msrp, applilcant_v_creditbureau_preferred, applicant_email_address) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+  $insertSQL =  sprintf("INSERT INTO credit_app_fullblown (applicant_did, applicant_sid, applicant_vid, applicant_cid, applicant_clid, applicant_app_token, credit_app_type, credit_app_source, applicant_ssn, applicant_dob, applicant_titlename, applicant_fname, applicant_mname, applicant_lname, applicant_main_phone, applicant_cell_phone, applicant_present_address1, applicant_present_addr_city, applicant_present_addr_state, applicant_present_addr_zip, applicant_addr_years, applicant_addr_months, applicant_buy_own_rent_other, applicant_previous1_addr1, applicant_previous1_addr_city, applicant_previous1_addr_zip, applicant_previous1_live_years, applicant_previous1_live_months, applicant_employment_type, applicant_employment_status, applicant_employer1_name, applicant_employer1_addr, applicant_employer1_city, applicant_employer1_state, applicant_employer1_zip, applicant_employer1_phone, applicant_employer1_work_years, applicant_employer1_work_months, applicant_employer1_position, applicant_employer1_salary_bringhome, applicant_employer1_payday_freq, applicant_other_income_amount, applicant_other_income_source, applicant_other_income_when_rcvd, applicant_employer2_name, applicant_employer2_phone, applicant_employer2_work_years, applicant_employer2_work_months, applicant_employer2_position, applilcant_v_asset_type, applilcant_v_intendeduse, applilcant_v_neworused, applilcant_v_stockno, applilcant_v_vin, applilcant_v_year, applilcant_v_make, applilcant_v_model, applilcant_v_style, applilcant_v_inception_miles, applilcant_v_trade_year, applilcant_v_trade_make, applilcant_v_trade_model, applilcant_v_trade_lien_holder_name, applilcant_v_cashprice, applilcant_v_taxes, applilcant_v_doc_fees, title_lic_reg_other_fees, applilcant_v_cash_down, applilcant_v_rebate, applilcant_v_trade_allowance, applilcant_v_trade_owed, applilcant_v_gap, applilcant_v_srvc_contract, applilcant_v_credit_life, applilcant_v_disability, applilcant_v_financed_amount, applilcant_v_term_months, applilcant_v_cust_rate, applilcant_v_total_monthpmts_est, applilcant_v_wholesale_invoice, applilcant_v_msrp, applilcant_v_creditbureau_preferred, applicant_email_address) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['applicant_did'], "int"),
                        GetSQLValueString($_POST['applicant_sid'], "int"),
                        GetSQLValueString($_POST['applicant_vid'], "int"),
@@ -175,7 +175,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form_one_creditapp"
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $insertGoTo));
+  header( sprintf("Location: %s", $insertGoTo));
 }
 
 
@@ -185,7 +185,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "ovrphngoal")) {
-  $insertSQL =  "INSERT INTO cust_leads (cust_nickname, cust_phoneno, cust_dealer_id, cust_salesperson_id, cust_date_td) VALUES (%s, %s, %s, %s, %s)",
+  $insertSQL =  sprintf("INSERT INTO cust_leads (cust_nickname, cust_phoneno, cust_dealer_id, cust_salesperson_id, cust_date_td) VALUES (%s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['cust_nickname'], "text"),
                        GetSQLValueString($_POST['cust_phoneno'], "text"),
                        GetSQLValueString($_POST['cust_dealer_id'], "int"),
@@ -200,7 +200,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "ovrphngoal")) {
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $insertGoTo));
+  header( sprintf("Location: %s", $insertGoTo));
 }
 
 $colname_userSets = "-1";
@@ -208,7 +208,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userSets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userSets =  "SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
+$query_userSets =  sprintf("SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
 $userSets = mysqli_query($idsconnection_mysqli, $query_userSets);
 $row_userSets = mysqli_fetch_assoc($userSets);
 $totalRows_userSets = mysqli_num_rows($userSets);
@@ -255,7 +255,7 @@ if (isset($_GET['credit_app_id'])) {
   $colname_creditapp_id_did = $_GET['credit_app_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_creditapp_id_did =  "SELECT * FROM credit_app_fullblown WHERE credit_app_fullblown.credit_app_fullblown_id = %s AND credit_app_fullblown.applicant_did = $sidmaindid", GetSQLValueString($colname_creditapp_id_did, "int"));
+$query_creditapp_id_did =  sprintf("SELECT * FROM credit_app_fullblown WHERE credit_app_fullblown.credit_app_fullblown_id = %s AND credit_app_fullblown.applicant_did = $sidmaindid", GetSQLValueString($colname_creditapp_id_did, "int"));
 $creditapp_id_did = mysqli_query($idsconnection_mysqli, $query_creditapp_id_did);
 $row_creditapp_id_did = mysqli_fetch_assoc($creditapp_id_did);
 $totalRows_creditapp_id_did = mysqli_num_rows($creditapp_id_did);

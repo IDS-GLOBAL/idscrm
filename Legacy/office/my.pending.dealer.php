@@ -75,7 +75,7 @@ $totalRows_qrydlr_prospc_notes = mysqli_num_rows($qrydlr_prospc_notes);
                                         
                                         <div class="row">
                                         	<div class="col-sm-12" align="center">
-                                            <a id="convert_pendingdlr" href="https://idscrm.com/verify.php?secret=<?php echo $row_pullPndngDlr['token']; ?>&token=<?php echo $row_userDudes['dudes_public_token']; ?>" target="_blank" class="btn btn-warning dim btn-xs">Covert To System Dealer.</a>
+                                            <a id="convert_pendingdlr" href="../verify.php?secret=<?php echo $row_pullPndngDlr['token']; ?>&token=<?php echo $row_userDudes['dudes_public_token']; ?>" target="_blank" class="btn btn-warning dim btn-xs">Covert To System Dealer.</a>
                                             <a id="viewprospect_dlr" href="prospect.dealer.php?prospctdlrid=<?php echo $row_pullPndngDlr['prospctdlrid']; ?>" target="_blank" class="btn btn-warning dim btn-xs m-l-md">View As A Prospect.</a>
                                             </div>
                                         </div>

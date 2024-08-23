@@ -82,7 +82,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "update_profile")) {
-  $updateSQL =  "UPDATE sales_person SET salesperson_firstname=%s, salesperson_lastname=%s, salesperson_nickname=%s, salesperson_mobilephone_number=%s, website_url=%s, prof_motto=%s, prof_hometown=%s, prof_sportsteam=%s, prof_dreamvact=%s, prof_favfood=%s, prof_favtvshow=%s WHERE salesperson_id=%s",
+  $updateSQL =  sprintf("UPDATE sales_person SET salesperson_firstname=%s, salesperson_lastname=%s, salesperson_nickname=%s, salesperson_mobilephone_number=%s, website_url=%s, prof_motto=%s, prof_hometown=%s, prof_sportsteam=%s, prof_dreamvact=%s, prof_favfood=%s, prof_favtvshow=%s WHERE salesperson_id=%s",
                        GetSQLValueString($_POST['salesperson_firstname'], "text"),
                        GetSQLValueString($_POST['salesperson_lastname'], "text"),
                        GetSQLValueString($_POST['salesperson_nickname'], "text"),
@@ -104,7 +104,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "update_profile")) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
     $updateGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $updateGoTo));
+  header( sprintf("Location: %s", $updateGoTo));
 }
 
 $colname_userSets = "-1";
@@ -112,7 +112,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userSets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userSets =  "SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
+$query_userSets =  sprintf("SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
 $userSets = mysqli_query($idsconnection_mysqli, $query_userSets);
 $row_userSets = mysqli_fetch_assoc($userSets);
 $totalRows_userSets = mysqli_num_rows($userSets);

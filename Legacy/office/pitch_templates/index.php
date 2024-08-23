@@ -86,7 +86,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -236,7 +236,7 @@ if (isset($_GET['pitchid'])) {
   $colname_pulltemplate = $_GET['pitchid'];
 }
 mysql_select_db($database_tracking, $tracking);
-$query_pulltemplate =  "SELECT * FROM `dudes_salespitch` WHERE `dudes_salespitch_id` = %s", GetSQLValueString($colname_pulltemplate, "int"));
+$query_pulltemplate =  sprintf("SELECT * FROM `dudes_salespitch` WHERE `dudes_salespitch_id` = %s", GetSQLValueString($colname_pulltemplate, "int"));
 $pulltemplate = mysqli_query($idsconnection_mysqli, $query_pulltemplate, $tracking);
 $row_pulltemplate = mysqli_fetch_array($pulltemplate);
 $totalRows_pulltemplate = mysqli_num_rows($pulltemplate);

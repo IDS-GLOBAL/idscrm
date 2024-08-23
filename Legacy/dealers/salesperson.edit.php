@@ -6,7 +6,7 @@ if (isset($_GET['sid'])) {
   $colname_query_Salesperson = $_GET['sid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_query_Salesperson =  "SELECT * FROM `sales_person` WHERE `sales_person`.`salesperson_id` = %s AND `sales_person`.`main_dealerid` = '$did' ", GetSQLValueString($colname_query_Salesperson, "int"));
+$query_query_Salesperson =  sprintf("SELECT * FROM `sales_person` WHERE `sales_person`.`salesperson_id` = %s AND `sales_person`.`main_dealerid` = '$did' ", GetSQLValueString($colname_query_Salesperson, "int"));
 $query_Salesperson = mysqli_query($idsconnection_mysqli, $query_query_Salesperson);
 $row_query_Salesperson = mysqli_fetch_assoc($query_Salesperson);
 $totalRows_query_Salesperson = mysqli_num_rows($query_Salesperson);

@@ -84,7 +84,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -219,7 +219,7 @@ if (isset($_GET['dealer'])) {
   $colname_dealer_query = $_GET['dealer'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_dealer_query =  "SELECT * FROM `dealers` WHERE `id` = %s", GetSQLValueString($colname_dealer_query, "int"));
+$query_dealer_query =  sprintf("SELECT * FROM `dealers` WHERE `id` = %s", GetSQLValueString($colname_dealer_query, "int"));
 $dealer_query = mysqli_query($idsconnection_mysqli, $query_dealer_query);
 $row_dealer_query = mysqli_fetch_array($dealer_query);
 $totalRows_dealer_query = mysqli_num_rows($dealer_query);
@@ -233,7 +233,7 @@ if (isset($_GET['dlr_prspct'])) {
   $colname_prspct_dealers = $_GET['dlr_prspct'];
 }
 mysql_select_db($database_tracking, $tracking);
-$query_prspct_dealers =  "SELECT * FROM `dealer_prospects` WHERE `id` = %s ORDER BY `state` ASC", GetSQLValueString($colname_prspct_dealers, "text"));
+$query_prspct_dealers =  sprintf("SELECT * FROM `dealer_prospects` WHERE `id` = %s ORDER BY `state` ASC", GetSQLValueString($colname_prspct_dealers, "text"));
 $prspct_dealers = mysqli_query($idsconnection_mysqli, $query_prspct_dealers, $tracking);
 $row_prspct_dealers = mysqli_fetch_array($prspct_dealers);
 $totalRows_prspct_dealers = mysqli_fetch_array($prspct_dealers);

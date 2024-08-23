@@ -86,7 +86,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userDets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDets =  "SELECT * FROM dealers WHERE email = %s";
+$query_userDets =  sprintf("SELECT * FROM dealers WHERE email = %s");
 $userDets = mysqli_query($idsconnection_mysqli, $query_userDets);
 $row_userDets = mysqli_fetch_assoc($userDets);
 $totalRows_userDets = mysqli_num_rows($userDets);
@@ -180,7 +180,7 @@ if (isset($editFormAction)) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "UpLoadPhotos")) {
-  $updateSQL =  "UPDATE vehicle_photos SET dealer_id=%s, vphoto1_path=IFNULL(%s,vphoto1_path), vphoto2_path=IFNULL(%s,vphoto2_path), vphoto3_path=IFNULL(%s,vphoto3_path), vphoto4_path=IFNULL(%s,vphoto4_path), vphoto5_path=IFNULL(%s,vphoto5_path), vphoto6_path=IFNULL(%s,vphoto6_path), vphoto7_path=IFNULL(%s,vphoto7_path), vphoto8_path=IFNULL(%s,vphoto8_path), vphoto9_path=IFNULL(%s,vphoto9_path), vphoto10_path=IFNULL(%s,vphoto10_path), vphoto11_path=IFNULL(%s,vphoto11_path), vphoto12_path=IFNULL(%s,vphoto12_path), vphoto13_path=IFNULL(%s,vphoto13_path), vphoto14_path=IFNULL(%s,vphoto14_path), vphoto15_path=IFNULL(%s,vphoto15_path), vphoto16_path=IFNULL(%s,vphoto16_path), vphoto17_path=IFNULL(%s,vphoto17_path), vphoto18_path=IFNULL(%s,vphoto18_path), vphoto19_path=IFNULL(%s,vphoto19_path), vphoto20_path=IFNULL(%s,vphoto20_path), vphoto21_path=IFNULL(%s,vphoto21_path), vphoto22_path=IFNULL(%s,vphoto22_path), vphoto23_path=IFNULL(%s,vphoto23_path), vphoto24_path=IFNULL(%s,vphoto24_path), vphoto25_path=IFNULL(%s,vphoto25_path), vphoto26_path=IFNULL(%s,vphoto26_path), vphoto27_path=IFNULL(%s,vphoto27_path), vphoto28_path=IFNULL(%s,vphoto28_path), vphoto29_path=IFNULL(%s,vphoto29_path), vphoto30_path=IFNULL(%s,vphoto30_path), vphoto31_path=IFNULL(%s,vphoto31_path), vphoto32_path=IFNULL(%s,vphoto32_path), vphoto33_path=IFNULL(%s,vphoto33_path), vphoto34_path=IFNULL(%s,vphoto34_path), vphoto35_path=IFNULL(%s,vphoto35_path), vphoto36_path=IFNULL(%s,vphoto36_path), vphoto37_path=IFNULL(%s,vphoto37_path), vphoto38_path=IFNULL(%s,vphoto38_path), vphoto39_path=IFNULL(%s,vphoto39_path), vphoto40_path=IFNULL(%s,vphoto40_path), vphoto41_path=IFNULL(%s,vphoto41_path), vphoto42_path=IFNULL(%s,vphoto42_path), vphoto43_path=IFNULL(%s,vphoto43_path), vphoto44_path=IFNULL(%s,vphoto44_path), vphoto45_path=IFNULL(%s,vphoto45_path), vphoto46_path=IFNULL(%s,vphoto46_path), vphoto47_path=IFNULL(%s,vphoto47_path), vphoto48_path=IFNULL(%s,vphoto48_path), vphoto49_path=IFNULL(%s,vphoto49_path), vphoto50_path=IFNULL(%s,vphoto50_path) WHERE vehicle_id=%s",
+  $updateSQL =  sprintf("UPDATE vehicle_photos SET dealer_id=%s, vphoto1_path=IFNULL(%s,vphoto1_path), vphoto2_path=IFNULL(%s,vphoto2_path), vphoto3_path=IFNULL(%s,vphoto3_path), vphoto4_path=IFNULL(%s,vphoto4_path), vphoto5_path=IFNULL(%s,vphoto5_path), vphoto6_path=IFNULL(%s,vphoto6_path), vphoto7_path=IFNULL(%s,vphoto7_path), vphoto8_path=IFNULL(%s,vphoto8_path), vphoto9_path=IFNULL(%s,vphoto9_path), vphoto10_path=IFNULL(%s,vphoto10_path), vphoto11_path=IFNULL(%s,vphoto11_path), vphoto12_path=IFNULL(%s,vphoto12_path), vphoto13_path=IFNULL(%s,vphoto13_path), vphoto14_path=IFNULL(%s,vphoto14_path), vphoto15_path=IFNULL(%s,vphoto15_path), vphoto16_path=IFNULL(%s,vphoto16_path), vphoto17_path=IFNULL(%s,vphoto17_path), vphoto18_path=IFNULL(%s,vphoto18_path), vphoto19_path=IFNULL(%s,vphoto19_path), vphoto20_path=IFNULL(%s,vphoto20_path), vphoto21_path=IFNULL(%s,vphoto21_path), vphoto22_path=IFNULL(%s,vphoto22_path), vphoto23_path=IFNULL(%s,vphoto23_path), vphoto24_path=IFNULL(%s,vphoto24_path), vphoto25_path=IFNULL(%s,vphoto25_path), vphoto26_path=IFNULL(%s,vphoto26_path), vphoto27_path=IFNULL(%s,vphoto27_path), vphoto28_path=IFNULL(%s,vphoto28_path), vphoto29_path=IFNULL(%s,vphoto29_path), vphoto30_path=IFNULL(%s,vphoto30_path), vphoto31_path=IFNULL(%s,vphoto31_path), vphoto32_path=IFNULL(%s,vphoto32_path), vphoto33_path=IFNULL(%s,vphoto33_path), vphoto34_path=IFNULL(%s,vphoto34_path), vphoto35_path=IFNULL(%s,vphoto35_path), vphoto36_path=IFNULL(%s,vphoto36_path), vphoto37_path=IFNULL(%s,vphoto37_path), vphoto38_path=IFNULL(%s,vphoto38_path), vphoto39_path=IFNULL(%s,vphoto39_path), vphoto40_path=IFNULL(%s,vphoto40_path), vphoto41_path=IFNULL(%s,vphoto41_path), vphoto42_path=IFNULL(%s,vphoto42_path), vphoto43_path=IFNULL(%s,vphoto43_path), vphoto44_path=IFNULL(%s,vphoto44_path), vphoto45_path=IFNULL(%s,vphoto45_path), vphoto46_path=IFNULL(%s,vphoto46_path), vphoto47_path=IFNULL(%s,vphoto47_path), vphoto48_path=IFNULL(%s,vphoto48_path), vphoto49_path=IFNULL(%s,vphoto49_path), vphoto50_path=IFNULL(%s,vphoto50_path) WHERE vehicle_id=%s",
                        GetSQLValueString($_POST['dealer_id'], "int"),
                        GetSQLValueString($_POST['vphoto1_path'], "text"),
                        GetSQLValueString($_POST['vphoto2_path'], "text"),
@@ -242,7 +242,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "UpLoadPhotos")) {
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
     $updateGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $updateGoTo));
+  header( sprintf("Location: %s", $updateGoTo));
 }
 
 if (isset($editFormAction)) {
@@ -276,7 +276,7 @@ if (isset($_GET['vid'])) {
   $colname_theRightVehicle = $_GET['vid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_theRightVehicle =  "SELECT * FROM vehicles, car_model WHERE vehicles.vmodelid = car_model.id AND vehicles.did = $did AND vehicles.vid = %s", GetSQLValueString($colname_theRightVehicle, "int"));
+$query_theRightVehicle =  sprintf("SELECT * FROM vehicles, car_model WHERE vehicles.vmodelid = car_model.id AND vehicles.did = $did AND vehicles.vid = %s", GetSQLValueString($colname_theRightVehicle, "int"));
 $theRightVehicle = mysqli_query($idsconnection_mysqli, $query_theRightVehicle);
 $row_theRightVehicle = mysqli_fetch_assoc($theRightVehicle);
 $totalRows_theRightVehicle = mysqli_num_rows($theRightVehicle);

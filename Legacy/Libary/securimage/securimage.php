@@ -1679,7 +1679,7 @@ class Securimage
 
     protected function getDsn()
     {
-        $dsn =  '%s:', $this->database_driver);
+        $dsn =  sprintf('%s:', $this->database_driver);
 
         switch($this->database_driver) {
             case self::SI_DRIVER_SQLITE3:
@@ -1688,7 +1688,7 @@ class Securimage
 
             case self::SI_DRIVER_MYSQL:
             case self::SI_DRIVER_PGSQL:
-                $dsn .=  'host=%s;dbname=%s',
+                $dsn .=  sprintf('host=%s;dbname=%s',
                                 $this->database_host,
                                 $this->database_name);
                 break;
@@ -1866,7 +1866,7 @@ class Securimage
 
             $id = $this->pdo_conn->quote($id);
 
-            $query =  "DELETE FROM %s WHERE id = %s AND namespace = %s",
+            $query =  sprintf("DELETE FROM %s WHERE id = %s AND namespace = %s",
                              $this->database_table, $id, $ns);
 
             $result = $this->pdo_conn->query($query);
@@ -1885,7 +1885,7 @@ class Securimage
             $now   = time();
             $limit = (!is_numeric($this->expiry_time) || $this->expiry_time < 1) ? 86400 : $this->expiry_time;
 
-            $query =  "DELETE FROM %s WHERE %s - created > %s",
+            $query =  sprintf("DELETE FROM %s WHERE %s - created > %s",
                              $this->database_table,
                              $this->pdo_conn->quote($now, PDO::PARAM_INT),
                              $this->pdo_conn->quote($limit, PDO::PARAM_INT));

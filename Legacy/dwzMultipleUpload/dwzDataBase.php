@@ -87,7 +87,7 @@ class dwzDataBase{
 			}
 		}
 						
-		$selectSQL = v $sql, $args);		
+		$selectSQL = sprintf($sql, $args);		
 		
 		$this->last_sql = $selectSQL;
 		
@@ -133,7 +133,7 @@ class dwzDataBase{
 		}
 		$total_sql = $sql_fields ." ) VALUES ( " .$sql_values ." )";
 		
-		$insertSQL = v $total_sql, $args);		
+		$insertSQL = sprintf($total_sql, $args);		
 		
 		$this->last_sql = $insertSQL;
 		
@@ -206,7 +206,7 @@ class dwzDataBase{
 			}
 		}		
 						
-		$updateSQL = v $sql, $args);		
+		$updateSQL = sprintf($sql, $args);		
 		
 		$this->last_sql = $updateSQL;
 		
@@ -268,7 +268,7 @@ class dwzDataBase{
 			}
 		}
 				
-		$deleteSQL = v $sql, $args);		
+		$deleteSQL = sprintf($sql, $args);		
 		
 		$this->last_sql = $deleteSQL;
 		

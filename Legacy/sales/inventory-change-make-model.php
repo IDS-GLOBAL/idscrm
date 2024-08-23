@@ -82,7 +82,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userSets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userSets =  "SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
+$query_userSets =  sprintf("SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
 $userSets = mysqli_query($idsconnection_mysqli, $query_userSets);
 $row_userSets = mysqli_fetch_assoc($userSets);
 $totalRows_userSets = mysqli_num_rows($userSets);
@@ -123,7 +123,7 @@ if (isset($_GET['vid'])) {
   $colname_update_inventory = $_GET['vid'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_update_inventory =  "SELECT * FROM vehicles WHERE vid = %s AND vehicles.did = $did", GetSQLValueString($colname_update_inventory, "int"));
+$query_update_inventory =  sprintf("SELECT * FROM vehicles WHERE vid = %s AND vehicles.did = $did", GetSQLValueString($colname_update_inventory, "int"));
 $update_inventory = mysqli_query($idsconnection_mysqli, $query_update_inventory);
 $row_update_inventory = mysqli_fetch_assoc($update_inventory);
 $totalRows_update_inventory = mysqli_num_rows($update_inventory);
@@ -136,7 +136,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "addVehicleymkmd")) {
-  $updateSQL =  "UPDATE vehicles SET did=%s, sid=%s, vmakeid=%s, vmodelid=%s, vlivestatus=%s, vyear=%s, vtrim=%s, vcondition=%s WHERE vid=%s",
+  $updateSQL =  sprintf("UPDATE vehicles SET did=%s, sid=%s, vmakeid=%s, vmodelid=%s, vlivestatus=%s, vyear=%s, vtrim=%s, vcondition=%s WHERE vid=%s",
                        GetSQLValueString($_POST['did'], "int"),
                        GetSQLValueString($_POST['sid'], "int"),
                        GetSQLValueString($_POST['vmakeid'], "int"),
@@ -155,7 +155,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "addVehicleymkmd")) 
     $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
     $updateGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $updateGoTo));
+  header( sprintf("Location: %s", $updateGoTo));
 }
 
 

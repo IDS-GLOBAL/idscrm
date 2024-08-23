@@ -80,7 +80,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userSets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userSets =  "SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
+$query_userSets =  sprintf("SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
 $userSets = mysqli_query($idsconnection_mysqli, $query_userSets);
 $row_userSets = mysqli_fetch_assoc($userSets);
 $totalRows_userSets = mysqli_num_rows($userSets);
@@ -101,7 +101,7 @@ if (isset($_GET['vehicle_id'])) {
   $colname_vPhoto = $_GET['vehicle_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_vPhoto =  "SELECT * FROM vehicle_photos WHERE vehicle_id = %s ORDER BY created_at DESC", GetSQLValueString($colname_vPhoto, "int"));
+$query_vPhoto =  sprintf("SELECT * FROM vehicle_photos WHERE vehicle_id = %s ORDER BY created_at DESC", GetSQLValueString($colname_vPhoto, "int"));
 $vPhoto = mysqli_query($idsconnection_mysqli, $query_vPhoto);
 $row_vPhoto = mysqli_fetch_assoc($vPhoto);
 $totalRows_vPhoto = mysqli_num_rows($vPhoto);

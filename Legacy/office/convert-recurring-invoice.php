@@ -53,7 +53,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "invoiceBody")) {
-  $insertSQL =  "INSERT INTO ids_toinvoices (invoice_typeid, invoice_number, invoice_tokenid, invoice_dealerid, invoice_status, invoice_date, invoice_duedate, invoice_sendtoclient, invoice_currency, fee_id1, lineitem1, fee_description1, quantity1, fee_price1, fee_amount1, tax1, fee_id2, lineitem2, fee_description2, quantity2, fee_price2, fee_amount2, tax2, fee_id3, lineitem3, fee_description3, quantity3, fee_price3, fee_amount3, tax3, fee_id4, lineitem4, fee_description4, quantity4, fee_price4, fee_amount4, tax4, fee_id5, lineitem5, fee_description5, quantity5, fee_price5, fee_amount5, tax5, fee_id6, lineitem6, fee_description6, quantity6, fee_price6, fee_amount6, tax6, fee_id7, lineitem7, fee_description7, quantity7, fee_price7, fee_amount7, tax7, fee_id8, lineitem8, fee_description8, quantity8, fee_price8, fee_amount8, tax8, fee_id9, lineitem9, fee_description9, quantity9, fee_price9, fee_amount9, tax9, fee_id10, lineitem10, fee_description10, quantity10, fee_price10, fee_amount10, tax10, fee_id11, lineitem11, fee_description11, quantity11, fee_price11, fee_amount11, tax11, fee_id12, lineitem12, fee_description12, quantity12, fee_price12, fee_amount12, tax12, fee_id13, lineitem13, fee_description13, quantity13, fee_price13, fee_amount13, tax13, fee_id14, lineitem14, fee_description14, quantity14, fee_price14, fee_amount14, tax14, fee_id15, lineitem15, fee_description15, quantity15, fee_price15, fee_amount15, tax15, sales_taxrate, invoice_subtotal, invoice_comments, invoice_taxtotal, invoice_total, applied_payment, invoice_amount_due, dudes_id_lastmodified, invoice_lastmodified, payment_status) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+  $insertSQL =  sprintf("INSERT INTO ids_toinvoices (invoice_typeid, invoice_number, invoice_tokenid, invoice_dealerid, invoice_status, invoice_date, invoice_duedate, invoice_sendtoclient, invoice_currency, fee_id1, lineitem1, fee_description1, quantity1, fee_price1, fee_amount1, tax1, fee_id2, lineitem2, fee_description2, quantity2, fee_price2, fee_amount2, tax2, fee_id3, lineitem3, fee_description3, quantity3, fee_price3, fee_amount3, tax3, fee_id4, lineitem4, fee_description4, quantity4, fee_price4, fee_amount4, tax4, fee_id5, lineitem5, fee_description5, quantity5, fee_price5, fee_amount5, tax5, fee_id6, lineitem6, fee_description6, quantity6, fee_price6, fee_amount6, tax6, fee_id7, lineitem7, fee_description7, quantity7, fee_price7, fee_amount7, tax7, fee_id8, lineitem8, fee_description8, quantity8, fee_price8, fee_amount8, tax8, fee_id9, lineitem9, fee_description9, quantity9, fee_price9, fee_amount9, tax9, fee_id10, lineitem10, fee_description10, quantity10, fee_price10, fee_amount10, tax10, fee_id11, lineitem11, fee_description11, quantity11, fee_price11, fee_amount11, tax11, fee_id12, lineitem12, fee_description12, quantity12, fee_price12, fee_amount12, tax12, fee_id13, lineitem13, fee_description13, quantity13, fee_price13, fee_amount13, tax13, fee_id14, lineitem14, fee_description14, quantity14, fee_price14, fee_amount14, tax14, fee_id15, lineitem15, fee_description15, quantity15, fee_price15, fee_amount15, tax15, sales_taxrate, invoice_subtotal, invoice_comments, invoice_taxtotal, invoice_total, applied_payment, invoice_amount_due, dudes_id_lastmodified, invoice_lastmodified, payment_status) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['invoice_typeid'], "int"),
                        GetSQLValueString($_POST['invoice_number'], "int"),
                        GetSQLValueString($_POST['invoice_tokenid'], "text"),
@@ -187,7 +187,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "invoiceBody")) {
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $insertGoTo));
+  header( sprintf("Location: %s", $insertGoTo));
 }
 
 $colname_userDudes = "-1";
@@ -195,7 +195,7 @@ if (isset($_SESSION['MM_Usernamemobi'])) {
   $colname_userDudes = $_SESSION['MM_Usernamemobi'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userDudes =  "SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
+$query_userDudes =  sprintf("SELECT * FROM dudes WHERE dudes_username = %s", GetSQLValueString($colname_userDudes, "text"));
 $userDudes = mysqli_query($idsconnection_mysqli, $query_userDudes);
 $row_userDudes = mysqli_fetch_array($userDudes);
 $totalRows_userDudes = mysqli_num_rows($userDudes);
@@ -221,7 +221,7 @@ if (isset($_GET['id'])) {
   $colname_queryDealer = $_GET['id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_queryDealer =  "SELECT * FROM dealers WHERE id = %s", GetSQLValueString($colname_queryDealer, "int"));
+$query_queryDealer =  sprintf("SELECT * FROM dealers WHERE id = %s", GetSQLValueString($colname_queryDealer, "int"));
 $queryDealer = mysqli_query($idsconnection_mysqli, $query_queryDealer);
 $row_queryDealer = mysqli_fetch_array($queryDealer);
 $totalRows_queryDealer = mysqli_num_rows($queryDealer);
@@ -238,7 +238,7 @@ if (isset($_GET['invoice_id'])) {
   $colname_queryInvoice = $_GET['invoice_id'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_queryInvoice =  "SELECT * FROM ids_toinvoices_recurring, dealers WHERE ids_toinvoices_recurring.invoice_dealerid = dealers.id AND ids_toinvoices_recurring.invoice_id = %s", GetSQLValueString($colname_queryInvoice, "int"));
+$query_queryInvoice =  sprintf("SELECT * FROM ids_toinvoices_recurring, dealers WHERE ids_toinvoices_recurring.invoice_dealerid = dealers.id AND ids_toinvoices_recurring.invoice_id = %s", GetSQLValueString($colname_queryInvoice, "int"));
 $queryInvoice = mysqli_query($idsconnection_mysqli, $query_queryInvoice);
 $row_queryInvoice = mysqli_fetch_array($queryInvoice);
 $totalRows_queryInvoice = mysqli_num_rows($queryInvoice);

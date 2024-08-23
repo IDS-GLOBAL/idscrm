@@ -82,7 +82,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "addVehicleymkmd")) {
-  $insertSQL =  "INSERT INTO vehicles (did, sid, vyear, vmakeid, vmodelid, vlivestatus, vtrim, vvin, vcondition, vcertified, vstockno, vmileage, vrprice, vdprice, vspecialprice, vecolor_txt, vicolor_txt) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+  $insertSQL =  sprintf("INSERT INTO vehicles (did, sid, vyear, vmakeid, vmodelid, vlivestatus, vtrim, vvin, vcondition, vcertified, vstockno, vmileage, vrprice, vdprice, vspecialprice, vecolor_txt, vicolor_txt) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['did'], "int"),
                        GetSQLValueString($_POST['sid'], "int"),
                        GetSQLValueString($_POST['vyear'], "int"),
@@ -109,7 +109,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "addVehicleymkmd")) 
     $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
     $insertGoTo .= $_SERVER['QUERY_STRING'];
   }
-  header( "Location: %s", $insertGoTo));
+  header( sprintf("Location: %s", $insertGoTo));
 }
 
 
@@ -118,7 +118,7 @@ if (isset($_SESSION['MM_Username'])) {
   $colname_userSets = $_SESSION['MM_Username'];
 }
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
-$query_userSets =  "SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
+$query_userSets =  sprintf("SELECT * FROM sales_person WHERE salesperson_email = %s", GetSQLValueString($colname_userSets, "text"));
 $userSets = mysqli_query($idsconnection_mysqli, $query_userSets);
 $row_userSets = mysqli_fetch_assoc($userSets);
 $totalRows_userSets = mysqli_num_rows($userSets);

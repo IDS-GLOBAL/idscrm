@@ -1,13 +1,5 @@
+<?php require_once('../Connections/idsconnection.php'); ?>
 <?php
-# FileName="Connection_php_mysql.htm"
-# Type="MYSQL"
-# HTTP="true"
-$hostname_idsconnection = "localhost";
-$database_idsconnection = "idsids_idsdms";
-$username_idsconnection = "idsids_faith";
-$password_idsconnection = "benjamin2831";
-$idsconnection_mysqli = mysqli_connect($hostname_idsconnection, $username_idsconnection, $password_idsconnection, $database_idsconnection); 
-
 
 if (!isset($_SESSION)) {
   session_start();

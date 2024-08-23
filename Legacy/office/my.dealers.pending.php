@@ -49,7 +49,7 @@ FROM
 `idsids_idsdms`.`dealers_pending`
 	LEFT JOIN `idsids_idsdms`.`dudes` AS `dudes1_id` ON (`dealers_pending`.`dudes_id`)
 	LEFT JOIN `idsids_idsdms`.`dudes` AS `dudes2_id` ON (`dealers_pending`.`dudes2_id`)
-	LEFT JOIN `idsids_idsdms`.`dudes` on `dealers_pending`.`dudes_id` = `dudes`.`dudes_id`
+	LEFT JOIN `idsids_idsdms`.`dudes` on `dealers_pending`.`dudes_id` = `dudes`.`dudes_id`  AND `dealers_pending`.`dudes2_id`
 
 WHERE 
 	`dealers_pending`.`sys_covertdlrs_did` IS  NULL

@@ -22,7 +22,7 @@
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a id="ids_myaccount_link" href="account.php">My Account</a></li>
                                 <li><a id="myprofile_link" href="profile.php">My Profile</a></li>
-                            <?php if($dudes_skillset_id == '9' ||  dudes_super == '1'){ ?>
+                            <?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
                                 <li><a id="ids_invoices_link" href="invoices.php">Billing</a></li>
                             <?php }else{ ?>
                                 <li><a id="ids_invoices_link" href="#">Billing</a></li>
@@ -112,7 +112,7 @@
 	                        <li><a href="prospect.search.php">New Prospect</a></li>
                             <li><a href="prospect.dealers.php">Prospects</a></li>
                             <li><a href="my.dealers.php">My Dealers</a></li>
-<?php if($dudes_skillset_id == '9' ||  dudes_super == '1'){ ?>
+<?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
                         	<li><a href="my.dealers.pending.php">Dealers Pending</a></li>
                         	<li><a href="my.dealers.system.php">System Dealers Only</a></li>
 <?php }?>                            
@@ -150,7 +150,7 @@
                             <li><a href="#">All Hold Vehicles</a></li>
                             <li><a href="inventory.transfers.php" title="Everything">Vehicle Transfers</a></li>
                             <li><a href="#">Create Dealer Inventory</a></li>
-<?php if($dudes_skillset_id == '9' ||  dudes_super == '1'){ ?>
+<?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
 
                             <li><a href="create.make-models.php">Create Make&amp;Models</a></li>
 <?php } ?>
@@ -161,7 +161,7 @@
                         <ul class="nav nav-second-level">
                         
                         
-<?php if($dudes_skillset_id == '9' ||  dudes_super == '1'){ ?>
+<?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
                         	<li><a href="billing.php" target="_blank">Old Billing</a></li>
                         	<li><a href="billing-new.php" target="_blank">New Billing</a></li>
 <?php }?>                            
@@ -209,7 +209,7 @@
                         <ul class="nav nav-second-level">
                             <li><a href="departments.php">View Departments</a></li>
 
-<?php if($dudes_skillset_id == '9' ||  dudes_super == '1'){ ?>
+<?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
                             <li><a href="department.add.php">Create A New Department</a></li>
 <?php } ?>
                             
@@ -233,7 +233,7 @@
                             <li>
                                 <a href="dealer.salespeople.php">Sales People</a>
                             </li>
-<?php if($dudes_skillset_id == '9' ||  dudes_super == '1'){ ?>
+<?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
                             <li>
                                 <a href="create.dude.php">New Dude</a>
                             </li>

@@ -1,0 +1,95 @@
+<?php
+//===========================================================================
+//* --    ~~                Crafty Syntax Live Help                ~~    -- *
+//===========================================================================
+     
+// --------------------------------------------------------------------------
+// LICENSE:
+//     This program may be modified or redistributed
+//     under the terms of the GNU General Public License
+//     as published by the Free Software Foundation; 
+//     This program is distributed in the hope that it will be useful,
+//     but WITHOUT ANY WARRANTY; without even the implied warranty of
+//     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//     GNU General Public License for more details.
+//
+//     You should have received a copy of the GNU General Public License
+//     along with this program in a file named LICENSE.txt .===========
+require_once("admin_common.php");
+validate_session($identity);
+
+if(!(empty($UNTRUSTED['speak']))){ 
+	$_COOKIE['speaklanguage'] = $UNTRUSTED['speak']; 
+	print "Language changed to " . $UNTRUSTED['speak'];
+ print "<SCRIPT type=\"text/javascript\"> window.location.replace(\"live.php\");</script>";
+  print "<a href=live.php>click here</a>";
+  exit;
+} 
+
+// get the info of this user.. 
+$query = "SELECT * FROM livehelp_users WHERE sessionid='".$identity['SESSIONID']."'";	
+$people = $mydatabase->query($query);
+$people = $people->fetchRow(DB_FETCHMODE_ASSOC);
+$myid = $people['user_id'];
+$channel = $people['onchannel'];
+$isadminsetting = $people['isadmin'];
+
+$lastaction = date("Ymdhis");
+$startdate =  date("Ymd");
+ 
+if(isset($UNTRUSTED['reset'])){
+ $query = "SELECT user_id,sessionid,camefrom,firstdepartment FROM livehelp_users WHERE isoperator='N' AND status!='chat'";
+ $sth = $mydatabase->query($query);
+ while($row = $sth->fetchRow(DB_FETCHMODE_ORDERED)){ 	
+   	 $user_id = $row[0]; 
+   	 $sessionid = $row[1];   	 
+     $camefrom = $row[2]; 
+     $firstdepartment= $old_user[3];  
+                              
+     // if not txt-db-api and $CSLH_Config['tracking'] == "Y" insert visitor and referer information:
+     if($dbtype != "txt-db-api"){     
+       if(!(empty($camefrom)) && ($CSLH_Config['reftracking']=="Y")){
+     	   archivepage('livehelp_referers_daily',$camefrom,date("Ymd"),$firstdepartment);
+     	   archivepage('livehelp_referers_monthly',$camefrom,date("Ym"),$firstdepartment);    	   
+     	 }
+     	 if ($CSLH_Config['tracking']=="Y")
+     	   archivefootsteps($sessionid);       
+     }	
+    archiveuser($sessionid);   
+ }
+print "Database reset...";
+print "<SCRIPT type=\"text/javascript\"> window.location.replace(\"live.php\");</script>";
+print "<a href=live.php>click here</a>";
+exit;
+}
+if(!($serversession))
+$mydatabase->close_connect();
+?>
+<title>Live help admin</title>
+
+<?php include("_inc.head.php"); ?>
+
+<frameset rows="52,*,155" border="0" frameborder="0" framespacing="0" spacing="0" >
+
+         <frame src="admin_options.php?tab=live" name="topofit" scrolling="no" border="0" marginheight="0" marginwidth="0" >
+         <frameset cols="*,317" border="0" frameborder="0" framespacing="0" spacing="0" >
+          <frameset rows="75,*" border="0" frameborder="0" framespacing="0" spacing="0" >
+           <frame src="admin_rooms.php" name="rooms" scrolling="NO" border="0" marginheight="0" marginwidth="0" >
+           <frame src="admin_connect.php?rand=<?php echo date("YmdHis"); ?>" name="connection" scrolling="AUTO" border="0" marginheight="0" marginwidth="0" >
+          </frameset>
+          <frame src="admin_users.php" name="users" scrolling="AUTO" border="0" marginheight="0" marginwidth="0" >
+         </frameset>
+         <frame src="admin_chat_bot.php" name="bottomof" scrolling="AUTO" border="0" marginheight="0" marginwidth="0" >
+        </frameset>
+        <noframes></noframes>
+
+
+
+
+
+
+
+
+
+
+<?php require_once("_inc.footer.php"); ?>

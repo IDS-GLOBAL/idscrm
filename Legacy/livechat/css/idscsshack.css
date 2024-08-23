@@ -1,0 +1,57 @@
+
+.leftnavlink {
+text-align: left;
+font-family: luxi sans, verdana, geneva, arial, helvetica, sans-serif;
+font-size: 15px;
+font-weight:bold;
+}
+
+
+
+
+/* Backgrounds */
+
+.br-white{
+	background:#fff !important;
+}
+
+.br-black{
+	background: #444 !important;
+}
+
+.br-red{
+	background:#e63131 !important;
+}
+
+.br-green{
+	background:#6fae26 !important;
+}
+
+.br-lblue{
+	background:#14b9e8 !important;
+}
+
+.br-blue{
+	background:#2f5393 !important;
+}
+
+.br-brown{
+	background:#c27256 !important;
+}
+
+.br-orange{
+	background:#ed450c !important;
+}
+
+.br-purple{
+	background:#702583 !important;
+}
+
+.br-pink{
+	background: #fb226f !important;
+}
+
+.br-yellow{
+	background: #ffb800 !important; 
+	/* background: #fff200 !important; */
+}

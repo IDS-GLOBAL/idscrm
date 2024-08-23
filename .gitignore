@@ -138,3 +138,10 @@ Legacy/office/Connections/tracking.php
 Legacy/office/Connections/idsconnection.php
 Legacy/office/Connections/idsdudes.php
 Legacy/test/@StripePhp/assets/js/charge.js
+Legacy/vehicles/photos/*
+Legacy/vehicles/photos/
+Legacy/vehicles/videos/*
+Legacy/vehicles/videos/
+Legacy/vehicles/_notes/
+Legacy/vehicles/photos/.well-known/pki-validation/_notes/dwsync.xml
+Legacy/vehicles/_notes/dwsync.xml

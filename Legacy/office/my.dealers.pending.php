@@ -52,7 +52,7 @@ FROM
 	JOIN `idsids_idsdms`.`dudes` on `dealers_pending`.`dudes_id` = `dudes`.`dudes_id`
 
 WHERE 
-	`dealers_pending`.`dudes_id` IS NOT NULL
+	`dealers_pending`.`sys_covertdlrs_did` IS  NULL
 GROUP BY
 	`dealers_pending`.`id`
 ORDER BY `dealers_pending`.`id` DESC

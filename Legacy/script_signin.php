@@ -1,7 +1,5 @@
 <?php require_once('Connections/idsconnection.php'); ?>
 <?php
-?>
-<?php
 // *** Validate request to login to this site.
 if (!isset($_SESSION)) {
   session_start();

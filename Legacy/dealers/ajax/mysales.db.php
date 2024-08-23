@@ -1,5 +1,5 @@
-<?php require_once('../Connections/idsconnection.php'); ?>
-<?php require_once('../Connections/tracking.php'); ?>
+<?php require_once('../../Connections/idsconnection.php'); ?>
+<?php require_once('../../Connections/tracking.php'); ?>
 <?php
 
 

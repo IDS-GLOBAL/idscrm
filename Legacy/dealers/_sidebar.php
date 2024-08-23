@@ -207,16 +207,17 @@
                         <span class="label label-info pull-right">NEW</span></a>
                     </li>
 
-                    <!--li class="special_link">
+                    <li class="special_link">
                         <a href="#"><i class="fa fa-cart-plus"></i> <span class="nav-label">Auction Cars</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="auction.php">Car Auction</a></li>
-                            <li><a href="auction-move.php">Move Cars To Auction</a></li>
+                            <!--li><a href="auction-move.php">Move Cars To Auction</a></li>
 							<li><a href="auction-settings.php">Auction Settings</a></li>
 							<li><a href="auction-purchases.php">Auction Purchases</a></li>
 							<li><a href="auction-pass.php">Auction Purchases</a></li>
+                            -->
                         </ul>
-                    </li-->
+                    </li>
 
                     <li class="special_link">
                         <a href="#"><i class="fa fa-angellist"></i> <span class="nav-label">Buy/Order</span><span class="fa arrow"></span></a>

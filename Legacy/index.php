@@ -511,7 +511,7 @@
                 <h2>Central Auto Sales</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://wwww.centralauto.com" target="_blank" class="btn btn-primary">Central Auto Sales</a>
+                <a href="https://wwww.centralauto.com" target="_blank" class="btn btn-primary">Central Auto Sales</a>
 
             </div>
             <div class="col-lg-4 features-text text-right m-t-n-lg wow zoomIn">
@@ -519,7 +519,7 @@
                 <h2>Sterling Auto Consultants</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://idscrm.com/sterlingauto.com" target="_blank" class="btn btn-primary">SterlingAutoLot.com</a>
+                <a href="https://idscrm.com/sterlingauto.com" target="_blank" class="btn btn-primary">SterlingAutoLot.com</a>
 
             </div>
             <div class="col-lg-4 features-text text-right wow fadeInRight">
@@ -527,7 +527,7 @@
                 <h2>AutoStarFinance.com</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://autostarfinance.com" target="_blank" class="btn btn-primary">AutoStarFinance.com</a>
+                <a href="https://autostarfinance.com" target="_blank" class="btn btn-primary">AutoStarFinance.com</a>
 
             </div>
         </div>
@@ -538,7 +538,7 @@
                 <h2>Central Auto Sales</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://wwww.centralauto.com" target="_blank" class="btn btn-primary">Central Auto Sales</a>
+                <a href="https://wwww.centralauto.com" target="_blank" class="btn btn-primary">Central Auto Sales</a>
 
             </div>
             <div class="col-lg-4 features-text text-right m-t-n-lg wow zoomIn">
@@ -546,7 +546,7 @@
                 <h2>Sterling Auto Consultants</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://idscrm.com/sterlingauto.com" target="_blank" class="btn btn-primary">SterlingAutoLot.com</a>
+                <a href="https://idscrm.com/sterlingauto.com" target="_blank" class="btn btn-primary">SterlingAutoLot.com</a>
 
             </div>
             <div class="col-lg-4 features-text text-right wow fadeInRight">
@@ -554,7 +554,7 @@
                 <h2>AutoStarFinance.com</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://autostarfinance.com" target="_blank" class="btn btn-primary">AutoStarFinance.com</a>
+                <a href="https://autostarfinance.com" target="_blank" class="btn btn-primary">AutoStarFinance.com</a>
 
             </div>
         </div>
@@ -565,7 +565,7 @@
                 <h2>Central Auto Sales</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://wwww.centralauto.com" target="_blank" class="btn btn-primary">Central Auto Sales</a>
+                <a href="https://wwww.centralauto.com" target="_blank" class="btn btn-primary">Central Auto Sales</a>
 
             </div>
             <div class="col-lg-4 features-text text-right m-t-n-lg wow zoomIn">
@@ -573,7 +573,7 @@
                 <h2>Sterling Auto Consultants</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://idscrm.com/sterlingauto.com" target="_blank" class="btn btn-primary">SterlingAutoLot.com</a>
+                <a href="https://idscrm.com/sterlingauto.com" target="_blank" class="btn btn-primary">SterlingAutoLot.com</a>
 
             </div>
             <div class="col-lg-4 features-text text-right wow fadeInRight">
@@ -581,7 +581,7 @@
                 <h2>AutoStarFinance.com</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://autostarfinance.com" target="_blank" class="btn btn-primary">AutoStarFinance.com</a>
+                <a href="https://autostarfinance.com" target="_blank" class="btn btn-primary">AutoStarFinance.com</a>
 
             </div>
         </div>
@@ -592,7 +592,7 @@
                 <h2>Central Auto Sales</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://wwww.centralauto.com" target="_blank" class="btn btn-primary">Central Auto Sales</a>
+                <a href="https://wwww.centralauto.com" target="_blank" class="btn btn-primary">Central Auto Sales</a>
 
             </div>
             <div class="col-lg-4 features-text text-right m-t-n-lg wow zoomIn">
@@ -600,7 +600,7 @@
                 <h2>Sterling Auto Consultants</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://idscrm.com/sterlingauto.com" target="_blank" class="btn btn-primary">SterlingAutoLot.com</a>
+                <a href="https://idscrm.com/sterlingauto.com" target="_blank" class="btn btn-primary">SterlingAutoLot.com</a>
 
             </div>
             <div class="col-lg-4 features-text text-right wow fadeInRight">
@@ -608,7 +608,7 @@
                 <h2>AutoStarFinance.com</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://autostarfinance.com" target="_blank" class="btn btn-primary">AutoStarFinance.com</a>
+                <a href="https://autostarfinance.com" target="_blank" class="btn btn-primary">AutoStarFinance.com</a>
 
             </div>
         </div>
@@ -619,7 +619,7 @@
                 <h2>Central Auto Sales</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://wwww.centralauto.com" target="_blank" class="btn btn-primary">Central Auto Sales</a>
+                <a href="https://wwww.centralauto.com" target="_blank" class="btn btn-primary">Central Auto Sales</a>
 
             </div>
             <div class="col-lg-4 features-text text-right m-t-n-lg wow zoomIn">
@@ -627,7 +627,7 @@
                 <h2>Sterling Auto Consultants</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://idscrm.com/sterlingauto.com" target="_blank" class="btn btn-primary">SterlingAutoLot.com</a>
+                <a href="https://idscrm.com/sterlingauto.com" target="_blank" class="btn btn-primary">SterlingAutoLot.com</a>
 
             </div>
             <div class="col-lg-4 features-text text-right wow fadeInRight">
@@ -635,7 +635,7 @@
                 <h2>AutoStarFinance.com</h2>
                 <img src="dealers/img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
                 <p>IDSCRM.com Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
-                <a href="http://autostarfinance.com" target="_blank" class="btn btn-primary">AutoStarFinance.com</a>
+                <a href="https://autostarfinance.com" target="_blank" class="btn btn-primary">AutoStarFinance.com</a>
 
             </div>
         </div>
@@ -661,7 +661,7 @@
                     <h4><span class="navy">WeFinance</span> Here.com</h4>
                     <p>We deliver qualified leads and highly qualified customers looking for what you have on your lot.   We market your business online at WeFinanceHere.com and manage your opportunities online using your IDSCRM back office.</p>
                     <ul class="list-inline social-icon">
-                        <li><a href="http://wefinancehere.com" target="_blank"><i class="fa fa-globe fa-3x fa-spin"></i></a>
+                        <li><a href="https://wefinancehere.com" target="_blank"><i class="fa fa-globe fa-3x fa-spin"></i></a>
                         </li>
                         <li><a href="https://www.facebook.com/wefinancehere" target="_blank"><i class="fa fa-facebook fa-3x"></i></a>
                         </li>

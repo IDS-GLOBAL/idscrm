@@ -47,6 +47,11 @@ $query_find_dealer_prospects = "SELECT
     dealer_prospects.company, 
     dealer_prospects.state, 
     dealer_prospects.city, 
+    dealer_prospects.email, 
+    dealer_prospects.phone, 
+    dealer_prospects.zip, 
+    dealer_prospects.website, 
+    dealer_prospects.status, 
     dealer_prospects.dealer_type_id, 
     dealer_prospects.dudes_id, 
     dealer_prospects.dudes2_id,
@@ -66,6 +71,11 @@ ON `dealer_prospects`.`state` = `dudes_states`.`state_abrv`
     dealer_prospects.company, 
     dealer_prospects.state, 
     dealer_prospects.city, 
+    dealer_prospects.email, 
+    dealer_prospects.phone, 
+    dealer_prospects.zip, 
+    dealer_prospects.website, 
+    dealer_prospects.status, 
     dealer_prospects.dealer_type_id, 
     dealer_prospects.dudes_id, 
     dealer_prospects.dudes2_id, 
@@ -114,7 +124,7 @@ $totalRows_find_dealer_prospects = mysqli_num_rows($find_dealer_prospects);
     <td><a id="<?php echo  $row_find_dealer_prospects['id']; ?>" class="ajaxtrigger" role="button">
 				<?php 
 					$status =  $row_find_dealer_prospects['status'];
-					if(!$status){ echo ''; }
+					
 					if($status == 0){ echo 'OFF'; }
 					if($status == 1){ echo 'ON'; }
 				?>

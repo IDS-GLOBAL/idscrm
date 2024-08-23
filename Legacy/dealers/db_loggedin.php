@@ -93,29 +93,36 @@ $converted_time_3 = date("Y-m-d H:i:s", strtotime($time_now . " -30 days"));
 
 
 
+// function zone_conversion_date($time, $cur_zone, $req_zone)
+// {   
+// 	global $zone_from;
+// 	global $zone_to;
+
+//     date_default_timezone_set("GMT");
+//     $gmt = date("Y-m-d H:i:s");
+
+//     date_default_timezone_set($zone_from);
+//     $local = date("Y-m-d H:i:s");
+
+//     date_default_timezone_set($zone_to);
+//     $required = date("Y-m-d H:i:s");
+
+//     /* return $required; */
+//     $diff1 = (strtotime($gmt) - strtotime($local));
+//     $diff2 = (strtotime($required) - strtotime($gmt));
+
+//     $date = new DateTime($time);
+//     $date->modify("+$diff1 seconds");
+//     $date->modify("+$diff2 seconds");
+
+//     return $timestamp = $date->format("Y-m-d H:i:s");
+// }
+
 function zone_conversion_date($time, $cur_zone, $req_zone)
-{   
-	global $zone_from;
-	global $zone_to;
-
-    date_default_timezone_set("GMT");
-    $gmt = date("Y-m-d H:i:s");
-
-    date_default_timezone_set($zone_from);
-    $local = date("Y-m-d H:i:s");
-
-    date_default_timezone_set($zone_to);
-    $required = date("Y-m-d H:i:s");
-
-    /* return $required; */
-    $diff1 = (strtotime($gmt) - strtotime($local));
-    $diff2 = (strtotime($required) - strtotime($gmt));
-
-    $date = new DateTime($time);
-    $date->modify("+$diff1 seconds");
-    $date->modify("+$diff2 seconds");
-
-    return $timestamp = $date->format("Y-m-d H:i:s");
+{
+    $date = new DateTime($time, new DateTimeZone($cur_zone));
+    $date->setTimezone(new DateTimeZone($req_zone));
+    return $date->format("Y-m-d H:i:s");
 }
 
 $against_time_now = date("Y-m-d H:i:s");

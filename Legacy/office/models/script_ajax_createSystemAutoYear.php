@@ -11,7 +11,7 @@ if (isset($_POST['inputNewSystemYear'])) {
 
     $inputNewSystemYear  = mysqli_real_escape_string($idsconnection_mysqli, trim($_POST['inputNewSystemYear']));
 
-    echo $inputNewSystemYear;
+    //echo $inputNewSystemYear;
 
     $query_find_dealer_prospects = "
         INSERT INTO `idsids_idsdms`.`auto_years` SET

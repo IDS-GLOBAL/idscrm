@@ -82,7 +82,7 @@ if(isset($_GET['dropzonevid'])){
 											$photo_openurl = 'img/thumbs/thumb1.jpg';
 										}else{
 											$photo_file_path = str_replace('../', '', $photo_file_path);
-											$photo_file_path = str_replace('vehicles/photos/', '', $photo_file_path);	
+											$photo_file_path = str_replace('vehicles/', '', $photo_file_path);	
 											$photo_openurl = "https://images.autocitymag.com/".$photo_file_path;
 											//"https://www.idscrm.com/vehicles/photos/"
 										}

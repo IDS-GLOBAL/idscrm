@@ -1,4 +1,3 @@
-<?php require_once('Connections/idsconnection.php'); ?>
 <?php
 
 
@@ -26,8 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email'])) {
        $mail->Host = 'mail.idscrm.com';
        $mail->SMTPAuth = true;
        $mail->Username = 'idsrobot@idscrm.com';  // Gmail username
-       //$mail->Password = '';  // Application password or Gmail password
-       $mail->Password = $idsrobotPassword;  // Application password or Gmail password
+       $mail->Password = 'ZF7xWD17VnVtK7fq';  // Application password or Gmail password
        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
        $mail->Port = 587;
        //$mail->Port = 465;

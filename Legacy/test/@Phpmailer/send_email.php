@@ -1,6 +1,4 @@
-<?php require_once('Connections/idsconnection.php'); ?>
 <?php
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -15,8 +13,7 @@ try {
     $mail->Host       = 'mail.idscrm.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'idsrobot@idscrm.com';                     //SMTP username
-    //  $mail->Password   = '';                               //SMTP password
-    $mail->Password   = $idsrobotPassword;                               //SMTP password
+    $mail->Password   = 'ZF7xWD17VnVtK7fq';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 

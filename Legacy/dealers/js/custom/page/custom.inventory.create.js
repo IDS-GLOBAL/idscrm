@@ -565,6 +565,7 @@ function addcartoinventory(){
 		$('div#createVehicleResult').html(result).show();
 		console.log(result);
 		//$('div#ajax_vehicle_console_results').html(result);
+		$("div#debug_console").html(result)
 		//passYesYearvin();
 	   });
 

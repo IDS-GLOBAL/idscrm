@@ -32,16 +32,6 @@ $vinlength = mysqli_real_escape_string($idsconnection_mysqli, trim($_POST['vinle
 
 
 
-
-
-
-
-if (mysql_errno() == 1062) {
-    //print 'no way!';
-
-}
-
-
 mysqli_select_db($idsconnection_mysqli, $database_idsconnection);
 $query_found_vehicle = "SELECT * FROM `idsids_idsdms`.`vehicles` WHERE `vehicles`.`vvin` = '$vvin'";
 $found_vehicle = mysqli_query($idsconnection_mysqli, $query_found_vehicle);

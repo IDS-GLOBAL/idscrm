@@ -153,7 +153,7 @@
                             <?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
                                 <li><a href="create.vin-make.php">Create Makes</a></li>
                                 <li><a href="create.vin-wmi.php">Create VIN WMI Codes</a></li>
-                                <li><a href="create.make-models.php">Create Make&amp;Models/</a></li>
+                                <li><a href="create.make-models.php">Create Make&amp;Models</a></li>
                             <?php } ?>
                         </ul>
                     </li>
@@ -162,10 +162,10 @@
                         <ul class="nav nav-second-level">
                         
                         
-<?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
+                        <?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
                         	<li><a href="billing.php" target="_blank">Old Billing</a></li>
                         	<li><a href="billing-new.php" target="_blank">New Billing</a></li>
-<?php }?>                            
+                        <?php }?>
                             
                             <li><a href="#">Create A Invoice</a></li>
 							<li><a href="#">Create A New Charge</a></li>
@@ -210,9 +210,9 @@
                         <ul class="nav nav-second-level">
                             <li><a href="departments.php">View Departments</a></li>
 
-<?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
-                            <li><a href="department.add.php">Create A New Department</a></li>
-<?php } ?>
+                            <?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
+                                <li><a href="department.add.php">Create A New Department</a></li>
+                            <?php } ?>
                             
                         </ul>
                     </li>
@@ -234,11 +234,11 @@
                             <li>
                                 <a href="dealer.salespeople.php">Sales People</a>
                             </li>
-<?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
+                            <?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
                             <li>
                                 <a href="create.dude.php">New Dude</a>
                             </li>
-<?php } ?>
+                            <?php } ?>
                             <li>
                                 <a href="#">Managers</a>
                             </li>

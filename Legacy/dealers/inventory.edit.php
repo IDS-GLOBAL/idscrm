@@ -165,6 +165,8 @@ $totalRows_query_bodystyles = mysqli_num_rows($query_bodystyles);
                                         <div class="col-md-4">
                                          
 										<?php 
+                                        	$photo_openurl = 'img/thumbs/thumb1.jpg';
+                                            
 											if($photo_file_path = $row_find_vehicle['vthubmnail_file_path']):
 
 											if(!$photo_file_path){

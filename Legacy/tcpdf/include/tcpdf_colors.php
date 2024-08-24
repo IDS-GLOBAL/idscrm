@@ -418,17 +418,17 @@ class TCPDF_COLORS {
 		switch (count($c)) {
 			case 4: {
 				// CMYK
-				$color .=  '%F %F %F %F', (max(0, min(100, floatval($c[0]))) / 100), (max(0, min(100, floatval($c[1]))) / 100), (max(0, min(100, floatval($c[2]))) / 100), (max(0, min(100, floatval($c[3]))) / 100));
+				$color .=  sprintf('%F %F %F %F', (max(0, min(100, floatval($c[0]))) / 100), (max(0, min(100, floatval($c[1]))) / 100), (max(0, min(100, floatval($c[2]))) / 100), (max(0, min(100, floatval($c[3]))) / 100));
 				break;
 			}
 			case 3: {
 				// RGB
-				$color .=  '%F %F %F', (max(0, min(255, floatval($c[0]))) / 255), (max(0, min(255, floatval($c[1]))) / 255), (max(0, min(255, floatval($c[2]))) / 255));
+				$color .=  sprintf('%F %F %F', (max(0, min(255, floatval($c[0]))) / 255), (max(0, min(255, floatval($c[1]))) / 255), (max(0, min(255, floatval($c[2]))) / 255));
 				break;
 			}
 			case 1: {
 				// grayscale
-				$color .=  '%F', (max(0, min(255, floatval($c[0]))) / 255));
+				$color .=  sprintf('%F', (max(0, min(255, floatval($c[0]))) / 255));
 				break;
 			}
 		}
@@ -445,7 +445,7 @@ class TCPDF_COLORS {
 	 */
 	public static function _JScolor($color) {
 		if (substr($color, 0, 1) == '#') {
-			return  "['RGB',%F,%F,%F]", (hexdec(substr($color, 1, 2)) / 255), (hexdec(substr($color, 3, 2)) / 255), (hexdec(substr($color, 5, 2)) / 255));
+			return  sprintf("['RGB',%F,%F,%F]", (hexdec(substr($color, 1, 2)) / 255), (hexdec(substr($color, 3, 2)) / 255), (hexdec(substr($color, 5, 2)) / 255));
 		}
 		if (!in_array($color, self::$jscolor)) {
 			// default transparent color

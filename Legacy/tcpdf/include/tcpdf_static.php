@@ -1215,7 +1215,7 @@ class TCPDF_STATIC {
 		$bs = '';
 		$chars = preg_split('//', $s, -1, PREG_SPLIT_NO_EMPTY);
 		foreach ($chars as $c) {
-			$bs .=  '%02s', dechex(ord($c)));
+			$bs .=  sprintf('%02s', dechex(ord($c)));
 		}
 		return $bs;
 	}
@@ -1229,7 +1229,7 @@ class TCPDF_STATIC {
 	 * @public static
 	 */
 	public static function getEncPermissionsString($protection) {
-		$binprot =  '%032b', $protection);
+		$binprot =  sprintf('%032b', $protection);
 		$str = chr(bindec(substr($binprot, 24, 8)));
 		$str .= chr(bindec(substr($binprot, 16, 8)));
 		$str .= chr(bindec(substr($binprot, 8, 8)));
@@ -1253,7 +1253,7 @@ class TCPDF_STATIC {
 			if (preg_match('/[0-9a-zA-Z#_=-]/', $chr) == 1) {
 				$escname .= $chr;
 			} else {
-				$escname .=  '#%02X', ord($chr));
+				$escname .=  sprintf('#%02X', ord($chr));
 			}
 		}
 		return $escname;
@@ -2011,7 +2011,7 @@ class TCPDF_STATIC {
 		// order the css array to account for specificity
 		$cssordered = array();
 		foreach ($cssarray as $key => $val) {
-			$skey =  '%04d', $key);
+			$skey =  sprintf('%04d', $key);
 			$cssordered[$val['s'].'_'.$skey] = $val;
 		}
 		// sort selectors alphabetically to account for specificity

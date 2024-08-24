@@ -416,9 +416,20 @@ function run_run(){
 
 
 // Pulling For models based on make
-function pullModelsFromMake(){
+function pullModelsFromMake(vmake){
+
+		let thismake = vmake;
+
 		console.log('Models From make Running');
 		var slct_vmake = document.getElementById("vmake");
+
+		if(slct_vmake){
+			vmake = thismake;
+		}
+
+		console.log('slct_vmake ', slct_vmake);
+
+
 		var themake_id = slct_vmake.options[slct_vmake.selectedIndex].value;
 		var themake = slct_vmake.options[slct_vmake.selectedIndex].text;
 		
@@ -430,6 +441,7 @@ function pullModelsFromMake(){
  $.post('ajax/pullmodels.php', {themake: themake, thisdid: thisdid }, function(result) {
  
 	$('select#vmodel').html(result);
+	console.log('Models From ajax/pullmodels.php: ', result)
 
  });
 

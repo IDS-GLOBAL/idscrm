@@ -5,12 +5,13 @@ if(!$_POST) exit;
 
 $themake = mysqli_real_escape_string($idsconnection_mysqli, trim($_POST['themake']));
 
+print_r($themake);
 
 
 $find_makes_sql = "SELECT * FROM `idsids_idsdms`.`car_model` WHERE `car_model`.`make` = '$themake'";
 $query = mysqli_query($idsconnection_mysqli, $find_makes_sql);
 
-echo mysql_error();
+//echo mysql_error();
 
 $myarray=array();
 

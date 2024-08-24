@@ -128,7 +128,13 @@ $totalRows_query_bodystyles = mysqli_num_rows($query_bodystyles);
                                           </select>
                                           <div class="input-group-btn">
                                           	
-											<button id="create_makemodel" type="button" class="btn btn-warning">Create New Year!</button>
+											<button id="create_newyear" type="button" class="btn btn-warning" data-toggle="modal" data-target="#myCreateYearModal">Create New Year!</button>
+
+                                            
+
+                                            
+
+
                                           </div>
                                           </div>
                                     </div>
@@ -227,6 +233,55 @@ $totalRows_query_bodystyles = mysqli_num_rows($query_bodystyles);
                 </div>
               </div>
             </div>
+
+
+            <div class="modal inmodal fade" id="myCreateYearModal" tabindex="-1" role="dialog"  aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                            <h4 class="modal-title">Create New Year</h4>
+                                                            <small class="font-bold">This year will be added to the system</small>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="ibox ">
+                                                                        <div class="ibox-title">
+                                                                            <h5>System Year Creation</h5>
+                                                                            
+                                                                        </div>
+                                                                        <div class="ibox-content">
+                                                                            <form>
+                                                                                
+                                                                                <div class="form-group row"><label class="col-lg-2 col-form-label">New System Year</label>
+    
+                                                                                    <div class="col-lg-10"><input type="inputNewSystemYear" placeholder="Year" class="form-control"> <span class="form-text text-danger m-b-none">only numbers only enter the year to be added to system.</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                
+                                                                                
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-lg-offset-2 col-lg-10">
+                                                                                        <button class="btn btn-sm btn-primary" type="submit">Create A New Year</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
             
 
 
@@ -272,6 +327,7 @@ $(document).ready(function() {
 } );
 
 </script>
+
 </body>
 
 </html>

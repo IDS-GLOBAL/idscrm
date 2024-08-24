@@ -150,10 +150,11 @@
                             <li><a href="#">All Hold Vehicles</a></li>
                             <li><a href="inventory.transfers.php" title="Everything">Vehicle Transfers</a></li>
                             <li><a href="#">Create Dealer Inventory</a></li>
-<?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
-
-                            <li><a href="create.make-models.php">Create Make&amp;Models</a></li>
-<?php } ?>
+                            <?php if($dudes_skillset_id == '9' ||  $dudes_super == '1'){ ?>
+                                <li><a href="create.vin-make.php">Create Makes</a></li>
+                                <li><a href="create.vin-wmi.php">Create VIN WMI Codes</a></li>
+                                <li><a href="create.make-models.php">Create Make&amp;Models/</a></li>
+                            <?php } ?>
                         </ul>
                     </li>
                     <li>

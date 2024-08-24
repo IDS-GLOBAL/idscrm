@@ -124,7 +124,7 @@ $totalRows_query_vvinwmi_onetwothree = mysqli_num_rows($query_vvinwmi_onetwothre
                                 </div>
                                 <div class="col-sm-6">
 
-	                                <div class="form-group"><label class="col-sm-2 control-label">Choose Manufaturer</label>
+	                                <div class="form-group"><label class="col-sm-2 control-label">Choose Manufacturer</label>
 
                                     <div class="col-sm-10"><select class="form-control m-b" id="car_make" name="car_make">
                                                     <option value="">Select Make</option>

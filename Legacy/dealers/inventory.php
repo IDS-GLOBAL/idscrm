@@ -225,7 +225,7 @@ $totalRows_CountVehicles = mysqli_num_rows($CountVehicles);
                                                             
                                                     <?php } else { ?>
                                                     
-                                                            <img class="thumbnail" src="<?php echo "https://images.autocitymag.com/no-photo.png".$photo_file_path; ?>" width="120px" />
+                                                            <img class="thumbnail" src="<?php echo "https://images.autocitymag.com/no-photo.png"; ?>" width="120px" />
                                                             
                                                             
                                                     <?php   } ?>

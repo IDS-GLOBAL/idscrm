@@ -303,9 +303,14 @@ function run_run(){
 					$.post('ajax/vinten.php', {vvin: vvin, thisdid: thisdid  }, 
 					   
 					   function(resultvyear) {
-						$('div#vinYearResult').html(resultvyear).show();
-						 $('input#vin_year').val(resultvyear);
+						
 						console.log('VIN YEAR: '+resultvyear);
+
+						$('div#vinYearResult').html(resultvyear).show();
+						
+						$('input#vin_year').val(resultvyear);
+						
+						
 
 
 						$("select#vyear").val(resultvyear);
@@ -331,9 +336,11 @@ function run_run(){
 	
 				   function(result2) {
 					   
-					   $('select#vmake').val(result2);
-					   $('div#vinMakeResult').html(result2);
-					   $('div#vinModelResult').html('Choose Model');
+					console.log('script_decodevinmake.php result2: ', result2)
+						
+						$('div#vinMakeResult').html(result2);
+					   	$('select#vmake').val(result2);
+					   	$('div#vinModelResult').html('Choose Model');
 
 
 						//Get select object

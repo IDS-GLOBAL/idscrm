@@ -14,6 +14,29 @@ $(document).ready(function(){
 		console.log('clicked button#create_newyear');
 
 	})
+
+	$("button#actionCreateAutoYearBtn").on('click', function(){
+
+		console.log('clicked button#create_newyear');
+
+		var inputNewSystemYear = $('input#inputNewSystemYear').val();
+
+		if(inputNewSystemYear.length = 4 &&	inputNewSystemYear.length > 3 && inputNewSystemYear.length < 5){
+			
+			$.post('models/script_ajax_createSystemAutoYear.php', {
+				
+				inputNewSystemYear: inputNewSystemYear
+			}, function(result){
+				console.log('script_ajax_createSystemAutoYear.php results:', result)
+				$("div#debug_console").html(result)
+			});
+
+		}else{
+			alert('Invalid Entry')
+		}
+
+
+	})
 	
 
 	$('button#create_makemodel').on('click', function(){
@@ -43,6 +66,7 @@ $(document).ready(function(){
 			$.post('script_create_ajax_makeandmodels.php', {
 						dudesid: dudesid,
 						car_year: car_year,
+						car_year_text: car_year_text,
 						car_makeid: car_makeid,
 						car_make_text: car_make_text,
 						car_model: car_model,

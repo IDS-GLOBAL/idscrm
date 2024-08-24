@@ -206,7 +206,7 @@ $totalRows_query_bodystyles = mysqli_num_rows($query_bodystyles);
               <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Make And Models Added And Exisit <small>Sort, search</small></h5>
+                        <h5>Make And Models Added And Exist <small>Sort, search</small></h5>
                     </div>
                     <div class="ibox-content">
                     
@@ -257,14 +257,15 @@ $totalRows_query_bodystyles = mysqli_num_rows($query_bodystyles);
                                                                                 
                                                                                 <div class="form-group row"><label class="col-lg-2 col-form-label">New System Year</label>
     
-                                                                                    <div class="col-lg-10"><input type="inputNewSystemYear" placeholder="Year" class="form-control"> <span class="form-text text-danger m-b-none">only numbers only enter the year to be added to system.</span>
+                                                                                    <div class="col-lg-10">
+                                                                                        <input id="inputNewSystemYear" name="inputNewSystemYear" type="text" placeholder="Year" class="form-control"> <span class="form-text text-danger m-b-none">only numbers only enter the year to be added to system.</span>
                                                                                     </div>
                                                                                 </div>
                                                                                 
                                                                                 
                                                                                 <div class="form-group row">
                                                                                     <div class="col-lg-offset-2 col-lg-10">
-                                                                                        <button class="btn btn-sm btn-primary" type="submit">Create A New Year</button>
+                                                                                        <button id="actionCreateAutoYearBtn" class="btn btn-sm btn-primary" type="button">Create A New Year</button>
                                                                                     </div>
                                                                                 </div>
                                                                             </form>

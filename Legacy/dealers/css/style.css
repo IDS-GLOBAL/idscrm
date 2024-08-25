@@ -189,42 +189,42 @@ height: 60px;
 .col-large{font-family: inherit; font-size:24px; font-weight:bold;}
 
 li.ui-sortable-handle.saved{
-border: 1px solid #d3d3d3;
-background-color:#0F0;
-font-weight: normal;
-color: #555555;
+  border: 1px solid #d3d3d3;
+  background-color:#0F0;
+  font-weight: normal;
+  color: #555555;
 }
 
 input.sorting{
-position: absolute;
-width: 23px;
-height: 20px;
-font-size: 10px;
-margin-top: -2px;
-margin-left: -4px;
-z-index: 100;
+  position: absolute;
+  width: 23px;
+  height: 20px;
+  font-size: 10px;
+  margin-top: -2px;
+  margin-left: -4px;
+  z-index: 100;
 }
 
 input.delete_sortedvphotos{
-position: absolute;
-width: 15px;
-height: 15px;
-font-size: 10px;
-margin-top: -1px;
-margin-left: 36px;
-z-index: 100;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  font-size: 10px;
+  margin-top: -1px;
+  margin-left: -15x;
+  z-index: 100;
 }
 
 #photogallery ul{ 
-list-style:none;
+  list-style:none;
 }
 
 input[type="search"] {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 input[type="text"] {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 input[type="number"] {
@@ -232,11 +232,11 @@ input[type="number"] {
 }
 
 select.form-control.input-sm{
-    font-size: 16px;
+  font-size: 16px;
 }
 
 div.dataTables_length select {
-width: 93px;
+  width: 93px;
 }
 
 .dataTables_length {
@@ -3365,7 +3365,8 @@ a.forum-item-title:hover {
 .tabs-container .tabs-left > .nav-tabs .active > a:hover,
 .tabs-container .tabs-left > .nav-tabs .active > a:focus {
   border-color: #e7eaec transparent #e7eaec #e7eaec;
-  *border-right-color: #ffffff;
+  border-right-color: #ffffff;
+  
 }
 .tabs-container .tabs-right > .nav-tabs {
   float: right;

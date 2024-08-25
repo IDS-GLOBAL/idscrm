@@ -46,7 +46,9 @@ if(isset($_GET['dropzonevid'])){
         
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Rearrange Vehicle Photos Below:</h2>
+                    
+                <h2>Rearrange Vehicle Photos Below:</h2>
+                    
                     <ol class="breadcrumb">
                         <li>
                             <a href="dashboard.php">Dashboard</a>
@@ -61,6 +63,7 @@ if(isset($_GET['dropzonevid'])){
                         	<a href="upload-vphotos.php?vid=<?php echo $row_find_vehicle['vid']; ?>">Currently: <?php echo $totalRows_find_vehicle_photos; ?> Photos.</a>
                         </li>
                     </ol>
+
                 </div>
                 <div class="col-lg-2">
 
@@ -130,13 +133,13 @@ if(isset($_GET['dropzonevid'])){
     <script src="js/jquery-1.10.2.js"></script> 
     <script src="js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="css/jquery-ui.css">
-  <script src="js/jquery-ui.js"></script>
-  <style>
-  #sortable { list-style-type: none; margin: 0; padding: 0; width: 100% !important; }
-  #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
-  #sortable li.ui-state-default.ui-sortable-handle.ui-sortable-helper:focus{ margin-top: -50px !important; }
-  </style>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-ui.js"></script>
+    <style>
+        #sortable { list-style-type: none; margin: 0; padding: 0; width: 100% !important; }
+        #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
+        #sortable li.ui-state-default.ui-sortable-handle.ui-sortable-helper:focus{ margin-top: -50px !important; }
+    </style>
 
 
     <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>

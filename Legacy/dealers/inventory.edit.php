@@ -174,7 +174,7 @@ $totalRows_query_bodystyles = mysqli_num_rows($query_bodystyles);
 											}else{
 												$photo_file_path = str_replace('../', '', $photo_file_path);
 												$photo_file_path = str_replace('vehicles/photos/', '', $photo_file_path);	
-												$photo_openurl = "https://images.autocitymag.com/".$photo_file_path;
+												$photo_openurl = "https://images.autocitymag.com/photos/".$photo_file_path;
 											}
 										?>
                                         <a href="<?php echo $photo_openurl; ?>" class="fancybox">
@@ -413,21 +413,21 @@ do {
                                     <div class="form-group">
                                         <label for="vexterior_color" class="col-sm-3 control-label">Exterior Color: </label>
                                         <div class="col-lg-9 col-md-9 col-sm-9">
-  <select name="vexterior_color" id="vexterior_color" class="form-control">
-    <option value="" <?php if (!(strcmp("", $row_find_vehicle['vecolor']))) {echo "selected=\"selected\"";} ?>>Select Color</option>
-    <?php
-do {  
-?>
-    <option value="<?php echo $row_colors_hex['color_hex']?>"<?php if (!(strcmp($row_colors_hex['color_hex'], $row_find_vehicle['vecolor']))) {echo "selected=\"selected\"";} ?>><?php echo $row_colors_hex['color_name']?></option>
-    <?php
-} while ($row_colors_hex = mysqli_fetch_assoc($colors_hex));
-  $rows = mysqli_num_rows($colors_hex);
-  if($rows > 0) {
-      mysqli_data_seek($colors_hex, 0);
-	  $row_colors_hex = mysqli_fetch_assoc($colors_hex);
-  }
-?>
-  </select>
+                                                <select name="vexterior_color" id="vexterior_color" class="form-control">
+                                                    <option value="" <?php if (!(strcmp("", $row_find_vehicle['vecolor']))) {echo "selected=\"selected\"";} ?>>Select Color</option>
+                                                    <?php
+                                                do {  
+                                                ?>
+                                                    <option value="<?php echo $row_colors_hex['color_hex']?>"<?php if (!(strcmp($row_colors_hex['color_hex'], $row_find_vehicle['vecolor']))) {echo "selected=\"selected\"";} ?>><?php echo $row_colors_hex['color_name']?></option>
+                                                    <?php
+                                                } while ($row_colors_hex = mysqli_fetch_assoc($colors_hex));
+                                                $rows = mysqli_num_rows($colors_hex);
+                                                if($rows > 0) {
+                                                    mysqli_data_seek($colors_hex, 0);
+                                                    $row_colors_hex = mysqli_fetch_assoc($colors_hex);
+                                                }
+                                                ?>
+                                                </select>
 
 
                                     	</div>
@@ -437,21 +437,21 @@ do {
                                          
                                          <label for="vinterior_color" class="col-sm-3 control-label">Interior Color: </label>
                                         <div class="col-lg-9 col-md-9 col-sm-9">
-                 <select name="vinterior_color" id="vinterior_color" class="form-control">
-                   <option value="" <?php if (!(strcmp("", $row_find_vehicle['vicolor']))) {echo "selected=\"selected\"";} ?>>Select Color</option>
-                   <?php
-do {  
-?>
-                   <option value="<?php echo $row_colors_hex['color_hex']?>"<?php if (!(strcmp($row_colors_hex['color_hex'], $row_find_vehicle['vicolor']))) {echo "selected=\"selected\"";} ?>><?php echo $row_colors_hex['color_name']?></option>
-                   <?php
-} while ($row_colors_hex = mysqli_fetch_assoc($colors_hex));
-  $rows = mysqli_num_rows($colors_hex);
-  if($rows > 0) {
-      mysqli_data_seek($colors_hex, 0);
-	  $row_colors_hex = mysqli_fetch_assoc($colors_hex);
-  }
-?>
-    </select>
+                                            <select name="vinterior_color" id="vinterior_color" class="form-control">
+                                                <option value="" <?php if (!(strcmp("", $row_find_vehicle['vicolor']))) {echo "selected=\"selected\"";} ?>>Select Color</option>
+                                                <?php
+                                                        do {  
+                                                        ?>
+                                                                        <option value="<?php echo $row_colors_hex['color_hex']?>"<?php if (!(strcmp($row_colors_hex['color_hex'], $row_find_vehicle['vicolor']))) {echo "selected=\"selected\"";} ?>><?php echo $row_colors_hex['color_name']?></option>
+                                                                        <?php
+                                                        } while ($row_colors_hex = mysqli_fetch_assoc($colors_hex));
+                                                        $rows = mysqli_num_rows($colors_hex);
+                                                        if($rows > 0) {
+                                                            mysqli_data_seek($colors_hex, 0);
+                                                            $row_colors_hex = mysqli_fetch_assoc($colors_hex);
+                                                        }
+                                                        ?>
+                                            </select>
                                     	</div>
                                     </div>
 
@@ -469,19 +469,19 @@ do {
     
                                         <div class="col-lg-9 col-md-9 col-sm-9">
                                             
-<select class="form-control m-b" id="vtransm"  name="vtransm">
-                    <option value="" <?php if (!(strcmp("", $row_find_vehicle['vtransm']))) {echo "selected=\"selected\"";} ?>>Select Transmission</option>
-                    <?php do {  ?>
-<option value="<?php echo ucfirst($row_distinct_transm['vtransm']); ?>"<?php if (!(strcmp($row_distinct_transm['vtransm'], $row_find_vehicle['vtransm']))) {echo "selected=\"selected\"";} ?>><?php echo ucfirst($row_distinct_transm['vtransm']); ?></option>
-<?php
-} while ($row_distinct_transm = mysqli_fetch_assoc($distinct_transm));
-  $rows = mysqli_num_rows($distinct_transm);
-  if($rows > 0) {
-      mysqli_data_seek($distinct_transm, 0);
-	  $row_distinct_transm = mysqli_fetch_assoc($distinct_transm);
-  }
-?>
-    </select>
+                                                <select class="form-control m-b" id="vtransm"  name="vtransm">
+                                                        <option value="" <?php if (!(strcmp("", $row_find_vehicle['vtransm']))) {echo "selected=\"selected\"";} ?>>Select Transmission</option>
+                                                                    
+                                                        <?php do {  ?><option value="<?php echo ucfirst($row_distinct_transm['vtransm']); ?>"<?php if (!(strcmp($row_distinct_transm['vtransm'], $row_find_vehicle['vtransm']))) {echo "selected=\"selected\"";} ?>><?php echo ucfirst($row_distinct_transm['vtransm']); ?></option>
+                                                        
+                                                        <?php } while ($row_distinct_transm = mysqli_fetch_assoc($distinct_transm));
+                                                            $rows = mysqli_num_rows($distinct_transm);
+                                                            if($rows > 0) {
+                                                                mysqli_data_seek($distinct_transm, 0);
+                                                                $row_distinct_transm = mysqli_fetch_assoc($distinct_transm);
+                                                            }   
+                                                        ?>
+                                                </select>
                                            
                                            </div>
                                     </div>                                    
@@ -517,13 +517,13 @@ do {
                                         <label for="vcylinders" class="col-sm-3 control-label">Cylinders: </label>
                                      <div class="col-lg-9 col-md-9 col-sm-9">
                                          <select id="vcylinders" name="vcylinders" class="form-control">
-<option value="" <?php if (!(strcmp("", $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>Select Cylinders</option>
-<option value="3" <?php if (!(strcmp(3, $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>3 Cylinders</option>
-<option value="4" <?php if (!(strcmp(4, $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>4 Cylinders</option>
-<option value="6" <?php if (!(strcmp(6, $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>6 Cylinders</option>
-<option value="8" <?php if (!(strcmp(8, $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>8 Cylinders</option>
-<option value="10" <?php if (!(strcmp(10, $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>10 Cylinders</option>
-<option value="12" <?php if (!(strcmp(12, $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>12 Cylinders</option>
+                                            <option value="" <?php if (!(strcmp("", $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>Select Cylinders</option>
+                                            <option value="3" <?php if (!(strcmp(3, $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>3 Cylinders</option>
+                                            <option value="4" <?php if (!(strcmp(4, $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>4 Cylinders</option>
+                                            <option value="6" <?php if (!(strcmp(6, $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>6 Cylinders</option>
+                                            <option value="8" <?php if (!(strcmp(8, $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>8 Cylinders</option>
+                                            <option value="10" <?php if (!(strcmp(10, $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>10 Cylinders</option>
+                                            <option value="12" <?php if (!(strcmp(12, $row_find_vehicle['vcylinders']))) {echo "selected=\"selected\"";} ?>>12 Cylinders</option>
                                          </select>
                                     </div>
                                     </div>
@@ -539,13 +539,12 @@ do {
                                     <div class="form-group">
                                         <label for="vfueltype" class="col-sm-3 control-label">Fuel Type: </label>
                                         <div class="col-lg-9 col-md-9 col-sm-9">
-<select id="vfueltype" name="vfueltype" class="form-control">
-<option value="" <?php if (!(strcmp("", $row_find_vehicle['vfueltype']))) {echo "selected=\"selected\"";} ?>>Select Fuel Type</option>
-<option value="Gasoline" <?php if (!(strcmp("Gasoline", $row_find_vehicle['vfueltype']))) {echo "selected=\"selected\"";} ?>>Gasoline</option>
-<option value="Diesel" <?php if (!(strcmp("Diesel", $row_find_vehicle['vfueltype']))) {echo "selected=\"selected\"";} ?>>Diesel</option>
-<option value="Hybrid" <?php if (!(strcmp("Hybrid", $row_find_vehicle['vfueltype']))) {echo "selected=\"selected\"";} ?>>Hybrid</option>
-<option value="Electric" <?php if (!(strcmp("Electric", $row_find_vehicle['vfueltype']))) {echo "selected=\"selected\"";} ?>>Electric</option>
-
+                                        <select id="vfueltype" name="vfueltype" class="form-control">
+                                            <option value="" <?php if (!(strcmp("", $row_find_vehicle['vfueltype']))) {echo "selected=\"selected\"";} ?>>Select Fuel Type</option>
+                                            <option value="Gasoline" <?php if (!(strcmp("Gasoline", $row_find_vehicle['vfueltype']))) {echo "selected=\"selected\"";} ?>>Gasoline</option>
+                                            <option value="Diesel" <?php if (!(strcmp("Diesel", $row_find_vehicle['vfueltype']))) {echo "selected=\"selected\"";} ?>>Diesel</option>
+                                            <option value="Hybrid" <?php if (!(strcmp("Hybrid", $row_find_vehicle['vfueltype']))) {echo "selected=\"selected\"";} ?>>Hybrid</option>
+                                            <option value="Electric" <?php if (!(strcmp("Electric", $row_find_vehicle['vfueltype']))) {echo "selected=\"selected\"";} ?>>Electric</option>
                                          </select>
 	                                    </div>
                                     </div>
@@ -749,7 +748,8 @@ do {
                             
                             
                             <p>
-                        <a id="vehicle_edit_uploadphoto" class="btn btn-success" href="upload-vphotos.php?vid=<?php echo $row_find_vehicle['vid']; ?>"><i class="fa fa-upload"></i>&nbsp;&nbsp;<span class="bold">Upload More Photos</span></a>
+                        <a id="vehicle_edit_uploadphoto" class="btn btn-success" href="upload-vphotos.php?vid=<?php echo $row_find_vehicle['vid']; ?>">
+                            <i class="fa fa-upload"></i>&nbsp;&nbsp;<span class="bold">Upload More Photos</span></a>
                         <a class="btn btn-info" href="sort-vphotos.php?vid=<?php echo $row_find_vehicle['vid']; ?>"><i class="fa fa-paste"></i> Resort Photos</a>
                     </p>
                             
@@ -795,7 +795,7 @@ do {
 										}else{
 											$photo_file_path = str_replace('../', '', $photo_file_path);
 											$photo_file_path = str_replace('vehicles/photos/', '', $photo_file_path);	
-											$photo_openurl = "http://images.autocitymag.com/".$photo_file_path;
+											$photo_openurl = "http://images.autocitymag.com/photos/".$photo_file_path;
 										}
 
 										

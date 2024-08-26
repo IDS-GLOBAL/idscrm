@@ -132,6 +132,7 @@ Legacy/Connections/frazerdms.php
 Legacy/Connections/idschatconnection.php
 Legacy/Connections/idsconnection.php
 Legacy/Connections/idshomenetatuoconnection.php
+Legacy/Connections/wfh_connection.php
 Legacy/Connections/tracking.php
 Legacy/office/Connections/wfh_connection.php
 Legacy/office/Connections/tracking.php
@@ -145,3 +146,5 @@ Legacy/vehicles/videos/
 Legacy/vehicles/_notes/
 Legacy/vehicles/photos/.well-known/pki-validation/_notes/dwsync.xml
 Legacy/vehicles/_notes/dwsync.xml
+Legacy/Connections/wfh_connection.php
+Legacy/Connections/wfh_connection.php
